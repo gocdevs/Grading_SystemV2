@@ -37,19 +37,21 @@ namespace GOC_GS
             this.btnViewGrades = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
-            this.btnTeacher = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.btnDashBoard = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(87)))));
             this.pnlTop.Controls.Add(this.button2);
-            this.pnlTop.Controls.Add(this.pnlMain);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(200, 0);
             this.pnlTop.Name = "pnlTop";
@@ -61,12 +63,13 @@ namespace GOC_GS
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(87)))));
             this.pnlLeft.Controls.Add(this.btnViewGrades);
+            this.pnlLeft.Controls.Add(this.pnlMain);
             this.pnlLeft.Controls.Add(this.button1);
             this.pnlLeft.Controls.Add(this.btnGrading);
-            this.pnlLeft.Controls.Add(this.btnTeacher);
             this.pnlLeft.Controls.Add(this.button3);
             this.pnlLeft.Controls.Add(this.button10);
             this.pnlLeft.Controls.Add(this.btnDashBoard);
+            this.pnlLeft.Controls.Add(this.pictureBox1);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
@@ -75,9 +78,9 @@ namespace GOC_GS
             // 
             // pnlMain
             // 
-            this.pnlMain.Location = new System.Drawing.Point(0, 75);
+            this.pnlMain.Location = new System.Drawing.Point(200, 59);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1144, 654);
+            this.pnlMain.Size = new System.Drawing.Size(1150, 670);
             this.pnlMain.TabIndex = 2;
             // 
             // button2
@@ -105,7 +108,7 @@ namespace GOC_GS
             this.btnViewGrades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnViewGrades.Image = ((System.Drawing.Image)(resources.GetObject("btnViewGrades.Image")));
             this.btnViewGrades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnViewGrades.Location = new System.Drawing.Point(17, 267);
+            this.btnViewGrades.Location = new System.Drawing.Point(17, 318);
             this.btnViewGrades.Name = "btnViewGrades";
             this.btnViewGrades.Size = new System.Drawing.Size(170, 46);
             this.btnViewGrades.TabIndex = 74;
@@ -121,11 +124,11 @@ namespace GOC_GS
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(14, 475);
+            this.button1.Location = new System.Drawing.Point(11, 423);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(170, 46);
             this.button1.TabIndex = 73;
-            this.button1.Text = "     Teacher Maintenance";
+            this.button1.Text = "    File Maintenance";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -137,29 +140,13 @@ namespace GOC_GS
             this.btnGrading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnGrading.Image = ((System.Drawing.Image)(resources.GetObject("btnGrading.Image")));
             this.btnGrading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGrading.Location = new System.Drawing.Point(17, 215);
+            this.btnGrading.Location = new System.Drawing.Point(17, 266);
             this.btnGrading.Name = "btnGrading";
             this.btnGrading.Size = new System.Drawing.Size(170, 46);
             this.btnGrading.TabIndex = 72;
             this.btnGrading.Text = "     Grading";
             this.btnGrading.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGrading.UseVisualStyleBackColor = true;
-            // 
-            // btnTeacher
-            // 
-            this.btnTeacher.FlatAppearance.BorderSize = 0;
-            this.btnTeacher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTeacher.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnTeacher.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-            this.btnTeacher.Image = ((System.Drawing.Image)(resources.GetObject("btnTeacher.Image")));
-            this.btnTeacher.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTeacher.Location = new System.Drawing.Point(14, 423);
-            this.btnTeacher.Name = "btnTeacher";
-            this.btnTeacher.Size = new System.Drawing.Size(170, 46);
-            this.btnTeacher.TabIndex = 71;
-            this.btnTeacher.Text = "     Teacher Profile";
-            this.btnTeacher.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTeacher.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -185,11 +172,11 @@ namespace GOC_GS
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(17, 671);
+            this.button10.Location = new System.Drawing.Point(12, 671);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(170, 46);
             this.button10.TabIndex = 69;
-            this.button10.Text = "     Settings";
+            this.button10.Text = "     Connection Settings";
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button10.UseVisualStyleBackColor = true;
             // 
@@ -201,7 +188,7 @@ namespace GOC_GS
             this.btnDashBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
             this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDashBoard.Location = new System.Drawing.Point(14, 319);
+            this.btnDashBoard.Location = new System.Drawing.Point(17, 214);
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(170, 46);
             this.btnDashBoard.TabIndex = 68;
@@ -209,11 +196,35 @@ namespace GOC_GS
             this.btnDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashBoard.UseVisualStyleBackColor = true;
             // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.Image = global::GOC_GS.Properties.Resources.goc_logo;
+            this.pictureBox5.Location = new System.Drawing.Point(585, 184);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(413, 381);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 4;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 164);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1037;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -222,6 +233,8 @@ namespace GOC_GS
             this.Text = "Form1";
             this.pnlTop.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -234,11 +247,12 @@ namespace GOC_GS
         public System.Windows.Forms.Button btnViewGrades;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnGrading;
-        public System.Windows.Forms.Button btnTeacher;
         public System.Windows.Forms.Button button3;
         public System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button btnDashBoard;
         private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

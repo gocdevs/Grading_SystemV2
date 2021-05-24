@@ -26,3 +26,4 @@ C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.exe
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.pdb
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmMain.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmDashboard.resources
