@@ -49,10 +49,11 @@ namespace GOC_GS
             // 
             this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(87)))));
             this.pnlTop.Controls.Add(this.button2);
+            this.pnlTop.Controls.Add(this.pnlMain);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTop.Location = new System.Drawing.Point(0, 0);
+            this.pnlTop.Location = new System.Drawing.Point(200, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1350, 54);
+            this.pnlTop.Size = new System.Drawing.Size(1150, 57);
             this.pnlTop.TabIndex = 0;
             this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTop_Paint);
             // 
@@ -67,17 +68,16 @@ namespace GOC_GS
             this.pnlLeft.Controls.Add(this.button10);
             this.pnlLeft.Controls.Add(this.btnDashBoard);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 54);
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
             this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(206, 675);
+            this.pnlLeft.Size = new System.Drawing.Size(200, 729);
             this.pnlLeft.TabIndex = 1;
             // 
             // pnlMain
             // 
-            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMain.Location = new System.Drawing.Point(206, 54);
+            this.pnlMain.Location = new System.Drawing.Point(0, 75);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1144, 675);
+            this.pnlMain.Size = new System.Drawing.Size(1144, 654);
             this.pnlMain.TabIndex = 2;
             // 
             // button2
@@ -89,7 +89,7 @@ namespace GOC_GS
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(1233, 9);
+            this.button2.Location = new System.Drawing.Point(1033, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 35);
             this.button2.TabIndex = 68;
@@ -133,7 +133,7 @@ namespace GOC_GS
             // 
             this.btnGrading.FlatAppearance.BorderSize = 0;
             this.btnGrading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnGrading.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnGrading.Image = ((System.Drawing.Image)(resources.GetObject("btnGrading.Image")));
             this.btnGrading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -185,7 +185,7 @@ namespace GOC_GS
             this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(14, 611);
+            this.button10.Location = new System.Drawing.Point(17, 671);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(170, 46);
             this.button10.TabIndex = 69;
@@ -214,9 +214,8 @@ namespace GOC_GS
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.pnlMain);
-            this.Controls.Add(this.pnlLeft);
             this.Controls.Add(this.pnlTop);
+            this.Controls.Add(this.pnlLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
