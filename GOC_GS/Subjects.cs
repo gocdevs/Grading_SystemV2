@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -64,45 +65,59 @@ namespace GOC_GS
         }
 
         //Retrieve Data from DB
-        public List<Subjects> Load()
+        public void LoadDataTable(DataGridView dgv)
         {
             try
             {
                 using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
                 {
-                    con.Open();
+                  
 
+                    #region Old Code
+                    //string sql = "SELECT * FROM subject";
+
+                    //MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    //MySqlDataReader reader = cmd.ExecuteReader();
+
+                    ////loop while have record
+                    //while (reader.Read())
+                    //{
+                    //    //instantiate model
+                    //    Subjects subject = new Subjects();
+
+                    //    //prepare properties
+                    //    subject.id = Convert.ToInt32(reader["id"].ToString());
+                    //    subject.subject_code = reader["subject_code"].ToString();
+                    //    subject.subject_name = reader["subject_name"].ToString();
+                    //    subject.subject_type = reader["subject_type"].ToString();                        
+                    //    subject.semester = reader["semester"].ToString();
+                    //    subject.grade_level = reader["grade_level"].ToString();
+                    //    subject.strand = reader["strand"].ToString();
+
+                    //    subjects.Add(subject);
+                    #endregion
+
+                    con.Open();
                     string sql = "SELECT * FROM subject";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
 
-                    MySqlDataReader reader = cmd.ExecuteReader();
+                    da.SelectCommand = cmd;
 
-                    //loop while have record
-                    while (reader.Read())
-                    {
-                        //instantiate model
-                        Subjects subject = new Subjects();
-
-                        //prepare properties
-                        subject.id = Convert.ToInt32(reader["id"].ToString());
-                        subject.subject_code = reader["subject_code"].ToString();
-                        subject.subject_name = reader["subject_name"].ToString();
-                        subject.subject_type = reader["subject_type"].ToString();                        
-                        subject.semester = reader["semester"].ToString();
-                        subject.grade_level = reader["grade_level"].ToString();
-                        subject.strand = reader["strand"].ToString();
-
-                        subjects.Add(subject);
-                    }
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
                 }
             }
+            
             catch (MySqlException ex)
             {
-
                 MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            return subjects;
+           
         }//End of Load
 
         //Save Records
@@ -117,8 +132,8 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO payment_log(subject_code ,subject_name ,subject_type ,grade_level ,strand) " +
-                                    " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand);";
+                    string sql = "INSERT INTO subject(subject_code ,subject_name ,subject_type ,grade_level ,strand,semester) " +
+                                    " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand,@strand);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -126,6 +141,7 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("subject_name", subject_name);                    
                     cmd.Parameters.AddWithValue("subject_type", subject_type);
                     cmd.Parameters.AddWithValue("grade_level", grade_level);
+                    cmd.Parameters.AddWithValue("semester", semester);
                     cmd.Parameters.AddWithValue("strand", strand);
 
                     cmd.ExecuteNonQuery();
@@ -150,14 +166,16 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "UPDATE subject SET subject_code=@subject_code ,subject_name=@subject_name ,subject_type=@subject_type ,grade_level=@grade_level ,strand=@strand" +
+                    string sql = "UPDATE subject SET subject_code=@subject_code,subject_name=@subject_name,subject_type=@subject_type,grade_level=@grade_level,strand=@strand,semester=@semester" +
                                     " WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("id", id);
                     cmd.Parameters.AddWithValue("subject_code", subject_code);
                     cmd.Parameters.AddWithValue("subject_name", subject_name);
                     cmd.Parameters.AddWithValue("subject_type", subject_type);
                     cmd.Parameters.AddWithValue("grade_level", grade_level);
+                    cmd.Parameters.AddWithValue("semester", semester);
                     cmd.Parameters.AddWithValue("strand", strand);
 
                     cmd.ExecuteNonQuery();
@@ -212,7 +230,7 @@ namespace GOC_GS
                     con.Open();
 
                     //prepare sql query
-                    string sql = "SELECT * FROM subject WHERE title =@title;";
+                    string sql = "SELECT * FROM subject WHERE subject_code =@subject_code;";
 
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);

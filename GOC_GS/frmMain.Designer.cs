@@ -31,64 +31,38 @@ namespace GOC_GS
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlLeft = new System.Windows.Forms.Panel();
-            this.pnlMain = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
+            this.pnlLeft = new System.Windows.Forms.Panel();
             this.btnViewGrades = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnConSettings = new System.Windows.Forms.Button();
             this.btnDashBoard = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlAllContainer = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
             // 
-            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(87)))));
+            this.pnlTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(63)))), ((int)(((byte)(94)))));
             this.pnlTop.Controls.Add(this.button2);
             this.pnlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTop.Location = new System.Drawing.Point(200, 0);
             this.pnlTop.Name = "pnlTop";
-            this.pnlTop.Size = new System.Drawing.Size(1150, 57);
+            this.pnlTop.Size = new System.Drawing.Size(1150, 51);
             this.pnlTop.TabIndex = 0;
             this.pnlTop.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlTop_Paint);
-            // 
-            // pnlLeft
-            // 
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(33)))), ((int)(((byte)(87)))));
-            this.pnlLeft.Controls.Add(this.btnViewGrades);
-            this.pnlLeft.Controls.Add(this.pnlMain);
-            this.pnlLeft.Controls.Add(this.button1);
-            this.pnlLeft.Controls.Add(this.btnGrading);
-            this.pnlLeft.Controls.Add(this.button3);
-            this.pnlLeft.Controls.Add(this.button10);
-            this.pnlLeft.Controls.Add(this.btnDashBoard);
-            this.pnlLeft.Controls.Add(this.pictureBox1);
-            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(200, 729);
-            this.pnlLeft.TabIndex = 1;
-            // 
-            // pnlMain
-            // 
-            this.pnlMain.Location = new System.Drawing.Point(200, 59);
-            this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1150, 670);
-            this.pnlMain.TabIndex = 2;
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -100,11 +74,27 @@ namespace GOC_GS
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // pnlLeft
+            // 
+            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(44)))), ((int)(((byte)(67)))));
+            this.pnlLeft.Controls.Add(this.btnViewGrades);
+            this.pnlLeft.Controls.Add(this.button1);
+            this.pnlLeft.Controls.Add(this.btnGrading);
+            this.pnlLeft.Controls.Add(this.button3);
+            this.pnlLeft.Controls.Add(this.btnConSettings);
+            this.pnlLeft.Controls.Add(this.btnDashBoard);
+            this.pnlLeft.Controls.Add(this.pictureBox1);
+            this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlLeft.Location = new System.Drawing.Point(0, 0);
+            this.pnlLeft.Name = "pnlLeft";
+            this.pnlLeft.Size = new System.Drawing.Size(200, 729);
+            this.pnlLeft.TabIndex = 1;
+            // 
             // btnViewGrades
             // 
             this.btnViewGrades.FlatAppearance.BorderSize = 0;
             this.btnViewGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnViewGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnViewGrades.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewGrades.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnViewGrades.Image = ((System.Drawing.Image)(resources.GetObject("btnViewGrades.Image")));
             this.btnViewGrades.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -115,12 +105,13 @@ namespace GOC_GS
             this.btnViewGrades.Text = "     View Grades";
             this.btnViewGrades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewGrades.UseVisualStyleBackColor = true;
+            this.btnViewGrades.Click += new System.EventHandler(this.btnViewGrades_Click);
             // 
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -131,12 +122,13 @@ namespace GOC_GS
             this.button1.Text = "    File Maintenance";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnGrading
             // 
             this.btnGrading.FlatAppearance.BorderSize = 0;
             this.btnGrading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGrading.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrading.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGrading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnGrading.Image = ((System.Drawing.Image)(resources.GetObject("btnGrading.Image")));
             this.btnGrading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,12 +139,13 @@ namespace GOC_GS
             this.btnGrading.Text = "     Grading";
             this.btnGrading.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGrading.UseVisualStyleBackColor = true;
+            this.btnGrading.Click += new System.EventHandler(this.btnGrading_Click);
             // 
             // button3
             // 
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -164,27 +157,28 @@ namespace GOC_GS
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnConSettings
             // 
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
-            this.button10.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.Location = new System.Drawing.Point(12, 671);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(170, 46);
-            this.button10.TabIndex = 69;
-            this.button10.Text = "     Connection Settings";
-            this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnConSettings.FlatAppearance.BorderSize = 0;
+            this.btnConSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConSettings.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnConSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnConSettings.Image")));
+            this.btnConSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConSettings.Location = new System.Drawing.Point(12, 671);
+            this.btnConSettings.Name = "btnConSettings";
+            this.btnConSettings.Size = new System.Drawing.Size(170, 46);
+            this.btnConSettings.TabIndex = 69;
+            this.btnConSettings.Text = "     Connection Settings";
+            this.btnConSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConSettings.UseVisualStyleBackColor = true;
+            this.btnConSettings.Click += new System.EventHandler(this.btnConSettings_Click);
             // 
             // btnDashBoard
             // 
             this.btnDashBoard.FlatAppearance.BorderSize = 0;
             this.btnDashBoard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDashBoard.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnDashBoard.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
             this.btnDashBoard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,17 +189,6 @@ namespace GOC_GS
             this.btnDashBoard.Text = "     Dashboard";
             this.btnDashBoard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDashBoard.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::GOC_GS.Properties.Resources.goc_logo;
-            this.pictureBox5.Location = new System.Drawing.Point(585, 184);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(413, 381);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 4;
-            this.pictureBox5.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -219,12 +202,20 @@ namespace GOC_GS
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
             // 
+            // pnlAllContainer
+            // 
+            this.pnlAllContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAllContainer.Location = new System.Drawing.Point(200, 51);
+            this.pnlAllContainer.Name = "pnlAllContainer";
+            this.pnlAllContainer.Size = new System.Drawing.Size(1150, 678);
+            this.pnlAllContainer.TabIndex = 26;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 729);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.pnlAllContainer);
             this.Controls.Add(this.pnlTop);
             this.Controls.Add(this.pnlLeft);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -233,7 +224,6 @@ namespace GOC_GS
             this.Text = "Form1";
             this.pnlTop.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -248,11 +238,10 @@ namespace GOC_GS
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnGrading;
         public System.Windows.Forms.Button button3;
-        public System.Windows.Forms.Button button10;
+        public System.Windows.Forms.Button btnConSettings;
         private System.Windows.Forms.Button btnDashBoard;
-        private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Panel pnlAllContainer;
     }
 }
 
