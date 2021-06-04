@@ -79,9 +79,11 @@ namespace GOC_GS
                 //pass value to edit mode               
                 txtSCode.Text = dgvList.Rows[e.RowIndex].Cells[3].Value.ToString();   
                 txtSName.Text = dgvList.Rows[e.RowIndex].Cells[4].Value.ToString();
-                cmbGradeLevel.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cmbSemester.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cmbSTypes.Text = dgvList.Rows[e.RowIndex].Cells[7].Value.ToString();                               
+                cmbSTypes.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cmbSemester.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cmbGradeLevel.Text = dgvList.Rows[e.RowIndex].Cells[7].Value.ToString();
+               
+                              
                 cmbStrand.Text = dgvList.Rows[e.RowIndex].Cells[8].Value.ToString();
 
                 btnAdd.Text = "&Update";//set button to Update                
