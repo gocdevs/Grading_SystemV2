@@ -49,6 +49,7 @@ namespace GOC_GS
         {
             #region Header Name
             dgv.Columns["id"].Visible = false;
+            dgv.Columns["subject_code"].HeaderText = "Subject Code";//to fix the header Name
 
             DataGridViewColumn FillSize = dgv.Columns[2];
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -65,7 +66,6 @@ namespace GOC_GS
             cmbStrand.Text = "";
 
             btnAdd.Text = "&Add New";
-
         }
 
 
@@ -81,9 +81,7 @@ namespace GOC_GS
                 txtSName.Text = dgvList.Rows[e.RowIndex].Cells[4].Value.ToString();
                 cmbSTypes.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
                 cmbSemester.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cmbGradeLevel.Text = dgvList.Rows[e.RowIndex].Cells[7].Value.ToString();
-               
-                              
+                cmbGradeLevel.Text = dgvList.Rows[e.RowIndex].Cells[7].Value.ToString();                                             
                 cmbStrand.Text = dgvList.Rows[e.RowIndex].Cells[8].Value.ToString();
 
                 btnAdd.Text = "&Update";//set button to Update                

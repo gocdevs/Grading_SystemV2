@@ -95,6 +95,22 @@ namespace GOC_GS
             }
         }
 
+        public void ValidateCombobox5(ComboBox one, ComboBox two, ComboBox three, ComboBox four, ComboBox five)
+        {
+            ComboBox[] newTextBox = { one, two, three, four, five };
+            for (int inti = 0; inti < newTextBox.Length; inti++)
+            {
+                if (newTextBox[inti].Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill the required drop down list");
+                    newTextBox[inti].Focus();
+                    readyToSave = 0;
+                    return;
+                }
+                readyToSave = 1;
+            }
+        }
+
         public void ValidateTextBox2(TextBox one, TextBox two)
         {
             TextBox[] newTextBox = { one, two };
