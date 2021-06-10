@@ -64,6 +64,12 @@
     <Compile Include="frmDashboard.Designer.cs">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFaculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFaculty.Designer.cs">
+      <DependentUpon>frmFaculty.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGradeInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +94,12 @@
     <Compile Include="Connection\frmConnectionSettings.Designer.cs">
       <DependentUpon>frmConnectionSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSection.Designer.cs">
+      <DependentUpon>frmSection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSubjects.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +120,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Section.cs" />
     <Compile Include="Subjects.cs" />
     <Compile Include="Util_RequiredFields.cs" />
     <EmbeddedResource Include="Connection\frmConnectionSettings.resx">
@@ -116,8 +129,14 @@
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFaculty.resx">
+      <DependentUpon>frmFaculty.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSection.resx">
+      <DependentUpon>frmSection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubjects.resx">
       <DependentUpon>frmSubjects.cs</DependentUpon>

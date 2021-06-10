@@ -34,18 +34,6 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\GOC_GS.pdb
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Google.Protobuf.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Zstandard.Net.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Memory.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Buffers.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\MySql.Data.xml
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csprojAssemblyReference.cache
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmConnectionSettings.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmDashboard.resources
@@ -57,3 +45,5 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.CopyComplete
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.exe
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.pdb
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFaculty.resources
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmSection.resources
