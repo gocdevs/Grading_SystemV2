@@ -1,3 +1,15 @@
+
+CREATE TABLE `grade_Level` (
+  `id` int(11) NOT NULL, 
+  `grade_level` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `grade_Level`
+  ADD PRIMARY KEY (`id`);
+
+
+
+
 File Maintenance
 -Subject
 id
