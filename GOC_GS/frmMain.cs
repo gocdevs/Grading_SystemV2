@@ -28,12 +28,12 @@ namespace GOC_GS
             pnlAllContainer.Visible = true;
 
             //load the form
-            frmSubjects subject = new frmSubjects();
-            subject.TopLevel = false;
-            subject.AutoScroll = true;
+            frmFileMaintenance frm = new frmFileMaintenance();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
 
-            pnlAllContainer.Controls.Add(subject);
-            subject.Show();
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
 
 
             //frmSubjects f = new frmSubjects();

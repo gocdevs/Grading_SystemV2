@@ -39,14 +39,14 @@ namespace GOC_GS
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.cmbStrand = new System.Windows.Forms.ComboBox();
             this.cmbSTypes = new System.Windows.Forms.ComboBox();
             this.txtSCode = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvList
@@ -180,19 +180,21 @@ namespace GOC_GS
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // pictureBox3
+            // btnClose
             // 
-            this.pictureBox3.Image = global::GOC_GS.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(1117, 15);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7955;
-            this.pictureBox3.TabStop = false;
+            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(1117, 15);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 7955;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cmbSemester
             // 
+            this.cmbSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSemester.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSemester.FormattingEnabled = true;
             this.cmbSemester.Items.AddRange(new object[] {
@@ -206,6 +208,7 @@ namespace GOC_GS
             // 
             // cmbGradeLevel
             // 
+            this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGradeLevel.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.Items.AddRange(new object[] {
@@ -219,6 +222,7 @@ namespace GOC_GS
             // 
             // cmbStrand
             // 
+            this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStrand.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
             this.cmbStrand.Items.AddRange(new object[] {
@@ -237,6 +241,7 @@ namespace GOC_GS
             // 
             // cmbSTypes
             // 
+            this.cmbSTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSTypes.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSTypes.FormattingEnabled = true;
             this.cmbSTypes.Items.AddRange(new object[] {
@@ -270,7 +275,7 @@ namespace GOC_GS
             this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -285,7 +290,7 @@ namespace GOC_GS
             this.Name = "frmSubjects";
             this.Text = "frmSubjects";
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +305,7 @@ namespace GOC_GS
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cmbSemester;

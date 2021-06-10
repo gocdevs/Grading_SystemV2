@@ -31,16 +31,16 @@ namespace GOC_GS
         {
             this.txtSectionName = new System.Windows.Forms.TextBox();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.cmbStrand = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSectionName
@@ -54,6 +54,7 @@ namespace GOC_GS
             // 
             // cmbGradeLevel
             // 
+            this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGradeLevel.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.Items.AddRange(new object[] {
@@ -64,43 +65,6 @@ namespace GOC_GS
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(120, 28);
             this.cmbGradeLevel.TabIndex = 7975;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Image = global::GOC_GS.Properties.Resources.refresh;
-            this.btnCancel.Location = new System.Drawing.Point(1054, 90);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 44);
-            this.btnCancel.TabIndex = 7973;
-            this.btnCancel.Text = "&Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(950, 90);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 44);
-            this.btnAdd.TabIndex = 7972;
-            this.btnAdd.Text = "      &Add New";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GOC_GS.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(1119, 25);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7971;
-            this.pictureBox3.TabStop = false;
             // 
             // label6
             // 
@@ -142,19 +106,18 @@ namespace GOC_GS
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(1123, 516);
             this.dgvList.TabIndex = 7963;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
             // cmbStrand
             // 
+            this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStrand.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
             this.cmbStrand.Items.AddRange(new object[] {
-            "ALL Strand",
             "ABM",
             "HUMSS",
             "STEM",
-            "NON STEM",
-            "TVL - ICT",
-            "TVL - HE"});
+            "TVL"});
             this.cmbStrand.Location = new System.Drawing.Point(121, 91);
             this.cmbStrand.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbStrand.Name = "cmbStrand";
@@ -174,6 +137,46 @@ namespace GOC_GS
             this.label7.TabIndex = 7970;
             this.label7.Text = "Strand:";
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Image = global::GOC_GS.Properties.Resources.refresh;
+            this.btnCancel.Location = new System.Drawing.Point(1054, 90);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(85, 44);
+            this.btnCancel.TabIndex = 7973;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdd.Location = new System.Drawing.Point(950, 90);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(98, 44);
+            this.btnAdd.TabIndex = 7972;
+            this.btnAdd.Text = "      &Add New";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(1119, 25);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 7971;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmSection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,7 +187,7 @@ namespace GOC_GS
             this.Controls.Add(this.cmbGradeLevel);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -192,8 +195,8 @@ namespace GOC_GS
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSection";
             this.Text = "frmSection";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,7 +208,7 @@ namespace GOC_GS
         private System.Windows.Forms.ComboBox cmbGradeLevel;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvList;

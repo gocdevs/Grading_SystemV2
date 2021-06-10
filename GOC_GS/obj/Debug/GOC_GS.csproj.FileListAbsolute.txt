@@ -47,3 +47,7 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.exe
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.pdb
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFaculty.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmSection.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFaculty.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultyLoadings.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFileMaintenance.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmSection.resources

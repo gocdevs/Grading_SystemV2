@@ -133,7 +133,7 @@ namespace GOC_GS
                     con.Open();
 
                     string sql = "INSERT INTO subject(subject_code ,subject_name ,subject_type ,grade_level ,strand,semester) " +
-                                    " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand,@strand);";
+                                    " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand,@semester);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
