@@ -58,7 +58,7 @@
   <ItemGroup>
     <Compile Include="Connection\Config.cs" />
     <Compile Include="Connection\CrystalReportConnection.cs" />
-    <Compile Include="FacultyLoading.cs" />
+    <Compile Include="Models\FacultyLoading.cs" />
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,10 +71,10 @@
     <Compile Include="FileMaintenance\frmFaculty.Designer.cs">
       <DependentUpon>frmFaculty.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFacultyLoadings.cs">
+    <Compile Include="FileMaintenance\frmFacultyLoadings.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFacultyLoadings.Designer.cs">
+    <Compile Include="FileMaintenance\frmFacultyLoadings.Designer.cs">
       <DependentUpon>frmFacultyLoadings.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFileMaintenance.cs">
@@ -149,7 +149,7 @@
     <EmbeddedResource Include="FileMaintenance\frmFaculty.resx">
       <DependentUpon>frmFaculty.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFacultyLoadings.resx">
+    <EmbeddedResource Include="FileMaintenance\frmFacultyLoadings.resx">
       <DependentUpon>frmFacultyLoadings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFileMaintenance.resx">
