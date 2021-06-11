@@ -244,8 +244,6 @@ namespace GOC_GS
             this.cmbSTypes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSTypes.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSTypes.FormattingEnabled = true;
-            this.cmbSTypes.Items.AddRange(new object[] {
-            "AAA"});
             this.cmbSTypes.Location = new System.Drawing.Point(119, 78);
             this.cmbSTypes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSTypes.Name = "cmbSTypes";

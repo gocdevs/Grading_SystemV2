@@ -74,5 +74,10 @@ namespace GOC_GS
             pnlAllContainer.Controls.Add(frm);
             frm.Show();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

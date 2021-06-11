@@ -64,7 +64,7 @@ namespace GOC_GS
                 using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
                 {
                     con.Open();
-                    string sql = "SELECT subject_type FROM subjectType";
+                    string sql = "SELECT subject_type FROM subjectType ORDER BY subject_type ASC";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();

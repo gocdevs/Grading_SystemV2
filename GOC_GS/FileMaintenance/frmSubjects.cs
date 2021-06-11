@@ -21,7 +21,7 @@ namespace GOC_GS
             AddImageDataGrid(dgvList);
             HeaderFix(dgvList);
 
-          //subject_types.LoadCombo(cmbSTypes);                       
+            subject_types.LoadCombo(cmbSTypes);                       
             strand.LoadCombo(cmbStrand);
 
         }
