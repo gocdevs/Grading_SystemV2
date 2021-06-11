@@ -33,6 +33,7 @@ namespace GOC_GS
             this.btnSubjects = new System.Windows.Forms.Button();
             this.btnSection = new System.Windows.Forms.Button();
             this.btnFaculty = new System.Windows.Forms.Button();
+            this.btnStrand = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +54,7 @@ namespace GOC_GS
             this.btnSubjects.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSubjects.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjects.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjects.Location = new System.Drawing.Point(385, 294);
+            this.btnSubjects.Location = new System.Drawing.Point(343, 292);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Size = new System.Drawing.Size(113, 65);
             this.btnSubjects.TabIndex = 7969;
@@ -66,7 +67,7 @@ namespace GOC_GS
             this.btnSection.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSection.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSection.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSection.Location = new System.Drawing.Point(504, 294);
+            this.btnSection.Location = new System.Drawing.Point(462, 292);
             this.btnSection.Name = "btnSection";
             this.btnSection.Size = new System.Drawing.Size(113, 65);
             this.btnSection.TabIndex = 7970;
@@ -79,18 +80,32 @@ namespace GOC_GS
             this.btnFaculty.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnFaculty.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaculty.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFaculty.Location = new System.Drawing.Point(623, 294);
+            this.btnFaculty.Location = new System.Drawing.Point(581, 292);
             this.btnFaculty.Name = "btnFaculty";
             this.btnFaculty.Size = new System.Drawing.Size(113, 65);
             this.btnFaculty.TabIndex = 7971;
             this.btnFaculty.Text = "&Faculty";
             this.btnFaculty.UseVisualStyleBackColor = false;
             // 
+            // btnStrand
+            // 
+            this.btnStrand.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnStrand.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStrand.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnStrand.Location = new System.Drawing.Point(700, 292);
+            this.btnStrand.Name = "btnStrand";
+            this.btnStrand.Size = new System.Drawing.Size(113, 65);
+            this.btnStrand.TabIndex = 7972;
+            this.btnStrand.Text = "S&trand";
+            this.btnStrand.UseVisualStyleBackColor = false;
+            this.btnStrand.Click += new System.EventHandler(this.btnStrand_Click);
+            // 
             // frmFileMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.btnStrand);
             this.Controls.Add(this.btnFaculty);
             this.Controls.Add(this.btnSection);
             this.Controls.Add(this.btnSubjects);
@@ -109,5 +124,6 @@ namespace GOC_GS
         private System.Windows.Forms.Button btnSubjects;
         private System.Windows.Forms.Button btnSection;
         private System.Windows.Forms.Button btnFaculty;
+        private System.Windows.Forms.Button btnStrand;
     }
 }
