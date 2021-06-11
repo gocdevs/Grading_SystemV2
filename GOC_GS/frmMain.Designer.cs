@@ -36,7 +36,7 @@ namespace GOC_GS
             this.btnViewGrades = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnFacultyLoading = new System.Windows.Forms.Button();
             this.btnConSettings = new System.Windows.Forms.Button();
             this.btnDashBoard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -80,7 +80,7 @@ namespace GOC_GS
             this.pnlLeft.Controls.Add(this.btnViewGrades);
             this.pnlLeft.Controls.Add(this.button1);
             this.pnlLeft.Controls.Add(this.btnGrading);
-            this.pnlLeft.Controls.Add(this.button3);
+            this.pnlLeft.Controls.Add(this.btnFacultyLoading);
             this.pnlLeft.Controls.Add(this.btnConSettings);
             this.pnlLeft.Controls.Add(this.btnDashBoard);
             this.pnlLeft.Controls.Add(this.pictureBox1);
@@ -141,21 +141,22 @@ namespace GOC_GS
             this.btnGrading.UseVisualStyleBackColor = true;
             this.btnGrading.Click += new System.EventHandler(this.btnGrading_Click);
             // 
-            // button3
+            // btnFacultyLoading
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(11, 371);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 46);
-            this.button3.TabIndex = 70;
-            this.button3.Text = "    Grading Set-Ups";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnFacultyLoading.FlatAppearance.BorderSize = 0;
+            this.btnFacultyLoading.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFacultyLoading.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacultyLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnFacultyLoading.Image = ((System.Drawing.Image)(resources.GetObject("btnFacultyLoading.Image")));
+            this.btnFacultyLoading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFacultyLoading.Location = new System.Drawing.Point(11, 371);
+            this.btnFacultyLoading.Name = "btnFacultyLoading";
+            this.btnFacultyLoading.Size = new System.Drawing.Size(170, 46);
+            this.btnFacultyLoading.TabIndex = 70;
+            this.btnFacultyLoading.Text = "    Faculty Loads";
+            this.btnFacultyLoading.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFacultyLoading.UseVisualStyleBackColor = true;
+            this.btnFacultyLoading.Click += new System.EventHandler(this.btnFacultyLoading_Click);
             // 
             // btnConSettings
             // 
@@ -237,7 +238,7 @@ namespace GOC_GS
         public System.Windows.Forms.Button btnViewGrades;
         public System.Windows.Forms.Button button1;
         public System.Windows.Forms.Button btnGrading;
-        public System.Windows.Forms.Button button3;
+        public System.Windows.Forms.Button btnFacultyLoading;
         public System.Windows.Forms.Button btnConSettings;
         private System.Windows.Forms.Button btnDashBoard;
         private System.Windows.Forms.PictureBox pictureBox1;

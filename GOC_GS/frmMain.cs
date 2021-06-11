@@ -60,5 +60,19 @@ namespace GOC_GS
             frmConnectionSettings frm = new frmConnectionSettings();
             frm.ShowDialog();
         }
+
+        private void btnFacultyLoading_Click(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmFacultyLoadings frm = new frmFacultyLoadings();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

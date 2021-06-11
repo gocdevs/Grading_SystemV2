@@ -11,7 +11,7 @@ namespace GOC_GS
 {
     class Section
     {
-        List<Section> section = new List<Section>();
+        List<Section> sections = new List<Section>();
 
         protected int id;
         protected string section_name;
@@ -68,6 +68,36 @@ namespace GOC_GS
             {
                 MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }//End of Load
+
+        //Load Combo
+        public List<Section> LoadCombo(ComboBox cmb)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT section_name FROM section";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);                  
+                    cmb.DataSource = dt;
+                    cmb.ValueMember = "section_name";
+                    cmb.DisplayMember = "section_name";
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return sections;
         }//End of Load
 
         //Save Records

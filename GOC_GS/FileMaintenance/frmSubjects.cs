@@ -16,12 +16,15 @@ namespace GOC_GS
         {
             InitializeComponent();
             subject.LoadDataTable(dgvList);
+            
             AddImageDataGrid(dgvList);
             HeaderFix(dgvList);
+
         }
 
-        Subjects subject = new Subjects();
+        Subjects subject = new Subjects();        
         List<Subjects> subject_list = new List<Subjects>();
+    
 
         Util_RequiredFields util = new Util_RequiredFields();
 

@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Connection\Config.cs" />
     <Compile Include="Connection\CrystalReportConnection.cs" />
+    <Compile Include="FacultyLoading.cs" />
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>

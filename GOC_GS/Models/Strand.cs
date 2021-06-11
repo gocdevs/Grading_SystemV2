@@ -56,6 +56,36 @@ namespace GOC_GS
             }
         }//End of Load
 
+        //Load Combo
+        public List<Strand> LoadCombo(ComboBox cmb)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT strand_name FROM strand";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    cmb.DataSource = dt;
+                    cmb.ValueMember = "strand_name";
+                    cmb.DisplayMember = "strand_name";
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return strands;
+        }//End of Load
+
         //Save Records
         public void Save()
         {

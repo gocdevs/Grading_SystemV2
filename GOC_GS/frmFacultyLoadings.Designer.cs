@@ -29,60 +29,42 @@ namespace GOC_GS
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtSCode = new System.Windows.Forms.TextBox();
+            this.txtFacultyName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             this.cmbStrand = new System.Windows.Forms.ComboBox();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSection = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSubjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.dgvFacultyName = new System.Windows.Forms.DataGridView();
+            this.dgvSubjects = new System.Windows.Forms.DataGridView();
+            this.dgvFacultyLoads = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // txtFacultyName
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 96);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(269, 536);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(304, 96);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(835, 273);
-            this.dataGridView2.TabIndex = 1;
-            // 
-            // txtSCode
-            // 
-            this.txtSCode.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSCode.Location = new System.Drawing.Point(11, 61);
-            this.txtSCode.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.txtSCode.Multiline = true;
-            this.txtSCode.Name = "txtSCode";
-            this.txtSCode.Size = new System.Drawing.Size(269, 28);
-            this.txtSCode.TabIndex = 7964;
+            this.txtFacultyName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFacultyName.Location = new System.Drawing.Point(11, 61);
+            this.txtFacultyName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtFacultyName.Multiline = true;
+            this.txtFacultyName.Name = "txtFacultyName";
+            this.txtFacultyName.Size = new System.Drawing.Size(269, 28);
+            this.txtFacultyName.TabIndex = 7964;
             // 
             // label4
             // 
@@ -97,27 +79,23 @@ namespace GOC_GS
             this.label4.TabIndex = 7963;
             this.label4.Text = "Search Faculty Name:";
             // 
-            // pictureBox3
+            // btnClose
             // 
-            this.pictureBox3.Image = global::GOC_GS.Properties.Resources.close;
-            this.pictureBox3.Location = new System.Drawing.Point(1119, 13);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 30);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 7967;
-            this.pictureBox3.TabStop = false;
+            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(1119, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 7967;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cmbStrand
             // 
+            this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStrand.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
-            this.cmbStrand.Items.AddRange(new object[] {
-            "ABM",
-            "HUMSS",
-            "STEM",
-            "TVL - ICT",
-            "TVL - HE"});
             this.cmbStrand.Location = new System.Drawing.Point(744, 61);
             this.cmbStrand.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbStrand.Name = "cmbStrand";
@@ -126,6 +104,7 @@ namespace GOC_GS
             // 
             // cmbGradeLevel
             // 
+            this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbGradeLevel.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.Items.AddRange(new object[] {
@@ -165,6 +144,7 @@ namespace GOC_GS
             // 
             // cmbSemester
             // 
+            this.cmbSemester.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSemester.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSemester.FormattingEnabled = true;
             this.cmbSemester.Items.AddRange(new object[] {
@@ -189,23 +169,16 @@ namespace GOC_GS
             this.label3.TabIndex = 7973;
             this.label3.Text = "Semester:";
             // 
-            // comboBox1
+            // cmbSection
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "ALL Strand",
-            "ABM",
-            "HUMSS",
-            "STEM",
-            "NON STEM",
-            "TVL - ICT",
-            "TVL - HE"});
-            this.comboBox1.Location = new System.Drawing.Point(1019, 61);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(120, 28);
-            this.comboBox1.TabIndex = 7976;
+            this.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSection.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSection.FormattingEnabled = true;
+            this.cmbSection.Location = new System.Drawing.Point(1019, 61);
+            this.cmbSection.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.cmbSection.Name = "cmbSection";
+            this.cmbSection.Size = new System.Drawing.Size(120, 28);
+            this.cmbSection.TabIndex = 7976;
             // 
             // label2
             // 
@@ -220,15 +193,15 @@ namespace GOC_GS
             this.label2.TabIndex = 7975;
             this.label2.Text = "Section:";
             // 
-            // textBox1
+            // txtSubjectName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(304, 61);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(287, 28);
-            this.textBox1.TabIndex = 7978;
+            this.txtSubjectName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubjectName.Location = new System.Drawing.Point(304, 61);
+            this.txtSubjectName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtSubjectName.Multiline = true;
+            this.txtSubjectName.Name = "txtSubjectName";
+            this.txtSubjectName.Size = new System.Drawing.Size(287, 28);
+            this.txtSubjectName.TabIndex = 7978;
             // 
             // label1
             // 
@@ -269,15 +242,6 @@ namespace GOC_GS
             this.label8.TabIndex = 7980;
             this.label8.Text = "Count: ";
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(305, 404);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(835, 228);
-            this.dataGridView3.TabIndex = 7981;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -317,20 +281,67 @@ namespace GOC_GS
             this.label11.TabIndex = 7984;
             this.label11.Text = "Subjects Assigned to Faculty";
             // 
+            // dgvFacultyName
+            // 
+            this.dgvFacultyName.AllowUserToAddRows = false;
+            this.dgvFacultyName.AllowUserToDeleteRows = false;
+            this.dgvFacultyName.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFacultyName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFacultyName.Location = new System.Drawing.Point(11, 97);
+            this.dgvFacultyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFacultyName.Name = "dgvFacultyName";
+            this.dgvFacultyName.ReadOnly = true;
+            this.dgvFacultyName.RowHeadersVisible = false;
+            this.dgvFacultyName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFacultyName.Size = new System.Drawing.Size(269, 548);
+            this.dgvFacultyName.TabIndex = 7985;
+            // 
+            // dgvSubjects
+            // 
+            this.dgvSubjects.AllowUserToAddRows = false;
+            this.dgvSubjects.AllowUserToDeleteRows = false;
+            this.dgvSubjects.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubjects.Location = new System.Drawing.Point(304, 97);
+            this.dgvSubjects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSubjects.Name = "dgvSubjects";
+            this.dgvSubjects.ReadOnly = true;
+            this.dgvSubjects.RowHeadersVisible = false;
+            this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSubjects.Size = new System.Drawing.Size(835, 276);
+            this.dgvSubjects.TabIndex = 7986;
+            // 
+            // dgvFacultyLoads
+            // 
+            this.dgvFacultyLoads.AllowUserToAddRows = false;
+            this.dgvFacultyLoads.AllowUserToDeleteRows = false;
+            this.dgvFacultyLoads.BackgroundColor = System.Drawing.Color.White;
+            this.dgvFacultyLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFacultyLoads.Location = new System.Drawing.Point(304, 401);
+            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFacultyLoads.Name = "dgvFacultyLoads";
+            this.dgvFacultyLoads.ReadOnly = true;
+            this.dgvFacultyLoads.RowHeadersVisible = false;
+            this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 244);
+            this.dgvFacultyLoads.TabIndex = 7987;
+            // 
             // frmFacultyLoadings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.dgvFacultyLoads);
+            this.Controls.Add(this.dgvSubjects);
+            this.Controls.Add(this.dgvFacultyName);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSubjectName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbSection);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbSemester);
             this.Controls.Add(this.label3);
@@ -338,45 +349,42 @@ namespace GOC_GS
             this.Controls.Add(this.cmbGradeLevel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.txtSCode);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.txtFacultyName);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacultyLoadings";
             this.Text = "frmFacultyLoadings";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox txtSCode;
+        private System.Windows.Forms.TextBox txtFacultyName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.ComboBox cmbStrand;
         private System.Windows.Forms.ComboBox cmbGradeLevel;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSection;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSubjectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridView dgvFacultyName;
+        private System.Windows.Forms.DataGridView dgvSubjects;
+        private System.Windows.Forms.DataGridView dgvFacultyLoads;
     }
 }
