@@ -49,7 +49,11 @@ namespace GOC_GS
         {
             #region Header Name
             dgv.Columns["id"].Visible = false;
-            
+
+            dgv.Columns["section_name"].HeaderText = "Section Name";//to fix the header Name
+            dgv.Columns["strand"].HeaderText = "Strand";//to fix the header Name
+            dgv.Columns["grade_level"].HeaderText = "Grade Level";//to fix the header Name
+           
 
             DataGridViewColumn FillSize = dgv.Columns[2];
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
