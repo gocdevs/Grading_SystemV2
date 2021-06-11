@@ -15,18 +15,19 @@ namespace GOC_GS
         Section section = new Section();
         Strand strand = new Strand();
         Subjects subjects = new Subjects();
+       
 
         List<Subjects> subjects_list = new List<Subjects>();
         List<Strand> strands_list = new List<Strand>();
         List<Section> sections_list = new List<Section>();
-
+       
         public frmFacultyLoadings()
         {
             InitializeComponent();
             subjects.LoadDataTable(dgvSubjects);
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
-
+           
             HeaderFixSubject(dgvSubjects);
         }
 

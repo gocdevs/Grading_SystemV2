@@ -54,5 +54,16 @@ namespace GOC_GS
             mainwin.pnlAllContainer.Controls.Add(frm);
             frm.Show();
         }
+
+        private void btnSubjectType_Click(object sender, EventArgs e)
+        {
+            frmSubjectType frm = new frmSubjectType();
+            frmMain mainwin = (frmMain)Application.OpenForms["frmMain"];
+            mainwin.pnlAllContainer.Controls.Clear();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            mainwin.pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

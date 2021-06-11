@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,15 @@ namespace GOC_GS
 {
     class Util_RequiredFields
     {
+
+        public String ToProperCase(String txt)
+        {
+            TextInfo ToProper = new CultureInfo("en-US", false).TextInfo;
+            String final = ToProper.ToTitleCase(txt);
+
+            return final;
+        }
+       
 
         #region For Validation
 

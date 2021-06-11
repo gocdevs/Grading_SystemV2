@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,11 +21,23 @@ namespace GOC_GS
             AddImageDataGrid(dgvList);
             HeaderFix(dgvList);
 
+          //subject_types.LoadCombo(cmbSTypes);                       
+            strand.LoadCombo(cmbStrand);
+
         }
 
         Subjects subject = new Subjects();        
         List<Subjects> subject_list = new List<Subjects>();
-    
+
+        SubjectType subject_types = new SubjectType();
+        List<SubjectType> subject_type_list = new List<SubjectType>();
+
+        Section section = new Section();
+        List<Section> sections_list = new List<Section>();
+
+        Strand strand = new Strand();             
+        List<Strand> strands_list = new List<Strand>();
+        
 
         Util_RequiredFields util = new Util_RequiredFields();
 
@@ -61,6 +74,9 @@ namespace GOC_GS
 
             DataGridViewColumn FillSize = dgv.Columns[2];
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            DataGridViewColumn FillSize1 = dgv.Columns[3];
+            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             #endregion
         }
 
@@ -128,7 +144,7 @@ namespace GOC_GS
                     #region UPDATE DISCOUNT
                     subject.Id = id;
                     subject.Subject_code = txtSCode.Text;
-                    subject.Subject_name = txtSName.Text;
+                    subject.Subject_name = util.ToProperCase(txtSName.Text);
                     subject.Subject_type = cmbSTypes.Text;
                     subject.Semester = cmbSemester.Text;
                     subject.Grade_level = cmbGradeLevel.Text;
@@ -151,10 +167,12 @@ namespace GOC_GS
 
                 if (util.readyToSave == 1)
                 {
+                    
+
                     subject.Id = id;
-                    subject.Subject_code = txtSCode.Text;
-                    subject.Subject_name = txtSName.Text;
-                    subject.Subject_type = cmbSTypes.Text;
+                    subject.Subject_code = txtSCode.Text.ToUpper();                    
+                    subject.Subject_name = util.ToProperCase(txtSName.Text);
+                    subject.Subject_type = cmbSTypes.Text.ToUpper();
                     subject.Semester = cmbSemester.Text;
                     subject.Grade_level = cmbGradeLevel.Text;
                     subject.Strand = cmbStrand.Text;

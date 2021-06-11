@@ -119,7 +119,7 @@ namespace GOC_GS
             this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(341, 16);
+            this.label3.Location = new System.Drawing.Point(414, 16);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
@@ -132,7 +132,7 @@ namespace GOC_GS
             this.label6.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(325, 48);
+            this.label6.Location = new System.Drawing.Point(398, 48);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
@@ -145,12 +145,12 @@ namespace GOC_GS
             this.label7.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(360, 80);
+            this.label7.Location = new System.Drawing.Point(406, 81);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 7953;
-            this.label7.Text = "Strand:";
+            this.label7.Text = "Subject for:";
             // 
             // btnCancel
             // 
@@ -200,7 +200,7 @@ namespace GOC_GS
             this.cmbSemester.Items.AddRange(new object[] {
             "First",
             "Second"});
-            this.cmbSemester.Location = new System.Drawing.Point(416, 11);
+            this.cmbSemester.Location = new System.Drawing.Point(489, 11);
             this.cmbSemester.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(120, 28);
@@ -214,7 +214,7 @@ namespace GOC_GS
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "11",
             "12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(418, 44);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(491, 44);
             this.cmbGradeLevel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(120, 28);
@@ -233,7 +233,7 @@ namespace GOC_GS
             "NON STEM",
             "TVL - ICT",
             "TVL - HE"});
-            this.cmbStrand.Location = new System.Drawing.Point(418, 78);
+            this.cmbStrand.Location = new System.Drawing.Point(491, 78);
             this.cmbStrand.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbStrand.Name = "cmbStrand";
             this.cmbStrand.Size = new System.Drawing.Size(120, 28);
@@ -245,9 +245,7 @@ namespace GOC_GS
             this.cmbSTypes.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSTypes.FormattingEnabled = true;
             this.cmbSTypes.Items.AddRange(new object[] {
-            "CORE SUBJECTS",
-            "SPECIALIZED SUBJECTS",
-            "APPLIED SUBJECTS"});
+            "AAA"});
             this.cmbSTypes.Location = new System.Drawing.Point(119, 78);
             this.cmbSTypes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSTypes.Name = "cmbSTypes";
