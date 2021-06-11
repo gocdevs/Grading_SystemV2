@@ -87,6 +87,7 @@ namespace GOC_GS
             this.btnFaculty.TabIndex = 7971;
             this.btnFaculty.Text = "&Faculty";
             this.btnFaculty.UseVisualStyleBackColor = false;
+            this.btnFaculty.Click += new System.EventHandler(this.btnFaculty_Click);
             // 
             // btnStrand
             // 
