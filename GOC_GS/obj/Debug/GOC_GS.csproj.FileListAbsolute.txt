@@ -103,3 +103,5 @@ C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.cspro
 C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.CopyComplete
 C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.exe
 C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.pdb
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStrand.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmSubjectType.resources
