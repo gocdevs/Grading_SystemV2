@@ -36,7 +36,7 @@ namespace GOC_GS
                 using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
                 {                 
                     con.Open();
-                    string sql = "SELECT * FROM subjectType";
+                    string sql = "SELECT * FROM subject_type";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -64,7 +64,7 @@ namespace GOC_GS
                 using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
                 {
                     con.Open();
-                    string sql = "SELECT subject_type FROM subjectType ORDER BY subject_type ASC";
+                    string sql = "SELECT subject_type FROM subject_type ORDER BY subject_type ASC";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -98,7 +98,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO subjectType(subject_type) " +
+                    string sql = "INSERT INTO subject_type(subject_type) " +
                                     " VALUES (@subject_type);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -126,7 +126,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "UPDATE subjectType SET subject_type=@subject_type" +
+                    string sql = "UPDATE subject_type SET subject_type=@subject_type" +
                                     " WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -157,7 +157,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "DELETE  FROM subjectType WHERE id=@id;";
+                    string sql = "DELETE  FROM subject_type WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("id", id);
