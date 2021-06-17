@@ -19,10 +19,19 @@ namespace GOC_GS
             faculty.LoadDataTable(dgvFacultyList);
             AddImageDataGrid(dgvFacultyList);
             HeaderFix(dgvFacultyList);
+
+            section.LoadCombo(cmbAdviserOf);
+            subjects.LoadCombo(cmbSpecializeSubject);
         }
 
         Faculty faculty = new Faculty();
         List<Faculty> faculty_list = new List<Faculty>();
+
+        Section section = new Section();
+        List<Section> section_list = new List<Section>();
+
+        Subjects subjects = new Subjects();
+        List<Subjects> subject_list = new List<Subjects>();
 
         Util_RequiredFields util = new Util_RequiredFields();
 
@@ -81,7 +90,7 @@ namespace GOC_GS
                 //
                 txtFacultyId.Text = dgvFacultyList.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtFName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[4].Value.ToString();
-                txtFacultyId.Text = dgvFacultyList.Rows[e.RowIndex].Cells[5].Value.ToString();
+                txtLName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtMName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[6].Value.ToString();
                 cmbCourse.Text = dgvFacultyList.Rows[e.RowIndex].Cells[7].Value.ToString();
                 cmbSpecializeSubject.Text = dgvFacultyList.Rows[e.RowIndex].Cells[8].Value.ToString();
