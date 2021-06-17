@@ -120,6 +120,35 @@ namespace GOC_GS
            
         }//End of Load
 
+        public List<Subjects> LoadCombo(ComboBox cmb)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT subject_name FROM subject";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    cmb.DataSource = dt;
+                    cmb.ValueMember = "subject_name";
+                    cmb.DisplayMember = "subject_name";
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return subjects;
+        }//End of Load
+
         //Save Records
         public void Save()
         {
