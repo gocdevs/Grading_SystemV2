@@ -30,5 +30,10 @@ namespace GOC_GS.FileMaintenance
             student_Profile.FilePath = txtFilePath.Text;
             student_Profile.importFile(dgvStudentList);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

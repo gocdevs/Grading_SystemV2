@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GOC_GS.FileMaintenance;
 
 namespace GOC_GS
 {
@@ -69,6 +70,17 @@ namespace GOC_GS
         private void btnFaculty_Click(object sender, EventArgs e)
         {
             frmFaculty frm = new frmFaculty();
+            frmMain mainwin = (frmMain)Application.OpenForms["frmMain"];
+            mainwin.pnlAllContainer.Controls.Clear();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            mainwin.pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmStudentProfile frm = new frmStudentProfile();
             frmMain mainwin = (frmMain)Application.OpenForms["frmMain"];
             mainwin.pnlAllContainer.Controls.Clear();
             frm.TopLevel = false;
