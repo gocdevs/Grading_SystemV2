@@ -29,33 +29,52 @@ namespace GOC_GS.FileMaintenance
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvList = new System.Windows.Forms.DataGridView();
+            this.dgvStudentList = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.PictureBox();
-            this.txtSCode = new System.Windows.Forms.TextBox();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
             this.lblFile = new System.Windows.Forms.Label();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnImport = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).BeginInit();
+            this.goc_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvList
+            // dgvStudentList
             // 
-            this.dgvList.AllowUserToAddRows = false;
-            this.dgvList.AllowUserToDeleteRows = false;
-            this.dgvList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Location = new System.Drawing.Point(14, 125);
-            this.dgvList.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvList.Name = "dgvList";
-            this.dgvList.ReadOnly = true;
-            this.dgvList.RowHeadersVisible = false;
-            this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(1123, 547);
-            this.dgvList.TabIndex = 7936;
+            this.dgvStudentList.AllowUserToAddRows = false;
+            this.dgvStudentList.AllowUserToDeleteRows = false;
+            this.dgvStudentList.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.goc_no,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dgvStudentList.Location = new System.Drawing.Point(14, 125);
+            this.dgvStudentList.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvStudentList.Name = "dgvStudentList";
+            this.dgvStudentList.ReadOnly = true;
+            this.dgvStudentList.RowHeadersVisible = false;
+            this.dgvStudentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudentList.Size = new System.Drawing.Size(1123, 547);
+            this.dgvStudentList.TabIndex = 7936;
             // 
             // btnCancel
             // 
@@ -94,14 +113,14 @@ namespace GOC_GS.FileMaintenance
             this.btnClose.TabIndex = 7958;
             this.btnClose.TabStop = false;
             // 
-            // txtSCode
+            // txtFilePath
             // 
-            this.txtSCode.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSCode.Location = new System.Drawing.Point(14, 42);
-            this.txtSCode.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.txtSCode.Name = "txtSCode";
-            this.txtSCode.Size = new System.Drawing.Size(409, 25);
-            this.txtSCode.TabIndex = 7963;
+            this.txtFilePath.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilePath.Location = new System.Drawing.Point(14, 42);
+            this.txtFilePath.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(409, 25);
+            this.txtFilePath.TabIndex = 7963;
             // 
             // lblFile
             // 
@@ -140,6 +159,7 @@ namespace GOC_GS.FileMaintenance
             this.btnImport.TabIndex = 7965;
             this.btnImport.Text = "&Import";
             this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // btnBrowse
             // 
@@ -152,6 +172,61 @@ namespace GOC_GS.FileMaintenance
             this.btnBrowse.TabIndex = 7967;
             this.btnBrowse.Text = "&Browse";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // goc_no
+            // 
+            this.goc_no.HeaderText = "GOC Number";
+            this.goc_no.Name = "goc_no";
+            this.goc_no.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "LRN Number";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "First Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Middle Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Last Name";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Grade Level";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Section";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Strand";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Academic Status";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // frmStudentProfile
             // 
@@ -162,15 +237,15 @@ namespace GOC_GS.FileMaintenance
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.lblFile);
-            this.Controls.Add(this.txtSCode);
+            this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.dgvList);
+            this.Controls.Add(this.dgvStudentList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStudentProfile";
             this.Text = "frmStudentProfile";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,14 +254,23 @@ namespace GOC_GS.FileMaintenance
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvList;
+        private System.Windows.Forms.DataGridView dgvStudentList;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox btnClose;
-        private System.Windows.Forms.TextBox txtSCode;
+        private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Label lblFile;
         private System.Windows.Forms.Button btnExport;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.DataGridViewTextBoxColumn goc_no;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
     }
 }
