@@ -78,6 +78,9 @@ namespace GOC_GS
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
+           
         }
     }
 }

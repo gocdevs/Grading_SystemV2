@@ -29,26 +29,32 @@ namespace GOC_GS
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSectionName = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnClose = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtSectionName
+            // txtUserName
             // 
-            this.txtSectionName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSectionName.Location = new System.Drawing.Point(553, 158);
-            this.txtSectionName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.txtSectionName.Name = "txtSectionName";
-            this.txtSectionName.Size = new System.Drawing.Size(176, 25);
-            this.txtSectionName.TabIndex = 7980;
+            this.txtUserName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(432, 127);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(200, 25);
+            this.txtUserName.TabIndex = 7980;
+            this.txtUserName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUserName_KeyDown);
             // 
             // label4
             // 
@@ -56,42 +62,33 @@ namespace GOC_GS
             this.label4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(456, 161);
+            this.label4.Location = new System.Drawing.Point(356, 127);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.Size = new System.Drawing.Size(70, 20);
             this.label4.TabIndex = 7979;
-            this.label4.Text = "Section Name:";
+            this.label4.Text = "Username:";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GOC_GS.Properties.Resources.goc_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 109);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 66);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(311, 297);
+            this.pictureBox1.Size = new System.Drawing.Size(237, 237);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7981;
             this.pictureBox1.TabStop = false;
             // 
-            // btnClose
+            // txtPassword
             // 
-            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(748, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(13, 19);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 7982;
-            this.btnClose.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(553, 191);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 25);
-            this.textBox1.TabIndex = 7984;
+            this.txtPassword.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(432, 160);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.Size = new System.Drawing.Size(200, 25);
+            this.txtPassword.TabIndex = 7984;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // label1
             // 
@@ -99,26 +96,26 @@ namespace GOC_GS
             this.label1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(456, 194);
+            this.label1.Location = new System.Drawing.Point(356, 160);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 20);
+            this.label1.Size = new System.Drawing.Size(66, 20);
             this.label1.TabIndex = 7983;
-            this.label1.Text = "Section Name:";
+            this.label1.Text = "Password:";
             // 
-            // btnAdd
+            // btnLogin
             // 
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(553, 224);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 44);
-            this.btnAdd.TabIndex = 7985;
-            this.btnAdd.Text = "      &Add New";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnLogin.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.Location = new System.Drawing.Point(432, 193);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(98, 34);
+            this.btnLogin.TabIndex = 7985;
+            this.btnLogin.Text = "&Log in";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // label2
             // 
@@ -126,30 +123,94 @@ namespace GOC_GS
             this.label2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(454, 100);
+            this.label2.Location = new System.Drawing.Point(354, 66);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 31);
+            this.label2.Size = new System.Drawing.Size(67, 31);
             this.label2.TabIndex = 7986;
-            this.label2.Text = "Log in:";
+            this.label2.Text = "Login";
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancel.Location = new System.Drawing.Point(534, 193);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 34);
+            this.btnCancel.TabIndex = 7987;
+            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(238, 2);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(215, 31);
+            this.label3.TabIndex = 7988;
+            this.label3.Text = "GRADING SYSTEM";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(0, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(662, 36);
+            this.panel1.TabIndex = 7989;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel2.Location = new System.Drawing.Point(0, 309);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(662, 18);
+            this.panel2.TabIndex = 7990;
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.ErrorImage = null;
+            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(645, 2);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(13, 19);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 7991;
+            this.btnClose.TabStop = false;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(772, 535);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(662, 327);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.txtSectionName);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtUserName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmLogin_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -158,13 +219,17 @@ namespace GOC_GS
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtSectionName;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox btnClose;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox btnClose;
     }
 }

@@ -15,7 +15,7 @@ namespace GOC_GS
         Section section = new Section();
         Strand strand = new Strand();
         Subjects subjects = new Subjects();
-       
+        Models.Faculty fl = new Models.Faculty();
 
         List<Subjects> subjects_list = new List<Subjects>();
         List<Strand> strands_list = new List<Strand>();
@@ -27,8 +27,11 @@ namespace GOC_GS
             subjects.LoadDataTable(dgvSubjects);
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
-           
+            fl.LoadDataTableName(dgvFacultyName);
             HeaderFixSubject(dgvSubjects);
+
+            DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
+            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void HeaderFixSubject(DataGridView dgv)
@@ -47,6 +50,8 @@ namespace GOC_GS
 
             DataGridViewColumn FillSize1 = dgv.Columns[3];
             FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+           
             #endregion
         }
 

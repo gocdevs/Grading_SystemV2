@@ -12,7 +12,7 @@ namespace GOC_GS.Models
 {
     class Faculty
     {
-        List<Faculty> faculty = new List<Faculty>();
+        List<Faculty> faculty_list = new List<Faculty>();
 
         protected int id;
         protected string faculty_id;
@@ -107,6 +107,38 @@ namespace GOC_GS.Models
             }
 
         }//End of Load
+
+        public void LoadDataTableName(DataGridView dgv)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT faculty_id, CONCAT(fname,' ', Left(mname,1) ,'. ',lname) Fullname FROM faculty ";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+
+                    con.Close();
+                }
+            }
+
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }//End of Load
+
+
 
         //Save Records
         public void Save()
@@ -255,7 +287,7 @@ namespace GOC_GS.Models
                 MessageBox.Show("ERROR : " + ex.Message.ToString(), "Enrollment System", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-            return faculty;
+            return faculty_list;
         }
     }
 }

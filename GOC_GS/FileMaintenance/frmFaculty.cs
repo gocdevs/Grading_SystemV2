@@ -133,8 +133,8 @@ namespace GOC_GS
                     #region UPDATE DISCOUNT
                     faculty.Id = id;
                     faculty.Faculty_id = txtFacultyId.Text;
-                    faculty.Last_name = txtFName.Text;
-                    faculty.First_name = txtFacultyId.Text;
+                    faculty.Last_name = txtLName.Text;
+                    faculty.First_name = txtFName.Text;
                     faculty.Middle_name = txtMName.Text;
                     faculty.Course = cmbCourse.Text;
                     faculty.Specialize_subject = cmbSpecializeSubject.Text;
@@ -160,8 +160,8 @@ namespace GOC_GS
                 {
                     faculty.Id = id;
                     faculty.Faculty_id = txtFacultyId.Text;
-                    faculty.Last_name = txtFName.Text;
-                    faculty.First_name = txtFacultyId.Text;
+                    faculty.Last_name = txtLName.Text;
+                    faculty.First_name = txtFName.Text;
                     faculty.Middle_name = txtMName.Text;
                     faculty.Course = cmbCourse.Text;
                     faculty.Specialize_subject = cmbSpecializeSubject.Text;

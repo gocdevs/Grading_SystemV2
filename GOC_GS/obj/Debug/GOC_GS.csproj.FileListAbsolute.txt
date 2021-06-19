@@ -142,3 +142,5 @@ C:\Users\My Computer\Desktop\GOC\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj
 C:\Users\My Computer\Desktop\GOC\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.CopyComplete
 C:\Users\My Computer\Desktop\GOC\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.exe
 C:\Users\My Computer\Desktop\GOC\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.pdb
+C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentProfile.resources
+C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmLogin.resources
