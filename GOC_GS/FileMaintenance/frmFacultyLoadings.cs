@@ -20,7 +20,8 @@ namespace GOC_GS
         List<Subjects> subjects_list = new List<Subjects>();
         List<Strand> strands_list = new List<Strand>();
         List<Section> sections_list = new List<Section>();
-       
+
+        public int id;
         public frmFacultyLoadings()
         {
             InitializeComponent();
@@ -30,9 +31,12 @@ namespace GOC_GS
             fl.LoadDataTableName(dgvFacultyName);
             HeaderFixSubject(dgvSubjects);
 
+            AddImageDataGrid(dgvSubjects);
+
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
             FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
 
         public void HeaderFixSubject(DataGridView dgv)
         {
@@ -55,9 +59,37 @@ namespace GOC_GS
             #endregion
         }
 
+        public void AddImageDataGrid(DataGridView dgv)
+        {
+            DataGridViewImageColumn dimg = new DataGridViewImageColumn();
+            dimg.Image = Properties.Resources.add_green;
+            dimg.HeaderText = "Add Subject";
+            dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns.Add(dimg);
+
+
+            
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                //id = Convert.ToInt32(dgvSubjects.Rows[e.RowIndex].Cells[2].Value.ToString());//for editing criteria
+
+                ////pass value to edit mode               
+                //txtSectionName.Text = dgvSubjects.Rows[e.RowIndex].Cells[3].Value.ToString();
+                //cmbStrand.Text = dgvSubjects.Rows[e.RowIndex].Cells[4].Value.ToString();
+                //cmbGradeLevel.Text = dgvSubjects.Rows[e.RowIndex].Cells[5].Value.ToString();
+
+                //btnAdd.Text = "&Update";//set button to Update                
+            }
         }
     }
 }

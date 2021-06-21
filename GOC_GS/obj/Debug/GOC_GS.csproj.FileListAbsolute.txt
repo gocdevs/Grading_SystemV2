@@ -34,7 +34,6 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\GOC_GS.pdb
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\CrystalDecisions.Shared.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csprojAssemblyReference.cache
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmConnectionSettings.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmDashboard.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmMain.resources

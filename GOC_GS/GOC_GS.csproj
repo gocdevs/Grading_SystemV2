@@ -246,5 +246,8 @@
   <ItemGroup>
     <Folder Include="Transcations\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_green.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

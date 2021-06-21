@@ -31,7 +31,6 @@ namespace GOC_GS
         {
             this.txtFacultyName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.cmbStrand = new System.Windows.Forms.ComboBox();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -50,10 +49,11 @@ namespace GOC_GS
             this.dgvFacultyName = new System.Windows.Forms.DataGridView();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
             this.dgvFacultyLoads = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFacultyName
@@ -78,18 +78,6 @@ namespace GOC_GS
             this.label4.Size = new System.Drawing.Size(132, 20);
             this.label4.TabIndex = 7963;
             this.label4.Text = "Search Faculty Name:";
-            // 
-            // btnClose
-            // 
-            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1119, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 30);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 7967;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // cmbStrand
             // 
@@ -288,7 +276,7 @@ namespace GOC_GS
             this.dgvFacultyName.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacultyName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacultyName.Location = new System.Drawing.Point(11, 97);
-            this.dgvFacultyName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFacultyName.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFacultyName.Name = "dgvFacultyName";
             this.dgvFacultyName.ReadOnly = true;
             this.dgvFacultyName.RowHeadersVisible = false;
@@ -303,13 +291,14 @@ namespace GOC_GS
             this.dgvSubjects.BackgroundColor = System.Drawing.Color.White;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSubjects.Location = new System.Drawing.Point(304, 97);
-            this.dgvSubjects.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvSubjects.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.RowHeadersVisible = false;
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubjects.Size = new System.Drawing.Size(835, 276);
             this.dgvSubjects.TabIndex = 7986;
+            this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // dgvFacultyLoads
             // 
@@ -318,13 +307,25 @@ namespace GOC_GS
             this.dgvFacultyLoads.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacultyLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacultyLoads.Location = new System.Drawing.Point(304, 401);
-            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFacultyLoads.Name = "dgvFacultyLoads";
             this.dgvFacultyLoads.ReadOnly = true;
             this.dgvFacultyLoads.RowHeadersVisible = false;
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 244);
             this.dgvFacultyLoads.TabIndex = 7987;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(1119, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 7967;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmFacultyLoadings
             // 
@@ -355,10 +356,10 @@ namespace GOC_GS
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacultyLoadings";
             this.Text = "frmFacultyLoadings";
-            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
