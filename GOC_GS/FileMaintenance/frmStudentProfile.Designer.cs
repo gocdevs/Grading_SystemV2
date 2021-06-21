@@ -31,7 +31,7 @@ namespace GOC_GS.FileMaintenance
         {
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSaveToDatabase = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.lblFile = new System.Windows.Forms.Label();
@@ -88,19 +88,20 @@ namespace GOC_GS.FileMaintenance
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // btnSaveToDatabase
             // 
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
-            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(948, 73);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 44);
-            this.btnAdd.TabIndex = 7959;
-            this.btnAdd.Text = "      &Add New";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnSaveToDatabase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnSaveToDatabase.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveToDatabase.Image = global::GOC_GS.Properties.Resources.add;
+            this.btnSaveToDatabase.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveToDatabase.Location = new System.Drawing.Point(917, 73);
+            this.btnSaveToDatabase.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnSaveToDatabase.Name = "btnSaveToDatabase";
+            this.btnSaveToDatabase.Size = new System.Drawing.Size(129, 44);
+            this.btnSaveToDatabase.TabIndex = 7959;
+            this.btnSaveToDatabase.Text = "      &Save to Database";
+            this.btnSaveToDatabase.UseVisualStyleBackColor = true;
+            this.btnSaveToDatabase.Click += new System.EventHandler(this.btnSaveToDatabase_Click);
             // 
             // btnClose
             // 
@@ -156,7 +157,7 @@ namespace GOC_GS.FileMaintenance
             this.btnImport.Location = new System.Drawing.Point(15, 75);
             this.btnImport.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnImport.Name = "btnImport";
-            this.btnImport.Size = new System.Drawing.Size(98, 44);
+            this.btnImport.Size = new System.Drawing.Size(98, 42);
             this.btnImport.TabIndex = 7965;
             this.btnImport.Text = "&Import";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -189,6 +190,7 @@ namespace GOC_GS.FileMaintenance
             // 
             // Column2
             // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "First Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -225,6 +227,7 @@ namespace GOC_GS.FileMaintenance
             // 
             // Column8
             // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column8.HeaderText = "Academic Status";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
@@ -240,7 +243,7 @@ namespace GOC_GS.FileMaintenance
             this.Controls.Add(this.lblFile);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSaveToDatabase);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvStudentList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -257,7 +260,7 @@ namespace GOC_GS.FileMaintenance
 
         private System.Windows.Forms.DataGridView dgvStudentList;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnSaveToDatabase;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Label lblFile;
