@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GOC_GS.FileMaintenance;
 
 namespace GOC_GS
 {
@@ -81,6 +82,20 @@ namespace GOC_GS
             frmLogin frm = new frmLogin();
             frm.ShowDialog();
            
+        }
+
+        private void btnStudentData_Click(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmStudentData frm = new frmStudentData();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
         }
     }
 }

@@ -41,6 +41,7 @@ namespace GOC_GS
             this.btnDashBoard = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pnlAllContainer = new System.Windows.Forms.Panel();
+            this.btnStudentData = new System.Windows.Forms.Button();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,6 +79,7 @@ namespace GOC_GS
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(44)))), ((int)(((byte)(67)))));
+            this.pnlLeft.Controls.Add(this.btnStudentData);
             this.pnlLeft.Controls.Add(this.btnViewGrades);
             this.pnlLeft.Controls.Add(this.button1);
             this.pnlLeft.Controls.Add(this.btnGrading);
@@ -212,6 +214,22 @@ namespace GOC_GS
             this.pnlAllContainer.Size = new System.Drawing.Size(1150, 678);
             this.pnlAllContainer.TabIndex = 26;
             // 
+            // btnStudentData
+            // 
+            this.btnStudentData.FlatAppearance.BorderSize = 0;
+            this.btnStudentData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentData.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnStudentData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudentData.Location = new System.Drawing.Point(17, 475);
+            this.btnStudentData.Name = "btnStudentData";
+            this.btnStudentData.Size = new System.Drawing.Size(158, 46);
+            this.btnStudentData.TabIndex = 1039;
+            this.btnStudentData.Text = "Student Data";
+            this.btnStudentData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStudentData.UseVisualStyleBackColor = true;
+            this.btnStudentData.Click += new System.EventHandler(this.btnStudentData_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,6 +262,7 @@ namespace GOC_GS
         private System.Windows.Forms.Button btnDashBoard;
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel pnlAllContainer;
+        public System.Windows.Forms.Button btnStudentData;
     }
 }
 
