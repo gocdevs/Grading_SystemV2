@@ -62,6 +62,12 @@
   <ItemGroup>
     <Compile Include="Connection\Config.cs" />
     <Compile Include="Connection\CrystalReportConnection.cs" />
+    <Compile Include="FileMaintenance\frmStudentData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileMaintenance\frmStudentData.Designer.cs">
+      <DependentUpon>frmStudentData.cs</DependentUpon>
+    </Compile>
     <Compile Include="FileMaintenance\frmStudentProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileMaintenance\frmStrand.resx">
       <DependentUpon>frmStrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileMaintenance\frmStudentData.resx">
+      <DependentUpon>frmStudentData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FileMaintenance\frmStudentProfile.resx">
       <DependentUpon>frmStudentProfile.cs</DependentUpon>
