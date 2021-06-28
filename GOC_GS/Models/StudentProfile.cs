@@ -140,6 +140,7 @@ namespace GOC_GS.Models
 
                     workbook.Close();
                     application.Quit();
+                    MessageBox.Show("All data load Successfully", "Ready to save into Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch(Exception ex)
