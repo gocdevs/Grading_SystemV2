@@ -77,19 +77,41 @@ namespace GOC_GS
             this.Close();
         }
 
+        String FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester;
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
-                //id = Convert.ToInt32(dgvSubjects.Rows[e.RowIndex].Cells[2].Value.ToString());//for editing criteria
+                //for (int i = 0; i < dgvFacultyName.Rows.Count; i++)
+                //{
+                //    FacultyId = dgvFacultyName.SelectedRows[i].Cells[0].Value.ToString();
+                //    FullName = dgvFacultyName.SelectedRows[i].Cells[1].Value.ToString();
+                //}
 
-                ////pass value to edit mode               
-                //txtSectionName.Text = dgvSubjects.Rows[e.RowIndex].Cells[3].Value.ToString();
-                //cmbStrand.Text = dgvSubjects.Rows[e.RowIndex].Cells[4].Value.ToString();
-                //cmbGradeLevel.Text = dgvSubjects.Rows[e.RowIndex].Cells[5].Value.ToString();
+                foreach (DataGridViewRow row in dgvFacultyName.SelectedRows)
+                {
+                    FacultyId = row.Cells[0].Value.ToString();
+                    FullName = row.Cells[1].Value.ToString();                    
+                }
 
-                //btnAdd.Text = "&Update";//set button to Update                
+                foreach (DataGridViewRow row in dgvSubjects.SelectedRows)
+                {
+                    SubjectCode = row.Cells[2].Value.ToString();
+                    SubjectType = row.Cells[4].Value.ToString();
+                    GradeLevel = row.Cells[6].Value.ToString();
+                    Strand = row.Cells[7].Value.ToString();
+                    Semester = row.Cells[5].Value.ToString();
+                }
+
+                // MessageBox.Show(FacultyId + " " + FullName + " " + SubjectCode + " " + Section + " " + Strand + " " + Semester);                               
+
+                dgvFacultyLoads.Rows.Add(FacultyId ,FullName ,SubjectCode , SubjectType, GradeLevel, Strand, Semester);
+
+
+               
             }
         }
     }
 }
+
+

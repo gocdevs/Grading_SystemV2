@@ -74,15 +74,11 @@ namespace GOC_GS
                     //initialize new datatable and load data to datagridview
                     DataTable dt = new DataTable();
                     da.Fill(dt);
-                    int row = 0;
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        cmb.Items.Add(dr[row].ToString());
-                        row++;
-                    }
-                    //cmb.DataSource = dt;
-                    //cmb.ValueMember = "strand_name";
-                    //cmb.DisplayMember = "strand_name";
+
+
+                    cmb.DataSource = dt;
+                    cmb.ValueMember = "strand_name";
+                    cmb.DisplayMember = "strand_name";
                 }
             }
             catch (MySqlException ex)

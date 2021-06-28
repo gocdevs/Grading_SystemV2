@@ -17,7 +17,6 @@ C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Compressi
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\MySql.Data.xml
-C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csprojAssemblyReference.cache
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmConnectionSettings.resources
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.Properties.Resources.resources
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.GenerateResource.cache
@@ -122,3 +121,7 @@ C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmLo
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentProfile.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmLogin.resources
 C:\Users\My Computer\Desktop\GOC\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentData.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentData.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentProfile.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmLogin.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csprojAssemblyReference.cache
