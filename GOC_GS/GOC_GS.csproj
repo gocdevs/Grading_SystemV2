@@ -74,6 +74,12 @@
     <Compile Include="FileMaintenance\frmStudentProfile.Designer.cs">
       <DependentUpon>frmStudentProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentSubject.Designer.cs">
+      <DependentUpon>frmStudentSubject.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSubjectType.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileMaintenance\frmSubjects.resx">
       <DependentUpon>frmSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentSubject.resx">
+      <DependentUpon>frmStudentSubject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSubjectType.resx">
       <DependentUpon>frmSubjectType.cs</DependentUpon>
