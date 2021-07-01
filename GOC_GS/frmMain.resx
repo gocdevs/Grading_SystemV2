@@ -130,6 +130,21 @@
         Pfo6uFrRpnqolA0EG1v2wwTe0G50WYeR3etX0vgGAcNkeirZ4kwAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnStudentSubject.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAIVSURBVEhLndVPS1RRGMdxmykT
+        MkqoZRvbpBRiiwIDd9HChYhbX0MvoBTc+QKCIAVBqYjSeg1FfzZuXIgkIqJEaaKDWhQR4/c3nEcez5xb
+        Z2bx4d55POf8uOe599jyeadSQjmTxhtf92vo3tR+2+AzOJ1gdVv4HuYx5Go2ztTNtxD/h5jGnMJF7KGK
+        P7iMcrVatSBjT2TrllMhqnnD2MAhFGB+4AtGFORRs7BkiO5Vu4PBcP8JfvHYUlhY4/vD/Yk1fUGN0u8x
+        2AI3cRU/Xc37hR5ojNUmQpDWq63rQ+wP2gab8A1X0IqOhLNQb9Zhc6TNbVstxBJ1r7fhK/wE+YApTIar
+        PMFzxGMrOO97E4foqibHE3cTtSLfcS4O8dvlQ17iLe6jLdRyNBSiLVFNFrGFftyC3j7Th9uwrWsoRKax
+        Fu611+N4AL2BZhQP8R5ZIWp8qidqclwr0lDIYzzCXehI+Yt4wZRtZIe8DrVL0MeonvTiGq473ejCDDSv
+        4Z4swJ5AQW/wCjqJzVyorSArpKgns8jdrmRI/MVbiJotA7iAZkPqzi4foi1QTWfUPtQTHZjqyQ1HfVFP
+        9LSpkP9u10fYkXKAF3gKfXjmWagtozAk3q5NWEgzFNL+rxBd9WWnJuf6jcIQ/R/Xb51Tqcm5VlFK9UTb
+        ZEGd0N7rBH4Xrjk0Vi9LlwvQusdPoiCjWjYtGKPu1quUjgAc27vu8n2aTgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnViewGrades.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1

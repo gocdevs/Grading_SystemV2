@@ -130,7 +130,7 @@ namespace GOC_GS
             this.Controls.Add(this.dgvList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSubjectType";
-            this.Text = "frmSubjectType";
+            this.Text = "7";
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
             this.ResumeLayout(false);

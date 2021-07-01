@@ -97,5 +97,19 @@ namespace GOC_GS
             pnlAllContainer.Controls.Add(frm);
             frm.Show();
         }
+
+        private void btnStudentSubject_Click(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmStudentSubject frm = new frmStudentSubject();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }

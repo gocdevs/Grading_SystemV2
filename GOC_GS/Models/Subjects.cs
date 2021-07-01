@@ -99,7 +99,7 @@ namespace GOC_GS
                     #endregion
 
                     con.Open();
-                    string sql = "SELECT * FROM subject";
+                    string sql = "SELECT * FROM subjects";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -127,7 +127,7 @@ namespace GOC_GS
                 using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
                 {
                     con.Open();
-                    string sql = "SELECT subject_name FROM subject";
+                    string sql = "SELECT subject_name FROM subjects";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -161,7 +161,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO subject(subject_code ,subject_name ,subject_type ,grade_level ,strand,semester) " +
+                    string sql = "INSERT INTO subjects(subject_code ,subject_name ,subject_type ,grade_level ,strand,semester) " +
                                     " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand,@semester);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -195,7 +195,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "UPDATE subject SET subject_code=@subject_code,subject_name=@subject_name,subject_type=@subject_type,grade_level=@grade_level,strand=@strand,semester=@semester" +
+                    string sql = "UPDATE subjects SET subject_code=@subject_code,subject_name=@subject_name,subject_type=@subject_type,grade_level=@grade_level,strand=@strand,semester=@semester" +
                                     " WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -231,7 +231,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "DELETE  FROM subject WHERE id=@id;";
+                    string sql = "DELETE  FROM subjects WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("id", id);
@@ -259,7 +259,7 @@ namespace GOC_GS
                     con.Open();
 
                     //prepare sql query
-                    string sql = "SELECT * FROM subject WHERE subject_code =@subject_code;";
+                    string sql = "SELECT * FROM subjects WHERE subject_code =@subject_code;";
 
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);

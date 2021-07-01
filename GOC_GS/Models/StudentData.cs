@@ -15,7 +15,9 @@ namespace GOC_GS.Models
         protected string lname;
         protected string grade_level;
         protected string strand;
+        //protected string section;
         DataTable dt;
+        BindingSource bs;
 
         public string Lname
         {
@@ -33,6 +35,68 @@ namespace GOC_GS.Models
         {
             get { return strand; }
             set { strand = value; }
+        }
+
+        public void LoadStudentList(DataGridView dgv)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+
+                    string sql = "SELECT CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section FROM student_profile";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    dt = new DataTable();
+                  
+                    da.Fill(dt);
+
+
+                    dgv.DataSource = dt;
+                   
+
+                    con.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR :  " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void SearchStudentList(DataGridView dgv)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+
+                    string sql = "SELECT CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName,section FROM student_profile";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+
+                    con.Close();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR :  " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void initDatagrid(DataGridView dgv)
@@ -180,6 +244,9 @@ namespace GOC_GS.Models
                     MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
         }
+
+
+
     }
     //End of Load
 

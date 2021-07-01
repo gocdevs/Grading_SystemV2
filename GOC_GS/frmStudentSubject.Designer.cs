@@ -30,8 +30,15 @@ namespace GOC_GS
         private void InitializeComponent()
         {
             this.dgvFacultyLoads = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
-            this.dgvFacultyName = new System.Windows.Forms.DataGridView();
+            this.dgvStudentName = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -48,16 +55,9 @@ namespace GOC_GS
             this.txtFacultyName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbSection = new System.Windows.Forms.ComboBox();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +84,49 @@ namespace GOC_GS
             this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 244);
             this.dgvFacultyLoads.TabIndex = 8008;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "LRN No.";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "FullName ";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Subject Name";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Grade Level";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Strand ";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Section";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Semester";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // dgvSubjects
             // 
             this.dgvSubjects.AllowUserToAddRows = false;
@@ -99,20 +142,20 @@ namespace GOC_GS
             this.dgvSubjects.Size = new System.Drawing.Size(835, 276);
             this.dgvSubjects.TabIndex = 8007;
             // 
-            // dgvFacultyName
+            // dgvStudentName
             // 
-            this.dgvFacultyName.AllowUserToAddRows = false;
-            this.dgvFacultyName.AllowUserToDeleteRows = false;
-            this.dgvFacultyName.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFacultyName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFacultyName.Location = new System.Drawing.Point(13, 95);
-            this.dgvFacultyName.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvFacultyName.Name = "dgvFacultyName";
-            this.dgvFacultyName.ReadOnly = true;
-            this.dgvFacultyName.RowHeadersVisible = false;
-            this.dgvFacultyName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFacultyName.Size = new System.Drawing.Size(269, 548);
-            this.dgvFacultyName.TabIndex = 8006;
+            this.dgvStudentName.AllowUserToAddRows = false;
+            this.dgvStudentName.AllowUserToDeleteRows = false;
+            this.dgvStudentName.BackgroundColor = System.Drawing.Color.White;
+            this.dgvStudentName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStudentName.Location = new System.Drawing.Point(13, 95);
+            this.dgvStudentName.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvStudentName.Name = "dgvStudentName";
+            this.dgvStudentName.ReadOnly = true;
+            this.dgvStudentName.RowHeadersVisible = false;
+            this.dgvStudentName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStudentName.Size = new System.Drawing.Size(269, 548);
+            this.dgvStudentName.TabIndex = 8006;
             // 
             // label11
             // 
@@ -314,49 +357,7 @@ namespace GOC_GS
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(105, 28);
             this.cmbSection.TabIndex = 7998;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "LRN No.";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "FullName ";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Subject Name";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Grade Level";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Strand ";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Section";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Semester";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.cmbSection.SelectedIndexChanged += new System.EventHandler(this.cmbSection_SelectedIndexChanged);
             // 
             // frmStudentSubject
             // 
@@ -365,7 +366,7 @@ namespace GOC_GS
             this.ClientSize = new System.Drawing.Size(1150, 678);
             this.Controls.Add(this.dgvFacultyLoads);
             this.Controls.Add(this.dgvSubjects);
-            this.Controls.Add(this.dgvFacultyName);
+            this.Controls.Add(this.dgvStudentName);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
@@ -387,7 +388,7 @@ namespace GOC_GS
             this.Text = "frmStudentSubject";
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStudentName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -397,7 +398,7 @@ namespace GOC_GS
         #endregion
         private System.Windows.Forms.DataGridView dgvFacultyLoads;
         private System.Windows.Forms.DataGridView dgvSubjects;
-        private System.Windows.Forms.DataGridView dgvFacultyName;
+        private System.Windows.Forms.DataGridView dgvStudentName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
