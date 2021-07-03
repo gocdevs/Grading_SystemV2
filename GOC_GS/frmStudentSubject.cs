@@ -49,7 +49,7 @@ namespace GOC_GS
                 {
                     con.Open();
 
-                    string sql = "SELECT CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section FROM student_profile";
+                    string sql = "SELECT lrn_no, CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section, strand FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -79,11 +79,11 @@ namespace GOC_GS
         {
             #region Header Name           
             dgv.Columns["section"].HeaderText = "Section";//to fix the header Name           
-            DataGridViewColumn FillSize = dgv.Columns[0];
-            FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //DataGridViewColumn FillSize = dgv.Columns[0];
+            //FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            DataGridViewColumn FillSize2 = dgv.Columns[1];
-            FillSize2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //DataGridViewColumn FillSize2 = dgv.Columns[1];
+            //FillSize2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             #endregion
         }
 
@@ -110,6 +110,40 @@ namespace GOC_GS
             {
                 dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
             }//End LoadSchedule()
+        }
+
+        public string StudentName, stud_section, LRN;
+        public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvStudentName.Rows.Count; i++)
+            {
+                LRN = dgvStudentName.Rows[i].Cells[0].FormattedValue.ToString();
+                StudentName = dgvStudentName.Rows[i].Cells[1].FormattedValue.ToString();
+                Section = dgvStudentName.Rows[i].Cells[2].FormattedValue.ToString();
+                Strand = dgvStudentName.Rows[i].Cells[3].FormattedValue.ToString();
+
+                for (int x = 0; x < dgvSubjects.Rows.Count; x++)
+                {
+                    //SubjectCode = dgvSubjects.Rows[x].Cells[0].FormattedValue.ToString();
+                    SubjectCode = dgvSubjects.Rows[x].Cells[1].FormattedValue.ToString();//Code
+                    SubjectName = dgvSubjects.Rows[x].Cells[2].FormattedValue.ToString();//name
+                    GradeLevel = dgvSubjects.Rows[x].Cells[3].FormattedValue.ToString();//Code              
+                    Strand = dgvSubjects.Rows[x].Cells[5].FormattedValue.ToString();//Code
+                    Semester = dgvSubjects.Rows[x].Cells[6].FormattedValue.ToString();//name
+
+                    dgvStudentSubjects.Rows.Add(LRN, StudentName, SubjectName, GradeLevel, Strand, Section, Semester);
+                }
+
+               // MessageBox.Show(LRN + " " + StudentName + " " + Section + " " + Strand); //Subject name
+
+               
+            }
+
+
+
+      
+
         }
     }
 }

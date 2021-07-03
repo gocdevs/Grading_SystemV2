@@ -47,7 +47,7 @@ namespace GOC_GS.Models
                 {
                     con.Open();
 
-                    string sql = "SELECT CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section FROM student_profile";
+                    string sql = "SELECT lrn_no, CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section, strand  FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
