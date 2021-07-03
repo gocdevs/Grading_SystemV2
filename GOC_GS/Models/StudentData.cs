@@ -17,7 +17,7 @@ namespace GOC_GS.Models
         protected string strand;
         //protected string section;
         DataTable dt;
-        BindingSource bs;
+        
 
         public string Lname
         {
@@ -36,6 +36,8 @@ namespace GOC_GS.Models
             get { return strand; }
             set { strand = value; }
         }
+
+       
 
         public void LoadStudentList(DataGridView dgv)
         {

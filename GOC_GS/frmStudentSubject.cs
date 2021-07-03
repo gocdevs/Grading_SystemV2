@@ -17,19 +17,28 @@ namespace GOC_GS
         Section section = new Section();
         Strand strand = new Strand();
         Subjects subject = new Subjects();
+        List<Subjects> subject_list = new List<Subjects>();
 
         DataTable dt = new DataTable();
         BindingSource bs = new BindingSource();
+
+        //DataTable subject_dt = new DataTable();
+        //BindingSource subject_bs = new BindingSource();
 
         public frmStudentSubject()
         {
             InitializeComponent();
             studentData.LoadStudentList(dgvStudentName);
             HeaderFix(dgvStudentName);
+
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
-            subject.LoadDataTable(dgvSubjects);
+
+            //subject.LoadDataTable(dgvSubjects);
+
+          
             LoadMe();
+
         }
 
         public void LoadMe()
@@ -80,7 +89,27 @@ namespace GOC_GS
 
         private void cmbSection_SelectedIndexChanged(object sender, EventArgs e)
         {
+           
             bs.Filter = string.Format("section LIKE '%{0}%'", cmbSection.Text);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //clear list
+            subject_list.Clear();
+            dgvSubjects.Rows.Clear();
+            //pass value to list
+          
+            subject.Semester = cmbSemester.Text;
+            subject.Grade_level = cmbGradeLevel.Text;
+            subject_list = subject.LoadThisSubjects();
+
+            //loop through load it to list view
+            foreach (var item in subject_list)
+            {
+                dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
+            }//End LoadSchedule()
         }
     }
 }

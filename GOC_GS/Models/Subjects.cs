@@ -64,6 +64,80 @@ namespace GOC_GS
             set { strand = value; }
         }
 
+        public List<Subjects> LoadThisSubjects()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+
+                    //try to open connection
+                    con.Open();
+
+                    //prepare sql query
+                    string sql = "SELECT * FROM subjects WHERE sem=@term and grade_level=@gradeLevel";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("term", semester);
+                    cmd.Parameters.AddWithValue("gradeLevel", grade_level);
+                    //cmd.Parameters.AddWithValue("strand", strand);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        Subjects subject = new Subjects();
+
+                        //prepare properties
+                        subject.subject_code = reader["subject_code"].ToString();
+                        subject.subject_name = reader["subject_name"].ToString();
+                        subject.semester = reader["sem"].ToString();
+                        subject.grade_level = reader["grade_level"].ToString();
+                        subject.strand = reader["strand"].ToString();
+
+                        subjects.Add(subject);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return subjects;
+        }//End of Load
+
+
+        public void LoadDataSubjects(DataGridView dgv)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {                    
+                    con.Open();
+                  
+                    string sql ="SELECT * FROM subjects";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }//End of Load
+        
         //Retrieve Data from DB
         public void LoadDataTable(DataGridView dgv)
         {
