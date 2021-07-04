@@ -128,22 +128,31 @@ namespace GOC_GS
                     //SubjectCode = dgvSubjects.Rows[x].Cells[0].FormattedValue.ToString();
                     SubjectCode = dgvSubjects.Rows[x].Cells[1].FormattedValue.ToString();//Code
                     SubjectName = dgvSubjects.Rows[x].Cells[2].FormattedValue.ToString();//name
-                    GradeLevel = dgvSubjects.Rows[x].Cells[3].FormattedValue.ToString();//Code              
-                    Strand = dgvSubjects.Rows[x].Cells[5].FormattedValue.ToString();//Code
+                    GradeLevel = dgvSubjects.Rows[x].Cells[3].FormattedValue.ToString();//Code                                
                     Semester = dgvSubjects.Rows[x].Cells[6].FormattedValue.ToString();//name
 
                     dgvStudentSubjects.Rows.Add(LRN, StudentName, SubjectName, GradeLevel, Strand, Section, Semester);
+
+                    Grading grading = new Grading();
+                    grading.LRN_No = LRN;
+                    grading.Fullname = StudentName;
+                    grading.Subject_Code = SubjectCode;
+                    grading.Subject_Desc = SubjectName;
+                    grading.Units = "";
+                    grading.FirstGrade = "";
+                    grading.SecondGrade = "";
+                    grading.Average = "";
+                    grading.Remarks = "";
+                    grading.Semester = Semester;
+                    grading.Grade_level = GradeLevel;
+                    grading.Section = Section;
+                    grading.Strand = Strand;
+
+                    grading.Save();
                 }
 
-               // MessageBox.Show(LRN + " " + StudentName + " " + Section + " " + Strand); //Subject name
-
-               
-            }
-
-
-
-      
-
+               // MessageBox.Show(LRN + " " + StudentName + " " + Section + " " + Strand); //Subject name               
+            }      
         }
     }
 }

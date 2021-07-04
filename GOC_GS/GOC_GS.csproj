@@ -86,6 +86,7 @@
     <Compile Include="frmSubjectType.Designer.cs">
       <DependentUpon>frmSubjectType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grading.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\FacultyLoading.cs" />
     <Compile Include="frmDashboard.cs">
