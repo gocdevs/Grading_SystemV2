@@ -28,13 +28,18 @@ namespace GOC_GS
             subjects.LoadDataTable(dgvSubjects);
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
+           
             fl.LoadDataTableName(dgvFacultyName);
-            HeaderFixSubject(dgvSubjects);
 
+            HeaderFixSubject(dgvSubjects);
             AddImageDataGrid(dgvSubjects);
+
+            AddImageDataGridLoading(dgvFacultyLoads);
 
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
             FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+           
         }
 
 
@@ -45,7 +50,7 @@ namespace GOC_GS
             dgv.Columns["subject_code"].HeaderText = "Subject Code";//to fix the header Name
             dgv.Columns["subject_name"].HeaderText = "Subject Name";//to fix the header Name
             dgv.Columns["subject_type"].HeaderText = "Subject Type";//to fix the header Name
-            dgv.Columns["semester"].HeaderText = "Semester";//to fix the header Name
+            dgv.Columns["sem"].HeaderText = "Semester";//to fix the header Name
             dgv.Columns["grade_level"].HeaderText = "Grade Level";//to fix the header Name
             dgv.Columns["strand"].HeaderText = "Strand";//to fix the header Name
 
@@ -53,9 +58,7 @@ namespace GOC_GS
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             DataGridViewColumn FillSize1 = dgv.Columns[3];
-            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-           
+            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;           
             #endregion
         }
 
@@ -66,10 +69,18 @@ namespace GOC_GS
             dimg.HeaderText = "Add Subject";
             dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
             dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns.Add(dimg);            
+        }
+
+        public void AddImageDataGridLoading(DataGridView dgv)
+        {
+            DataGridViewImageColumn dimg = new DataGridViewImageColumn();
+            dimg.Image = Properties.Resources.delete;
+            dimg.HeaderText = "Remove Subject";
+            dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+         
             dgv.Columns.Add(dimg);
-
-
-            
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -78,10 +89,45 @@ namespace GOC_GS
         }
 
         String FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester;
+
+        private void dgvFacultyLoads_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            base.OnClick(e);
+            e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+          
+        }
+
+        private void dgvFacultyLoads_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                if (dgvFacultyLoads.Rows.Count < 1)
+                {
+
+                }
+                else
+                {
+                    foreach (DataGridViewRow row in dgvFacultyName.SelectedRows)
+                    {
+
+                        dgvFacultyLoads.Rows.RemoveAt(row.Index);
+                    }
+                }                
+            }
+
+          
+            foreach (DataGridViewColumn column in dgvFacultyName.Columns)
+            {
+                column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+
+            
+        }
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 0)
             {
+                
                 //for (int i = 0; i < dgvFacultyName.Rows.Count; i++)
                 //{
                 //    FacultyId = dgvFacultyName.SelectedRows[i].Cells[0].Value.ToString();
@@ -105,11 +151,9 @@ namespace GOC_GS
 
                 // MessageBox.Show(FacultyId + " " + FullName + " " + SubjectCode + " " + Section + " " + Strand + " " + Semester);                               
 
-                dgvFacultyLoads.Rows.Add(FacultyId ,FullName ,SubjectCode , SubjectType, GradeLevel, Strand, Semester);
-
-
-               
+                dgvFacultyLoads.Rows.Add(FacultyId ,FullName ,SubjectCode , SubjectType, GradeLevel, Strand, Semester);              
             }
+           
         }
     }
 }

@@ -49,7 +49,6 @@ namespace GOC_GS
             this.dgvFacultyName = new System.Windows.Forms.DataGridView();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
             this.dgvFacultyLoads = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.PictureBox();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +56,7 @@ namespace GOC_GS
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).BeginInit();
@@ -329,18 +329,8 @@ namespace GOC_GS
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 244);
             this.dgvFacultyLoads.TabIndex = 7987;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1119, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 30);
-            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnClose.TabIndex = 7967;
-            this.btnClose.TabStop = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.dgvFacultyLoads.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacultyLoads_CellContentClick);
+            this.dgvFacultyLoads.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvFacultyLoads_ColumnAdded);
             // 
             // Column1
             // 
@@ -384,6 +374,18 @@ namespace GOC_GS
             this.Column6.HeaderText = "Semester";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(1119, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnClose.TabIndex = 7967;
+            this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmFacultyLoadings
             // 
