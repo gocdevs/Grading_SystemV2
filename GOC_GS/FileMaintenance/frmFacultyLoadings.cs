@@ -90,6 +90,49 @@ namespace GOC_GS
 
         String FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester;
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (dgvFacultyLoads.Rows.Count > 0)
+            {
+                string message = "Do you want to save all record?";
+                string title = "GOC_Grading_System";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                   
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else
+            {
+
+            }
+        }
+
+        private void btnRemoveAll_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to delete all record? in the list";
+            string title = "GOC_Grading_System";
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                dgvFacultyLoads.Rows.Clear();
+            }
+            else
+            {
+                return;
+            }
+        }
+
         private void dgvFacultyLoads_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
             base.OnClick(e);
@@ -114,7 +157,6 @@ namespace GOC_GS
                     }
                 }                
             }
-
           
             foreach (DataGridViewColumn column in dgvFacultyName.Columns)
             {
