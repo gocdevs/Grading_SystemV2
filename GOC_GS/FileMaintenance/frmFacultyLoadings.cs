@@ -102,9 +102,7 @@ namespace GOC_GS
                 if (result == DialogResult.Yes)
                 {
                     for (int i = 0; i < dgvFacultyLoads.Rows.Count; i++)
-                    {
-
-                      
+                    {                      
                         facultyLoads.Faculty_id = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();
                         facultyLoads.FullName = dgvFacultyLoads.Rows[i].Cells[1].FormattedValue.ToString();
                         facultyLoads.SubjectCode = dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString();

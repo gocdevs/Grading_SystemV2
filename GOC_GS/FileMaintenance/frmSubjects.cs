@@ -68,7 +68,7 @@ namespace GOC_GS
             dgv.Columns["subject_code"].HeaderText = "Subject Code";//to fix the header Name
             dgv.Columns["subject_name"].HeaderText = "Subject Name";//to fix the header Name
             dgv.Columns["subject_type"].HeaderText = "Subject Type";//to fix the header Name
-            dgv.Columns["semester"].HeaderText = "Semester";//to fix the header Name
+            dgv.Columns["sem"].HeaderText = "Semester";//to fix the header Name
             dgv.Columns["grade_level"].HeaderText = "Grade Level";//to fix the header Name
             dgv.Columns["strand"].HeaderText = "Strand";//to fix the header Name
 
