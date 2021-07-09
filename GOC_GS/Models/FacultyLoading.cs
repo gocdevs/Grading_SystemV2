@@ -14,9 +14,9 @@ namespace GOC_GS
 
         protected int id;
         protected string faculty_id;
-        protected string fullName;
+        protected string fullname;
         protected string subjectCode;
-        protected string subjectType;
+        protected string section;
         protected string gradeLevel;
         protected string strand;
         protected string semester;
@@ -36,8 +36,8 @@ namespace GOC_GS
 
         public string FullName
         {
-            get { return fullName; }
-            set { fullName = value; }
+            get { return fullname; }
+            set { fullname = value; }
         }
 
         public string SubjectCode
@@ -46,10 +46,10 @@ namespace GOC_GS
             set { subjectCode = value; }
         }
 
-        public string SubjectType
+        public string Section
         {
-            get { return subjectType; }
-            set { subjectType = value; }
+            get { return section; }
+            set { section = value; }
         }
 
         public string GradeLevel
@@ -62,6 +62,12 @@ namespace GOC_GS
         {
             get { return strand; }
             set { strand = value; }
+        }
+
+        public string Semester
+        {
+            get { return semester; }
+            set { semester = value; }
         }
 
 
@@ -77,19 +83,17 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO faculty(faculty_id, lname, fname, mname, course, specialize_subject, adviser_of, employment_status) " +
-                                    " VALUES (@faculty_id, @lname, @fname, @mname, @course, @specialize_subject, @adviser_of, @employment_status);";
+                    string sql = "INSERT INTO faculty_loads(faculty_id, fullname, subject_code, section, strand, semester) " +
+                                    " VALUES (@faculty_id, @fullname, @subjectCode, @section, @strand, @semester);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     cmd.Parameters.AddWithValue("faculty_id", faculty_id);
-                    //cmd.Parameters.AddWithValue("lname", lname);
-                    //cmd.Parameters.AddWithValue("fname", fname);
-                    //cmd.Parameters.AddWithValue("mname", mname);
-                    //cmd.Parameters.AddWithValue("course", course);
-                    //cmd.Parameters.AddWithValue("specialize_subject", specialize_subject);
-                    //cmd.Parameters.AddWithValue("adviser_of", adviser_of);
-                    //cmd.Parameters.AddWithValue("employment_status", employment_status);
+                    cmd.Parameters.AddWithValue("fullname", fullname);
+                    cmd.Parameters.AddWithValue("subjectCode", subjectCode);
+                    cmd.Parameters.AddWithValue("section", section);
+                    cmd.Parameters.AddWithValue("strand", strand);
+                    cmd.Parameters.AddWithValue("semester", semester);
 
                     cmd.ExecuteNonQuery();
                 }

@@ -16,6 +16,7 @@ namespace GOC_GS
         Strand strand = new Strand();
         Subjects subjects = new Subjects();
         Models.Faculty fl = new Models.Faculty();
+        FacultyLoading facultyLoads = new FacultyLoading();
 
         List<Subjects> subjects_list = new List<Subjects>();
         List<Strand> strands_list = new List<Strand>();
@@ -37,9 +38,7 @@ namespace GOC_GS
             AddImageDataGridLoading(dgvFacultyLoads);
 
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
-            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
-           
+            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;           
         }
 
 
@@ -102,7 +101,20 @@ namespace GOC_GS
 
                 if (result == DialogResult.Yes)
                 {
-                   
+                    for (int i = 0; i < dgvFacultyLoads.Rows.Count; i++)
+                    {
+
+                      
+                        facultyLoads.Faculty_id = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();
+                        facultyLoads.FullName = dgvFacultyLoads.Rows[i].Cells[1].FormattedValue.ToString();
+                        facultyLoads.SubjectCode = dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString();
+                        facultyLoads.Section = dgvFacultyLoads.Rows[i].Cells[3].FormattedValue.ToString();
+                        facultyLoads.Strand = dgvFacultyLoads.Rows[i].Cells[4].FormattedValue.ToString();
+                        facultyLoads.Semester = dgvFacultyLoads.Rows[i].Cells[5].FormattedValue.ToString();
+
+                        facultyLoads.Save();
+                    }                   
+                           
                 }
                 else
                 {
