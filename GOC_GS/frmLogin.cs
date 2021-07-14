@@ -15,7 +15,7 @@ namespace GOC_GS
         Users user = new Users();
         List<Users> users = new List<Users>();
 
-        public string UserType, Full_Name, Teacher_Id;
+        public string UserType, Username, Password, First_Name, Last_Name, Teacher_Id, Full_Name;
         public bool Flag;
 
         public frmLogin()
@@ -48,7 +48,77 @@ namespace GOC_GS
                     Teacher_Id = item.User_id;
                     Flag = true;
                 }
-                //credential();
+                Check_Credential();
+            }
+        }
+
+        public void Check_Credential()
+        {
+
+            if (Flag == true)
+            {
+                if (UserType.Equals("Admin"))
+                {
+                    frmMain main = new frmMain();
+
+                    main.Access_Control = UserType.ToString();
+                    //main.First_Name = First_Name.ToString();
+                    //main.Last_Name = Last_Name.ToString();
+
+                    main.AccessGrant();
+                    main.Show();
+                    this.Hide();
+                }
+
+                else if (UserType.Equals("Teacher"))
+                {
+                    frmMain main = new frmMain();
+
+                    main.Access_Control = "Teacher";
+
+                    main.Access_Control = UserType.ToString();
+                    //main.First_Name = First_Name.ToString();
+                    //main.Last_Name = Last_Name.ToString();
+                    //main.Teacher_Id = Teacher_Id.ToString();
+
+                    main.AccessGrant();
+
+                    main.btnFacultyLoading.Visible = false;
+                    main.btnFileMaintenance.Visible = false;
+                    main.btnStudentData.Visible = false;
+                    main.btnStudentSubject.Visible = false;
+                  
+
+                    main.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    string message = "Erorr";
+                    string title = "GOC_INFO_SYS";
+
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+
+                    if (result == DialogResult.OK)
+                    {
+                        Flag = false;
+                        return;
+                    }
+                }
+            }
+            else
+            {
+                string message = "User not existing";
+                string title = "GOC_INFO_SYS";
+
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Error);
+
+                if (result == DialogResult.OK)
+                {
+                    return;
+                }
             }
         }
 

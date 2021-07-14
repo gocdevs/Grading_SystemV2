@@ -25,6 +25,41 @@ namespace GOC_GS
         {
             InitializeComponent();
             faculty.LoadDataTableName(dgvFacultyName);
+            user.LoadDataTable(dgvList);
+
+            HeaderFixSubject();
+            AddImageDataGrid(dgvList);
+        }
+
+        public void AddImageDataGrid(DataGridView dgv)
+        {
+            DataGridViewImageColumn dimg = new DataGridViewImageColumn();
+            dimg.Image = Properties.Resources.edit;
+            dimg.HeaderText = "Edit";
+            dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns.Add(dimg);
+
+
+            DataGridViewImageColumn dimgDelete = new DataGridViewImageColumn();
+            dimgDelete.Image = Properties.Resources.delete;
+            dimgDelete.HeaderText = "Delete";
+            dimgDelete.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimgDelete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns.Add(dimgDelete);
+        }
+
+
+        public void HeaderFixSubject()
+        {
+            #region Header Name
+            DataGridViewColumn FillSize = dgvList.Columns[2];
+            FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            DataGridViewColumn FillSize1 = dgvFacultyName.Columns[0];
+            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            #endregion
         }
 
         public void Reset()
@@ -99,6 +134,43 @@ namespace GOC_GS
                 }
             }
            user.LoadDataTable(dgvList);
+        }
+
+        private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0)
+            {
+                id = Convert.ToInt32(dgvList.Rows[e.RowIndex].Cells[2].Value.ToString());//for editing criteria
+
+                //pass value to edit mode               
+                txtUsername.Text = dgvList.Rows[e.RowIndex].Cells[4].Value.ToString();
+                txtPass.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cmbUserType.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
+              
+
+                btnAdd.Text = "&Update";//set button to Update                
+            }
+
+            else if (e.ColumnIndex == 1)
+            {
+                string message = "Do you want to delete this record?";
+                string title = "Grading System";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    user.Id = Convert.ToInt32(dgvList.Rows[e.RowIndex].Cells[2].Value.ToString());//for editing criteria
+                    user.Delete();
+                    Reset();
+                    user.LoadDataTable(dgvList);
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
     }
 }

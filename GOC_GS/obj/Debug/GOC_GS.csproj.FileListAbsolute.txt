@@ -142,3 +142,5 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentData.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStudentSubject.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmUsers.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmUsers.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultyLoadSection.resources

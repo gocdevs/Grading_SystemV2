@@ -61,6 +61,7 @@ namespace GOC_GS
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvList.Size = new System.Drawing.Size(847, 469);
             this.dgvList.TabIndex = 7963;
+            this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
             // btnCancel
             // 

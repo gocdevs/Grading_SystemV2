@@ -13,9 +13,22 @@ namespace GOC_GS
 {
     public partial class frmMain : Form
     {
+        public string Access_Control, First_Name, Last_Name, Teacher_Id;
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        public void AccessGrant()
+        {
+            //if (Access_Control.Equals("Admin"))
+            //{
+            //MessageBox.Show("Welcome " + Access_Control + ": " + Last_Name + ", " + First_Name);
+            //lblAccessTag.Text = "Logged in as " + Access_Control + "\n Name: " + Last_Name + ", " + First_Name;
+            //lblIdNo.Text = Teacher_Id;
+            //MessageBox.Show(Teacher_Id);
+            //}
+
         }
 
         private void pnlTop_Paint(object sender, PaintEventArgs e)

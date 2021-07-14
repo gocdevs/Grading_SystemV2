@@ -20,6 +20,7 @@ namespace GOC_GS
         protected string gradeLevel;
         protected string strand;
         protected string semester;
+        protected string subjectType;
 
 
         public int Id
@@ -70,6 +71,12 @@ namespace GOC_GS
             set { semester = value; }
         }
 
+        public string SubjectType
+        {
+            get { return subjectType; }
+            set { subjectType = value; }
+        }
+
 
         //Save Records
         public void Save()
@@ -83,8 +90,8 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO faculty_loads(faculty_id, fullname, subject_code, section, strand, semester) " +
-                                    " VALUES (@faculty_id, @fullname, @subjectCode, @section, @strand, @semester);";
+                    string sql = "INSERT INTO faculty_loads(faculty_id, fullname, subject_code, section, strand, semester,subjectType,grade_level) " +
+                                    " VALUES (@faculty_id, @fullname, @subjectCode, @section, @strand, @semester,@subjectType,@gradeLevel);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -94,6 +101,8 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("section", section);
                     cmd.Parameters.AddWithValue("strand", strand);
                     cmd.Parameters.AddWithValue("semester", semester);
+                    cmd.Parameters.AddWithValue("subjectType", subjectType);
+                    cmd.Parameters.AddWithValue("gradeLevel", gradeLevel);
 
                     cmd.ExecuteNonQuery();
                 }
