@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -96,7 +97,7 @@ namespace GOC_GS.Models
                     DataTable dt = new DataTable();
                     da.Fill(dt);
                     dgv.DataSource = dt;
-
+                   
                     con.Close();
                 }
             }

@@ -103,7 +103,7 @@ namespace GOC_GS
             this.btnStudentSubject.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnStudentSubject.Image = ((System.Drawing.Image)(resources.GetObject("btnStudentSubject.Image")));
             this.btnStudentSubject.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudentSubject.Location = new System.Drawing.Point(11, 423);
+            this.btnStudentSubject.Location = new System.Drawing.Point(17, 422);
             this.btnStudentSubject.Name = "btnStudentSubject";
             this.btnStudentSubject.Size = new System.Drawing.Size(170, 46);
             this.btnStudentSubject.TabIndex = 1040;
@@ -119,7 +119,7 @@ namespace GOC_GS
             this.btnStudentData.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStudentData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnStudentData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudentData.Location = new System.Drawing.Point(17, 527);
+            this.btnStudentData.Location = new System.Drawing.Point(23, 526);
             this.btnStudentData.Name = "btnStudentData";
             this.btnStudentData.Size = new System.Drawing.Size(158, 46);
             this.btnStudentData.TabIndex = 1039;
@@ -153,7 +153,7 @@ namespace GOC_GS
             this.btnFileMaintenance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnFileMaintenance.Image = ((System.Drawing.Image)(resources.GetObject("btnFileMaintenance.Image")));
             this.btnFileMaintenance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFileMaintenance.Location = new System.Drawing.Point(11, 475);
+            this.btnFileMaintenance.Location = new System.Drawing.Point(17, 474);
             this.btnFileMaintenance.Name = "btnFileMaintenance";
             this.btnFileMaintenance.Size = new System.Drawing.Size(170, 46);
             this.btnFileMaintenance.TabIndex = 73;
@@ -187,7 +187,7 @@ namespace GOC_GS
             this.btnFacultyLoading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
             this.btnFacultyLoading.Image = ((System.Drawing.Image)(resources.GetObject("btnFacultyLoading.Image")));
             this.btnFacultyLoading.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFacultyLoading.Location = new System.Drawing.Point(11, 371);
+            this.btnFacultyLoading.Location = new System.Drawing.Point(17, 370);
             this.btnFacultyLoading.Name = "btnFacultyLoading";
             this.btnFacultyLoading.Size = new System.Drawing.Size(170, 46);
             this.btnFacultyLoading.TabIndex = 70;

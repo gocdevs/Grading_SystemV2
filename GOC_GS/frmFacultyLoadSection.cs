@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,50 +14,63 @@ namespace GOC_GS
 {
     public partial class frmFacultyLoadSection : Form
     {
+        Models.Faculty fl = new Models.Faculty();
+        FacultyLoading facultyLoading = new FacultyLoading();
+        Section section = new Section();
+        List<Section> sections = new List<Section>();
+
+        DataTable dt = new DataTable();
+        //DataTable comboSection = new DataTable();
+
         public frmFacultyLoadSection()
         {
             InitializeComponent();
+            fl.LoadDataTableName(dgvFacultyName);
+            facultyLoading.LoadDataTable(dgvFacultyLoads);        
+            LoadCombo();
+        }
+        
+        public void LoadCombo()
+        {
+            DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
+
+            cmb.HeaderText = "Section";
+            cmb.Name = "Combo";
+            ArrayList row = new ArrayList();
+
+            //clear list
+            sections.Clear();         
+            sections = section.LoadSectionCombo();
+
+            //loop through load it to list view
+            foreach (var item in sections)
+            {
+                //Load to datagridView
+                row.Add(item.Section_name);
+            }
+
+            cmb.Items.AddRange(row.ToArray());
+
+            //datagridadd column
+            dgvFacultyLoads.Columns.Add(cmb);
         }
 
-        public void AddImageDataGridLoading(DataGridView dgv , DataGridViewComboBoxColumn dgvCmb)
+        
+
+        private void dgvFacultyLoads_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
-                {
-                    con.Open();
-                    string sql = "SELECT strand_name FROM strand";
+          
+        }
 
-                    MySqlCommand cmd = new MySqlCommand(sql, con);
-                    MySqlDataAdapter da = new MySqlDataAdapter();
+        private void dgvFacultyLoads_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+           
+        }
 
-                    da.SelectCommand = cmd;
-
-                    //initialize new datatable and load data to datagridview
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgv.DataSource = dt;
-                }
-            }
-
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-
-            dgvCmb.HeaderText = "Section";
-
-
-
-
-            dgvCmb.Items.Add("Ghanashyam");
-            dgvCmb.Items.Add("Jignesh");
-            dgvCmb.Items.Add("Ishver");
-            dgvCmb.Items.Add("Anand");
-
-            dgvCmb.Name = "cmbName";
-            dgv.Columns.Add(dgvCmb);
+        private void frmFacultyLoadSection_Load(object sender, EventArgs e)
+        {
+            dgvFacultyLoads.EditingControlShowing += dgvFacultyLoads_EditingControlShowing;
         }
     }
 }
+

@@ -80,6 +80,12 @@
     <Compile Include="frmFacultyLoadSection.Designer.cs">
       <DependentUpon>frmFacultyLoadSection.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFacultySetUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacultySetUp.Designer.cs">
+      <DependentUpon>frmFacultySetUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,7 @@
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\Subjects.cs" />
     <Compile Include="Models\Strand.cs" />
+    <Compile Include="StudentGrade.cs" />
     <Compile Include="SubjectType.cs" />
     <Compile Include="Users.cs" />
     <Compile Include="Utilities\Util_RequiredFields.cs" />
@@ -204,8 +211,14 @@
     <EmbeddedResource Include="frmFacultyLoadSection.resx">
       <DependentUpon>frmFacultyLoadSection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFacultySetUp.resx">
+      <DependentUpon>frmFacultySetUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmFileMaintenance.resx">
       <DependentUpon>frmFileMaintenance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGradeInput.resx">
+      <DependentUpon>frmGradeInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

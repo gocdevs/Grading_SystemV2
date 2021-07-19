@@ -70,6 +70,49 @@ namespace GOC_GS
             }
         }//End of Load
 
+        public List<Section> LoadSectionCombo()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+
+                    //try to open connection
+                    con.Open();
+
+                    //prepare sql query
+                    string sql = "SELECT section_name FROM section ";
+                   
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        Section section = new Section();
+
+                        //prepare properties
+                       
+                        section.section_name = reader["section_name"].ToString();
+                       
+                      
+
+                        sections.Add(section);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return sections;
+        }//End of Load
+
+
         //Load Combo
         public List<Section> LoadCombo(ComboBox cmb)
         {

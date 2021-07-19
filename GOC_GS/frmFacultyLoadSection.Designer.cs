@@ -73,11 +73,12 @@ namespace GOC_GS
             this.dgvFacultyLoads.Location = new System.Drawing.Point(306, 99);
             this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFacultyLoads.Name = "dgvFacultyLoads";
-            this.dgvFacultyLoads.ReadOnly = true;
             this.dgvFacultyLoads.RowHeadersVisible = false;
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 544);
             this.dgvFacultyLoads.TabIndex = 8033;
+            this.dgvFacultyLoads.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacultyLoads_CellEnter);
+            this.dgvFacultyLoads.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvFacultyLoads_EditingControlShowing);
             // 
             // dgvFacultyName
             // 
@@ -213,6 +214,7 @@ namespace GOC_GS
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacultyLoadSection";
             this.Text = "frmFacultyLoadSection";
+            this.Load += new System.EventHandler(this.frmFacultyLoadSection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();

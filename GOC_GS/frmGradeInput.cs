@@ -12,9 +12,15 @@ namespace GOC_GS
 {
     public partial class frmGradeInput : Form
     {
+        StudentGrade studentGrade = new StudentGrade();
+        Strand strand = new Strand();
+        
         public frmGradeInput()
         {
             InitializeComponent();
+            studentGrade.LoadDataTable(dgvList);
+            //strand.LoadCombo(cmbStrand);
+
         }
     }
 }

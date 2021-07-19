@@ -61,7 +61,16 @@ namespace GOC_GS
 
         private void btnGrading_Click(object sender, EventArgs e)
         {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
 
+            //load the form
+            frmGradeInput frm = new frmGradeInput();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
         }
 
         private void btnViewGrades_Click(object sender, EventArgs e)
@@ -81,12 +90,13 @@ namespace GOC_GS
             pnlAllContainer.Visible = true;
 
             //load the form
-            frmFacultyLoadings frm = new frmFacultyLoadings();
+            frmFacultySetUp frm = new frmFacultySetUp();
             frm.TopLevel = false;
             frm.AutoScroll = true;
 
             pnlAllContainer.Controls.Add(frm);
             frm.Show();
+
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

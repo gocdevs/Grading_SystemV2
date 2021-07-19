@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,36 @@ namespace GOC_GS
             set { subjectType = value; }
         }
 
+        //Retrieve Data from DB
+        public void LoadDataTable(DataGridView dgv)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT * FROM faculty_loads";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+
+                    con.Close();
+                }
+            }
+
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }//End of Load
 
         //Save Records
         public void Save()
