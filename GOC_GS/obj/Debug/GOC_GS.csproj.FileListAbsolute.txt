@@ -147,3 +147,5 @@ C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacu
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultyLoadSection.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmGradeInput.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultySetUp.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultySetUp.resources
+C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmGradeInput.resources

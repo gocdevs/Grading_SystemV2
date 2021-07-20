@@ -30,19 +30,15 @@ namespace GOC_GS
         private void InitializeComponent()
         {
             this.btnRemoveAll = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvFacultyLoads = new System.Windows.Forms.DataGridView();
-            this.dgvFacultyName = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFacultyName = new System.Windows.Forms.TextBox();
+            this.txtStudent = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,14 +51,15 @@ namespace GOC_GS
             this.btnRemoveAll.Text = "Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // btnUpdate
             // 
-            this.btnSave.Location = new System.Drawing.Point(962, 64);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(86, 28);
-            this.btnSave.TabIndex = 8034;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnUpdate.Location = new System.Drawing.Point(962, 64);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(86, 28);
+            this.btnUpdate.TabIndex = 8034;
+            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dgvFacultyLoads
             // 
@@ -70,30 +67,15 @@ namespace GOC_GS
             this.dgvFacultyLoads.AllowUserToDeleteRows = false;
             this.dgvFacultyLoads.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacultyLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFacultyLoads.Location = new System.Drawing.Point(306, 99);
+            this.dgvFacultyLoads.Location = new System.Drawing.Point(14, 99);
             this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFacultyLoads.Name = "dgvFacultyLoads";
             this.dgvFacultyLoads.RowHeadersVisible = false;
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 544);
+            this.dgvFacultyLoads.Size = new System.Drawing.Size(1127, 544);
             this.dgvFacultyLoads.TabIndex = 8033;
             this.dgvFacultyLoads.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacultyLoads_CellEnter);
             this.dgvFacultyLoads.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvFacultyLoads_EditingControlShowing);
-            // 
-            // dgvFacultyName
-            // 
-            this.dgvFacultyName.AllowUserToAddRows = false;
-            this.dgvFacultyName.AllowUserToDeleteRows = false;
-            this.dgvFacultyName.BackgroundColor = System.Drawing.Color.White;
-            this.dgvFacultyName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFacultyName.Location = new System.Drawing.Point(13, 95);
-            this.dgvFacultyName.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvFacultyName.Name = "dgvFacultyName";
-            this.dgvFacultyName.ReadOnly = true;
-            this.dgvFacultyName.RowHeadersVisible = false;
-            this.dgvFacultyName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFacultyName.Size = new System.Drawing.Size(269, 548);
-            this.dgvFacultyName.TabIndex = 8031;
             // 
             // label11
             // 
@@ -134,32 +116,6 @@ namespace GOC_GS
             this.label10.TabIndex = 8028;
             this.label10.Text = "No. of Subject Assigned: ";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(107, 647);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
-            this.label8.TabIndex = 8027;
-            this.label8.Text = "Count: ";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(9, 647);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 20);
-            this.label5.TabIndex = 8026;
-            this.label5.Text = "No. of Faculty: ";
-            // 
             // btnClose
             // 
             this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
@@ -184,39 +140,36 @@ namespace GOC_GS
             this.label4.TabIndex = 8013;
             this.label4.Text = "Search Faculty Name:";
             // 
-            // txtFacultyName
+            // txtStudent
             // 
-            this.txtFacultyName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFacultyName.Location = new System.Drawing.Point(13, 59);
-            this.txtFacultyName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.txtFacultyName.Multiline = true;
-            this.txtFacultyName.Name = "txtFacultyName";
-            this.txtFacultyName.Size = new System.Drawing.Size(269, 28);
-            this.txtFacultyName.TabIndex = 8014;
+            this.txtStudent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtStudent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtStudent.Location = new System.Drawing.Point(14, 64);
+            this.txtStudent.Name = "txtStudent";
+            this.txtStudent.Size = new System.Drawing.Size(238, 20);
+            this.txtStudent.TabIndex = 8036;
+            this.txtStudent.TextChanged += new System.EventHandler(this.txtStudent_TextChanged);
+            this.txtStudent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudent_KeyPress);
             // 
             // frmFacultyLoadSection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.txtStudent);
             this.Controls.Add(this.btnRemoveAll);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvFacultyLoads);
-            this.Controls.Add(this.dgvFacultyName);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtFacultyName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacultyLoadSection";
             this.Text = "frmFacultyLoadSection";
             this.Load += new System.EventHandler(this.frmFacultyLoadSection_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,16 +179,13 @@ namespace GOC_GS
         #endregion
 
         private System.Windows.Forms.Button btnRemoveAll;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvFacultyLoads;
-        private System.Windows.Forms.DataGridView dgvFacultyName;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFacultyName;
+        private System.Windows.Forms.TextBox txtStudent;
     }
 }

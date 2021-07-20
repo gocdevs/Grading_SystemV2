@@ -144,5 +144,39 @@ namespace GOC_GS
 
             }
         }
+
+        //Update
+        public void Update()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+
+                    //try to open connection
+                    con.Open();
+
+                    string sql = "UPDATE faculty_loads SET section=@section"+
+                                    " WHERE id=@id;";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                
+                    cmd.Parameters.AddWithValue("section", section);
+                    cmd.Parameters.AddWithValue("id", id);
+
+
+                    cmd.ExecuteNonQuery();
+
+                    
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.Message.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
     }
 }

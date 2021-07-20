@@ -107,13 +107,16 @@ namespace GOC_GS
                         facultyLoads.FullName = dgvFacultyLoads.Rows[i].Cells[1].FormattedValue.ToString();
                         facultyLoads.SubjectCode = dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString();
                         facultyLoads.GradeLevel = dgvFacultyLoads.Rows[i].Cells[3].FormattedValue.ToString();
-                        facultyLoads.Semester = dgvFacultyLoads.Rows[i].Cells[4].FormattedValue.ToString();
-                        facultyLoads.Strand = dgvFacultyLoads.Rows[i].Cells[5].FormattedValue.ToString();
+
+                        facultyLoads.Semester = dgvFacultyLoads.Rows[i].Cells[5].FormattedValue.ToString();
+                        facultyLoads.Strand = dgvFacultyLoads.Rows[i].Cells[4].FormattedValue.ToString();
+
                         facultyLoads.SubjectType = dgvFacultyLoads.Rows[i].Cells[6].FormattedValue.ToString();
                       
 
 
                         facultyLoads.Save();
+
                     }                   
                            
                 }
