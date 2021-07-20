@@ -13,7 +13,7 @@ namespace GOC_GS
 {
     public partial class frmMain : Form
     {
-        public string Access_Control, First_Name, Last_Name, Teacher_Id;
+        public string Access_Control, Username, UserType, Teacher_Id;
         public frmMain()
         {
             InitializeComponent();
@@ -21,13 +21,27 @@ namespace GOC_GS
 
         public void AccessGrant()
         {
-            //if (Access_Control.Equals("Admin"))
-            //{
-            //MessageBox.Show("Welcome " + Access_Control + ": " + Last_Name + ", " + First_Name);
-            //lblAccessTag.Text = "Logged in as " + Access_Control + "\n Name: " + Last_Name + ", " + First_Name;
-            //lblIdNo.Text = Teacher_Id;
-            //MessageBox.Show(Teacher_Id);
-            //}
+            if (Access_Control.Equals("Admin"))
+            {
+                //MessageBox.Show("Welcome " + Access_Control + ": " + Last_Name + ", " + First_Name);
+                //lblAccessTag.Text = "Logged in as " + Access_Control + "\n Name: " + Last_Name + ", " + First_Name;
+                //lblIdNo.Text = Teacher_Id;
+                //MessageBox.Show(Teacher_Id);
+                lblFacultyId.Text = Teacher_Id;
+                lblUser.Text = Username;
+                lblUserStatus.Text = UserType;
+            }
+
+            else if (Access_Control.Equals("Teacher"))
+            {
+                //MessageBox.Show("Welcome " + Access_Control + ": " + Last_Name + ", " + First_Name);
+                //lblAccessTag.Text = "Logged in as " + Access_Control + "\n Name: " + Last_Name + ", " + First_Name;
+                //lblIdNo.Text = Teacher_Id;
+                //MessageBox.Show(Teacher_Id);
+                lblFacultyId.Text = Teacher_Id;
+                lblUser.Text = Username;
+                lblUserStatus.Text = UserType;
+            }
 
         }
 
@@ -75,7 +89,7 @@ namespace GOC_GS
 
         private void btnViewGrades_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnConSettings_Click(object sender, EventArgs e)

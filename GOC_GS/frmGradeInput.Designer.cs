@@ -85,62 +85,65 @@ namespace GOC_GS
             this.panel1.Controls.Add(this.label3);
             this.panel1.Location = new System.Drawing.Point(14, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 39);
+            this.panel1.Size = new System.Drawing.Size(1100, 51);
             this.panel1.TabIndex = 7995;
             // 
             // cmbGradeLevel
             // 
             this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGradeLevel.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGradeLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "11",
             "12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(91, 8);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(95, 7);
             this.cmbGradeLevel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
-            this.cmbGradeLevel.Size = new System.Drawing.Size(85, 23);
+            this.cmbGradeLevel.Size = new System.Drawing.Size(85, 24);
             this.cmbGradeLevel.TabIndex = 1046;
+            this.cmbGradeLevel.SelectedIndexChanged += new System.EventHandler(this.cmbGradeLevel_SelectedIndexChanged);
+            this.cmbGradeLevel.Click += new System.EventHandler(this.cmbGradeLevel_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(398, 11);
+            this.label1.Location = new System.Drawing.Point(398, 14);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 15);
+            this.label1.Size = new System.Drawing.Size(56, 16);
             this.label1.TabIndex = 1052;
             this.label1.Text = "Subject:";
             // 
             // cmbSubject
             // 
             this.cmbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubject.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(454, 7);
+            this.cmbSubject.Location = new System.Drawing.Point(454, 10);
             this.cmbSubject.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSubject.Name = "cmbSubject";
-            this.cmbSubject.Size = new System.Drawing.Size(159, 23);
+            this.cmbSubject.Size = new System.Drawing.Size(159, 24);
             this.cmbSubject.TabIndex = 1051;
+            this.cmbSubject.SelectedIndexChanged += new System.EventHandler(this.cmbSubject_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(209, 11);
+            this.label2.Location = new System.Drawing.Point(209, 14);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 15);
+            this.label2.Size = new System.Drawing.Size(56, 16);
             this.label2.TabIndex = 1050;
             this.label2.Text = "Section:";
             // 
             // btnSaveGrades
             // 
-            this.btnSaveGrades.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveGrades.Location = new System.Drawing.Point(967, 6);
+            this.btnSaveGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveGrades.Location = new System.Drawing.Point(967, 9);
             this.btnSaveGrades.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveGrades.Name = "btnSaveGrades";
             this.btnSaveGrades.Size = new System.Drawing.Size(100, 25);
@@ -151,23 +154,24 @@ namespace GOC_GS
             // cmbSection
             // 
             this.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSection.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(265, 8);
+            this.cmbSection.Location = new System.Drawing.Point(265, 11);
             this.cmbSection.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSection.Name = "cmbSection";
-            this.cmbSection.Size = new System.Drawing.Size(112, 23);
+            this.cmbSection.Size = new System.Drawing.Size(112, 24);
             this.cmbSection.TabIndex = 1049;
+            this.cmbSection.SelectedIndexChanged += new System.EventHandler(this.cmbSection_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(637, 11);
+            this.label5.Location = new System.Drawing.Point(637, 14);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.Size = new System.Drawing.Size(43, 16);
             this.label5.TabIndex = 1054;
             this.label5.Text = "Term:";
             // 
@@ -175,26 +179,26 @@ namespace GOC_GS
             // 
             this.cmbTerm.BackColor = System.Drawing.Color.White;
             this.cmbTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTerm.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTerm.FormattingEnabled = true;
             this.cmbTerm.Items.AddRange(new object[] {
             "1st",
             "2nd"});
-            this.cmbTerm.Location = new System.Drawing.Point(682, 7);
+            this.cmbTerm.Location = new System.Drawing.Point(682, 10);
             this.cmbTerm.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTerm.Name = "cmbTerm";
-            this.cmbTerm.Size = new System.Drawing.Size(122, 23);
+            this.cmbTerm.Size = new System.Drawing.Size(122, 24);
             this.cmbTerm.TabIndex = 1053;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Roboto Cn", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 6);
+            this.label3.Location = new System.Drawing.Point(13, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 15);
+            this.label3.Size = new System.Drawing.Size(85, 16);
             this.label3.TabIndex = 1048;
             this.label3.Text = "Grade Level:";
             // 

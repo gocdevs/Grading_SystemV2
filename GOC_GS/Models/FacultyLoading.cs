@@ -78,6 +78,42 @@ namespace GOC_GS
             set { subjectType = value; }
         }
 
+        public List<FacultyLoading> FilterSubjectViaSection()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    //prepare sql query
+                    string sql = "SELECT * FROM faculty_loads";
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        FacultyLoading loading = new FacultyLoading();
+
+                        //prepare properties                       
+                        loading.subjectCode = reader["subject_code"].ToString();
+                        loading.section = reader["section"].ToString();
+                        loading.gradeLevel = reader["grade_level"].ToString();
+                        loading.faculty_id = reader["faculty_id"].ToString();
+                        faculty_list.Add(loading);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return faculty_list;
+        }//End of Load
+
         //Retrieve Data from DB
         public void LoadDataTable(DataGridView dgv)
         {

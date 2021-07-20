@@ -174,10 +174,7 @@ namespace GOC_GS
         }
 
         private void txtStudent_TextChanged(object sender, EventArgs e)
-        {
-            //DataView dv = new DataView(dt);
-            //dv.RowFilter = string.Format("section LIKE '%{0}%'", txtStudent.Text);
-            //dgvFacultyLoads.DataSource = dv;
+        {            
             if (txtStudent.Text == "")
             {
                 try

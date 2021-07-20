@@ -45,7 +45,7 @@ namespace GOC_GS
                     //pass variable to form Assesment                   
                     UserType = item.User_type;
                     Full_Name = item.Full_name;          
-                    Teacher_Id = item.User_id;
+                    Teacher_Id = item.Faculty_id;
                     Flag = true;
                 }
                 Check_Credential();
@@ -62,8 +62,9 @@ namespace GOC_GS
                     frmMain main = new frmMain();
 
                     main.Access_Control = UserType.ToString();
-                    //main.First_Name = First_Name.ToString();
-                    //main.Last_Name = Last_Name.ToString();
+                    main.UserType = UserType.ToString();
+                    main.Username = Full_Name.ToString();
+                    main.Teacher_Id = Teacher_Id.ToString();
 
                     main.AccessGrant();
                     main.Show();
@@ -74,12 +75,12 @@ namespace GOC_GS
                 {
                     frmMain main = new frmMain();
 
-                    main.Access_Control = "Teacher";
+                    //main.Access_Control = "Teacher";
 
                     main.Access_Control = UserType.ToString();
-                    //main.First_Name = First_Name.ToString();
-                    //main.Last_Name = Last_Name.ToString();
-                    //main.Teacher_Id = Teacher_Id.ToString();
+                    main.UserType = UserType.ToString();
+                    main.Username = Full_Name.ToString();
+                    main.Teacher_Id = Teacher_Id.ToString();
 
                     main.AccessGrant();
 

@@ -33,6 +33,9 @@ namespace GOC_GS
             this.pnlTop = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.lblUserStatus = new System.Windows.Forms.Label();
+            this.lblFacultyId = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
             this.btnStudentSubject = new System.Windows.Forms.Button();
             this.btnStudentData = new System.Windows.Forms.Button();
             this.btnViewGrades = new System.Windows.Forms.Button();
@@ -80,6 +83,9 @@ namespace GOC_GS
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(44)))), ((int)(((byte)(67)))));
+            this.pnlLeft.Controls.Add(this.lblUserStatus);
+            this.pnlLeft.Controls.Add(this.lblFacultyId);
+            this.pnlLeft.Controls.Add(this.lblUser);
             this.pnlLeft.Controls.Add(this.btnStudentSubject);
             this.pnlLeft.Controls.Add(this.btnStudentData);
             this.pnlLeft.Controls.Add(this.btnViewGrades);
@@ -94,6 +100,36 @@ namespace GOC_GS
             this.pnlLeft.Name = "pnlLeft";
             this.pnlLeft.Size = new System.Drawing.Size(200, 729);
             this.pnlLeft.TabIndex = 1;
+            // 
+            // lblUserStatus
+            // 
+            this.lblUserStatus.AutoSize = true;
+            this.lblUserStatus.ForeColor = System.Drawing.Color.White;
+            this.lblUserStatus.Location = new System.Drawing.Point(105, 179);
+            this.lblUserStatus.Name = "lblUserStatus";
+            this.lblUserStatus.Size = new System.Drawing.Size(65, 13);
+            this.lblUserStatus.TabIndex = 1042;
+            this.lblUserStatus.Text = "Adminstrator";
+            // 
+            // lblFacultyId
+            // 
+            this.lblFacultyId.AutoSize = true;
+            this.lblFacultyId.ForeColor = System.Drawing.Color.White;
+            this.lblFacultyId.Location = new System.Drawing.Point(20, 192);
+            this.lblFacultyId.Name = "lblFacultyId";
+            this.lblFacultyId.Size = new System.Drawing.Size(31, 13);
+            this.lblFacultyId.TabIndex = 1041;
+            this.lblFacultyId.Text = "0001";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.ForeColor = System.Drawing.Color.White;
+            this.lblUser.Location = new System.Drawing.Point(20, 179);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(69, 13);
+            this.lblUser.TabIndex = 69;
+            this.lblUser.Text = "Efraim Basilio";
             // 
             // btnStudentSubject
             // 
@@ -263,6 +299,7 @@ namespace GOC_GS
             this.Text = "Form1";
             this.pnlTop.ResumeLayout(false);
             this.pnlLeft.ResumeLayout(false);
+            this.pnlLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -283,6 +320,9 @@ namespace GOC_GS
         public System.Windows.Forms.Panel pnlAllContainer;
         public System.Windows.Forms.Button btnStudentData;
         public System.Windows.Forms.Button btnStudentSubject;
+        public System.Windows.Forms.Label lblUserStatus;
+        public System.Windows.Forms.Label lblFacultyId;
+        public System.Windows.Forms.Label lblUser;
     }
 }
 

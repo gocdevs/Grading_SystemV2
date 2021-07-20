@@ -78,6 +78,8 @@ namespace GOC_GS.Models
             set { employment_status = value; }
         }
 
+
+
         //Retrieve Data from DB
         public void LoadDataTable(DataGridView dgv)
         {

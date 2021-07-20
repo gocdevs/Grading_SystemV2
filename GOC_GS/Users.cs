@@ -184,6 +184,7 @@ namespace GOC_GS
                         user.user_type = reader["user_type"].ToString();
                         user.user_id = reader["user_id"].ToString();
                         user.password = reader["password"].ToString();
+                        user.faculty_id = reader["faculty_id"].ToString();
                         user.full_name = reader["full_name"].ToString();
                        
                         users.Add(user);
