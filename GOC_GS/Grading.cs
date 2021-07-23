@@ -118,7 +118,7 @@ namespace GOC_GS
             set { lrn_no = value; }
         }
 
-
+        List<Grading> grades = new List<Grading>();
         //Save Records
         public void Save()
         {
@@ -158,5 +158,52 @@ namespace GOC_GS
 
             }
         }
+
+        public List<Grading> Load()
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+
+                    string sql = "SELECT * FROM grading";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);                   
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        Grading grade = new Grading();
+
+                        //prepare properties
+                        grade.id = Convert.ToInt32(reader["id"].ToString());
+                        grade.lrn_no = reader["lrn_no"].ToString();
+                        grade.fullname = reader["fullname"].ToString();
+                        grade.subject_code = reader["subject_code"].ToString();
+                        grade.subject_desc = reader["subject_desc"].ToString();
+                        grade.units = reader["units"].ToString();
+                        grade.first_or_3rd_Q = reader["1st_or_3rd_Q"].ToString();
+                        grade.second_or_4th_Q = reader["2nd_or_4th_Q"].ToString();
+                        grade.average = reader["average"].ToString();
+                        grade.remarks = reader["remarks"].ToString();
+                        grade.sem = reader["sem"].ToString();
+                        grade.grade_level = reader["grade_level"].ToString();
+                        grade.section = reader["section"].ToString();
+                        grade.strand = reader["strand"].ToString();
+
+                        grades.Add(grade);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show("ERROR : " + ex.ToString(), "GOCINFOSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return grades;
+        }//End of Load
     }
 }

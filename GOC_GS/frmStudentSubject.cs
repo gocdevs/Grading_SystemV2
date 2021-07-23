@@ -138,11 +138,11 @@ namespace GOC_GS
                     grading.Fullname = StudentName;
                     grading.Subject_Code = SubjectCode;
                     grading.Subject_Desc = SubjectName;
-                    grading.Units = "";
-                    grading.FirstGrade = "";
-                    grading.SecondGrade = "";
-                    grading.Average = "";
-                    grading.Remarks = "";
+                    grading.Units = "0";
+                    grading.FirstGrade = "0";
+                    grading.SecondGrade = "0";
+                    grading.Average = "0";
+                    grading.Remarks = "0";
                     grading.Semester = Semester;
                     grading.Grade_level = GradeLevel;
                     grading.Section = Section;

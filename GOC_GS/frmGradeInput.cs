@@ -23,12 +23,61 @@ namespace GOC_GS
         List<Section> sections = new List<Section>();
 
         frmMain main = new frmMain();
-        
+
+        Grading grade = new Grading();
+        List<Grading> grades = new List<Grading>();
+
         public frmGradeInput()
         {
             InitializeComponent();
-            studentGrade.LoadDataTable(dgvList);
+            //studentGrade.LoadDataTable(dgvList);
             //strand.LoadCombo(cmbStrand);
+
+            //handle this to handle keypress event...
+            dgvGrades.EditingControlShowing += new DataGridViewEditingControlShowingEventHandler(dgvGrades_EditingControlShowing);
+            dgvGrades.CellEndEdit += new DataGridViewCellEventHandler(dgvGrades_CellEndEdit);
+
+            ((DataGridViewTextBoxColumn)dgvGrades.Columns[5]).MaxInputLength = 5;
+            ((DataGridViewTextBoxColumn)dgvGrades.Columns[6]).MaxInputLength = 5;
+        }
+
+        private void RecordCount()
+        {         
+            
+            lblNum.Text = dgvGrades.Rows.Count.ToString();
+        }
+
+        public void HeaderFix(DataGridView dgv)
+        {
+            #region Header Name
+            dgv.Columns["id"].Visible = false;
+            dgv.Columns["units"].Visible = false;
+            dgv.Columns["subject_code"].Visible = false;
+            dgv.Columns["subject_desc"].Visible = false;
+            dgv.Columns["sem"].Visible = false;
+            dgv.Columns["grade_level"].Visible = false;
+            dgv.Columns["section"].Visible = false;
+            dgv.Columns["strand"].Visible = false;
+
+            dgv.Columns["lrn_no"].HeaderText = "LRN No.";
+            dgv.Columns["fullname"].HeaderText = "Student Name";
+            //dgv.Columns["subject_code"].HeaderText = "Subject Code";
+            dgv.Columns["1st_or_3rd_Q"].HeaderText = "First Quarter";
+            dgv.Columns["2nd_or_4th_Q"].HeaderText = "Second Quarter";
+            dgv.Columns["average"].HeaderText = "Average";
+            dgv.Columns["remarks"].HeaderText = "Remarks";
+
+            DataGridViewColumn FillSize = dgv.Columns[2];
+            FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            //DataGridViewColumn FillSize2 = dgv.Columns[3];
+            //FillSize2.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            DataGridViewColumn FillSize3 = dgv.Columns[6];
+            FillSize3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            DataGridViewColumn FillSize4 = dgv.Columns[7];
+            FillSize4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            #endregion
         }
 
         private void FilterSection()
@@ -82,31 +131,244 @@ namespace GOC_GS
 
         private void cmbSubject_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            
+        }
+
+        private void cmbTerm_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTerm.SelectedIndex == 0)
             {
-                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                dgvGrades.Columns[5].HeaderText = "First Quarter";
+                dgvGrades.Columns[6].HeaderText = "Second Quarter";
+                LoadGrading();
+                RecordCount();
+            }
+            else
+            {
+                dgvGrades.Columns[5].HeaderText = "Third Quarter";
+                dgvGrades.Columns[6].HeaderText = "Fourth Quarter";
+                LoadGrading();
+                RecordCount();
+            }            
+        }
+
+        public void LoadGrading()
+        {
+            //clear list
+            grades.Clear();
+            dgvGrades.Rows.Clear();
+            //pass value to list
+            grades = grade.Load();
+
+            //loop through load it to list view
+            foreach (var item in grades)
+            {
+                if (item.Subject_Code == cmbSubject.Text && item.Sem == cmbTerm.Text)
                 {
-                    con.Open();
-                    string sql = "SELECT * FROM grading WHERE sem = '"+cmbTerm.Text+ "' AND subject_code='"+cmbSubject.Text+"'";
-                    //string sql = "SELECT * FROM grading WHERE subject_code '" + cmbSubject.Text + "' and sem '" + cmbTerm.Text + "' and  grade_level '" + cmbGradeLevel.Text + "'" +
-                    //    " and section '" + cmbSection.Text + "'";
-                    MySqlCommand cmd = new MySqlCommand(sql, con);
-                    MySqlDataAdapter da = new MySqlDataAdapter();
+                    dgvGrades.Rows.Add(item.Id, item.LRN_No, item.Fullname, item.Subject_Code, item.Units, item.FirstGrade, item.SecondGrade, item.Average, item.Remarks, item.Sem, item.Grade_level, item.Section, item.Strand);
+                }
+                
+            }//End LoadSchedule()
+        }
 
-                    da.SelectCommand = cmd;
-
-                    //initialize new datatable and load data to datagridview
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-                    dgvList.DataSource = dt;
-
-                    con.Close();
+        private void dgvGrades_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow rw in this.dgvGrades.Rows)
+            {
+                for (int i = 0; i < rw.Cells.Count; i++)
+                {
+                    if (rw.Cells[i].Value == null || rw.Cells[i].Value == DBNull.Value || String.IsNullOrWhiteSpace(rw.Cells[i].Value.ToString()))
+                    {
+                        //MessageBox.Show("No Empty grades");
+                        rw.Cells[i].Value = "0";
+                        break;
+                    }
                 }
             }
 
-            catch (MySqlException ex)
+            #region Validate Remarks Passed of Failed
+            for (int n = 0; n < dgvGrades.Rows.Count; n++)
             {
-                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dgvGrades.Rows[n].Cells[7].Value = ((Double.Parse(dgvGrades.Rows[n].Cells[6].Value.ToString()) + Double.Parse(dgvGrades.Rows[n].Cells[5].Value.ToString())) / 2).ToString("0.##");
+            }
+
+            foreach (DataGridViewRow Myrow in dgvGrades.Rows)
+            {   //Here 2 cell is target value and 1 cell is Volume
+                if (Convert.ToDouble(Myrow.Cells[7].Value) < 75)// Or your condition 
+                {
+                    Myrow.Cells[8].Style.BackColor = ColorTranslator.FromHtml("#FF7E61");
+                    Myrow.Cells[8].Style.ForeColor = ColorTranslator.FromHtml("#00000");                   
+                    Myrow.Cells[8].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    Myrow.Cells[8].Value = "FAILED";
+                }
+                else
+                {
+                    Myrow.Cells[8].Style.BackColor = ColorTranslator.FromHtml("#0080CF");
+                    Myrow.Cells[8].Style.ForeColor = ColorTranslator.FromHtml("#FFFFFF");
+                    Myrow.Cells[8].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    Myrow.Cells[8].Value = "PASSED";
+                  
+                }
+            }
+            #endregion
+
+            #region for Cell [5]
+
+            foreach (DataGridViewRow Myrow in dgvGrades.Rows)
+            {   //Here 2 cell is target value and 1 cell is Volume
+                if (Convert.ToDouble(Myrow.Cells[5].Value) < 60 && Convert.ToDouble(Myrow.Cells[5].Value) != 0)// Or your condition 
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.Brown;
+                    Myrow.Cells[5].Style.ForeColor = Color.White;
+                    Myrow.Cells[5].Value = "0";
+                }
+                else if (Convert.ToDouble(Myrow.Cells[5].Value) > 100)
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.Brown;
+                    Myrow.Cells[5].Style.ForeColor = Color.White;
+                    Myrow.Cells[5].Value = "0";
+                }
+                else
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.White;
+                    Myrow.Cells[5].Style.ForeColor = Color.Black;
+                }
+            }
+            #endregion
+
+            #region for cell[6]
+            foreach (DataGridViewRow Myrow in dgvGrades.Rows)
+            {   //Here 2 cell is target value and 1 cell is Volume
+                if (Convert.ToDouble(Myrow.Cells[6].Value) < 60 && Convert.ToDouble(Myrow.Cells[6].Value) != 0)// Or your condition 
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.Brown;
+                    Myrow.Cells[6].Style.ForeColor = Color.White;
+                    Myrow.Cells[6].Value = "0";
+                }
+                else if (Convert.ToDouble(Myrow.Cells[6].Value) > 100)
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.Brown;
+                    Myrow.Cells[6].Style.ForeColor = Color.White;
+                    Myrow.Cells[6].Value = "0";
+                    //MessageBox.Show("morethan 100");
+                    //break;
+                }
+                else
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.White;
+                    Myrow.Cells[6].Style.ForeColor = Color.Black;
+                }
+                #endregion
+
+            }
+        }
+
+        public void CheckGrade()
+        {
+            for (int n = 0; n < dgvGrades.Rows.Count; n++)
+            {
+
+                dgvGrades.Rows[n].Cells[7].Value = ((Double.Parse(dgvGrades.Rows[n].Cells[6].Value.ToString()) + Double.Parse(dgvGrades.Rows[n].Cells[5].Value.ToString())) / 2).ToString("0.##");
+
+            }
+
+            foreach (DataGridViewRow Myrow in dgvGrades.Rows)
+            {   //Here 2 cell is target value and 1 cell is Volume
+                if (Convert.ToDouble(Myrow.Cells[7].Value) < 75)// Or your condition 
+                {
+                    Myrow.Cells[8].Style.BackColor = Color.Red;
+                    Myrow.Cells[8].Style.ForeColor = Color.White;
+                    Myrow.Cells[8].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    Myrow.Cells[8].Value = "FAILED";
+
+                }
+                else
+                {
+                    Myrow.Cells[8].Style.BackColor = Color.Green;
+                    Myrow.Cells[8].Style.ForeColor = Color.White;
+                    Myrow.Cells[8].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    Myrow.Cells[8].Value = "PASSED";
+                }
+            }
+
+            foreach (DataGridViewRow Myrow in dgvGrades.Rows)
+            {   //Here 2 cell is target value and 1 cell is Volume
+                if (Convert.ToDouble(Myrow.Cells[5].Value) < 75 && Convert.ToDouble(Myrow.Cells[5].Value) != 0)// Or your condition 
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.Brown;
+                    Myrow.Cells[5].Style.ForeColor = Color.White;
+                }
+                else if (Convert.ToDouble(Myrow.Cells[5].Value) > 100)
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.Brown;
+                    Myrow.Cells[5].Style.ForeColor = Color.White;
+                }
+                else
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.White;
+                    Myrow.Cells[5].Style.ForeColor = Color.Black;
+                }
+            }
+
+            foreach (DataGridViewRow Myrow in dgvGrades.Rows)
+            {   //Here 2 cell is target value and 1 cell is Volume
+                if (Convert.ToDouble(Myrow.Cells[6].Value) < 75 && Convert.ToDouble(Myrow.Cells[6].Value) != 0)// Or your condition 
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.Brown;
+                    Myrow.Cells[6].Style.ForeColor = Color.White;
+                }
+                else if (Convert.ToDouble(Myrow.Cells[6].Value) > 100)
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.Brown;
+                    Myrow.Cells[6].Style.ForeColor = Color.White;
+                    //MessageBox.Show("morethan 100");
+                    //break;
+                }
+                else
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.White;
+                    Myrow.Cells[6].Style.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void colScores_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if (e.KeyChar == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dgvGrades_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            //control input for column 4
+            e.Control.KeyPress -= new KeyPressEventHandler(colScores_KeyPress);
+
+            //column to control input
+            if ((dgvGrades.CurrentCell.ColumnIndex == 5))
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(colScores_KeyPress);
+                }
+            }
+
+            if ((dgvGrades.CurrentCell.ColumnIndex == 6))
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(colScores_KeyPress);
+                }
             }
         }
     }
