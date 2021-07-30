@@ -59,6 +59,9 @@ namespace GOC_GS
             this.label4 = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnLoadStud = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSection = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -78,6 +81,9 @@ namespace GOC_GS
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnLoadStud);
             this.panel1.Controls.Add(this.cmbGradeLevel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbSubject);
@@ -87,23 +93,24 @@ namespace GOC_GS
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cmbTerm);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(14, 12);
+            this.panel1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(13, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1100, 42);
+            this.panel1.Size = new System.Drawing.Size(1100, 54);
             this.panel1.TabIndex = 7995;
             // 
             // cmbGradeLevel
             // 
             this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGradeLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGradeLevel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "11",
             "12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(95, 11);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(95, 14);
             this.cmbGradeLevel.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
-            this.cmbGradeLevel.Size = new System.Drawing.Size(78, 24);
+            this.cmbGradeLevel.Size = new System.Drawing.Size(53, 26);
             this.cmbGradeLevel.TabIndex = 1046;
             this.cmbGradeLevel.SelectedIndexChanged += new System.EventHandler(this.cmbGradeLevel_SelectedIndexChanged);
             this.cmbGradeLevel.Click += new System.EventHandler(this.cmbGradeLevel_Click);
@@ -111,46 +118,46 @@ namespace GOC_GS
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(398, 14);
+            this.label1.Location = new System.Drawing.Point(352, 18);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(58, 18);
             this.label1.TabIndex = 1052;
             this.label1.Text = "Subject:";
             // 
             // cmbSubject
             // 
             this.cmbSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSubject.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSubject.FormattingEnabled = true;
-            this.cmbSubject.Location = new System.Drawing.Point(454, 10);
+            this.cmbSubject.Location = new System.Drawing.Point(418, 14);
             this.cmbSubject.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSubject.Name = "cmbSubject";
-            this.cmbSubject.Size = new System.Drawing.Size(159, 24);
+            this.cmbSubject.Size = new System.Drawing.Size(159, 26);
             this.cmbSubject.TabIndex = 1051;
             this.cmbSubject.SelectedIndexChanged += new System.EventHandler(this.cmbSubject_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(209, 14);
+            this.label2.Location = new System.Drawing.Point(163, 18);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(58, 18);
             this.label2.TabIndex = 1050;
             this.label2.Text = "Section:";
             // 
             // btnSaveGrades
             // 
-            this.btnSaveGrades.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveGrades.Location = new System.Drawing.Point(996, 9);
+            this.btnSaveGrades.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveGrades.Location = new System.Drawing.Point(966, 15);
             this.btnSaveGrades.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveGrades.Name = "btnSaveGrades";
-            this.btnSaveGrades.Size = new System.Drawing.Size(100, 25);
+            this.btnSaveGrades.Size = new System.Drawing.Size(125, 26);
             this.btnSaveGrades.TabIndex = 1058;
             this.btnSaveGrades.Text = "Submit Grades";
             this.btnSaveGrades.UseVisualStyleBackColor = true;
@@ -158,24 +165,24 @@ namespace GOC_GS
             // cmbSection
             // 
             this.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSection.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(265, 11);
+            this.cmbSection.Location = new System.Drawing.Point(229, 14);
             this.cmbSection.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSection.Name = "cmbSection";
-            this.cmbSection.Size = new System.Drawing.Size(112, 24);
+            this.cmbSection.Size = new System.Drawing.Size(112, 26);
             this.cmbSection.TabIndex = 1049;
             this.cmbSection.SelectedIndexChanged += new System.EventHandler(this.cmbSection_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(637, 14);
+            this.label5.Location = new System.Drawing.Point(591, 18);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 16);
+            this.label5.Size = new System.Drawing.Size(43, 18);
             this.label5.TabIndex = 1054;
             this.label5.Text = "Term:";
             // 
@@ -183,27 +190,27 @@ namespace GOC_GS
             // 
             this.cmbTerm.BackColor = System.Drawing.Color.White;
             this.cmbTerm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTerm.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTerm.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTerm.FormattingEnabled = true;
             this.cmbTerm.Items.AddRange(new object[] {
             "1st",
             "2nd"});
-            this.cmbTerm.Location = new System.Drawing.Point(688, 12);
+            this.cmbTerm.Location = new System.Drawing.Point(642, 15);
             this.cmbTerm.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTerm.Name = "cmbTerm";
-            this.cmbTerm.Size = new System.Drawing.Size(122, 24);
+            this.cmbTerm.Size = new System.Drawing.Size(73, 26);
             this.cmbTerm.TabIndex = 1053;
             this.cmbTerm.SelectedIndexChanged += new System.EventHandler(this.cmbTerm_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(4, 15);
+            this.label3.Location = new System.Drawing.Point(4, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 16);
+            this.label3.Size = new System.Drawing.Size(86, 18);
             this.label3.TabIndex = 1048;
             this.label3.Text = "Grade Level:";
             // 
@@ -214,11 +221,11 @@ namespace GOC_GS
             this.panel2.Controls.Add(this.dgvGrades);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(13, 61);
+            this.panel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(13, 101);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1126, 579);
+            this.panel2.Size = new System.Drawing.Size(1126, 546);
             this.panel2.TabIndex = 7996;
             // 
             // button1
@@ -256,7 +263,7 @@ namespace GOC_GS
             this.dgvGrades.Margin = new System.Windows.Forms.Padding(4);
             this.dgvGrades.Name = "dgvGrades";
             this.dgvGrades.RowHeadersVisible = false;
-            this.dgvGrades.Size = new System.Drawing.Size(1126, 579);
+            this.dgvGrades.Size = new System.Drawing.Size(1126, 546);
             this.dgvGrades.TabIndex = 1056;
             this.dgvGrades.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrades_CellEndEdit);
             this.dgvGrades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvGrades_EditingControlShowing);
@@ -273,7 +280,7 @@ namespace GOC_GS
             this.IDNo.HeaderText = "IDNo";
             this.IDNo.Name = "IDNo";
             this.IDNo.ReadOnly = true;
-            this.IDNo.Width = 63;
+            this.IDNo.Width = 66;
             // 
             // StudentName
             // 
@@ -288,7 +295,7 @@ namespace GOC_GS
             this.subjectCode.HeaderText = "Subject Code";
             this.subjectCode.Name = "subjectCode";
             this.subjectCode.ReadOnly = true;
-            this.subjectCode.Width = 116;
+            this.subjectCode.Width = 118;
             // 
             // units
             // 
@@ -303,14 +310,14 @@ namespace GOC_GS
             this.firstQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.firstQ.HeaderText = "Quarter Grade";
             this.firstQ.Name = "firstQ";
-            this.firstQ.Width = 118;
+            this.firstQ.Width = 127;
             // 
             // secondQ
             // 
             this.secondQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.secondQ.HeaderText = "Quarter Grade";
             this.secondQ.Name = "secondQ";
-            this.secondQ.Width = 118;
+            this.secondQ.Width = 127;
             // 
             // average
             // 
@@ -318,7 +325,7 @@ namespace GOC_GS
             this.average.HeaderText = "Average";
             this.average.Name = "average";
             this.average.ReadOnly = true;
-            this.average.Width = 85;
+            this.average.Width = 87;
             // 
             // remarks
             // 
@@ -326,7 +333,7 @@ namespace GOC_GS
             this.remarks.HeaderText = "Remarks";
             this.remarks.Name = "remarks";
             this.remarks.ReadOnly = true;
-            this.remarks.Width = 87;
+            this.remarks.Width = 90;
             // 
             // Term
             // 
@@ -380,12 +387,12 @@ namespace GOC_GS
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblNum.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNum.Location = new System.Drawing.Point(105, 651);
+            this.lblNum.Location = new System.Drawing.Point(1113, 653);
             this.lblNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(16, 18);
+            this.lblNum.Size = new System.Drawing.Size(17, 19);
             this.lblNum.TabIndex = 8031;
             this.lblNum.Text = "0";
             // 
@@ -393,20 +400,57 @@ namespace GOC_GS
             // 
             this.label10.AutoSize = true;
             this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(10, 649);
+            this.label10.Location = new System.Drawing.Point(993, 651);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(95, 20);
+            this.label10.Size = new System.Drawing.Size(112, 19);
             this.label10.TabIndex = 8030;
             this.label10.Text = "No. of Students:";
+            // 
+            // btnLoadStud
+            // 
+            this.btnLoadStud.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadStud.Location = new System.Drawing.Point(723, 13);
+            this.btnLoadStud.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadStud.Name = "btnLoadStud";
+            this.btnLoadStud.Size = new System.Drawing.Size(85, 28);
+            this.btnLoadStud.TabIndex = 1059;
+            this.btnLoadStud.Text = "Search";
+            this.btnLoadStud.UseVisualStyleBackColor = true;
+            this.btnLoadStud.Click += new System.EventHandler(this.btnLoadStud_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(912, 68);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 23);
+            this.label6.TabIndex = 1060;
+            this.label6.Text = "Section Active:";
+            // 
+            // lblSection
+            // 
+            this.lblSection.AutoSize = true;
+            this.lblSection.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSection.ForeColor = System.Drawing.Color.Black;
+            this.lblSection.Location = new System.Drawing.Point(1040, 68);
+            this.lblSection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSection.Name = "lblSection";
+            this.lblSection.Size = new System.Drawing.Size(0, 23);
+            this.lblSection.TabIndex = 8032;
             // 
             // frmGradeInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.lblSection);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNum);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
@@ -457,5 +501,8 @@ namespace GOC_GS
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblNum;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnLoadStud;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSection;
     }
 }

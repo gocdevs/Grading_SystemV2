@@ -13,6 +13,7 @@ namespace GOC_GS
 {
     public partial class frmMain : Form
     {
+        frmGradeInput grade = new frmGradeInput();
         public string Access_Control, Username, UserType, Teacher_Id;
         public frmMain()
         {
@@ -30,6 +31,7 @@ namespace GOC_GS
                 lblFacultyId.Text = Teacher_Id;
                 lblUser.Text = Username;
                 lblUserStatus.Text = UserType;
+                grade.teacher_id = Teacher_Id;
             }
 
             else if (Access_Control.Equals("Teacher"))
@@ -41,6 +43,8 @@ namespace GOC_GS
                 lblFacultyId.Text = Teacher_Id;
                 lblUser.Text = Username;
                 lblUserStatus.Text = UserType;
+                grade.teacher_id = Teacher_Id;
+
             }
 
         }
@@ -82,7 +86,7 @@ namespace GOC_GS
             frmGradeInput frm = new frmGradeInput();
             frm.TopLevel = false;
             frm.AutoScroll = true;
-
+            frm.teacher_id = Teacher_Id;
             pnlAllContainer.Controls.Add(frm);
             frm.Show();
         }

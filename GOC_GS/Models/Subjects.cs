@@ -76,13 +76,13 @@ namespace GOC_GS
                     con.Open();
 
                     //prepare sql query
-                    string sql = "SELECT * FROM subjects WHERE sem=@term and grade_level=@gradeLevel";
+                    string sql = "SELECT * FROM subjects WHERE sem=@term and grade_level=@gradeLevel and strand=@strand";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     cmd.Parameters.AddWithValue("term", semester);
                     cmd.Parameters.AddWithValue("gradeLevel", grade_level);
-                    //cmd.Parameters.AddWithValue("strand", strand);
+                    cmd.Parameters.AddWithValue("strand", strand);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 

@@ -49,7 +49,7 @@ namespace GOC_GS
                 {
                     con.Open();
 
-                    string sql = "SELECT lrn_no, CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section, strand FROM student_profile";
+                    string sql = "SELECT lrn_no, CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName, section, strand FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -103,6 +103,7 @@ namespace GOC_GS
           
             subject.Semester = cmbSemester.Text;
             subject.Grade_level = cmbGradeLevel.Text;
+            subject.Strand = cmbStrand.Text;
             subject_list = subject.LoadThisSubjects();
 
             //loop through load it to list view

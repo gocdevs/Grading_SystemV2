@@ -115,11 +115,10 @@ namespace GOC_GS
             // 
             this.lblFacultyId.AutoSize = true;
             this.lblFacultyId.ForeColor = System.Drawing.Color.White;
-            this.lblFacultyId.Location = new System.Drawing.Point(20, 192);
+            this.lblFacultyId.Location = new System.Drawing.Point(20, 198);
             this.lblFacultyId.Name = "lblFacultyId";
-            this.lblFacultyId.Size = new System.Drawing.Size(31, 13);
+            this.lblFacultyId.Size = new System.Drawing.Size(0, 13);
             this.lblFacultyId.TabIndex = 1041;
-            this.lblFacultyId.Text = "0001";
             // 
             // lblUser
             // 

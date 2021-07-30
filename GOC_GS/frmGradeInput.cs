@@ -22,11 +22,13 @@ namespace GOC_GS
         Section section = new Section();
         List<Section> sections = new List<Section>();
 
-        frmMain main = new frmMain();
+      
+      
 
         Grading grade = new Grading();
         List<Grading> grades = new List<Grading>();
 
+        public string teacher_id;
         public frmGradeInput()
         {
             InitializeComponent();
@@ -82,19 +84,35 @@ namespace GOC_GS
 
         private void FilterSection()
         {
-            //clear list
-            sections.Clear();
-            sections = section.LoadSection();
+            ////clear list
+            //sections.Clear();
+            //sections = section.LoadSection();
 
-            cmbSection.Items.Clear();
+            //cmbSection.Items.Clear();
+            ////loop through load it to list view
+            //foreach (var item in sections)
+            //{
+            //    if (cmbGradeLevel.Text == item.Grade_Level)
+            //    {
+            //        cmbSection.Items.Add(item.Section_name);
+            //    }               
+            //}
+            //
+
+            //clear list
+            fList.Clear();
+            fList = fl.FilterSubjectViaSection();
+
+            cmbSubject.Items.Clear();
             //loop through load it to list view
-            foreach (var item in sections)
+
+            foreach (var item in fList)
             {
-                if (cmbGradeLevel.Text == item.Grade_Level)
+                if (cmbGradeLevel.Text == item.GradeLevel && teacher_id == item.Faculty_id)
                 {
-                    cmbSection.Items.Add(item.Section_name);
-                }               
-            }           
+                    cmbSection.Items.Add(item.Section);
+                }
+            }
         }
 
         private void FilterSubject()
@@ -105,9 +123,10 @@ namespace GOC_GS
 
             cmbSubject.Items.Clear();
             //loop through load it to list view
+            
             foreach (var item in fList)
             {
-                if (cmbSection.Text == item.Section && main.lblFacultyId.Text == item.Faculty_id )
+                if (cmbSection.Text == item.Section && teacher_id == item.Faculty_id )
                 {
                     cmbSubject.Items.Add(item.SubjectCode);
                 }
@@ -139,16 +158,14 @@ namespace GOC_GS
             if (cmbTerm.SelectedIndex == 0)
             {
                 dgvGrades.Columns[5].HeaderText = "First Quarter";
-                dgvGrades.Columns[6].HeaderText = "Second Quarter";
-                LoadGrading();
-                RecordCount();
+                dgvGrades.Columns[6].HeaderText = "Second Quarter";               
+               
             }
             else
             {
                 dgvGrades.Columns[5].HeaderText = "Third Quarter";
-                dgvGrades.Columns[6].HeaderText = "Fourth Quarter";
-                LoadGrading();
-                RecordCount();
+                dgvGrades.Columns[6].HeaderText = "Fourth Quarter";               
+                
             }            
         }
 
@@ -163,12 +180,18 @@ namespace GOC_GS
             //loop through load it to list view
             foreach (var item in grades)
             {
-                if (item.Subject_Code == cmbSubject.Text && item.Sem == cmbTerm.Text)
+                if (item.Subject_Code == cmbSubject.Text && item.Sem == cmbTerm.Text && cmbSection.Text == item.Section)
                 {
                     dgvGrades.Rows.Add(item.Id, item.LRN_No, item.Fullname, item.Subject_Code, item.Units, item.FirstGrade, item.SecondGrade, item.Average, item.Remarks, item.Sem, item.Grade_level, item.Section, item.Strand);
+                   
                 }
-                
+                //else
+                //{
+                //    MessageBox.Show("NO STUDENTS FOUND");
+                //}                                
             }//End LoadSchedule()
+
+            lblSection.Text = cmbSection.Text;
         }
 
         private void dgvGrades_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -370,6 +393,12 @@ namespace GOC_GS
                     tb.KeyPress += new KeyPressEventHandler(colScores_KeyPress);
                 }
             }
+        }
+
+        private void btnLoadStud_Click(object sender, EventArgs e)
+        {
+            LoadGrading();
+            RecordCount();
         }
     }
 }
