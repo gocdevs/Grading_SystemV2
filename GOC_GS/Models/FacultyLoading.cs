@@ -88,8 +88,47 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
                     //prepare sql query
-                    string sql = "SELECT * FROM faculty_loads";
+                    string sql = "SELECT DISTINCT section FROM faculty_loads WHERE faculty_id =@faculty_id";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("faculty_id", faculty_id);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        FacultyLoading loading = new FacultyLoading();
+
+                        //prepare properties                       
+                        //loading.subjectCode = reader["subject_code"].ToString();
+                        loading.section = reader["section"].ToString();
+                        //loading.gradeLevel = reader["grade_level"].ToString();
+                        //loading.faculty_id = reader["faculty_id"].ToString();
+                        faculty_list.Add(loading);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return faculty_list;
+        }//End of Load
+
+        public List<FacultyLoading> LoadSubjectCode()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    //prepare sql query
+                    string sql = "SELECT DISTINCT subject_code FROM faculty_loads WHERE faculty_id =@faculty_id AND section=@section";
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("faculty_id", faculty_id);
+                    cmd.Parameters.AddWithValue("section", section);
                     MySqlDataReader reader = cmd.ExecuteReader();
 
                     //loop while have record
@@ -100,9 +139,9 @@ namespace GOC_GS
 
                         //prepare properties                       
                         loading.subjectCode = reader["subject_code"].ToString();
-                        loading.section = reader["section"].ToString();
-                        loading.gradeLevel = reader["grade_level"].ToString();
-                        loading.faculty_id = reader["faculty_id"].ToString();
+                        //loading.section = reader["section"].ToString();
+                        //loading.gradeLevel = reader["grade_level"].ToString();
+                        //loading.faculty_id = reader["faculty_id"].ToString();
                         faculty_list.Add(loading);
                     }
                 }
@@ -201,10 +240,7 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("section", section);
                     cmd.Parameters.AddWithValue("id", id);
 
-
-                    cmd.ExecuteNonQuery();
-
-                    
+                    cmd.ExecuteNonQuery();                    
                 }
             }
             catch (MySqlException ex)

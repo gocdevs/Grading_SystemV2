@@ -117,13 +117,15 @@ namespace GOC_GS
 
                         facultyLoads.Save();
 
-                    }                   
-                           
+                    }
+                    MessageBox.Show("Record Saved!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dgvFacultyLoads.Rows.Clear();
                 }
                 else
                 {
                     return;
                 }
+
             }
             else
             {

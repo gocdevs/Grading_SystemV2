@@ -101,17 +101,25 @@ namespace GOC_GS
 
             //clear list
             fList.Clear();
+            fl.Faculty_id = teacher_id;
             fList = fl.FilterSubjectViaSection();
 
             cmbSection.Items.Clear();
             //loop through load it to list view
 
+            //foreach (var item in fList)
+            //{
+            //    if (cmbGradeLevel.Text == item.GradeLevel && teacher_id == item.Faculty_id)
+            //    {
+            //        cmbSection.Items.Add(item.Section.Distinct().ToArray());
+            //    }
+            //}
+
             foreach (var item in fList)
             {
-                if (cmbGradeLevel.Text == item.GradeLevel && teacher_id == item.Faculty_id)
-                {
-                    cmbSection.Items.Add(item.Section);
-                }
+                
+                cmbSection.Items.Add(item.Section);
+               
             }
         }
 
@@ -119,17 +127,18 @@ namespace GOC_GS
         {
             //clear list
             fList.Clear();
-            fList = fl.FilterSubjectViaSection();
+            fl.Faculty_id = teacher_id;
+            fl.Section = cmbSection.Text;
+            fList = fl.LoadSubjectCode();
 
             cmbSubject.Items.Clear();
             //loop through load it to list view
             
             foreach (var item in fList)
             {
-                if (cmbSection.Text == item.Section && teacher_id == item.Faculty_id )
-                {
+                
                     cmbSubject.Items.Add(item.SubjectCode);
-                }
+                
             }
         }
 

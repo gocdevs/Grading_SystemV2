@@ -232,6 +232,46 @@ namespace GOC_GS
                 }
             }            
         }
+
+        private void btnRemoveAll_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to delete all records?";
+            string title = "Grading System";
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    //prepare connection string 
+                    using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                    {
+
+                        //try to open connection
+                        con.Open();
+
+                        string sql = "DELETE FROM faculty_loads";
+
+                        MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Record deleted!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                facultyLoading.LoadDataTable(dgvFacultyLoads);
+            }
+            else
+            {
+                return;
+            }            
+        }
     }
 }
 

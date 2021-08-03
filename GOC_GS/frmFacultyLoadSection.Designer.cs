@@ -50,6 +50,7 @@ namespace GOC_GS
             this.btnRemoveAll.TabIndex = 8035;
             this.btnRemoveAll.Text = "Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
+            this.btnRemoveAll.Click += new System.EventHandler(this.btnRemoveAll_Click);
             // 
             // btnUpdate
             // 
