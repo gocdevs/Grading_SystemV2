@@ -103,7 +103,7 @@ namespace GOC_GS
             fList.Clear();
             fList = fl.FilterSubjectViaSection();
 
-            cmbSubject.Items.Clear();
+            cmbSection.Items.Clear();
             //loop through load it to list view
 
             foreach (var item in fList)
@@ -209,6 +209,10 @@ namespace GOC_GS
                 }
             }
 
+            //dgvGrades.Rows[n].Cells[5] --- First Quarter
+            //dgvGrades.Rows[n].Cells[6] --- Second Quarter
+            //dgvGrades.Rows[n].Cells[7] --- OUTPUT
+
             #region Validate Remarks Passed of Failed
             for (int n = 0; n < dgvGrades.Rows.Count; n++)
             {
@@ -218,7 +222,7 @@ namespace GOC_GS
             foreach (DataGridViewRow Myrow in dgvGrades.Rows)
             {   //Here 2 cell is target value and 1 cell is Volume
                 if (Convert.ToDouble(Myrow.Cells[7].Value) < 75)// Or your condition 
-                {
+                {                   
                     Myrow.Cells[8].Style.BackColor = ColorTranslator.FromHtml("#FF7E61");
                     Myrow.Cells[8].Style.ForeColor = ColorTranslator.FromHtml("#00000");                   
                     Myrow.Cells[8].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -233,57 +237,57 @@ namespace GOC_GS
                   
                 }
             }
+
+
             #endregion
 
             #region for Cell [5]
-
             foreach (DataGridViewRow Myrow in dgvGrades.Rows)
             {   //Here 2 cell is target value and 1 cell is Volume
-                if (Convert.ToDouble(Myrow.Cells[5].Value) < 60 && Convert.ToDouble(Myrow.Cells[5].Value) != 0)// Or your condition 
+                if (Convert.ToDouble(Myrow.Cells[5].Value) < 75 && Convert.ToDouble(Myrow.Cells[5].Value) >= 60 && Convert.ToDouble(Myrow.Cells[5].Value) != 0)// Or your condition 
                 {
-                    Myrow.Cells[5].Style.BackColor = Color.Brown;
+                    Myrow.Cells[5].Style.BackColor = ColorTranslator.FromHtml("#3C66A2");
                     Myrow.Cells[5].Style.ForeColor = Color.White;
+                    //Myrow.Cells[5].Value = "0";
+                }
+                else if (Convert.ToDouble(Myrow.Cells[5].Value) < 60 && Convert.ToDouble(Myrow.Cells[5].Value) != 0)
+                {
+                    Myrow.Cells[5].Style.BackColor = Color.White;
+                    Myrow.Cells[5].Style.ForeColor = Color.Black;
                     Myrow.Cells[5].Value = "0";
                 }
                 else if (Convert.ToDouble(Myrow.Cells[5].Value) > 100)
                 {
-                    Myrow.Cells[5].Style.BackColor = Color.Brown;
-                    Myrow.Cells[5].Style.ForeColor = Color.White;
-                    Myrow.Cells[5].Value = "0";
-                }
-                else
-                {
                     Myrow.Cells[5].Style.BackColor = Color.White;
                     Myrow.Cells[5].Style.ForeColor = Color.Black;
-                }
+                    Myrow.Cells[5].Value = "0";
+                }                
             }
             #endregion
 
             #region for cell[6]
             foreach (DataGridViewRow Myrow in dgvGrades.Rows)
             {   //Here 2 cell is target value and 1 cell is Volume
-                if (Convert.ToDouble(Myrow.Cells[6].Value) < 60 && Convert.ToDouble(Myrow.Cells[6].Value) != 0)// Or your condition 
+                if (Convert.ToDouble(Myrow.Cells[6].Value) < 75 && Convert.ToDouble(Myrow.Cells[6].Value) >= 60 && Convert.ToDouble(Myrow.Cells[6].Value) != 0)// Or your condition 
                 {
-                    Myrow.Cells[6].Style.BackColor = Color.Brown;
+                    Myrow.Cells[6].Style.BackColor = ColorTranslator.FromHtml("#3C66A2");
                     Myrow.Cells[6].Style.ForeColor = Color.White;
+                    //Myrow.Cells[5].Value = "0";
+                }
+                else if (Convert.ToDouble(Myrow.Cells[6].Value) < 60 && Convert.ToDouble(Myrow.Cells[6].Value) != 0)
+                {
+                    Myrow.Cells[6].Style.BackColor = Color.White;
+                    Myrow.Cells[6].Style.ForeColor = Color.Black;
                     Myrow.Cells[6].Value = "0";
                 }
                 else if (Convert.ToDouble(Myrow.Cells[6].Value) > 100)
                 {
-                    Myrow.Cells[6].Style.BackColor = Color.Brown;
-                    Myrow.Cells[6].Style.ForeColor = Color.White;
-                    Myrow.Cells[6].Value = "0";
-                    //MessageBox.Show("morethan 100");
-                    //break;
-                }
-                else
-                {
                     Myrow.Cells[6].Style.BackColor = Color.White;
                     Myrow.Cells[6].Style.ForeColor = Color.Black;
+                    Myrow.Cells[6].Value = "0";
                 }
-                #endregion
-
             }
+            #endregion
         }
 
         public void CheckGrade()

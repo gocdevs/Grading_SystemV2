@@ -38,11 +38,16 @@ namespace GOC_GS
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvStudentName = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmbSemester = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,17 +57,8 @@ namespace GOC_GS
             this.label6 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtFacultyName = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cmbSection = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGenerate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
@@ -84,7 +80,7 @@ namespace GOC_GS
             this.Column5,
             this.Column3,
             this.Column6});
-            this.dgvStudentSubjects.Location = new System.Drawing.Point(306, 399);
+            this.dgvStudentSubjects.Location = new System.Drawing.Point(1047, 399);
             this.dgvStudentSubjects.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStudentSubjects.Name = "dgvStudentSubjects";
             this.dgvStudentSubjects.ReadOnly = true;
@@ -92,6 +88,7 @@ namespace GOC_GS
             this.dgvStudentSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvStudentSubjects.Size = new System.Drawing.Size(835, 244);
             this.dgvStudentSubjects.TabIndex = 8008;
+            this.dgvStudentSubjects.Visible = false;
             // 
             // Column1
             // 
@@ -159,6 +156,50 @@ namespace GOC_GS
             this.dgvSubjects.Size = new System.Drawing.Size(835, 265);
             this.dgvSubjects.TabIndex = 8007;
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "id";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Subject Code";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "Subject Name";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Grade Level";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Subject Type";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Strand";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Semester";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
             // dgvStudentName
             // 
             this.dgvStudentName.AllowUserToAddRows = false;
@@ -187,44 +228,18 @@ namespace GOC_GS
             this.label11.TabIndex = 8005;
             this.label11.Text = "Subjects Assigned to Students";
             // 
-            // label9
+            // lblCount
             // 
-            this.label9.AutoSize = true;
-            this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(456, 647);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
-            this.label9.TabIndex = 8004;
-            this.label9.Text = "Count: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(303, 647);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 20);
-            this.label10.TabIndex = 8003;
-            this.label10.Text = "No. of Subject Assigned: ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label8.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(107, 647);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(48, 20);
-            this.label8.TabIndex = 8002;
-            this.label8.Text = "Count: ";
+            this.lblCount.AutoSize = true;
+            this.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblCount.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblCount.Location = new System.Drawing.Point(107, 647);
+            this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(48, 20);
+            this.lblCount.TabIndex = 8002;
+            this.lblCount.Text = "Count: ";
             // 
             // label5
             // 
@@ -235,9 +250,9 @@ namespace GOC_GS
             this.label5.Location = new System.Drawing.Point(9, 647);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 20);
+            this.label5.Size = new System.Drawing.Size(98, 20);
             this.label5.TabIndex = 8001;
-            this.label5.Text = "No. of Faculty: ";
+            this.label5.Text = "No. of Students: ";
             // 
             // cmbSemester
             // 
@@ -341,40 +356,18 @@ namespace GOC_GS
             this.label4.TabIndex = 7988;
             this.label4.Text = "Students Name per Section:";
             // 
-            // txtFacultyName
-            // 
-            this.txtFacultyName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFacultyName.Location = new System.Drawing.Point(13, 59);
-            this.txtFacultyName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
-            this.txtFacultyName.Multiline = true;
-            this.txtFacultyName.Name = "txtFacultyName";
-            this.txtFacultyName.Size = new System.Drawing.Size(160, 28);
-            this.txtFacultyName.TabIndex = 7989;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(181, 35);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 20);
-            this.label2.TabIndex = 7997;
-            this.label2.Text = "Section:";
-            // 
             // cmbSection
             // 
             this.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSection.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(177, 59);
+            this.cmbSection.Location = new System.Drawing.Point(14, 59);
             this.cmbSection.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSection.Name = "cmbSection";
-            this.cmbSection.Size = new System.Drawing.Size(105, 28);
+            this.cmbSection.Size = new System.Drawing.Size(268, 28);
             this.cmbSection.TabIndex = 7998;
             this.cmbSection.SelectedIndexChanged += new System.EventHandler(this.cmbSection_SelectedIndexChanged);
+            this.cmbSection.Enter += new System.EventHandler(this.cmbSection_Enter);
             // 
             // button1
             // 
@@ -385,50 +378,6 @@ namespace GOC_GS
             this.button1.Text = "Load Subject";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "id";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Subject Code";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column10.HeaderText = "Subject Name";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Grade Level";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Subject Type";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Strand";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Semester";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
             // 
             // btnGenerate
             // 
@@ -451,9 +400,7 @@ namespace GOC_GS
             this.Controls.Add(this.dgvSubjects);
             this.Controls.Add(this.dgvStudentName);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblCount);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbSection);
             this.Controls.Add(this.cmbSemester);
@@ -462,10 +409,8 @@ namespace GOC_GS
             this.Controls.Add(this.cmbGradeLevel);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtFacultyName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStudentSubject";
             this.Text = "frmStudentSubject";
@@ -483,9 +428,7 @@ namespace GOC_GS
         private System.Windows.Forms.DataGridView dgvSubjects;
         private System.Windows.Forms.DataGridView dgvStudentName;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbSemester;
         private System.Windows.Forms.Label label3;
@@ -495,8 +438,6 @@ namespace GOC_GS
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFacultyName;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbSection;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

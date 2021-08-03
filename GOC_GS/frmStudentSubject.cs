@@ -30,14 +30,14 @@ namespace GOC_GS
             InitializeComponent();
             studentData.LoadStudentList(dgvStudentName);
             HeaderFix(dgvStudentName);
-
+            LoadMe();
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
 
             //subject.LoadDataTable(dgvSubjects);
 
           
-            LoadMe();
+            
 
         }
 
@@ -49,7 +49,7 @@ namespace GOC_GS
                 {
                     con.Open();
 
-                    string sql = "SELECT lrn_no, CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName, section, strand FROM student_profile";
+                    string sql = "SELECT CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName, section FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -82,8 +82,8 @@ namespace GOC_GS
             //DataGridViewColumn FillSize = dgv.Columns[0];
             //FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            //DataGridViewColumn FillSize2 = dgv.Columns[1];
-            //FillSize2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            DataGridViewColumn FillSize2 = dgv.Columns[1];
+            FillSize2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             #endregion
         }
 
@@ -91,7 +91,7 @@ namespace GOC_GS
         {
            
             bs.Filter = string.Format("section LIKE '%{0}%'", cmbSection.Text);
-
+            RecordCount();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,8 +112,20 @@ namespace GOC_GS
                 dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
             }//End LoadSchedule()
         }
+        private void RecordCount()
+        {
+
+            lblCount.Text = dgvStudentName.Rows.Count.ToString();
+        }
 
         public string StudentName, stud_section, LRN;
+
+        private void cmbSection_Enter(object sender, EventArgs e)
+        {
+            bs.Filter = string.Format("section LIKE '%{0}%'", cmbSection.Text);
+            RecordCount();
+        }
+
         public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
         private void btnGenerate_Click(object sender, EventArgs e)
         {
@@ -152,7 +164,7 @@ namespace GOC_GS
                     grading.Save();
                 }
 
-               // MessageBox.Show(LRN + " " + StudentName + " " + Section + " " + Strand); //Subject name               
+                MessageBox.Show("Data Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }      
         }
     }
