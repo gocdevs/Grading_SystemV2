@@ -158,7 +158,7 @@ namespace GOC_GS
             this.btnStudentData.Name = "btnStudentData";
             this.btnStudentData.Size = new System.Drawing.Size(158, 46);
             this.btnStudentData.TabIndex = 1039;
-            this.btnStudentData.Text = "Student Data";
+            this.btnStudentData.Text = "Student Profile";
             this.btnStudentData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStudentData.UseVisualStyleBackColor = true;
             this.btnStudentData.Click += new System.EventHandler(this.btnStudentData_Click);

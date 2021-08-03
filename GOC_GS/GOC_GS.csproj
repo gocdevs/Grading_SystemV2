@@ -86,6 +86,12 @@
     <Compile Include="frmFacultySetUp.Designer.cs">
       <DependentUpon>frmFacultySetUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudentInfo.Designer.cs">
+      <DependentUpon>frmStudentInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmStudentSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileMaintenance\frmSubjects.resx">
       <DependentUpon>frmSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudentInfo.resx">
+      <DependentUpon>frmStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentSubject.resx">
       <DependentUpon>frmStudentSubject.cs</DependentUpon>

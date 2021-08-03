@@ -28,18 +28,17 @@ namespace GOC_GS
         public frmStudentSubject()
         {
             InitializeComponent();
-            studentData.LoadStudentList(dgvStudentName);
             
+            studentData.LoadStudentList(dgvStudentName);
+           
             LoadMe();
+
             HeaderFix(dgvStudentName);
+
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
 
-            //subject.LoadDataTable(dgvSubjects);
-
-          
-            
-
+            //subject.LoadDataTable(dgvSubjects);                      
         }
 
         public void LoadMe()
@@ -50,7 +49,7 @@ namespace GOC_GS
                 {
                     con.Open();
 
-                    string sql = "SELECT CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName, section, strand, lrn_no FROM student_profile";
+                    string sql = "SELECT lrn_no, CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName, section, strand FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     MySqlDataAdapter da = new MySqlDataAdapter();
@@ -78,16 +77,19 @@ namespace GOC_GS
 
         public void HeaderFix(DataGridView dgv)
         {
-            #region Header Name           
-            dgv.Columns["section"].HeaderText = "Section";//to fix the header Name
-            dgv.Columns["strand"].Visible = false;
-            dgv.Columns["lrn_no"].Visible = false;
-            //
-            //DataGridViewColumn FillSize = dgv.Columns[0];
-            //FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            #region Header Name     
+                  
+            dgv.Columns["section"].HeaderText = "Section";
+            dgv.Columns["lrn_no"].HeaderText = "LRN No.";
+            dgv.Columns["strand"].HeaderText = "Strand";
+
+
 
             DataGridViewColumn FillSize2 = dgv.Columns[1];
             FillSize2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            DataGridViewColumn FillSize = dgv.Columns[2];
+            FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             #endregion
         }
 
@@ -166,10 +168,9 @@ namespace GOC_GS
                     grading.Strand = Strand;
 
                     grading.Save();
-                }
-
-                MessageBox.Show("Data Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }      
+                }                
+            }
+            MessageBox.Show("Data Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

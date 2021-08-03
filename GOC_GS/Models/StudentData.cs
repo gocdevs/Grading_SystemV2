@@ -130,6 +130,34 @@ namespace GOC_GS.Models
                 MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        public void LoadGrid(DataGridView dgv)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT * FROM student_profile";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+                }
+            }
+
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }//End of Load
+
         //Load Datagrid
         public void LoadDataTable(DataGridView dgv)
         {
@@ -247,7 +275,7 @@ namespace GOC_GS.Models
                 }
         }
 
-
+       
 
     }
     //End of Load

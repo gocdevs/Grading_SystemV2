@@ -211,7 +211,9 @@ namespace GOC_GS
 
                 // MessageBox.Show(FacultyId + " " + FullName + " " + SubjectCode + " " + Section + " " + Strand + " " + Semester);                               
 
-                dgvFacultyLoads.Rows.Add(FacultyId ,FullName ,SubjectCode , SubjectType, GradeLevel, Strand, Semester);              
+                dgvFacultyLoads.Rows.Add(FacultyId ,FullName ,SubjectCode , SubjectType, GradeLevel, Strand, Semester);
+
+                
             }
            
         }

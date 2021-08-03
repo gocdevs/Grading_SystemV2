@@ -39,7 +39,7 @@ namespace GOC_GS.FileMaintenance
         private void btnSaveToDatabase_Click(object sender, EventArgs e)
         {
             Util_RequiredFields util = new Util_RequiredFields();
-            
+
             if (dgvStudentList.RowCount > 0)
             {
                 for (int i = 0; i < dgvStudentList.Rows.Count; i++)
@@ -63,10 +63,6 @@ namespace GOC_GS.FileMaintenance
             {
                 return;
             }
-
-            
-
-           
         }
 
 
