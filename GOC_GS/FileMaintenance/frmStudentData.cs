@@ -15,6 +15,9 @@ namespace GOC_GS.FileMaintenance
     {
         StudentProfile sp = new StudentProfile();
         List<StudentProfile> sp_list = new List<StudentProfile>();
+
+        frmStudentInfo info = new frmStudentInfo();
+
         public frmStudentData()
         {
             InitializeComponent();
@@ -22,7 +25,7 @@ namespace GOC_GS.FileMaintenance
             //sda.LoadGrid(dgvStudentList);
             Load();
             //HeaderFixSubject(dgvStudentList);
-          // AddImageDataGrid(dgvStudentList);
+            AddImageDataGrid(dgv);
         }
         public void AddImageDataGrid(DataGridView dgv)
         {
@@ -40,12 +43,8 @@ namespace GOC_GS.FileMaintenance
             sp_list = sp.LoadStudent();
             foreach (var item in sp_list)
             {
-                dgvStudentList.Rows.Add(item.Id,item.GOC_No,item.LRN_No);
-                //item.FName,item.MName,item.LName,item.Grade_Level,item.Section,item.Strand,item.Academic_Status
-            }
-
-         
-
+                dgv.Rows.Add(item.Id,item.GOC_No,item.LRN_No ,item.FName, item.MName, item.LName, item.Grade_Level, item.Section, item.Strand, item.Academic_Status);              
+            }         
         }
 
 
@@ -100,25 +99,48 @@ namespace GOC_GS.FileMaintenance
             sda.LoadDataTable(dgvStudentList);
         }
 
-        frmStudentInfo info = new frmStudentInfo();
+       
         
         private void dgvStudentList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            
+        }
+       
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 10)//select to edit
             {
-                //pass value to edit mode      
-                //info.goc_no = dgvStudentList.Rows[e.RowIndex].Cells[1].Value.ToString();
-                info.lrn_no = dgvStudentList.Rows[e.RowIndex].Cells[2].Value.ToString();
+                //MessageBox.Show("aa");
+                //pass value to edit mode
+                info.id = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value.ToString());
+                info.goc_no = dgv.Rows[e.RowIndex].Cells[1].Value.ToString();
+                info.lrn_no = dgv.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-                //info.fullname = dgvStudentList.Rows[e.RowIndex].Cells[3].Value.ToString();
-                //info.fullname = dgvStudentList.Rows[e.RowIndex].Cells[3].Value.ToString();
-                //info.fullname = dgvStudentList.Rows[e.RowIndex].Cells[3].Value.ToString();
+                info.fname = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();                
+                info.mname = dgv.Rows[e.RowIndex].Cells[4].Value.ToString();
+                info.lname = dgv.Rows[e.RowIndex].Cells[5].Value.ToString();
 
-                //info.grade_level = dgvStudentList.Rows[e.RowIndex].Cells[4].Value.ToString();
-                //info.section = dgvStudentList.Rows[e.RowIndex].Cells[5].Value.ToString();
-                //info.strand = dgvStudentList.Rows[e.RowIndex].Cells[6].Value.ToString();
-                //info.academic_status = dgvStudentList.Rows[e.RowIndex].Cells[7].Value.ToString();                             
+                info.grade_level = dgv.Rows[e.RowIndex].Cells[6].Value.ToString();
+                info.section = dgv.Rows[e.RowIndex].Cells[7].Value.ToString();
+                info.strand = dgv.Rows[e.RowIndex].Cells[8].Value.ToString();
+                info.academic_status = dgv.Rows[e.RowIndex].Cells[9].Value.ToString();
             }
+
+            //info.Show();
+
+            //frmFacultyLoadSection frm = new frmFacultyLoadSection();
+            frmMain mainwin = (frmMain)Application.OpenForms["frmMain"];
+            mainwin.pnlAllContainer.Controls.Clear();
+            info.TopLevel = false;
+            info.AutoScroll = true;
+            mainwin.pnlAllContainer.Controls.Add(info);
+            info.Show();
+
+
+            info.Render();
+            
+
+
         }
     }
 }

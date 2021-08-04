@@ -205,5 +205,128 @@ namespace GOC_GS
             }
             return grades;
         }//End of Load
+
+        //Update
+        public void Update_Info_Grade()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    string sql = "UPDATE grading SET goc_no=@goc_no, lrn_no=@lrn_no, fname=@fname," +
+                        "lname=@lname, mname=@mname, grade_level=@grade_level, section=@section, strand=@strand," +
+                        "academic_status=@academic_status WHERE id=@id;";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("id", id);
+                    //cmd.Parameters.AddWithValue("goc_no", goc_no);
+                    //cmd.Parameters.AddWithValue("lrn_no", lrn_no);
+                    //cmd.Parameters.AddWithValue("fname", fname);
+                    //cmd.Parameters.AddWithValue("lname", lname);
+                    //cmd.Parameters.AddWithValue("mname", mname);
+                    cmd.Parameters.AddWithValue("grade_level", grade_level);
+                    cmd.Parameters.AddWithValue("section", section);
+                    cmd.Parameters.AddWithValue("strand", strand);
+                    //cmd.Parameters.AddWithValue("fullname", fullname);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.Message.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+        public string thisfullname;
+        public List<Grading> Get_Name()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+
+                    //try to open connection
+                    con.Open();
+
+                    //prepare sql query
+                    string sql = "SELECT CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName FROM student_profile WHERE lrn_no=@lrn_no";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("lrn_no", lrn_no);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        Grading sp = new Grading();
+
+                        //prepare properties
+                        sp.fullname = reader["FullName"].ToString();
+                        
+
+                        grading_list.Add(sp);
+
+                        thisfullname = sp.fullname.ToString();
+                    }
+
+                   
+                }
+
+                //string sql2 = "UPDATE grading SET fullname=@thisfullname WHERE lrn_no=@lrn_no";
+
+                //MySqlCommand cmd2 = new MySqlCommand(sql2, con);
+
+                //cmd2.Parameters.AddWithValue("id", id);
+                //cmd2.Parameters.AddWithValue("thisfullname", thisfullname);
+                //cmd2.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return grading_list;           
+        }//End of Load
+
+        public void Update_Name()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    string sql = "UPDATE grading SET fullname=@fullname WHERE lrn_no=@lrn_no;";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("lrn_no", lrn_no);                   
+                    cmd.Parameters.AddWithValue("fullname", fullname);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.Message.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+
     }
 }

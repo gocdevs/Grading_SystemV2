@@ -195,7 +195,7 @@ namespace GOC_GS.Models
                     //try to open connection
                     con.Open();
                     //prepare sql query
-                    string sql = "SELECT  * FROM student_profile";
+                    string sql = "SELECT * FROM student_profile";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -228,5 +228,47 @@ namespace GOC_GS.Models
             }
             return studentProfiles;
         }//End of Load
+
+
+        //Update
+        public void Update()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    string sql = "UPDATE student_profile SET goc_no=@goc_no, lrn_no=@lrn_no, fname=@fname," +
+                        "lname=@lname, mname=@mname, grade_level=@grade_level, section=@section, strand=@strand," +
+                        "academic_status=@academic_status WHERE id=@id;";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("id", id);
+                    cmd.Parameters.AddWithValue("goc_no", goc_no);
+                    cmd.Parameters.AddWithValue("lrn_no", lrn_no);
+                    cmd.Parameters.AddWithValue("fname", fname);
+                    cmd.Parameters.AddWithValue("lname", lname);
+                    cmd.Parameters.AddWithValue("mname", mname);
+                    cmd.Parameters.AddWithValue("grade_level", grade_level);
+                    cmd.Parameters.AddWithValue("section", section);
+                    cmd.Parameters.AddWithValue("strand", strand);
+                    cmd.Parameters.AddWithValue("academic_status", academic_status);
+
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.Message.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
+
+       
     }
 }
+

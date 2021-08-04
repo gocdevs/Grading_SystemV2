@@ -64,6 +64,8 @@ namespace GOC_GS
             set { strand = value; }
         }
 
+
+
         public List<Subjects> LoadThisSubjects()
         {
             try
