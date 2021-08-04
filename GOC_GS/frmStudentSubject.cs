@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using System.Configuration;
+
 
 namespace GOC_GS
 {
@@ -28,7 +31,7 @@ namespace GOC_GS
         public frmStudentSubject()
         {
             InitializeComponent();
-            
+            pnlLoading.Hide();
             studentData.LoadStudentList(dgvStudentName);
            
             LoadMe();
@@ -38,7 +41,8 @@ namespace GOC_GS
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
 
-            //subject.LoadDataTable(dgvSubjects);                      
+            //subject.LoadDataTable(dgvSubjects);
+            //progressBar1.Visible = false;
         }
 
         public void LoadMe()
@@ -132,9 +136,40 @@ namespace GOC_GS
             RecordCount();
         }
 
+        private void cmbSemester_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //clear list
+            subject_list.Clear();
+            dgvSubjects.Rows.Clear();
+            //pass value to list
+
+            subject.Semester = cmbSemester.Text;
+            subject.Grade_level = cmbGradeLevel.Text;
+            subject.Strand = cmbStrand.Text;
+            subject_list = subject.LoadThisSubjects();
+
+            //loop through load it to list view
+            foreach (var item in subject_list)
+            {
+                dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
+            }//End LoadSchedule()
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            
+        }
+
+        private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+           
+        }
+
         public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
         private void btnGenerate_Click(object sender, EventArgs e)
         {
+            //pnlLoading.Show();
+
             for (int i = 0; i < dgvStudentName.Rows.Count; i++)
             {
                 LRN = dgvStudentName.Rows[i].Cells[0].FormattedValue.ToString();
@@ -168,9 +203,18 @@ namespace GOC_GS
                     grading.Strand = Strand;
 
                     grading.Save();
-                }                
+                    this.Refresh();                       
+                }
+                //MessageBox.Show(i.ToString());
+                pnlLoading.Show();
+                lblLoading.Text = i.ToString() + " records";
+
             }
+            pnlLoading.Hide();
             MessageBox.Show("Data Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
         }
+
     }
 }

@@ -150,6 +150,11 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("strand", strand);
 
                     cmd.ExecuteNonQuery();
+
+                    
+                  
+
+
                 }
             }
             catch (MySqlException ex)
