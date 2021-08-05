@@ -207,9 +207,9 @@ namespace GOC_GS
                 }
                 //MessageBox.Show(i.ToString());
                 pnlLoading.Show();
-                lblLoading.Text = i.ToString() + " records";
-
+                lblLoading.Text = (i + 1) + " records saved.";
             }
+            
             pnlLoading.Hide();
             MessageBox.Show("Data Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

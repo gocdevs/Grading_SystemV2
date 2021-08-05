@@ -97,6 +97,7 @@ namespace GOC_GS
                         //prepare properties
                         subject.subject_code = reader["subject_code"].ToString();
                         subject.subject_name = reader["subject_name"].ToString();
+                        subject.subject_type = reader["subject_type"].ToString();
                         subject.semester = reader["sem"].ToString();
                         subject.grade_level = reader["grade_level"].ToString();
                         subject.strand = reader["strand"].ToString();

@@ -99,13 +99,13 @@
     <Compile Include="frmStudentSubject.Designer.cs">
       <DependentUpon>frmStudentSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSubjectType.cs">
+    <Compile Include="FileMaintenance\frmSubjectType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSubjectType.Designer.cs">
+    <Compile Include="FileMaintenance\frmSubjectType.Designer.cs">
       <DependentUpon>frmSubjectType.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grading.cs" />
+    <Compile Include="Models\Grading.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\FacultyLoading.cs" />
     <Compile Include="frmDashboard.cs">
@@ -126,10 +126,10 @@
     <Compile Include="FileMaintenance\frmFacultyLoadings.Designer.cs">
       <DependentUpon>frmFacultyLoadings.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFileMaintenance.cs">
+    <Compile Include="FileMaintenance\frmFileMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFileMaintenance.Designer.cs">
+    <Compile Include="FileMaintenance\frmFileMaintenance.Designer.cs">
       <DependentUpon>frmFileMaintenance.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGradeInput.cs">
@@ -187,9 +187,9 @@
     <Compile Include="Models\Section.cs" />
     <Compile Include="Models\Subjects.cs" />
     <Compile Include="Models\Strand.cs" />
-    <Compile Include="StudentGrade.cs" />
-    <Compile Include="SubjectType.cs" />
-    <Compile Include="Users.cs" />
+    <Compile Include="Models\StudentGrade.cs" />
+    <Compile Include="Models\SubjectType.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Utilities\Util_RequiredFields.cs" />
     <EmbeddedResource Include="Connection\frmConnectionSettings.resx">
       <DependentUpon>frmConnectionSettings.cs</DependentUpon>
@@ -221,7 +221,7 @@
     <EmbeddedResource Include="frmFacultySetUp.resx">
       <DependentUpon>frmFacultySetUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFileMaintenance.resx">
+    <EmbeddedResource Include="FileMaintenance\frmFileMaintenance.resx">
       <DependentUpon>frmFileMaintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGradeInput.resx">
@@ -245,7 +245,7 @@
     <EmbeddedResource Include="frmStudentSubject.resx">
       <DependentUpon>frmStudentSubject.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSubjectType.resx">
+    <EmbeddedResource Include="FileMaintenance\frmSubjectType.resx">
       <DependentUpon>frmSubjectType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
