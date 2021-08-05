@@ -97,7 +97,7 @@ namespace GOC_GS
             this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(456, 647);
+            this.label9.Location = new System.Drawing.Point(1089, 647);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(48, 20);
@@ -110,7 +110,7 @@ namespace GOC_GS
             this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(303, 647);
+            this.label10.Location = new System.Drawing.Point(936, 647);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(145, 20);

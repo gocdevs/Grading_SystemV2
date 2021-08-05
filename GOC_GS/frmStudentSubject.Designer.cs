@@ -284,6 +284,7 @@ namespace GOC_GS
             this.cmbStrand.Name = "cmbStrand";
             this.cmbStrand.Size = new System.Drawing.Size(120, 27);
             this.cmbStrand.TabIndex = 7994;
+            this.cmbStrand.SelectedIndexChanged += new System.EventHandler(this.cmbStrand_SelectedIndexChanged);
             // 
             // cmbGradeLevel
             // 
@@ -298,6 +299,7 @@ namespace GOC_GS
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(61, 27);
             this.cmbGradeLevel.TabIndex = 7993;
+            this.cmbGradeLevel.SelectedIndexChanged += new System.EventHandler(this.cmbGradeLevel_SelectedIndexChanged);
             // 
             // label7
             // 

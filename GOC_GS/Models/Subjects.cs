@@ -368,5 +368,44 @@ namespace GOC_GS
             }
             return subjects;
         }
+
+        public List<Subjects> Load()
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+
+                    string sql = "SELECT * FROM subjects";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        Subjects subject = new Subjects();
+
+                        //prepare properties
+                        subject.id = Convert.ToInt32(reader["id"].ToString());
+                        subject.subject_code = reader["subject_code"].ToString();
+                        subject.subject_name = reader["subject_name"].ToString();
+                        subject.grade_level = reader["grade_level"].ToString();
+                        subject.subject_type = reader["subject_type"].ToString();
+                        subject.strand = reader["strand"].ToString();
+                        subject.semester = reader["semester"].ToString();
+                        subjects.Add(subject);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+
+                MessageBox.Show("ERROR : " + ex.ToString(), "GOCINFOSYS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return subjects;
+        }//End of Load
     }
 }

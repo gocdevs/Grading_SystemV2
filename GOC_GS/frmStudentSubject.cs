@@ -165,6 +165,16 @@ namespace GOC_GS
            
         }
 
+        private void cmbGradeLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbStrand_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
         private void btnGenerate_Click(object sender, EventArgs e)
         {

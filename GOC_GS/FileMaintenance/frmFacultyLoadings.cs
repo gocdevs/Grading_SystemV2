@@ -27,20 +27,17 @@ namespace GOC_GS
         {
             InitializeComponent();
             subjects.LoadDataTable(dgvSubjects);
-            section.LoadCombo(cmbSection);
-            strand.LoadCombo(cmbStrand);
-           
+            //section.LoadCombo(cmbSection);
+            strand.LoadCombo(cmbStrand);           
             fl.LoadDataTableName(dgvFacultyName);
-
             HeaderFixSubject(dgvSubjects);
             AddImageDataGrid(dgvSubjects);
-
             AddImageDataGridLoading(dgvFacultyLoads);
 
+            dgvFacultyName.Columns["faculty_id"].HeaderText = "";
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
             FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;           
         }
-
 
         public void HeaderFixSubject(DataGridView dgv)
         {
@@ -113,8 +110,6 @@ namespace GOC_GS
 
                         facultyLoads.SubjectType = dgvFacultyLoads.Rows[i].Cells[6].FormattedValue.ToString();
                       
-
-
                         facultyLoads.Save();
 
                     }
