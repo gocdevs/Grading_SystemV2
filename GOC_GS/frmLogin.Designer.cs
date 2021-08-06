@@ -39,7 +39,6 @@ namespace GOC_GS
             this.btnCancel = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -72,7 +71,7 @@ namespace GOC_GS
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GOC_GS.Properties.Resources.goc_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 77);
+            this.pictureBox1.Location = new System.Drawing.Point(20, 77);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(196, 182);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -108,7 +107,7 @@ namespace GOC_GS
             this.btnLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnLogin.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogin.Location = new System.Drawing.Point(342, 203);
+            this.btnLogin.Location = new System.Drawing.Point(342, 225);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(98, 34);
@@ -135,7 +134,7 @@ namespace GOC_GS
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(444, 203);
+            this.btnCancel.Location = new System.Drawing.Point(444, 225);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(98, 34);
@@ -147,12 +146,12 @@ namespace GOC_GS
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(194, -2);
+            this.label3.Location = new System.Drawing.Point(194, 2);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(257, 39);
+            this.label3.Size = new System.Drawing.Size(217, 33);
             this.label3.TabIndex = 7988;
             this.label3.Text = "GRADING SYSTEM";
             // 
@@ -165,26 +164,19 @@ namespace GOC_GS
             this.panel1.Size = new System.Drawing.Size(662, 36);
             this.panel1.TabIndex = 7989;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel2.Location = new System.Drawing.Point(0, 275);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(662, 18);
-            this.panel2.TabIndex = 7990;
-            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
             this.btnClose.ErrorImage = null;
             this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(556, -3);
+            this.btnClose.Location = new System.Drawing.Point(574, 3);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(13, 19);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 7991;
             this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmLogin
             // 
@@ -193,7 +185,6 @@ namespace GOC_GS
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(594, 291);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnLogin);
@@ -229,7 +220,6 @@ namespace GOC_GS
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox btnClose;
     }
 }

@@ -18,6 +18,11 @@ namespace GOC_GS
         public string UserType, Username, Password, First_Name, Last_Name, Teacher_Id, Full_Name;
         public bool Flag;
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public frmLogin()
         {
             InitializeComponent();
