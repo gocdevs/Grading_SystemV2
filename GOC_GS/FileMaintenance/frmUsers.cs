@@ -52,10 +52,19 @@ namespace GOC_GS
 
         public void HeaderFixSubject()
         {
+            dgvList.Columns["password"].Visible = false;
+            dgvList.Columns["id"].Visible = false;
+
+            dgvList.Columns["faculty_id"].HeaderText = "Faculty Id";
+            dgvList.Columns["user_id"].HeaderText = "Username";
+            dgvList.Columns["user_type"].HeaderText = "User Type";
+            dgvList.Columns["full_name"].HeaderText = "Teacher Name";
+
             #region Header Name
-            DataGridViewColumn FillSize = dgvList.Columns[2];
+            DataGridViewColumn FillSize = dgvList.Columns[5];
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
+            dgvFacultyName.Columns["faculty_id"].HeaderText = "Faculty Id";
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[0];
             FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 

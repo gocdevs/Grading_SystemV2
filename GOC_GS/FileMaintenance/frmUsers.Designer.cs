@@ -65,7 +65,7 @@ namespace GOC_GS
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = global::GOC_GS.Properties.Resources.refresh;
             this.btnCancel.Location = new System.Drawing.Point(1052, 119);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
@@ -78,13 +78,13 @@ namespace GOC_GS
             // btnAdd
             // 
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(948, 119);
+            this.btnAdd.Location = new System.Drawing.Point(933, 119);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 44);
+            this.btnAdd.Size = new System.Drawing.Size(113, 44);
             this.btnAdd.TabIndex = 7972;
             this.btnAdd.Text = "      &Add New";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -104,66 +104,66 @@ namespace GOC_GS
             // cmbUserType
             // 
             this.cmbUserType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUserType.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUserType.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUserType.FormattingEnabled = true;
             this.cmbUserType.Items.AddRange(new object[] {
             "Admin",
             "Teacher",
             "Principal"});
-            this.cmbUserType.Location = new System.Drawing.Point(674, 95);
+            this.cmbUserType.Location = new System.Drawing.Point(657, 126);
             this.cmbUserType.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cmbUserType.Name = "cmbUserType";
-            this.cmbUserType.Size = new System.Drawing.Size(158, 28);
+            this.cmbUserType.Size = new System.Drawing.Size(158, 27);
             this.cmbUserType.TabIndex = 7983;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(304, 129);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(66, 20);
+            this.label10.Size = new System.Drawing.Size(75, 19);
             this.label10.TabIndex = 7993;
             this.label10.Text = "Password:";
             // 
             // txtPass
             // 
-            this.txtPass.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(379, 125);
+            this.txtPass.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Location = new System.Drawing.Point(391, 126);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(158, 25);
+            this.txtPass.Size = new System.Drawing.Size(158, 27);
             this.txtPass.TabIndex = 7982;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(599, 95);
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(574, 126);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(69, 20);
+            this.label11.Size = new System.Drawing.Size(77, 19);
             this.label11.TabIndex = 7992;
             this.label11.Text = "User Type:";
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(379, 92);
+            this.txtUsername.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(391, 95);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(158, 25);
+            this.txtUsername.Size = new System.Drawing.Size(158, 27);
             this.txtUsername.TabIndex = 7981;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(304, 95);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(70, 20);
+            this.label12.Size = new System.Drawing.Size(79, 19);
             this.label12.TabIndex = 7991;
             this.label12.Text = "Username:";
             // 
@@ -184,7 +184,7 @@ namespace GOC_GS
             // 
             // txtFacultyName
             // 
-            this.txtFacultyName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFacultyName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFacultyName.Location = new System.Drawing.Point(13, 56);
             this.txtFacultyName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtFacultyName.Multiline = true;
@@ -196,12 +196,12 @@ namespace GOC_GS
             // 
             this.label1.AutoSize = true;
             this.label1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(10, 32);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
+            this.label1.Size = new System.Drawing.Size(101, 19);
             this.label1.TabIndex = 7995;
             this.label1.Text = "Faculty Name:";
             // 
