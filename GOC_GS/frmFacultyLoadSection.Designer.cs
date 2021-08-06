@@ -32,8 +32,7 @@ namespace GOC_GS
             this.btnRemoveAll = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.dgvFacultyLoads = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblFaculty = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,9 +43,10 @@ namespace GOC_GS
             // 
             // btnRemoveAll
             // 
-            this.btnRemoveAll.Location = new System.Drawing.Point(1054, 64);
+            this.btnRemoveAll.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveAll.Location = new System.Drawing.Point(1034, 64);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(86, 28);
+            this.btnRemoveAll.Size = new System.Drawing.Size(106, 28);
             this.btnRemoveAll.TabIndex = 8035;
             this.btnRemoveAll.Text = "Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
@@ -54,11 +54,12 @@ namespace GOC_GS
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(962, 64);
+            this.btnUpdate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(903, 64);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(86, 28);
+            this.btnUpdate.Size = new System.Drawing.Size(125, 28);
             this.btnUpdate.TabIndex = 8034;
-            this.btnUpdate.Text = "&Update";
+            this.btnUpdate.Text = "&Update Section";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
@@ -69,51 +70,39 @@ namespace GOC_GS
             this.dgvFacultyLoads.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacultyLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacultyLoads.Location = new System.Drawing.Point(14, 99);
-            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvFacultyLoads.Name = "dgvFacultyLoads";
             this.dgvFacultyLoads.RowHeadersVisible = false;
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacultyLoads.Size = new System.Drawing.Size(1127, 544);
             this.dgvFacultyLoads.TabIndex = 8033;
+            this.dgvFacultyLoads.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacultyLoads_CellContentClick);
             this.dgvFacultyLoads.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacultyLoads_CellEnter);
             this.dgvFacultyLoads.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvFacultyLoads_EditingControlShowing);
             // 
-            // label11
+            // lblFaculty
             // 
-            this.label11.AutoSize = true;
-            this.label11.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label11.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(303, 67);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(166, 20);
-            this.label11.TabIndex = 8030;
-            this.label11.Text = "Subjects Assigned to Faculty";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label9.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(1089, 647);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(48, 20);
-            this.label9.TabIndex = 8029;
-            this.label9.Text = "Count: ";
+            this.lblFaculty.AutoSize = true;
+            this.lblFaculty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblFaculty.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFaculty.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFaculty.Location = new System.Drawing.Point(1111, 650);
+            this.lblFaculty.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFaculty.Name = "lblFaculty";
+            this.lblFaculty.Size = new System.Drawing.Size(17, 19);
+            this.lblFaculty.TabIndex = 8029;
+            this.lblFaculty.Text = "0";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label10.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(936, 647);
+            this.label10.Location = new System.Drawing.Point(933, 650);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(145, 20);
+            this.label10.Size = new System.Drawing.Size(170, 19);
             this.label10.TabIndex = 8028;
             this.label10.Text = "No. of Subject Assigned: ";
             // 
@@ -132,12 +121,12 @@ namespace GOC_GS
             // 
             this.label4.AutoSize = true;
             this.label4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(10, 35);
+            this.label4.Location = new System.Drawing.Point(14, 67);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 20);
+            this.label4.Size = new System.Drawing.Size(148, 19);
             this.label4.TabIndex = 8013;
             this.label4.Text = "Search Faculty Name:";
             // 
@@ -145,9 +134,10 @@ namespace GOC_GS
             // 
             this.txtStudent.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtStudent.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtStudent.Location = new System.Drawing.Point(14, 64);
+            this.txtStudent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStudent.Location = new System.Drawing.Point(169, 64);
             this.txtStudent.Name = "txtStudent";
-            this.txtStudent.Size = new System.Drawing.Size(238, 20);
+            this.txtStudent.Size = new System.Drawing.Size(238, 27);
             this.txtStudent.TabIndex = 8036;
             this.txtStudent.TextChanged += new System.EventHandler(this.txtStudent_TextChanged);
             this.txtStudent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStudent_KeyPress);
@@ -161,8 +151,7 @@ namespace GOC_GS
             this.Controls.Add(this.btnRemoveAll);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvFacultyLoads);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblFaculty);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label4);
@@ -182,8 +171,7 @@ namespace GOC_GS
         private System.Windows.Forms.Button btnRemoveAll;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DataGridView dgvFacultyLoads;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblFaculty;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox btnClose;
         private System.Windows.Forms.Label label4;

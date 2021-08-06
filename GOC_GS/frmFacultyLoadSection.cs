@@ -14,14 +14,14 @@ namespace GOC_GS
 {
     public partial class frmFacultyLoadSection : Form
     {
+        DataTable dt = new DataTable();
+
         Models.Faculty fl = new Models.Faculty();
         FacultyLoading facultyLoading = new FacultyLoading();
         Section section = new Section();
         List<Section> sections = new List<Section>();
-
-        DataTable dt = new DataTable();
-        //DataTable comboSection = new DataTable();
-
+               
+        public int id;
         public frmFacultyLoadSection()
         {
             InitializeComponent();
@@ -30,13 +30,31 @@ namespace GOC_GS
             LoadCombo();
             HeaderFix(dgvFacultyLoads);
             AutoComplete();
+            AddImageDataGrid(dgvFacultyLoads);
+            CountLoads();
         }
-        
+
+        public void CountLoads()
+        {
+            lblFaculty.Text =  dgvFacultyLoads.Rows.Count.ToString();
+        }
+
+        public void AddImageDataGrid(DataGridView dgv)
+        {
+            DataGridViewImageColumn dimg = new DataGridViewImageColumn();
+            dimg.Image = Properties.Resources.delete;
+            dimg.HeaderText = "Remove Subject";
+            dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            dgv.Columns.Add(dimg);
+        }
+
         public void LoadCombo()
         {
             DataGridViewComboBoxColumn cmb = new DataGridViewComboBoxColumn();
 
-            cmb.HeaderText = "Section";
+            cmb.HeaderText = "Section to be Assigned";
             cmb.Name = "Combo";
             ArrayList row = new ArrayList();
 
@@ -68,22 +86,20 @@ namespace GOC_GS
             dgv.Columns["faculty_id"].HeaderText = "Faculty Id";
             dgv.Columns["fullname"].HeaderText = "Faculty Name";
             dgv.Columns["subject_code"].HeaderText = "Subject Code";
-           
+            dgv.Columns["section"].HeaderText = "Assigned Section ";
+
             dgv.Columns["semester"].HeaderText = "Semester";
             dgv.Columns["grade_level"].HeaderText = "Grade Level";
             dgv.Columns["subjectType"].HeaderText = "Subject Type";//to fix the header Name           
 
-            DataGridViewColumn FillSize = dgv.Columns[7];
+            DataGridViewColumn FillSize = dgv.Columns[2];
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
            
-
             #endregion
         }
 
         private void AutoComplete()
         {
-
             try
             {
                 using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
@@ -156,6 +172,7 @@ namespace GOC_GS
                     }
                     MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     facultyLoading.LoadDataTable(dgvFacultyLoads);
+                    CountLoads();
                 }
                 else
                 {
@@ -266,11 +283,62 @@ namespace GOC_GS
 
                 }
                 facultyLoading.LoadDataTable(dgvFacultyLoads);
+                CountLoads();
             }
             else
             {
                 return;
             }            
+        }
+
+        private void dgvFacultyLoads_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 1)
+            {
+                string message = "Do you want to delete this record?";
+                string title = "Grading System";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    id = Convert.ToInt32(dgvFacultyLoads.Rows[e.RowIndex].Cells[2].Value.ToString());
+
+                    #region Delete Specific
+                    try
+                    {
+                        //prepare connection string 
+                        using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                        {
+
+                            //try to open connection
+                            con.Open();
+
+                            string sql = "DELETE FROM faculty_loads WHERE id=@id";
+
+                            MySqlCommand cmd = new MySqlCommand(sql, con);
+                            cmd.Parameters.AddWithValue("id",id);
+
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Record deleted!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (MySqlException ex)
+                    {
+                        MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    facultyLoading.LoadDataTable(dgvFacultyLoads);
+                    CountLoads();
+
+                    #endregion
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
     }
 }
