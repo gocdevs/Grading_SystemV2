@@ -37,7 +37,10 @@ namespace GOC_GS
             this.btnSubjectType = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnClose
@@ -54,12 +57,14 @@ namespace GOC_GS
             // 
             // btnSubjects
             // 
-            this.btnSubjects.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSubjects.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubjects.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSubjects.FlatAppearance.BorderSize = 0;
+            this.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubjects.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjects.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjects.Location = new System.Drawing.Point(283, 228);
+            this.btnSubjects.Location = new System.Drawing.Point(236, 332);
             this.btnSubjects.Name = "btnSubjects";
-            this.btnSubjects.Size = new System.Drawing.Size(113, 65);
+            this.btnSubjects.Size = new System.Drawing.Size(125, 63);
             this.btnSubjects.TabIndex = 7969;
             this.btnSubjects.Text = "&Subjects";
             this.btnSubjects.UseVisualStyleBackColor = false;
@@ -67,12 +72,14 @@ namespace GOC_GS
             // 
             // btnSection
             // 
-            this.btnSection.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSection.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSection.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSection.FlatAppearance.BorderSize = 0;
+            this.btnSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSection.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSection.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSection.Location = new System.Drawing.Point(402, 228);
+            this.btnSection.Location = new System.Drawing.Point(425, 332);
             this.btnSection.Name = "btnSection";
-            this.btnSection.Size = new System.Drawing.Size(113, 65);
+            this.btnSection.Size = new System.Drawing.Size(125, 63);
             this.btnSection.TabIndex = 7970;
             this.btnSection.Text = "Se&ction";
             this.btnSection.UseVisualStyleBackColor = false;
@@ -80,12 +87,14 @@ namespace GOC_GS
             // 
             // btnFaculty
             // 
-            this.btnFaculty.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnFaculty.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFaculty.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnFaculty.FlatAppearance.BorderSize = 0;
+            this.btnFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFaculty.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaculty.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFaculty.Location = new System.Drawing.Point(759, 228);
+            this.btnFaculty.Location = new System.Drawing.Point(806, 205);
             this.btnFaculty.Name = "btnFaculty";
-            this.btnFaculty.Size = new System.Drawing.Size(113, 65);
+            this.btnFaculty.Size = new System.Drawing.Size(125, 63);
             this.btnFaculty.TabIndex = 7971;
             this.btnFaculty.Text = "&Faculty";
             this.btnFaculty.UseVisualStyleBackColor = false;
@@ -93,12 +102,14 @@ namespace GOC_GS
             // 
             // btnStrand
             // 
-            this.btnStrand.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnStrand.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStrand.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnStrand.FlatAppearance.BorderSize = 0;
+            this.btnStrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStrand.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStrand.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStrand.Location = new System.Drawing.Point(521, 228);
+            this.btnStrand.Location = new System.Drawing.Point(425, 205);
             this.btnStrand.Name = "btnStrand";
-            this.btnStrand.Size = new System.Drawing.Size(113, 65);
+            this.btnStrand.Size = new System.Drawing.Size(125, 63);
             this.btnStrand.TabIndex = 7972;
             this.btnStrand.Text = "S&trand";
             this.btnStrand.UseVisualStyleBackColor = false;
@@ -106,12 +117,14 @@ namespace GOC_GS
             // 
             // btnSubjectType
             // 
-            this.btnSubjectType.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnSubjectType.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubjectType.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSubjectType.FlatAppearance.BorderSize = 0;
+            this.btnSubjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubjectType.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjectType.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjectType.Location = new System.Drawing.Point(640, 228);
+            this.btnSubjectType.Location = new System.Drawing.Point(618, 205);
             this.btnSubjectType.Name = "btnSubjectType";
-            this.btnSubjectType.Size = new System.Drawing.Size(113, 65);
+            this.btnSubjectType.Size = new System.Drawing.Size(125, 63);
             this.btnSubjectType.TabIndex = 7973;
             this.btnSubjectType.Text = "Subject Ty&pe";
             this.btnSubjectType.UseVisualStyleBackColor = false;
@@ -119,12 +132,14 @@ namespace GOC_GS
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(164, 228);
+            this.button1.Location = new System.Drawing.Point(618, 332);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 65);
+            this.button1.Size = new System.Drawing.Size(125, 63);
             this.button1.TabIndex = 7974;
             this.button1.Text = "Student &Profile";
             this.button1.UseVisualStyleBackColor = false;
@@ -132,22 +147,48 @@ namespace GOC_GS
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(878, 228);
+            this.button2.Location = new System.Drawing.Point(236, 205);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 65);
+            this.button2.Size = new System.Drawing.Size(125, 63);
             this.button2.TabIndex = 7975;
             this.button2.Text = "&User";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.label3.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label3.Location = new System.Drawing.Point(442, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(281, 39);
+            this.label3.TabIndex = 7988;
+            this.label3.Text = "FILE MAINTENANCE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(0, 63);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1151, 43);
+            this.panel1.TabIndex = 7990;
             // 
             // frmFileMaintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSubjectType);
@@ -160,6 +201,8 @@ namespace GOC_GS
             this.Name = "frmFileMaintenance";
             this.Text = "frmFileMaintenance";
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -174,5 +217,7 @@ namespace GOC_GS
         private System.Windows.Forms.Button btnSubjectType;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

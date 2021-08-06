@@ -36,11 +36,12 @@ namespace GOC_GS
             // btnLoads
             // 
             this.btnLoads.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnLoads.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoads.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoads.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoads.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLoads.Location = new System.Drawing.Point(385, 307);
+            this.btnLoads.Location = new System.Drawing.Point(499, 240);
             this.btnLoads.Name = "btnLoads";
-            this.btnLoads.Size = new System.Drawing.Size(113, 65);
+            this.btnLoads.Size = new System.Drawing.Size(168, 71);
             this.btnLoads.TabIndex = 7976;
             this.btnLoads.Text = "&Faculty Loads";
             this.btnLoads.UseVisualStyleBackColor = false;
@@ -49,11 +50,12 @@ namespace GOC_GS
             // btnLoadSection
             // 
             this.btnLoadSection.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnLoadSection.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadSection.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadSection.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLoadSection.Location = new System.Drawing.Point(551, 307);
+            this.btnLoadSection.Location = new System.Drawing.Point(499, 352);
             this.btnLoadSection.Name = "btnLoadSection";
-            this.btnLoadSection.Size = new System.Drawing.Size(157, 65);
+            this.btnLoadSection.Size = new System.Drawing.Size(168, 71);
             this.btnLoadSection.TabIndex = 7977;
             this.btnLoadSection.Text = "&Faculty Section Loads";
             this.btnLoadSection.UseVisualStyleBackColor = false;

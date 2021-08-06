@@ -117,6 +117,20 @@ namespace GOC_GS
 
         }
 
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmDashboard frm = new frmDashboard();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();

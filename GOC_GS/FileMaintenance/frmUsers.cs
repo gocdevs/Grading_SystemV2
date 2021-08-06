@@ -181,5 +181,10 @@ namespace GOC_GS
                 }
             }
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Reset();
+        }
     }
 }

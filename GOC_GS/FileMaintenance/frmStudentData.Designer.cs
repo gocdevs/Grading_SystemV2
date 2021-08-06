@@ -33,7 +33,6 @@ namespace GOC_GS.FileMaintenance
             this.label3 = new System.Windows.Forms.Label();
             this.cmbStrand = new System.Windows.Forms.ComboBox();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.PictureBox();
@@ -68,73 +67,66 @@ namespace GOC_GS.FileMaintenance
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(542, 34);
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(809, 56);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 13);
+            this.label4.Size = new System.Drawing.Size(50, 19);
             this.label4.TabIndex = 7981;
             this.label4.Text = "Strand";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(415, 34);
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(537, 58);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.Size = new System.Drawing.Size(86, 19);
             this.label3.TabIndex = 7980;
             this.label3.Text = "Grade Level";
             // 
             // cmbStrand
             // 
             this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbStrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
-            this.cmbStrand.Location = new System.Drawing.Point(545, 50);
+            this.cmbStrand.Location = new System.Drawing.Point(865, 53);
             this.cmbStrand.Name = "cmbStrand";
-            this.cmbStrand.Size = new System.Drawing.Size(121, 21);
+            this.cmbStrand.Size = new System.Drawing.Size(121, 27);
             this.cmbStrand.TabIndex = 7979;
             this.cmbStrand.SelectedIndexChanged += new System.EventHandler(this.cmbStrand_SelectedIndexChanged);
             // 
             // cmbGradeLevel
             // 
             this.cmbGradeLevel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGradeLevel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGradeLevel.FormattingEnabled = true;
             this.cmbGradeLevel.Items.AddRange(new object[] {
-            "7",
-            "8",
-            "9",
-            "10",
             "11",
             "12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(418, 50);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(642, 53);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
-            this.cmbGradeLevel.Size = new System.Drawing.Size(121, 21);
+            this.cmbGradeLevel.Size = new System.Drawing.Size(121, 27);
             this.cmbGradeLevel.TabIndex = 7978;
             this.cmbGradeLevel.SelectedIndexChanged += new System.EventHandler(this.cmbGradeLevel_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(368, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
-            this.label2.TabIndex = 7977;
-            this.label2.Text = "Filter By";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 34);
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(148, 19);
             this.label1.TabIndex = 7976;
-            this.label1.Text = "Search By Last Name";
+            this.label1.Text = "Search by Last Name:";
             // 
             // txtSearch
             // 
             this.txtSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtSearch.Location = new System.Drawing.Point(15, 50);
+            this.txtSearch.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Location = new System.Drawing.Point(16, 57);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(313, 20);
+            this.txtSearch.Size = new System.Drawing.Size(313, 27);
             this.txtSearch.TabIndex = 7975;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -151,12 +143,12 @@ namespace GOC_GS.FileMaintenance
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = global::GOC_GS.Properties.Resources.refresh;
-            this.btnCancel.Location = new System.Drawing.Point(1037, 40);
+            this.btnCancel.Location = new System.Drawing.Point(1036, 50);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 44);
+            this.btnCancel.Size = new System.Drawing.Size(85, 34);
             this.btnCancel.TabIndex = 7973;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -349,7 +341,6 @@ namespace GOC_GS.FileMaintenance
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbStrand);
             this.Controls.Add(this.cmbGradeLevel);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnClose);
@@ -371,7 +362,6 @@ namespace GOC_GS.FileMaintenance
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbStrand;
         private System.Windows.Forms.ComboBox cmbGradeLevel;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.PictureBox btnClose;
