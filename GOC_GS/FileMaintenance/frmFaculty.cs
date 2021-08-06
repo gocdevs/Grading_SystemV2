@@ -72,10 +72,10 @@ namespace GOC_GS
             txtLName.Text = "";
             txtFName.Text = "";
             txtMName.Text = "";
-            cmbCourse.Text = "";
+            txtCourse.Text = "";
             cmbSpecializeSubject.Text = "";
             cmbAdviserOf.Text = "";
-            cmbEmpStatus.Text = "";
+            cmbEStatus.Text = "";
 
             btnAdd.Text = "&Add New";
         }
@@ -92,10 +92,11 @@ namespace GOC_GS
                 txtFName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[4].Value.ToString();
                 txtLName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtMName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cmbCourse.Text = dgvFacultyList.Rows[e.RowIndex].Cells[7].Value.ToString();
+                txtCourse.Text = dgvFacultyList.Rows[e.RowIndex].Cells[7].Value.ToString();
                 cmbSpecializeSubject.Text = dgvFacultyList.Rows[e.RowIndex].Cells[8].Value.ToString();
                 cmbAdviserOf.Text = dgvFacultyList.Rows[e.RowIndex].Cells[9].Value.ToString();
-                cmbEmpStatus.Text = dgvFacultyList.Rows[e.RowIndex].Cells[10].Value.ToString();
+                cmbEmp.Text = dgvFacultyList.Rows[e.RowIndex].Cells[10].Value.ToString();
+                cmbEStatus.Text = dgvFacultyList.Rows[e.RowIndex].Cells[10].Value.ToString();
 
                 btnAdd.Text = "&Update";//set button to Update                
             }
@@ -126,8 +127,8 @@ namespace GOC_GS
         {
             if (btnAdd.Text == "&Update")
             {
-                util.ValidateTextBox4(txtFacultyId, txtLName, txtFName, txtMName);// Validation before Updating
-                util.ValidateCombobox4(cmbAdviserOf, cmbSpecializeSubject, cmbEmpStatus, cmbCourse);// Validation before Updating
+                util.ValidateTextBox5(txtFacultyId, txtLName, txtFName, txtMName, txtCourse);// Validation before Updating
+                util.ValidateCombobox3(cmbAdviserOf, cmbSpecializeSubject, cmbEStatus);// Validation before Updating
                 if (util.readyToSave == 1)
                 {
                     #region UPDATE DISCOUNT
@@ -136,10 +137,10 @@ namespace GOC_GS
                     faculty.Last_name = txtLName.Text;
                     faculty.First_name = txtFName.Text;
                     faculty.Middle_name = txtMName.Text;
-                    faculty.Course = cmbCourse.Text;
+                    faculty.Course = txtCourse.Text;
                     faculty.Specialize_subject = cmbSpecializeSubject.Text;
                     faculty.Adviser_of = cmbAdviserOf.Text;
-                    faculty.Emp_status = cmbEmpStatus.Text;
+                    faculty.Emp_status = cmbEStatus.Text;
 
                     faculty.Update();
                     Reset();
@@ -153,8 +154,8 @@ namespace GOC_GS
             }
             else
             {
-                util.ValidateTextBox4(txtFacultyId, txtLName, txtFName, txtMName);// Validation before Updating
-                util.ValidateCombobox4(cmbAdviserOf, cmbSpecializeSubject, cmbEmpStatus, cmbCourse);// Validation before Updating
+                util.ValidateTextBox5(txtFacultyId, txtLName, txtFName, txtMName, txtCourse);// Validation before Updating
+                util.ValidateCombobox3(cmbAdviserOf, cmbSpecializeSubject, cmbEStatus);// Validation before Updating
 
                 if (util.readyToSave == 1)
                 {
@@ -163,10 +164,10 @@ namespace GOC_GS
                     faculty.Last_name = txtLName.Text;
                     faculty.First_name = txtFName.Text;
                     faculty.Middle_name = txtMName.Text;
-                    faculty.Course = cmbCourse.Text;
+                    faculty.Course = txtCourse.Text;
                     faculty.Specialize_subject = cmbSpecializeSubject.Text;
                     faculty.Adviser_of = cmbAdviserOf.Text;
-                    faculty.Emp_status = cmbEmpStatus.Text;
+                    faculty.Emp_status = cmbEStatus.Text;
 
                     faculty.Save();
                     Reset();
@@ -183,6 +184,11 @@ namespace GOC_GS
         private void pbClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Reset();
         }
     }
 }

@@ -49,6 +49,9 @@ namespace GOC_GS
             this.txtFacultyId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pbClose = new System.Windows.Forms.PictureBox();
+            this.txtCourse = new System.Windows.Forms.TextBox();
+            this.cmbEStatus = new System.Windows.Forms.ComboBox();
+            this.cmbEmp = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +63,7 @@ namespace GOC_GS
             this.dgvFacultyList.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacultyList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacultyList.Location = new System.Drawing.Point(13, 190);
-            this.dgvFacultyList.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dgvFacultyList.Margin = new System.Windows.Forms.Padding(5);
             this.dgvFacultyList.Name = "dgvFacultyList";
             this.dgvFacultyList.ReadOnly = true;
             this.dgvFacultyList.RowHeadersVisible = false;
@@ -166,7 +169,7 @@ namespace GOC_GS
             // cmbCourse
             // 
             this.cmbCourse.FormattingEnabled = true;
-            this.cmbCourse.Location = new System.Drawing.Point(561, 28);
+            this.cmbCourse.Location = new System.Drawing.Point(894, 203);
             this.cmbCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCourse.Name = "cmbCourse";
             this.cmbCourse.Size = new System.Drawing.Size(233, 28);
@@ -194,8 +197,13 @@ namespace GOC_GS
             // 
             // cmbEmpStatus
             // 
+            this.cmbEmpStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmpStatus.FormattingEnabled = true;
-            this.cmbEmpStatus.Location = new System.Drawing.Point(561, 144);
+            this.cmbEmpStatus.Items.AddRange(new object[] {
+            "Fulltime",
+            "Partime",
+            "Out"});
+            this.cmbEmpStatus.Location = new System.Drawing.Point(894, 203);
             this.cmbEmpStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbEmpStatus.Name = "cmbEmpStatus";
             this.cmbEmpStatus.Size = new System.Drawing.Size(233, 28);
@@ -226,10 +234,11 @@ namespace GOC_GS
             this.button2.TabIndex = 7952;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // txtFacultyId
             // 
-            this.txtFacultyId.Location = new System.Drawing.Point(120, 28);
+            this.txtFacultyId.Location = new System.Drawing.Point(121, 26);
             this.txtFacultyId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFacultyId.Name = "txtFacultyId";
             this.txtFacultyId.Size = new System.Drawing.Size(233, 25);
@@ -257,20 +266,50 @@ namespace GOC_GS
             this.pbClose.TabStop = false;
             this.pbClose.Click += new System.EventHandler(this.pbClose_Click);
             // 
+            // txtCourse
+            // 
+            this.txtCourse.Location = new System.Drawing.Point(561, 32);
+            this.txtCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCourse.Name = "txtCourse";
+            this.txtCourse.Size = new System.Drawing.Size(233, 25);
+            this.txtCourse.TabIndex = 7983;
+            // 
+            // cmbEStatus
+            // 
+            this.cmbEStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEStatus.FormattingEnabled = true;
+            this.cmbEStatus.Items.AddRange(new object[] {
+            "Full-time",
+            "Part-time"});
+            this.cmbEStatus.Location = new System.Drawing.Point(561, 145);
+            this.cmbEStatus.Name = "cmbEStatus";
+            this.cmbEStatus.Size = new System.Drawing.Size(233, 28);
+            this.cmbEStatus.TabIndex = 7984;
+            // 
+            // cmbEmp
+            // 
+            this.cmbEmp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmp.FormattingEnabled = true;
+            this.cmbEmp.Location = new System.Drawing.Point(894, 203);
+            this.cmbEmp.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cmbEmp.Name = "cmbEmp";
+            this.cmbEmp.Size = new System.Drawing.Size(233, 28);
+            this.cmbEmp.TabIndex = 7985;
+            // 
             // frmFaculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.cmbEStatus);
+            this.Controls.Add(this.txtCourse);
             this.Controls.Add(this.pbClose);
             this.Controls.Add(this.txtFacultyId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.cmbEmpStatus);
             this.Controls.Add(this.cmbAdviserOf);
             this.Controls.Add(this.cmbSpecializeSubject);
-            this.Controls.Add(this.cmbCourse);
             this.Controls.Add(this.txtMName);
             this.Controls.Add(this.txtFName);
             this.Controls.Add(this.txtLName);
@@ -282,6 +321,9 @@ namespace GOC_GS
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblLname);
             this.Controls.Add(this.dgvFacultyList);
+            this.Controls.Add(this.cmbCourse);
+            this.Controls.Add(this.cmbEmpStatus);
+            this.Controls.Add(this.cmbEmp);
             this.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
@@ -316,5 +358,8 @@ namespace GOC_GS
         private System.Windows.Forms.TextBox txtFacultyId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pbClose;
+        private System.Windows.Forms.TextBox txtCourse;
+        private System.Windows.Forms.ComboBox cmbEStatus;
+        private System.Windows.Forms.ComboBox cmbEmp;
     }
 }
