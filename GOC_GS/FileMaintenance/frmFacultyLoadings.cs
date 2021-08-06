@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace GOC_GS
@@ -48,6 +49,34 @@ namespace GOC_GS
             }
         }
 
+        public void LoadSubjectsAll()
+        {
+            subjects_list.Clear();
+            subjects_list = subjects.Load();
+            dgvNewSubjects.Rows.Clear();
+            foreach (var item in subjects_list)
+            {                
+                dgvNewSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);                
+            }
+        }
+
+        public void LoadSubjectSpecific()
+        {
+            subjects_list.Clear();
+            subjects_list = subjects.Load();
+            dgvNewSubjects.Rows.Clear();
+
+            String txt = util.ToProperCase(txtSubjectName.Text);
+
+            foreach (var item in subjects_list)
+            {               
+                if (item.Subject_name.Contains(txt))
+                {
+                    dgvNewSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
+                }
+               
+            }
+        }
 
         public void HeaderFixSubject(DataGridView dgv)
         {
@@ -99,6 +128,21 @@ namespace GOC_GS
         private void btnLoad_Click(object sender, EventArgs e)
         {
             LoadSubjects();
+        }
+
+        private void btnSearchAll_Click(object sender, EventArgs e)
+        {
+            txtSubjectName.Enabled = true;
+            txtSubjectName.Focus();
+            LoadSubjectsAll();
+        }
+
+        Util_RequiredFields util = new Util_RequiredFields();
+
+        private void txtSubjectName_TextChanged(object sender, EventArgs e)
+        {
+           
+            LoadSubjectSpecific();
         }
 
         private void dgvNewSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
