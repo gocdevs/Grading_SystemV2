@@ -238,8 +238,8 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO subjects(subject_code ,subject_name ,subject_type ,grade_level ,strand,semester) " +
-                                    " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand,@semester);";
+                    string sql = "INSERT INTO subjects(subject_code ,subject_name ,subject_type ,grade_level ,strand,sem) " +
+                                    " VALUES (@subject_code,@subject_name,@subject_type,@grade_level,@strand,@sem);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -247,7 +247,7 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("subject_name", subject_name);                    
                     cmd.Parameters.AddWithValue("subject_type", subject_type);
                     cmd.Parameters.AddWithValue("grade_level", grade_level);
-                    cmd.Parameters.AddWithValue("semester", semester);
+                    cmd.Parameters.AddWithValue("sem", semester);
                     cmd.Parameters.AddWithValue("strand", strand);
 
                     cmd.ExecuteNonQuery();
@@ -272,7 +272,7 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "UPDATE subjects SET subject_code=@subject_code,subject_name=@subject_name,subject_type=@subject_type,grade_level=@grade_level,strand=@strand,semester=@semester" +
+                    string sql = "UPDATE subjects SET subject_code=@subject_code,subject_name=@subject_name,subject_type=@subject_type,grade_level=@grade_level,strand=@strand,sem=@sem" +
                                     " WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
@@ -281,12 +281,12 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("subject_name", subject_name);
                     cmd.Parameters.AddWithValue("subject_type", subject_type);
                     cmd.Parameters.AddWithValue("grade_level", grade_level);
-                    cmd.Parameters.AddWithValue("semester", semester);
+                    cmd.Parameters.AddWithValue("sem", semester);
                     cmd.Parameters.AddWithValue("strand", strand);
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                   
                 }
             }
             catch (MySqlException ex)
@@ -354,7 +354,7 @@ namespace GOC_GS
                         subject.subject_code = reader["subject_code"].ToString();
                         subject.subject_name = reader["subject_name"].ToString();
                         subject.subject_type = reader["subject_type"].ToString();
-                        subject.semester = reader["semester"].ToString();
+                        subject.semester = reader["sem"].ToString();
                         subject.grade_level = reader["grade_level"].ToString();
                         subject.strand = reader["strand"].ToString();
 

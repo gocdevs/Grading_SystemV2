@@ -16,14 +16,12 @@ namespace GOC_GS
         public frmSubjects()
         {
             InitializeComponent();
-            subject.LoadDataTable(dgvList);
-            
+
+            subject.LoadDataTable(dgvList);            
             AddImageDataGrid(dgvList);
             HeaderFix(dgvList);
-
             subject_types.LoadCombo(cmbSTypes);                       
             strand.LoadCombo(cmbStrand);
-
         }
 
         Subjects subject = new Subjects();        
@@ -38,7 +36,6 @@ namespace GOC_GS
         Strand strand = new Strand();             
         List<Strand> strands_list = new List<Strand>();
         
-
         Util_RequiredFields util = new Util_RequiredFields();
 
         public int id;
@@ -51,7 +48,6 @@ namespace GOC_GS
             dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
             dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgv.Columns.Add(dimg);
-
 
             DataGridViewImageColumn dimgDelete = new DataGridViewImageColumn();
             dimgDelete.Image = Properties.Resources.delete;
@@ -89,9 +85,11 @@ namespace GOC_GS
             cmbGradeLevel.Text = "";
             cmbStrand.Text = "";
 
+            subject_types.LoadCombo(cmbSTypes);
+            strand.LoadCombo(cmbStrand);
+
             btnAdd.Text = "&Add New";
         }
-
 
         //Cellcontent Event for Datagrid
         private void dgvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -103,10 +101,10 @@ namespace GOC_GS
                 //pass value to edit mode               
                 txtSCode.Text = dgvList.Rows[e.RowIndex].Cells[3].Value.ToString();   
                 txtSName.Text = dgvList.Rows[e.RowIndex].Cells[4].Value.ToString();
-                cmbSTypes.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cmbSemester.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
-                cmbGradeLevel.Text = dgvList.Rows[e.RowIndex].Cells[7].Value.ToString();                                             
-                cmbStrand.Text = dgvList.Rows[e.RowIndex].Cells[8].Value.ToString();
+                cmbGradeLevel.Text = dgvList.Rows[e.RowIndex].Cells[5].Value.ToString();
+                cmbSTypes.Text = dgvList.Rows[e.RowIndex].Cells[6].Value.ToString();
+                cmbStrand.Text = dgvList.Rows[e.RowIndex].Cells[7].Value.ToString();                                             
+                cmbSemester.Text = dgvList.Rows[e.RowIndex].Cells[8].Value.ToString();
 
                 btnAdd.Text = "&Update";//set button to Update                
             }
@@ -151,7 +149,10 @@ namespace GOC_GS
                     subject.Strand = cmbStrand.Text;
 
                     subject.Update();
+                    MessageBox.Show("Record Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
+
+
                     #endregion              
                 }
                 else
@@ -166,9 +167,8 @@ namespace GOC_GS
                 util.ValidateCombobox4(cmbGradeLevel, cmbSemester, cmbStrand, cmbSTypes);// Validation before Updating
 
                 if (util.readyToSave == 1)
-                {
+                {                    
                     
-
                     subject.Id = id;
                     subject.Subject_code = txtSCode.Text.ToUpper();                    
                     subject.Subject_name = util.ToProperCase(txtSName.Text);
@@ -178,7 +178,9 @@ namespace GOC_GS
                     subject.Strand = cmbStrand.Text;
 
                     subject.Save();
+                    MessageBox.Show("Record Saved!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
+
                 }
                 else
                 {

@@ -55,13 +55,13 @@ namespace GOC_GS
             this.dgvList.AllowUserToDeleteRows = false;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Location = new System.Drawing.Point(14, 132);
+            this.dgvList.Location = new System.Drawing.Point(14, 127);
             this.dgvList.Margin = new System.Windows.Forms.Padding(4);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.RowHeadersVisible = false;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(1123, 516);
+            this.dgvList.Size = new System.Drawing.Size(1123, 521);
             this.dgvList.TabIndex = 7935;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
@@ -71,7 +71,7 @@ namespace GOC_GS
             this.txtSName.Location = new System.Drawing.Point(119, 47);
             this.txtSName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtSName.Name = "txtSName";
-            this.txtSName.Size = new System.Drawing.Size(176, 25);
+            this.txtSName.Size = new System.Drawing.Size(446, 25);
             this.txtSName.TabIndex = 7948;
             // 
             // label2
@@ -119,7 +119,7 @@ namespace GOC_GS
             this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label3.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(414, 16);
+            this.label3.Location = new System.Drawing.Point(629, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(65, 20);
@@ -132,7 +132,7 @@ namespace GOC_GS
             this.label6.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label6.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(398, 48);
+            this.label6.Location = new System.Drawing.Point(613, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(79, 20);
@@ -145,21 +145,21 @@ namespace GOC_GS
             this.label7.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label7.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(406, 81);
+            this.label7.Location = new System.Drawing.Point(644, 83);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 20);
+            this.label7.Size = new System.Drawing.Size(48, 20);
             this.label7.TabIndex = 7953;
-            this.label7.Text = "Subject for:";
+            this.label7.Text = "Strand:";
             // 
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = global::GOC_GS.Properties.Resources.refresh;
-            this.btnCancel.Location = new System.Drawing.Point(1052, 80);
+            this.btnCancel.Location = new System.Drawing.Point(1052, 73);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(85, 44);
+            this.btnCancel.Size = new System.Drawing.Size(85, 37);
             this.btnCancel.TabIndex = 7957;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -171,10 +171,10 @@ namespace GOC_GS
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(948, 80);
+            this.btnAdd.Location = new System.Drawing.Point(943, 74);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(98, 44);
+            this.btnAdd.Size = new System.Drawing.Size(105, 37);
             this.btnAdd.TabIndex = 7956;
             this.btnAdd.Text = "      &Add New";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -198,12 +198,12 @@ namespace GOC_GS
             this.cmbSemester.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSemester.FormattingEnabled = true;
             this.cmbSemester.Items.AddRange(new object[] {
-            "First",
-            "Second"});
-            this.cmbSemester.Location = new System.Drawing.Point(489, 11);
+            "1st",
+            "2nd"});
+            this.cmbSemester.Location = new System.Drawing.Point(704, 13);
             this.cmbSemester.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSemester.Name = "cmbSemester";
-            this.cmbSemester.Size = new System.Drawing.Size(120, 28);
+            this.cmbSemester.Size = new System.Drawing.Size(79, 28);
             this.cmbSemester.TabIndex = 7958;
             // 
             // cmbGradeLevel
@@ -214,10 +214,10 @@ namespace GOC_GS
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "11",
             "12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(491, 44);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(706, 46);
             this.cmbGradeLevel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
-            this.cmbGradeLevel.Size = new System.Drawing.Size(120, 28);
+            this.cmbGradeLevel.Size = new System.Drawing.Size(77, 28);
             this.cmbGradeLevel.TabIndex = 7959;
             // 
             // cmbStrand
@@ -225,18 +225,10 @@ namespace GOC_GS
             this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStrand.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
-            this.cmbStrand.Items.AddRange(new object[] {
-            "ALL Strand",
-            "ABM",
-            "HUMSS",
-            "STEM",
-            "NON STEM",
-            "TVL - ICT",
-            "TVL - HE"});
-            this.cmbStrand.Location = new System.Drawing.Point(491, 78);
+            this.cmbStrand.Location = new System.Drawing.Point(706, 80);
             this.cmbStrand.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbStrand.Name = "cmbStrand";
-            this.cmbStrand.Size = new System.Drawing.Size(120, 28);
+            this.cmbStrand.Size = new System.Drawing.Size(144, 28);
             this.cmbStrand.TabIndex = 7960;
             // 
             // cmbSTypes
@@ -247,7 +239,7 @@ namespace GOC_GS
             this.cmbSTypes.Location = new System.Drawing.Point(119, 78);
             this.cmbSTypes.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSTypes.Name = "cmbSTypes";
-            this.cmbSTypes.Size = new System.Drawing.Size(178, 28);
+            this.cmbSTypes.Size = new System.Drawing.Size(219, 28);
             this.cmbSTypes.TabIndex = 7961;
             // 
             // txtSCode
@@ -256,7 +248,7 @@ namespace GOC_GS
             this.txtSCode.Location = new System.Drawing.Point(119, 12);
             this.txtSCode.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtSCode.Name = "txtSCode";
-            this.txtSCode.Size = new System.Drawing.Size(176, 25);
+            this.txtSCode.Size = new System.Drawing.Size(219, 25);
             this.txtSCode.TabIndex = 7962;
             // 
             // frmSubjects
