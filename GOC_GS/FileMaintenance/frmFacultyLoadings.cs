@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -30,9 +32,53 @@ namespace GOC_GS
             AddImageDataGrid(dgvNewSubjects);
             AddImageDataGridLoading(dgvFacultyLoads);
 
-            dgvFacultyName.Columns["faculty_id"].HeaderText = "";
+            dgvFacultyName.Columns["faculty_id"].HeaderText = "Faculty Id";
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
-            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;           
+            FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            CountFacultyName();
+        }
+
+        public void SearchTeacherName(DataGridView dgv, TextBox txt)
+        {
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    con.Open();
+                    string sql = "SELECT  faculty_id, CONCAT(fname,' ', Left(mname,1) ,'. ',lname) Fullname FROM faculty WHERE lname LIKE('%" + txt.Text + "%') OR fname LIKE('%" + txt.Text + "%') ";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    MySqlDataAdapter da = new MySqlDataAdapter();
+
+                    da.SelectCommand = cmd;
+
+                    //initialize new datatable and load data to datagridview
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgv.DataSource = dt;
+
+                    con.Close();
+                }
+            }
+
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }//End of Load
+
+        public void CountFacultyName()
+        {
+            lblFacultyNo.Refresh();
+            lblFacultyNo.Text = dgvFacultyName.Rows.Count.ToString();
+        }
+
+        public void CountSubjectAssigned()
+        {
+            lblSubjectAssigned.Refresh();
+            lblSubjectAssigned.Text = dgvFacultyLoads.Rows.Count.ToString();
         }
 
         public void LoadSubjects()
@@ -73,8 +119,7 @@ namespace GOC_GS
                 if (item.Subject_name.Contains(txt))
                 {
                     dgvNewSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
-                }
-               
+                }               
             }
         }
 
@@ -145,6 +190,12 @@ namespace GOC_GS
             LoadSubjectSpecific();
         }
 
+        private void txtFacultyName_TextChanged(object sender, EventArgs e)
+        {
+            SearchTeacherName(dgvFacultyName, txtFacultyName);
+            CountFacultyName();
+        }
+
         private void dgvNewSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 7)
@@ -165,6 +216,8 @@ namespace GOC_GS
                 }               
                 dgvFacultyLoads.Rows.Add(FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester);
             }
+
+            CountSubjectAssigned();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -208,6 +261,8 @@ namespace GOC_GS
             {
 
             }
+
+            CountSubjectAssigned();
         }
 
         private void btnRemoveAll_Click(object sender, EventArgs e)
@@ -226,6 +281,8 @@ namespace GOC_GS
             {
                 return;
             }
+
+            CountSubjectAssigned();
         }
 
         private void dgvFacultyLoads_ColumnAdded(object sender, DataGridViewColumnEventArgs e)

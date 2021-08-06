@@ -40,8 +40,8 @@ namespace GOC_GS
             this.txtSubjectName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblFacultyNo = new System.Windows.Forms.Label();
+            this.lblSubjectAssigned = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvFacultyName = new System.Windows.Forms.DataGridView();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
@@ -82,6 +82,7 @@ namespace GOC_GS
             this.txtFacultyName.Name = "txtFacultyName";
             this.txtFacultyName.Size = new System.Drawing.Size(269, 28);
             this.txtFacultyName.TabIndex = 7964;
+            this.txtFacultyName.TextChanged += new System.EventHandler(this.txtFacultyName_TextChanged);
             // 
             // label4
             // 
@@ -106,6 +107,7 @@ namespace GOC_GS
             this.cmbStrand.Name = "cmbStrand";
             this.cmbStrand.Size = new System.Drawing.Size(120, 27);
             this.cmbStrand.TabIndex = 7971;
+            this.cmbStrand.Visible = false;
             // 
             // cmbGradeLevel
             // 
@@ -120,6 +122,7 @@ namespace GOC_GS
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(99, 27);
             this.cmbGradeLevel.TabIndex = 7970;
+            this.cmbGradeLevel.Visible = false;
             // 
             // label7
             // 
@@ -133,6 +136,7 @@ namespace GOC_GS
             this.label7.Size = new System.Drawing.Size(54, 19);
             this.label7.TabIndex = 7969;
             this.label7.Text = "Strand:";
+            this.label7.Visible = false;
             // 
             // label6
             // 
@@ -146,6 +150,7 @@ namespace GOC_GS
             this.label6.Size = new System.Drawing.Size(90, 19);
             this.label6.TabIndex = 7968;
             this.label6.Text = "Grade Level:";
+            this.label6.Visible = false;
             // 
             // cmbSemester
             // 
@@ -160,6 +165,7 @@ namespace GOC_GS
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(120, 27);
             this.cmbSemester.TabIndex = 7974;
+            this.cmbSemester.Visible = false;
             // 
             // label3
             // 
@@ -173,6 +179,7 @@ namespace GOC_GS
             this.label3.Size = new System.Drawing.Size(73, 19);
             this.label3.TabIndex = 7973;
             this.label3.Text = "Semester:";
+            this.label3.Visible = false;
             // 
             // txtSubjectName
             // 
@@ -212,31 +219,31 @@ namespace GOC_GS
             this.label5.TabIndex = 7979;
             this.label5.Text = "No. of Faculty: ";
             // 
-            // label8
+            // lblFacultyNo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(121, 649);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 19);
-            this.label8.TabIndex = 7980;
-            this.label8.Text = "Count: ";
+            this.lblFacultyNo.AutoSize = true;
+            this.lblFacultyNo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblFacultyNo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFacultyNo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblFacultyNo.Location = new System.Drawing.Point(112, 650);
+            this.lblFacultyNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFacultyNo.Name = "lblFacultyNo";
+            this.lblFacultyNo.Size = new System.Drawing.Size(17, 19);
+            this.lblFacultyNo.TabIndex = 7980;
+            this.lblFacultyNo.Text = "0";
             // 
-            // label9
+            // lblSubjectAssigned
             // 
-            this.label9.AutoSize = true;
-            this.label9.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(479, 649);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 19);
-            this.label9.TabIndex = 7983;
-            this.label9.Text = "Count: ";
+            this.lblSubjectAssigned.AutoSize = true;
+            this.lblSubjectAssigned.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblSubjectAssigned.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubjectAssigned.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblSubjectAssigned.Location = new System.Drawing.Point(479, 649);
+            this.lblSubjectAssigned.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblSubjectAssigned.Name = "lblSubjectAssigned";
+            this.lblSubjectAssigned.Size = new System.Drawing.Size(17, 19);
+            this.lblSubjectAssigned.TabIndex = 7983;
+            this.lblSubjectAssigned.Text = "0";
             // 
             // label10
             // 
@@ -394,6 +401,7 @@ namespace GOC_GS
             this.btnLoad.TabIndex = 8013;
             this.btnLoad.Text = "&Search";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Visible = false;
             this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
             // 
             // dgvNewSubjects
@@ -487,9 +495,9 @@ namespace GOC_GS
             this.Controls.Add(this.dgvFacultyLoads);
             this.Controls.Add(this.dgvSubjects);
             this.Controls.Add(this.dgvFacultyName);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblSubjectAssigned);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblFacultyNo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSubjectName);
             this.Controls.Add(this.label1);
@@ -528,8 +536,8 @@ namespace GOC_GS
         private System.Windows.Forms.TextBox txtSubjectName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblFacultyNo;
+        private System.Windows.Forms.Label lblSubjectAssigned;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvFacultyName;
         private System.Windows.Forms.DataGridView dgvSubjects;
