@@ -395,7 +395,7 @@ namespace GOC_GS
                         subject.grade_level = reader["grade_level"].ToString();
                         subject.subject_type = reader["subject_type"].ToString();
                         subject.strand = reader["strand"].ToString();
-                        subject.semester = reader["semester"].ToString();
+                        subject.semester = reader["sem"].ToString();
                         subjects.Add(subject);
                     }
                 }

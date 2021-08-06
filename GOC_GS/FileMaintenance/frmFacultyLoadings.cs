@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GOC_GS
@@ -30,14 +24,30 @@ namespace GOC_GS
             //section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);           
             fl.LoadDataTableName(dgvFacultyName);
-            HeaderFixSubject(dgvSubjects);
-            AddImageDataGrid(dgvSubjects);
+            //HeaderFixSubject(dgvSubjects);
+           
+            AddImageDataGrid(dgvNewSubjects);
             AddImageDataGridLoading(dgvFacultyLoads);
 
             dgvFacultyName.Columns["faculty_id"].HeaderText = "";
             DataGridViewColumn FillSize1 = dgvFacultyName.Columns[1];
             FillSize1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;           
         }
+
+        public void LoadSubjects()
+        {
+            subjects_list.Clear();
+            subjects_list = subjects.Load();
+            dgvNewSubjects.Rows.Clear();
+            foreach (var item in subjects_list)
+            {
+                if (item.Grade_level == cmbGradeLevel.Text && item.Semester == cmbSemester.Text && item.Strand == cmbStrand.Text)
+                {
+                    dgvNewSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
+                }                
+            }
+        }
+
 
         public void HeaderFixSubject(DataGridView dgv)
         {
@@ -86,6 +96,33 @@ namespace GOC_GS
 
         String FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester;
 
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            LoadSubjects();
+        }
+
+        private void dgvNewSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {            
+                foreach (DataGridViewRow row in dgvFacultyName.SelectedRows)
+                {
+                    FacultyId = row.Cells[0].Value.ToString();
+                    FullName = row.Cells[1].Value.ToString();
+                }
+
+                foreach (DataGridViewRow row in dgvNewSubjects.SelectedRows)
+                {
+                    SubjectCode = row.Cells[1].Value.ToString();
+                    SubjectType = row.Cells[3].Value.ToString();
+                    GradeLevel = row.Cells[5].Value.ToString();
+                    Strand = row.Cells[6].Value.ToString();
+                    Semester = row.Cells[4].Value.ToString();
+                }               
+                dgvFacultyLoads.Rows.Add(FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester);
+            }
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (dgvFacultyLoads.Rows.Count > 0)
@@ -102,6 +139,7 @@ namespace GOC_GS
                     {                      
                         facultyLoads.Faculty_id = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();
                         facultyLoads.FullName = dgvFacultyLoads.Rows[i].Cells[1].FormattedValue.ToString();
+
                         facultyLoads.SubjectCode = dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString();
                         facultyLoads.GradeLevel = dgvFacultyLoads.Rows[i].Cells[3].FormattedValue.ToString();
 
@@ -180,36 +218,7 @@ namespace GOC_GS
         }
         private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
-            {
-                
-                //for (int i = 0; i < dgvFacultyName.Rows.Count; i++)
-                //{
-                //    FacultyId = dgvFacultyName.SelectedRows[i].Cells[0].Value.ToString();
-                //    FullName = dgvFacultyName.SelectedRows[i].Cells[1].Value.ToString();
-                //}
-
-                foreach (DataGridViewRow row in dgvFacultyName.SelectedRows)
-                {
-                    FacultyId = row.Cells[0].Value.ToString();
-                    FullName = row.Cells[1].Value.ToString();                    
-                }
-
-                foreach (DataGridViewRow row in dgvSubjects.SelectedRows)
-                {
-                    SubjectCode = row.Cells[2].Value.ToString();
-                    SubjectType = row.Cells[4].Value.ToString();
-                    GradeLevel = row.Cells[6].Value.ToString();
-                    Strand = row.Cells[7].Value.ToString();
-                    Semester = row.Cells[5].Value.ToString();
-                }
-
-                // MessageBox.Show(FacultyId + " " + FullName + " " + SubjectCode + " " + Section + " " + Strand + " " + Semester);                               
-
-                dgvFacultyLoads.Rows.Add(FacultyId ,FullName ,SubjectCode , SubjectType, GradeLevel, Strand, Semester);
-
-                
-            }
+           
            
         }
     }

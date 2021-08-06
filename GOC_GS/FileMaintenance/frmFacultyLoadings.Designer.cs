@@ -57,10 +57,19 @@ namespace GOC_GS
             this.btnSave = new System.Windows.Forms.Button();
             this.btnRemoveAll = new System.Windows.Forms.Button();
             this.btnLoad = new System.Windows.Forms.Button();
+            this.dgvNewSubjects = new System.Windows.Forms.DataGridView();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNewSubjects)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFacultyName
@@ -260,7 +269,7 @@ namespace GOC_GS
             this.dgvSubjects.AllowUserToDeleteRows = false;
             this.dgvSubjects.BackgroundColor = System.Drawing.Color.White;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Location = new System.Drawing.Point(304, 97);
+            this.dgvSubjects.Location = new System.Drawing.Point(1131, 97);
             this.dgvSubjects.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
@@ -268,6 +277,7 @@ namespace GOC_GS
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSubjects.Size = new System.Drawing.Size(835, 197);
             this.dgvSubjects.TabIndex = 7986;
+            this.dgvSubjects.Visible = false;
             this.dgvSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSubjects_CellContentClick);
             // 
             // dgvFacultyLoads
@@ -284,13 +294,13 @@ namespace GOC_GS
             this.Column5,
             this.Column6,
             this.Column3});
-            this.dgvFacultyLoads.Location = new System.Drawing.Point(304, 336);
+            this.dgvFacultyLoads.Location = new System.Drawing.Point(304, 372);
             this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFacultyLoads.Name = "dgvFacultyLoads";
             this.dgvFacultyLoads.ReadOnly = true;
             this.dgvFacultyLoads.RowHeadersVisible = false;
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 309);
+            this.dgvFacultyLoads.Size = new System.Drawing.Size(835, 273);
             this.dgvFacultyLoads.TabIndex = 7987;
             this.dgvFacultyLoads.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFacultyLoads_CellContentClick);
             this.dgvFacultyLoads.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dgvFacultyLoads_ColumnAdded);
@@ -353,7 +363,7 @@ namespace GOC_GS
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(960, 301);
+            this.btnSave.Location = new System.Drawing.Point(937, 333);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(86, 28);
             this.btnSave.TabIndex = 8011;
@@ -364,9 +374,9 @@ namespace GOC_GS
             // btnRemoveAll
             // 
             this.btnRemoveAll.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoveAll.Location = new System.Drawing.Point(1052, 301);
+            this.btnRemoveAll.Location = new System.Drawing.Point(1040, 333);
             this.btnRemoveAll.Name = "btnRemoveAll";
-            this.btnRemoveAll.Size = new System.Drawing.Size(86, 28);
+            this.btnRemoveAll.Size = new System.Drawing.Size(97, 28);
             this.btnRemoveAll.TabIndex = 8012;
             this.btnRemoveAll.Text = "&Remove All";
             this.btnRemoveAll.UseVisualStyleBackColor = true;
@@ -381,12 +391,81 @@ namespace GOC_GS
             this.btnLoad.TabIndex = 8013;
             this.btnLoad.Text = "&Load";
             this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // dgvNewSubjects
+            // 
+            this.dgvNewSubjects.AllowUserToAddRows = false;
+            this.dgvNewSubjects.AllowUserToDeleteRows = false;
+            this.dgvNewSubjects.BackgroundColor = System.Drawing.Color.White;
+            this.dgvNewSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNewSubjects.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13,
+            this.Column14});
+            this.dgvNewSubjects.Location = new System.Drawing.Point(304, 97);
+            this.dgvNewSubjects.Name = "dgvNewSubjects";
+            this.dgvNewSubjects.ReadOnly = true;
+            this.dgvNewSubjects.RowHeadersVisible = false;
+            this.dgvNewSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvNewSubjects.Size = new System.Drawing.Size(833, 226);
+            this.dgvNewSubjects.TabIndex = 8014;
+            this.dgvNewSubjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNewSubjects_CellContentClick);
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "id ";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Subject Code";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "Subject Name";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Grade Level";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Subject Type";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Strand";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Semester";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
             // 
             // frmFacultyLoadings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.dgvNewSubjects);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnRemoveAll);
             this.Controls.Add(this.btnSave);
@@ -415,6 +494,7 @@ namespace GOC_GS
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyLoads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNewSubjects)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +529,13 @@ namespace GOC_GS
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.DataGridView dgvNewSubjects;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
     }
 }
