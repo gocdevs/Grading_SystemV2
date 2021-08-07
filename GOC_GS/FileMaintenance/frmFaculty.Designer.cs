@@ -180,7 +180,7 @@ namespace GOC_GS
             // 
             this.cmbSpecializeSubject.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSpecializeSubject.FormattingEnabled = true;
-            this.cmbSpecializeSubject.Location = new System.Drawing.Point(561, 65);
+            this.cmbSpecializeSubject.Location = new System.Drawing.Point(894, 203);
             this.cmbSpecializeSubject.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSpecializeSubject.Name = "cmbSpecializeSubject";
             this.cmbSpecializeSubject.Size = new System.Drawing.Size(233, 28);
@@ -215,10 +215,10 @@ namespace GOC_GS
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F);
             this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(960, 137);
+            this.btnAdd.Location = new System.Drawing.Point(945, 137);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(85, 44);
+            this.btnAdd.Size = new System.Drawing.Size(100, 44);
             this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -242,7 +242,8 @@ namespace GOC_GS
             this.txtFacultyId.Location = new System.Drawing.Point(121, 26);
             this.txtFacultyId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFacultyId.Name = "txtFacultyId";
-            this.txtFacultyId.Size = new System.Drawing.Size(233, 25);
+            this.txtFacultyId.ReadOnly = true;
+            this.txtFacultyId.Size = new System.Drawing.Size(115, 25);
             this.txtFacultyId.TabIndex = 1;
             // 
             // label1
@@ -299,7 +300,7 @@ namespace GOC_GS
             // 
             // txtSpecialSubj
             // 
-            this.txtSpecialSubj.Location = new System.Drawing.Point(800, 68);
+            this.txtSpecialSubj.Location = new System.Drawing.Point(561, 69);
             this.txtSpecialSubj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSpecialSubj.Name = "txtSpecialSubj";
             this.txtSpecialSubj.Size = new System.Drawing.Size(233, 25);
@@ -319,7 +320,6 @@ namespace GOC_GS
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cmbAdviserOf);
-            this.Controls.Add(this.cmbSpecializeSubject);
             this.Controls.Add(this.txtMName);
             this.Controls.Add(this.txtFName);
             this.Controls.Add(this.txtLName);
@@ -334,6 +334,7 @@ namespace GOC_GS
             this.Controls.Add(this.cmbCourse);
             this.Controls.Add(this.cmbEmpStatus);
             this.Controls.Add(this.cmbEmp);
+            this.Controls.Add(this.cmbSpecializeSubject);
             this.Font = new System.Drawing.Font("Arial Narrow", 11.25F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
