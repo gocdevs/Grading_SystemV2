@@ -22,6 +22,7 @@ namespace GOC_GS
         List<Section> sections = new List<Section>();
                
         public int id;
+        public string this_section;
         public frmFacultyLoadSection()
         {
             InitializeComponent();
@@ -41,6 +42,14 @@ namespace GOC_GS
 
         public void AddImageDataGrid(DataGridView dgv)
         {
+            DataGridViewImageColumn dimg2 = new DataGridViewImageColumn();
+            dimg2.Image = Properties.Resources.add_green;
+            dimg2.HeaderText = "Assign Section";
+            dimg2.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg2.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            dgv.Columns.Add(dimg2);
+
             DataGridViewImageColumn dimg = new DataGridViewImageColumn();
             dimg.Image = Properties.Resources.delete;
             dimg.HeaderText = "Remove Subject";
@@ -48,6 +57,8 @@ namespace GOC_GS
             dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
 
             dgv.Columns.Add(dimg);
+
+           
         }
 
         public void LoadCombo()
@@ -155,20 +166,23 @@ namespace GOC_GS
 
                     for (int i = 0; i < dgvFacultyLoads.Rows.Count; i++)
                     {
-                        if (dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.Equals(""))
-                        {
-                            facultyLoading.Id = Convert.ToInt32(dgvFacultyLoads.Rows[i].Cells[1].FormattedValue.ToString());
-                            facultyLoading.Section = dgvFacultyLoads.Rows[i].Cells[9].FormattedValue.ToString();
+                        //if (dgvFacultyLoads.Rows[i].Cells[10].FormattedValue.Equals(""))//Section to be assigned
+                        //{
+                            facultyLoading.Id = Convert.ToInt32(dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString());//id
+                            facultyLoading.Section = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();//Updated Section
 
                             facultyLoading.Update();
-                        }
-                        else
-                        {
-                            facultyLoading.Id = Convert.ToInt32(dgvFacultyLoads.Rows[i].Cells[1].FormattedValue.ToString());
-                            facultyLoading.Section = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();
+                        //}
 
-                            facultyLoading.Update();
-                        }                      
+                        //if (dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.Equals(""))
+                        //{
+                            //facultyLoading.Id = Convert.ToInt32(dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString());//id
+                            //facultyLoading.Section = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();//Updated Section
+
+                            //facultyLoading.Update();
+                        //}
+                       
+
                     }
                     MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     facultyLoading.LoadDataTable(dgvFacultyLoads);
@@ -293,7 +307,7 @@ namespace GOC_GS
 
         private void dgvFacultyLoads_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 2)
             {
                 string message = "Do you want to delete this record?";
                 string title = "Grading System";
@@ -318,7 +332,7 @@ namespace GOC_GS
                             string sql = "DELETE FROM faculty_loads WHERE id=@id";
 
                             MySqlCommand cmd = new MySqlCommand(sql, con);
-                            cmd.Parameters.AddWithValue("id",id);
+                            cmd.Parameters.AddWithValue("id", id);
 
                             cmd.ExecuteNonQuery();
                             MessageBox.Show("Record deleted!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -339,8 +353,61 @@ namespace GOC_GS
                     return;
                 }
             }
+
+            else if (e.ColumnIndex == 1)
+            {
+                var ctr = 0;
+                
+                    for (int i = 0; i < dgvFacultyLoads.Rows.Count; i++)
+                    {
+                        if (!dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.Equals(""))//Section to be assigned
+                        {
+                            ctr = 1;
+                        }
+                        
+                        else
+                        {
+                            //MessageBox.Show("Please check the section to assign","Grading System",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            //return;
+                        }
+                    }
+
+                    if (ctr == 1)
+                    {
+
+                        string message = "Do you want to assign the teacher to this section?";
+                        string title = "Grading System";
+
+                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                        DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+                        if (result == DialogResult.Yes)
+                        {
+
+                            foreach (DataGridViewRow row in dgvFacultyLoads.SelectedRows)
+                            {
+                                id = Convert.ToInt32(row.Cells[3].Value.ToString());//id
+                                this_section = row.Cells[0].Value.ToString();//Section to Set
+
+                                facultyLoading.Id = id;
+                                facultyLoading.Section = this_section;
+                                facultyLoading.Update();
+                            }
+                            MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            facultyLoading.LoadDataTable(dgvFacultyLoads);
+                            CountLoads();
+                        }
+                    }
+                }
+                else
+                {
+                    return;
+                }
+
+            
         }
     }
 }
+
 
 

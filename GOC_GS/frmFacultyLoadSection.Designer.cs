@@ -55,7 +55,7 @@ namespace GOC_GS
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(903, 64);
+            this.btnUpdate.Location = new System.Drawing.Point(1003, 108);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(125, 28);
             this.btnUpdate.TabIndex = 8034;
@@ -70,7 +70,7 @@ namespace GOC_GS
             this.dgvFacultyLoads.BackgroundColor = System.Drawing.Color.White;
             this.dgvFacultyLoads.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacultyLoads.Location = new System.Drawing.Point(14, 99);
-            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvFacultyLoads.Margin = new System.Windows.Forms.Padding(4);
             this.dgvFacultyLoads.Name = "dgvFacultyLoads";
             this.dgvFacultyLoads.RowHeadersVisible = false;
             this.dgvFacultyLoads.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -149,12 +149,12 @@ namespace GOC_GS
             this.ClientSize = new System.Drawing.Size(1150, 678);
             this.Controls.Add(this.txtStudent);
             this.Controls.Add(this.btnRemoveAll);
-            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.dgvFacultyLoads);
             this.Controls.Add(this.lblFaculty);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmFacultyLoadSection";
             this.Text = "frmFacultyLoadSection";
