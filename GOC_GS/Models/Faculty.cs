@@ -292,5 +292,43 @@ namespace GOC_GS.Models
             }
             return faculty_list;
         }
+
+        public List<Faculty> CountFaculty()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+
+                    //try to open connection
+                    con.Open();
+
+                    //prepare sql query
+                    string sql = "SELECT id FROM faculty ORDER BY id DESC LIMIT 1;";
+
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);                   
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        Faculty faculty = new Faculty();
+
+                        //prepare properties                        
+                        faculty.id = Convert.ToInt32(reader["id"].ToString());
+                        faculty_list.Add(faculty);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.Message.ToString(), "Enrollment System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return faculty_list;
+        }
     }
 }

@@ -52,6 +52,7 @@ namespace GOC_GS
             this.txtCourse = new System.Windows.Forms.TextBox();
             this.cmbEStatus = new System.Windows.Forms.ComboBox();
             this.cmbEmp = new System.Windows.Forms.ComboBox();
+            this.txtSpecialSubj = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacultyList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.SuspendLayout();
@@ -148,7 +149,7 @@ namespace GOC_GS
             this.txtLName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(233, 25);
-            this.txtLName.TabIndex = 7944;
+            this.txtLName.TabIndex = 4;
             // 
             // txtFName
             // 
@@ -156,7 +157,7 @@ namespace GOC_GS
             this.txtFName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(233, 25);
-            this.txtFName.TabIndex = 7945;
+            this.txtFName.TabIndex = 2;
             // 
             // txtMName
             // 
@@ -164,7 +165,7 @@ namespace GOC_GS
             this.txtMName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMName.Name = "txtMName";
             this.txtMName.Size = new System.Drawing.Size(233, 25);
-            this.txtMName.TabIndex = 7946;
+            this.txtMName.TabIndex = 3;
             // 
             // cmbCourse
             // 
@@ -193,7 +194,7 @@ namespace GOC_GS
             this.cmbAdviserOf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbAdviserOf.Name = "cmbAdviserOf";
             this.cmbAdviserOf.Size = new System.Drawing.Size(233, 28);
-            this.cmbAdviserOf.TabIndex = 7949;
+            this.cmbAdviserOf.TabIndex = 7;
             // 
             // cmbEmpStatus
             // 
@@ -218,7 +219,7 @@ namespace GOC_GS
             this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(85, 44);
-            this.btnAdd.TabIndex = 7951;
+            this.btnAdd.TabIndex = 9;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -231,7 +232,7 @@ namespace GOC_GS
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 44);
-            this.button2.TabIndex = 7952;
+            this.button2.TabIndex = 10;
             this.button2.Text = "&Cancel";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -242,7 +243,7 @@ namespace GOC_GS
             this.txtFacultyId.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFacultyId.Name = "txtFacultyId";
             this.txtFacultyId.Size = new System.Drawing.Size(233, 25);
-            this.txtFacultyId.TabIndex = 7954;
+            this.txtFacultyId.TabIndex = 1;
             // 
             // label1
             // 
@@ -272,7 +273,7 @@ namespace GOC_GS
             this.txtCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCourse.Name = "txtCourse";
             this.txtCourse.Size = new System.Drawing.Size(233, 25);
-            this.txtCourse.TabIndex = 7983;
+            this.txtCourse.TabIndex = 5;
             // 
             // cmbEStatus
             // 
@@ -284,7 +285,7 @@ namespace GOC_GS
             this.cmbEStatus.Location = new System.Drawing.Point(561, 145);
             this.cmbEStatus.Name = "cmbEStatus";
             this.cmbEStatus.Size = new System.Drawing.Size(233, 28);
-            this.cmbEStatus.TabIndex = 7984;
+            this.cmbEStatus.TabIndex = 8;
             // 
             // cmbEmp
             // 
@@ -296,11 +297,20 @@ namespace GOC_GS
             this.cmbEmp.Size = new System.Drawing.Size(233, 28);
             this.cmbEmp.TabIndex = 7985;
             // 
+            // txtSpecialSubj
+            // 
+            this.txtSpecialSubj.Location = new System.Drawing.Point(800, 68);
+            this.txtSpecialSubj.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSpecialSubj.Name = "txtSpecialSubj";
+            this.txtSpecialSubj.Size = new System.Drawing.Size(233, 25);
+            this.txtSpecialSubj.TabIndex = 6;
+            // 
             // frmFaculty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.txtSpecialSubj);
             this.Controls.Add(this.cmbEStatus);
             this.Controls.Add(this.txtCourse);
             this.Controls.Add(this.pbClose);
@@ -361,5 +371,6 @@ namespace GOC_GS
         private System.Windows.Forms.TextBox txtCourse;
         private System.Windows.Forms.ComboBox cmbEStatus;
         private System.Windows.Forms.ComboBox cmbEmp;
+        private System.Windows.Forms.TextBox txtSpecialSubj;
     }
 }

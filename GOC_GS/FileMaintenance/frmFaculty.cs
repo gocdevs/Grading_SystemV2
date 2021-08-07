@@ -21,7 +21,8 @@ namespace GOC_GS
             HeaderFix(dgvFacultyList);
 
             section.LoadCombo(cmbAdviserOf);
-            subjects.LoadCombo(cmbSpecializeSubject);
+            //subjects.LoadCombo(cmbSpecializeSubject);
+            RenderFacultyId();
         }
 
         Faculty faculty = new Faculty();
@@ -59,8 +60,15 @@ namespace GOC_GS
         {
             #region Header Name
             dgv.Columns["id"].Visible = false;
-            //dgv.Columns["subject_code"].HeaderText = "Subject Code";//to fix the header Name
-
+            dgv.Columns["faculty_id"].HeaderText = "Faculty Id";
+            dgv.Columns["fname"].HeaderText = "First Name";
+            dgv.Columns["lname"].HeaderText = "Last Name";
+            dgv.Columns["mname"].HeaderText = "Middle Name";
+            dgv.Columns["course"].HeaderText = "Course";
+            dgv.Columns["specialize_subject"].HeaderText = "Specialization";
+            dgv.Columns["adviser_of"].HeaderText = "Adviser";
+            dgv.Columns["employment_status"].HeaderText = "Status";
+            
             DataGridViewColumn FillSize = dgv.Columns[2];
             FillSize.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             #endregion
@@ -73,11 +81,37 @@ namespace GOC_GS
             txtFName.Text = "";
             txtMName.Text = "";
             txtCourse.Text = "";
-            cmbSpecializeSubject.Text = "";
+            txtSpecialSubj.Text = "";
             cmbAdviserOf.Text = "";
             cmbEStatus.Text = "";
 
             btnAdd.Text = "&Add New";
+        }
+
+        public void RenderFacultyId()
+        {
+            if (dgvFacultyList.Rows.Count > 0)
+            {              
+                faculty_list.Clear();
+                faculty_list = faculty.CountFaculty();
+
+                foreach (var item in faculty_list)
+                {                   
+                    String year = DateTime.Now.Year.ToString();
+                    year = year.Substring(year.Length - 2);
+                    var num = item.Id + 1;
+
+                    txtFacultyId.Text = String.Format("SHS-" + year + "-{0:0000}", num);
+                }
+            }
+            else
+            {
+                String year = DateTime.Now.Year.ToString();
+                year = year.Substring(year.Length - 2);
+                var num = dgvFacultyList.Rows.Count + 1;
+
+                txtFacultyId.Text = String.Format("SHS-"+year+"-{0:0000}", num);
+            }            
         }
 
         private void dgvFacultyList_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -93,7 +127,7 @@ namespace GOC_GS
                 txtLName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[5].Value.ToString();
                 txtMName.Text = dgvFacultyList.Rows[e.RowIndex].Cells[6].Value.ToString();
                 txtCourse.Text = dgvFacultyList.Rows[e.RowIndex].Cells[7].Value.ToString();
-                cmbSpecializeSubject.Text = dgvFacultyList.Rows[e.RowIndex].Cells[8].Value.ToString();
+                txtSpecialSubj.Text = dgvFacultyList.Rows[e.RowIndex].Cells[8].Value.ToString();
                 cmbAdviserOf.Text = dgvFacultyList.Rows[e.RowIndex].Cells[9].Value.ToString();
                 cmbEmp.Text = dgvFacultyList.Rows[e.RowIndex].Cells[10].Value.ToString();
                 cmbEStatus.Text = dgvFacultyList.Rows[e.RowIndex].Cells[10].Value.ToString();
@@ -127,8 +161,8 @@ namespace GOC_GS
         {
             if (btnAdd.Text == "&Update")
             {
-                util.ValidateTextBox5(txtFacultyId, txtLName, txtFName, txtMName, txtCourse);// Validation before Updating
-                util.ValidateCombobox3(cmbAdviserOf, cmbSpecializeSubject, cmbEStatus);// Validation before Updating
+                util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+                util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
                 if (util.readyToSave == 1)
                 {
                     #region UPDATE DISCOUNT
@@ -138,7 +172,7 @@ namespace GOC_GS
                     faculty.First_name = txtFName.Text;
                     faculty.Middle_name = txtMName.Text;
                     faculty.Course = txtCourse.Text;
-                    faculty.Specialize_subject = cmbSpecializeSubject.Text;
+                    faculty.Specialize_subject = txtSpecialSubj.Text;
                     faculty.Adviser_of = cmbAdviserOf.Text;
                     faculty.Emp_status = cmbEStatus.Text;
 
@@ -154,8 +188,8 @@ namespace GOC_GS
             }
             else
             {
-                util.ValidateTextBox5(txtFacultyId, txtLName, txtFName, txtMName, txtCourse);// Validation before Updating
-                util.ValidateCombobox3(cmbAdviserOf, cmbSpecializeSubject, cmbEStatus);// Validation before Updating
+                util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+                util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
 
                 if (util.readyToSave == 1)
                 {
@@ -165,7 +199,7 @@ namespace GOC_GS
                     faculty.First_name = txtFName.Text;
                     faculty.Middle_name = txtMName.Text;
                     faculty.Course = txtCourse.Text;
-                    faculty.Specialize_subject = cmbSpecializeSubject.Text;
+                    faculty.Specialize_subject = txtSpecialSubj.Text;
                     faculty.Adviser_of = cmbAdviserOf.Text;
                     faculty.Emp_status = cmbEStatus.Text;
 

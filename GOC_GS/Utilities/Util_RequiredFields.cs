@@ -206,6 +206,23 @@ namespace GOC_GS
                 readyToSave = 1;
             }
         }
+
+        public void ValidateTextBox6(TextBox one, TextBox two, TextBox three, TextBox four, TextBox five, TextBox six)
+        {
+            TextBox[] newTextBox = { one, two, three, four, five,six };
+            for (int inti = 0; inti < newTextBox.Length; inti++)
+            {
+                if (newTextBox[inti].Text == string.Empty)
+                {
+                    MessageBox.Show("Please fill the required Text");
+                    newTextBox[inti].Focus();
+
+                    readyToSave = 0;
+                    return;
+                }
+                readyToSave = 1;
+            }
+        }
         //public void Validate_MOP(RadioButton one, RadioButton two)
         //{
         //    RadioButton[] newTextBox = { one, two};
