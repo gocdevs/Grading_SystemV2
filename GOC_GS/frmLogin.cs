@@ -20,12 +20,13 @@ namespace GOC_GS
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+           Application.Exit();
         }
 
         public frmLogin()
         {
             InitializeComponent();
+            txtUserName.Focus();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
