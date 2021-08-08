@@ -15,9 +15,15 @@ namespace GOC_GS
     {
         frmGradeInput grade = new frmGradeInput();
         public string Access_Control, Username, UserType, Teacher_Id;
+        List<Panel> listpanel = new List<Panel>();
+        private int index;
         public frmMain()
         {
             InitializeComponent();
+
+            listpanel.Add(pnlAdminView);
+            listpanel.Add(pnlTeacherView);            
+            listpanel[index].BringToFront();
         }
 
         public void AccessGrant()
@@ -32,6 +38,11 @@ namespace GOC_GS
                 lblUser.Text = Username;
                 lblUserStatus.Text = UserType;
                 grade.teacher_id = Teacher_Id;
+
+                //pnlAdminView.Visible = true;
+                //pnlAdminView.Location = new Point(7, 200);
+                listpanel[0].BringToFront();
+                listpanel[0].Visible = true;
             }
 
             else if (Access_Control.Equals("Teacher"))
@@ -45,6 +56,11 @@ namespace GOC_GS
                 lblUserStatus.Text = UserType;
                 grade.teacher_id = Teacher_Id;
 
+                //pnlTeacherView.Visible = true;
+                //pnlTeacherView.Location = new Point(200, 200);
+                listpanel[1].BringToFront();
+                listpanel[1].Visible = true;
+
             }
 
         }
@@ -56,16 +72,7 @@ namespace GOC_GS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            pnlAllContainer.Controls.Clear();
-            pnlAllContainer.Visible = true;
-
-            //load the form
-            frmFileMaintenance frm = new frmFileMaintenance();
-            frm.TopLevel = false;
-            frm.AutoScroll = true;
-
-            pnlAllContainer.Controls.Add(frm);
-            frm.Show();
+           
 
 
             //frmSubjects f = new frmSubjects();
@@ -79,16 +86,7 @@ namespace GOC_GS
 
         private void btnGrading_Click(object sender, EventArgs e)
         {
-            pnlAllContainer.Controls.Clear();
-            pnlAllContainer.Visible = true;
-
-            //load the form
-            frmGradeInput frm = new frmGradeInput();
-            frm.TopLevel = false;
-            frm.AutoScroll = true;
-            frm.teacher_id = Teacher_Id;
-            pnlAllContainer.Controls.Add(frm);
-            frm.Show();
+           
         }
 
         private void btnViewGrades_Click(object sender, EventArgs e)
@@ -104,6 +102,45 @@ namespace GOC_GS
 
         private void btnFacultyLoading_Click(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnDashBoard_Click_1(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmDashboard frm = new frmDashboard();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnFileMaintenance_Click(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmFileMaintenance frm = new frmFileMaintenance();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnFacultyLoading_Click_1(object sender, EventArgs e)
+        {
             pnlAllContainer.Controls.Clear();
             pnlAllContainer.Visible = true;
 
@@ -114,19 +151,60 @@ namespace GOC_GS
 
             pnlAllContainer.Controls.Add(frm);
             frm.Show();
-
         }
 
-        private void btnDashBoard_Click(object sender, EventArgs e)
+        private void btnStudentSubject_Click_1(object sender, EventArgs e)
         {
             pnlAllContainer.Controls.Clear();
             pnlAllContainer.Visible = true;
 
             //load the form
-            frmDashboard frm = new frmDashboard();
+            frmStudentSubject frm = new frmStudentSubject();
             frm.TopLevel = false;
             frm.AutoScroll = true;
 
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnStudentData_Click_1(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmStudentData frm = new frmStudentData();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnGrading_Click_1(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmGradeInput frm = new frmGradeInput();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            frm.teacher_id = Teacher_Id;
+            pnlAllContainer.Controls.Add(frm);
+            frm.Show();
+        }
+
+        private void btnGrading_Click_2(object sender, EventArgs e)
+        {
+            pnlAllContainer.Controls.Clear();
+            pnlAllContainer.Visible = true;
+
+            //load the form
+            frmGradeInput frm = new frmGradeInput();
+            frm.TopLevel = false;
+            frm.AutoScroll = true;
+            frm.teacher_id = Teacher_Id;
             pnlAllContainer.Controls.Add(frm);
             frm.Show();
         }
@@ -141,30 +219,12 @@ namespace GOC_GS
 
         private void btnStudentData_Click(object sender, EventArgs e)
         {
-            pnlAllContainer.Controls.Clear();
-            pnlAllContainer.Visible = true;
-
-            //load the form
-            frmStudentData frm = new frmStudentData();
-            frm.TopLevel = false;
-            frm.AutoScroll = true;
-
-            pnlAllContainer.Controls.Add(frm);
-            frm.Show();
+            
         }
 
         private void btnStudentSubject_Click(object sender, EventArgs e)
         {
-            pnlAllContainer.Controls.Clear();
-            pnlAllContainer.Visible = true;
-
-            //load the form
-            frmStudentSubject frm = new frmStudentSubject();
-            frm.TopLevel = false;
-            frm.AutoScroll = true;
-
-            pnlAllContainer.Controls.Add(frm);
-            frm.Show();
+            
         }
     }
 }
