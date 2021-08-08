@@ -26,9 +26,10 @@ namespace GOC_GS.FileMaintenance
         }
 
         private void btnImport_Click(object sender, EventArgs e)
-        {
+        {           
+            //tmrCount.Enabled = true;
             student_Profile.FilePath = txtFilePath.Text;
-            student_Profile.importFile(dgvStudentList);
+            student_Profile.importFile(dgvStudentList);                      
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -65,7 +66,12 @@ namespace GOC_GS.FileMaintenance
             }
         }
 
-
+        private void tmrCount_Tick(object sender, EventArgs e)
+        {
+            //pnlLoading.Visible = true;
+            lblLoading.Refresh();
+            lblLoading.Text = (dgvStudentList.Rows.Count) + " records saved.";            
+        }
     }
 }
 

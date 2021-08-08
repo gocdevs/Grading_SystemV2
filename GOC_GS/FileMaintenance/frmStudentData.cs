@@ -142,5 +142,10 @@ namespace GOC_GS.FileMaintenance
 
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

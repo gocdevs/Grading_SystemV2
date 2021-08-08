@@ -12,12 +12,14 @@ namespace GOC_GS
 {
     public partial class frmSection : Form
     {
+        Strand strand = new Strand();
         public frmSection()
         {
             InitializeComponent();
             section.LoadDataTable(dgvList);
             AddImageDataGrid(dgvList);
             HeaderFix(dgvList);
+            strand.LoadCombo(cmbStrand);
         }
 
         Section section = new Section();

@@ -14,6 +14,12 @@ namespace GOC_GS
     public partial class frmStudentInfo : Form
     {
         public string goc_no, lrn_no, fname, lname, mname, grade_level, section, strand, academic_status, fullname;
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public int id;
 
 

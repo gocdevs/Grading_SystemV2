@@ -186,5 +186,10 @@ namespace GOC_GS
         {
             Reset();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

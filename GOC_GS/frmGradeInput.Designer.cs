@@ -31,6 +31,7 @@ namespace GOC_GS
         {
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnLoadStud = new System.Windows.Forms.Button();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSubject = new System.Windows.Forms.ComboBox();
@@ -59,7 +60,6 @@ namespace GOC_GS
             this.label4 = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnLoadStud = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lblSection = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -71,13 +71,14 @@ namespace GOC_GS
             // btnClose
             // 
             this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1119, 13);
+            this.btnClose.Location = new System.Drawing.Point(1118, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.Size = new System.Drawing.Size(21, 20);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 7991;
             this.btnClose.TabStop = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel1
             // 
@@ -98,6 +99,18 @@ namespace GOC_GS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 54);
             this.panel1.TabIndex = 7995;
+            // 
+            // btnLoadStud
+            // 
+            this.btnLoadStud.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadStud.Location = new System.Drawing.Point(723, 13);
+            this.btnLoadStud.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLoadStud.Name = "btnLoadStud";
+            this.btnLoadStud.Size = new System.Drawing.Size(85, 28);
+            this.btnLoadStud.TabIndex = 1059;
+            this.btnLoadStud.Text = "Search";
+            this.btnLoadStud.UseVisualStyleBackColor = true;
+            this.btnLoadStud.Click += new System.EventHandler(this.btnLoadStud_Click);
             // 
             // cmbGradeLevel
             // 
@@ -222,7 +235,7 @@ namespace GOC_GS
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(13, 101);
+            this.panel2.Location = new System.Drawing.Point(13, 105);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1126, 546);
@@ -295,7 +308,7 @@ namespace GOC_GS
             this.subjectCode.HeaderText = "Subject Code";
             this.subjectCode.Name = "subjectCode";
             this.subjectCode.ReadOnly = true;
-            this.subjectCode.Width = 118;
+            this.subjectCode.Width = 108;
             // 
             // units
             // 
@@ -310,14 +323,14 @@ namespace GOC_GS
             this.firstQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.firstQ.HeaderText = "Quarter Grade";
             this.firstQ.Name = "firstQ";
-            this.firstQ.Width = 127;
+            this.firstQ.Width = 116;
             // 
             // secondQ
             // 
             this.secondQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.secondQ.HeaderText = "Quarter Grade";
             this.secondQ.Name = "secondQ";
-            this.secondQ.Width = 127;
+            this.secondQ.Width = 116;
             // 
             // average
             // 
@@ -389,7 +402,7 @@ namespace GOC_GS
             this.lblNum.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNum.Location = new System.Drawing.Point(1113, 653);
+            this.lblNum.Location = new System.Drawing.Point(1096, 76);
             this.lblNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(17, 19);
@@ -402,46 +415,34 @@ namespace GOC_GS
             this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(993, 651);
+            this.label10.Location = new System.Drawing.Point(976, 74);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 19);
             this.label10.TabIndex = 8030;
             this.label10.Text = "No. of Students:";
             // 
-            // btnLoadStud
-            // 
-            this.btnLoadStud.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadStud.Location = new System.Drawing.Point(723, 13);
-            this.btnLoadStud.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLoadStud.Name = "btnLoadStud";
-            this.btnLoadStud.Size = new System.Drawing.Size(85, 28);
-            this.btnLoadStud.TabIndex = 1059;
-            this.btnLoadStud.Text = "Search";
-            this.btnLoadStud.UseVisualStyleBackColor = true;
-            this.btnLoadStud.Click += new System.EventHandler(this.btnLoadStud_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(912, 68);
+            this.label6.Location = new System.Drawing.Point(17, 74);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 23);
+            this.label6.Size = new System.Drawing.Size(109, 19);
             this.label6.TabIndex = 1060;
             this.label6.Text = "Section Active:";
             // 
             // lblSection
             // 
             this.lblSection.AutoSize = true;
-            this.lblSection.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSection.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSection.ForeColor = System.Drawing.Color.Black;
-            this.lblSection.Location = new System.Drawing.Point(1040, 68);
+            this.lblSection.Location = new System.Drawing.Point(145, 74);
             this.lblSection.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSection.Name = "lblSection";
-            this.lblSection.Size = new System.Drawing.Size(0, 23);
+            this.lblSection.Size = new System.Drawing.Size(0, 19);
             this.lblSection.TabIndex = 8032;
             // 
             // frmGradeInput

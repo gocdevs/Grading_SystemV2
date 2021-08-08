@@ -413,5 +413,10 @@ namespace GOC_GS
             LoadGrading();
             RecordCount();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -46,10 +46,10 @@ namespace GOC_GS
             // btnClose
             // 
             this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1119, 13);
+            this.btnClose.Location = new System.Drawing.Point(1119, 12);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.Size = new System.Drawing.Size(20, 22);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 7968;
             this.btnClose.TabStop = false;
@@ -62,7 +62,7 @@ namespace GOC_GS
             this.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubjects.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjects.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjects.Location = new System.Drawing.Point(236, 332);
+            this.btnSubjects.Location = new System.Drawing.Point(233, 263);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Size = new System.Drawing.Size(125, 63);
             this.btnSubjects.TabIndex = 7969;
@@ -77,7 +77,7 @@ namespace GOC_GS
             this.btnSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSection.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSection.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSection.Location = new System.Drawing.Point(425, 332);
+            this.btnSection.Location = new System.Drawing.Point(431, 263);
             this.btnSection.Name = "btnSection";
             this.btnSection.Size = new System.Drawing.Size(125, 63);
             this.btnSection.TabIndex = 7970;
@@ -92,7 +92,7 @@ namespace GOC_GS
             this.btnFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFaculty.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaculty.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFaculty.Location = new System.Drawing.Point(806, 205);
+            this.btnFaculty.Location = new System.Drawing.Point(335, 144);
             this.btnFaculty.Name = "btnFaculty";
             this.btnFaculty.Size = new System.Drawing.Size(125, 63);
             this.btnFaculty.TabIndex = 7971;
@@ -107,7 +107,7 @@ namespace GOC_GS
             this.btnStrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStrand.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStrand.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStrand.Location = new System.Drawing.Point(425, 205);
+            this.btnStrand.Location = new System.Drawing.Point(635, 263);
             this.btnStrand.Name = "btnStrand";
             this.btnStrand.Size = new System.Drawing.Size(125, 63);
             this.btnStrand.TabIndex = 7972;
@@ -122,7 +122,7 @@ namespace GOC_GS
             this.btnSubjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubjectType.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjectType.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjectType.Location = new System.Drawing.Point(618, 205);
+            this.btnSubjectType.Location = new System.Drawing.Point(824, 263);
             this.btnSubjectType.Name = "btnSubjectType";
             this.btnSubjectType.Size = new System.Drawing.Size(125, 63);
             this.btnSubjectType.TabIndex = 7973;
@@ -137,11 +137,11 @@ namespace GOC_GS
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(618, 332);
+            this.button1.Location = new System.Drawing.Point(744, 144);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 63);
+            this.button1.Size = new System.Drawing.Size(131, 63);
             this.button1.TabIndex = 7974;
-            this.button1.Text = "Student &Profile";
+            this.button1.Text = "Import Student";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -152,7 +152,7 @@ namespace GOC_GS
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(236, 205);
+            this.button2.Location = new System.Drawing.Point(542, 144);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 63);
             this.button2.TabIndex = 7975;
@@ -178,9 +178,9 @@ namespace GOC_GS
             this.panel1.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(0, 63);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1151, 43);
+            this.panel1.Size = new System.Drawing.Size(1102, 43);
             this.panel1.TabIndex = 7990;
             // 
             // frmFileMaintenance

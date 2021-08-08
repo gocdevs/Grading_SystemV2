@@ -135,12 +135,17 @@ namespace GOC_GS.Models
                                     range.Cells[xlRow, 8].Text,
                                     range.Cells[xlRow, 9].Text
                                     );
+
+                       
                     }
                     //end load datagrid
 
                     workbook.Close();
                     application.Quit();
+                   
                     MessageBox.Show("All data load Successfully", "Ready to save into Database", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    FileMaintenance.frmStudentProfile frm = new FileMaintenance.frmStudentProfile();
+                    frm.tmrCount.Enabled = false;
                 }
             }
             catch(Exception ex)
@@ -258,7 +263,7 @@ namespace GOC_GS.Models
 
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (MySqlException ex)

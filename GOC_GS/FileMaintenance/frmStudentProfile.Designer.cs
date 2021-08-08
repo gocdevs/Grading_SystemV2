@@ -29,15 +29,8 @@ namespace GOC_GS.FileMaintenance
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnSaveToDatabase = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.PictureBox();
-            this.txtFilePath = new System.Windows.Forms.TextBox();
-            this.lblFile = new System.Windows.Forms.Label();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnImport = new System.Windows.Forms.Button();
-            this.btnBrowse = new System.Windows.Forms.Button();
             this.goc_no = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +40,16 @@ namespace GOC_GS.FileMaintenance
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSaveToDatabase = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.PictureBox();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.lblFile = new System.Windows.Forms.Label();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.lblLoading = new System.Windows.Forms.Label();
+            this.tmrCount = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.SuspendLayout();
@@ -73,8 +76,64 @@ namespace GOC_GS.FileMaintenance
             this.dgvStudentList.ReadOnly = true;
             this.dgvStudentList.RowHeadersVisible = false;
             this.dgvStudentList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentList.Size = new System.Drawing.Size(1123, 547);
+            this.dgvStudentList.Size = new System.Drawing.Size(1123, 475);
             this.dgvStudentList.TabIndex = 7936;
+            // 
+            // goc_no
+            // 
+            this.goc_no.HeaderText = "GOC Number";
+            this.goc_no.Name = "goc_no";
+            this.goc_no.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "LRN Number";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "First Name";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Middle Name";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Last Name";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Grade Level";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Section";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Strand";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.HeaderText = "Academic Status";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
             // 
             // btnCancel
             // 
@@ -176,67 +235,28 @@ namespace GOC_GS.FileMaintenance
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
-            // goc_no
+            // lblLoading
             // 
-            this.goc_no.HeaderText = "GOC Number";
-            this.goc_no.Name = "goc_no";
-            this.goc_no.ReadOnly = true;
+            this.lblLoading.AutoSize = true;
+            this.lblLoading.BackColor = System.Drawing.SystemColors.Control;
+            this.lblLoading.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoading.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblLoading.Location = new System.Drawing.Point(923, 604);
+            this.lblLoading.Name = "lblLoading";
+            this.lblLoading.Size = new System.Drawing.Size(0, 19);
+            this.lblLoading.TabIndex = 8018;
             // 
-            // Column1
+            // tmrCount
             // 
-            this.Column1.HeaderText = "LRN Number";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "First Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Middle Name";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Last Name";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Grade Level";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Section";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Strand";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.HeaderText = "Academic Status";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
+            this.tmrCount.Interval = 1000;
+            this.tmrCount.Tick += new System.EventHandler(this.tmrCount_Tick);
             // 
             // frmStudentProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.lblLoading);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnImport);
@@ -276,5 +296,7 @@ namespace GOC_GS.FileMaintenance
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.Label lblLoading;
+        public System.Windows.Forms.Timer tmrCount;
     }
 }

@@ -42,7 +42,7 @@ namespace GOC_GS
             // txtStrandName
             // 
             this.txtStrandName.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStrandName.Location = new System.Drawing.Point(112, 97);
+            this.txtStrandName.Location = new System.Drawing.Point(114, 60);
             this.txtStrandName.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.txtStrandName.Name = "txtStrandName";
             this.txtStrandName.Size = new System.Drawing.Size(176, 25);
@@ -54,7 +54,7 @@ namespace GOC_GS
             this.label4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label4.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(15, 100);
+            this.label4.Location = new System.Drawing.Point(17, 63);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(85, 20);
@@ -67,13 +67,13 @@ namespace GOC_GS
             this.dgvList.AllowUserToDeleteRows = false;
             this.dgvList.BackgroundColor = System.Drawing.Color.White;
             this.dgvList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvList.Location = new System.Drawing.Point(14, 141);
+            this.dgvList.Location = new System.Drawing.Point(16, 104);
             this.dgvList.Margin = new System.Windows.Forms.Padding(4);
             this.dgvList.Name = "dgvList";
             this.dgvList.ReadOnly = true;
             this.dgvList.RowHeadersVisible = false;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(1123, 516);
+            this.dgvList.Size = new System.Drawing.Size(1123, 539);
             this.dgvList.TabIndex = 7979;
             this.dgvList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellContentClick);
             // 
@@ -81,7 +81,7 @@ namespace GOC_GS
             // 
             this.btnCancel.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = global::GOC_GS.Properties.Resources.refresh;
-            this.btnCancel.Location = new System.Drawing.Point(1052, 89);
+            this.btnCancel.Location = new System.Drawing.Point(1054, 52);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 44);
@@ -96,7 +96,7 @@ namespace GOC_GS
             this.btnAdd.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Image = global::GOC_GS.Properties.Resources.add;
             this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdd.Location = new System.Drawing.Point(948, 89);
+            this.btnAdd.Location = new System.Drawing.Point(950, 52);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(98, 44);
@@ -108,7 +108,7 @@ namespace GOC_GS
             // btnClose
             // 
             this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1117, 24);
+            this.btnClose.Location = new System.Drawing.Point(1119, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(20, 30);
