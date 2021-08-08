@@ -64,11 +64,15 @@ namespace GOC_GS
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.lblLoading = new System.Windows.Forms.Label();
             this.pnlLoading = new System.Windows.Forms.PictureBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlLoading)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvStudentSubjects
@@ -211,7 +215,7 @@ namespace GOC_GS
             this.dgvStudentName.AllowUserToDeleteRows = false;
             this.dgvStudentName.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudentName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentName.Location = new System.Drawing.Point(116, 39);
+            this.dgvStudentName.Location = new System.Drawing.Point(116, 48);
             this.dgvStudentName.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStudentName.Name = "dgvStudentName";
             this.dgvStudentName.ReadOnly = true;
@@ -226,7 +230,7 @@ namespace GOC_GS
             this.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblCount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCount.Location = new System.Drawing.Point(896, 10);
+            this.lblCount.Location = new System.Drawing.Point(896, 19);
             this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(55, 19);
@@ -239,7 +243,7 @@ namespace GOC_GS
             this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(781, 10);
+            this.label5.Location = new System.Drawing.Point(781, 19);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
@@ -333,7 +337,7 @@ namespace GOC_GS
             this.label4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(112, 10);
+            this.label4.Location = new System.Drawing.Point(112, 19);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(187, 19);
@@ -345,7 +349,7 @@ namespace GOC_GS
             this.cmbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSection.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(305, 7);
+            this.cmbSection.Location = new System.Drawing.Point(305, 16);
             this.cmbSection.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(109, 27);
@@ -404,10 +408,10 @@ namespace GOC_GS
             // btnClose
             // 
             this.btnClose.Image = global::GOC_GS.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1121, 11);
+            this.btnClose.Location = new System.Drawing.Point(1127, 6);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(20, 30);
+            this.btnClose.Size = new System.Drawing.Size(15, 23);
             this.btnClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnClose.TabIndex = 7990;
             this.btnClose.TabStop = false;
@@ -434,11 +438,46 @@ namespace GOC_GS
             this.pnlLoading.TabIndex = 8016;
             this.pnlLoading.TabStop = false;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.Location = new System.Drawing.Point(9, 8);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(111, 23);
+            this.radioButton1.TabIndex = 8017;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.Location = new System.Drawing.Point(126, 8);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(111, 23);
+            this.radioButton2.TabIndex = 8018;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Location = new System.Drawing.Point(447, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(273, 37);
+            this.panel1.TabIndex = 8019;
+            this.panel1.Visible = false;
+            // 
             // frmStudentSubject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlLoading);
             this.Controls.Add(this.lblLoading);
             this.Controls.Add(this.lblSuccess);
@@ -468,6 +507,8 @@ namespace GOC_GS
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlLoading)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -509,5 +550,8 @@ namespace GOC_GS
         private System.Windows.Forms.Label lblSuccess;
         private System.Windows.Forms.Label lblLoading;
         private System.Windows.Forms.PictureBox pnlLoading;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
