@@ -175,6 +175,11 @@ namespace GOC_GS
 
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
         private void btnGenerate_Click(object sender, EventArgs e)
         {
