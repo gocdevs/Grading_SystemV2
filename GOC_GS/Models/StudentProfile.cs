@@ -246,6 +246,7 @@ namespace GOC_GS.Models
                     con.Open();
                     //prepare sql query
                     string sql = "SELECT id, lrn_no, fname, lname ,CONCAT(LEFT(mname,1)) mname, section, strand FROM student_profile";
+
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
                     MySqlDataReader reader = cmd.ExecuteReader();

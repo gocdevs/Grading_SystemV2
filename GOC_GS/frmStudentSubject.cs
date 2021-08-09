@@ -38,11 +38,11 @@ namespace GOC_GS
         {
             InitializeComponent();
             pnlLoading.Hide();
-            studentData.LoadStudentList(dgvStudentNames);
+            //studentData.LoadStudentList(dgvStudentNames);
 
             LoadMe();
 
-            HeaderFix(dgvStudentNames);
+            //HeaderFix(dgvStudentNames);
 
             section.LoadCombo(cmbSection);
             strand.LoadCombo(cmbStrand);
@@ -56,14 +56,11 @@ namespace GOC_GS
         {
             list_studProf.Clear();
             list_studProf = studProf.LoadStudentToGrade();
-
+            dgvStudNames.Rows.Clear();
             foreach (var item in list_studProf)
             {
-
-                //string last = item.MName;
-                //string mname = last.Substring(0,1);
-               
-                if (item.MName == "")
+              
+                if ( item.MName.Trim() == "")
                 {
                     fullname = item.LName + ", " + item.FName + " " + item.MName + "";
                 }
@@ -71,13 +68,38 @@ namespace GOC_GS
                 {
                     fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
                 }
-
-
                 dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname , item.Section, item.Strand);
             }
         }
 
-       
+       public String strand_item;
+       private void FilterBySection()
+        {
+            list_studProf.Clear();
+            list_studProf = studProf.LoadStudentToGrade();
+
+            dgvStudNames.Rows.Clear();
+            foreach (var item in list_studProf)
+            {
+                if (cmbSection.Text.Equals(item.Section))
+                {
+                    if (item.MName.Trim() == "")
+                    {
+                        fullname = item.LName + ", " + item.FName + " " + item.MName + "";
+                    }
+                    else
+                    {
+                        fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
+                    }
+
+                    dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname, item.Section, item.Strand);
+
+                    lblStrand.Refresh();
+                    lblStrand.Text = item.Strand;
+                }
+               
+            }                                          
+        }
 
         public void HeaderFix(DataGridView dgv)
         {
@@ -99,11 +121,12 @@ namespace GOC_GS
 
         private void cmbSection_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-            bs.Filter = string.Format("section LIKE '%{0}%'", cmbSection.Text);
-            //LoadTVL();
-            RecordCount();
-            //studentData.LoadStudentList(dgvStudentName);
+
+            ////bs.Filter = string.Format("section LIKE '%{0}%'", cmbSection.Text);
+            ////LoadTVL();
+            //FilterBySection();
+            //RecordCount();
+            ////studentData.LoadStudentList(dgvStudentName);
 
         }
 
@@ -141,24 +164,10 @@ namespace GOC_GS
 
         private void cmbSemester_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadTVL();
+            
             RecordCount();
 
-            //clear list
-            subject_list.Clear();
-            dgvSubjects.Rows.Clear();
-            //pass value to list
-
-            subject.Semester = cmbSemester.Text;
-            subject.Grade_level = cmbGradeLevel.Text;
-            subject.Strand = cmbStrand.Text;
-            subject_list = subject.LoadThisSubjects();
-
-            //loop through load it to list view
-            foreach (var item in subject_list)
-            {
-                dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
-            }//End LoadSchedule()
+           
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -188,45 +197,47 @@ namespace GOC_GS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LoadTVL();
+            subject.Grade_level = cmbGradeLevel.Text;
+            subject.Strand = lblStrand.Text;
+            subject.Semester = cmbSemester.Text;
+            subject_list =  subject.LoadThisSubjects();
+
+            dgvStudentSubjects.Rows.Clear();
+            foreach (var item in subject_list)
+            {
+                dgvStudentSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type ,item.Strand,item.Semester );
+            }
+
+
         }
 
-        private void LoadTVL()
-        {
-            try
-            {
-                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
-                {
-                    con.Open();
-
-                    string sql = "SELECT lrn_no, CONCAT(fname,' ', Left(mname,1) ,'. ',lname) FullName, section, strand  FROM student_profile WHERE strand LIKE('" + cmbStrand.Text + "')";
-
-                    MySqlCommand cmd = new MySqlCommand(sql, con);
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-
-                    da.SelectCommand = cmd;
-
-                    //initialize new datatable and load data to datagridview
-                    dt = new DataTable();
-
-                    da.Fill(dt);
-
-
-                    dgvStudentNames.DataSource = dt;
-
-
-                    con.Close();
-                }
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("ERROR :  " + ex.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            //studentData.LoadStudentList(dgvStudentName);
+            FilterBySection();
+            RecordCount();
+
+            ////clear list
+            //subject_list.Clear();
+            //dgvSubjects.Rows.Clear();
+            
+            ////pass value to list
+            //subject.Semester = cmbSemester.Text;
+            //subject.Grade_level = cmbGradeLevel.Text;
+            //subject.Strand = cmbStrand.Text;
+            //subject_list = subject.LoadThisSubjects();
+
+            ////loop through load it to list view
+            //foreach (var item in subject_list)
+            //{
+            //    dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
+            //}//End LoadSchedule()
+        }
+
+        private void cmbSection_Click(object sender, EventArgs e)
+        {
+           
         }
 
         public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
