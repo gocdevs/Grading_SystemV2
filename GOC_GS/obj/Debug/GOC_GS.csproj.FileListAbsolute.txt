@@ -86,25 +86,12 @@ C:\Users\Odyssey\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmLo
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentProfile.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmLogin.resources
 C:\Users\My Computer\Desktop\GOC\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentData.resources
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Google.Protobuf.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Zstandard.Net.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Memory.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Buffers.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\MySql.Data.xml
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.FileMaintenance.frmStudentData.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStudentSubject.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmUsers.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultyLoadSection.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmGradeInput.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmFacultySetUp.resources
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.AssemblyReference.cache
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\GOC_GS.exe.config
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\GOC_GS.exe
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\GOC_GS.pdb
@@ -151,3 +138,4 @@ C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.exe
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.pdb
 C:\Users\emaru\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csprojAssemblyReference.cache
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStudentInfo.resources
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.AssemblyReference.cache

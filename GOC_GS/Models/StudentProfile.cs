@@ -200,6 +200,7 @@ namespace GOC_GS.Models
                     //try to open connection
                     con.Open();
                     //prepare sql query
+
                     string sql = "SELECT * FROM student_profile";
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -234,6 +235,49 @@ namespace GOC_GS.Models
             return studentProfiles;
         }//End of Load
 
+        public List<StudentProfile> LoadStudentToGrade()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    //prepare sql query
+                    string sql = "SELECT id, lrn_no, fname, lname ,CONCAT(LEFT(mname,1)) mname, section, strand FROM student_profile";
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    //loop while have record
+                    while (reader.Read())
+                    {
+                        //instantiate model
+                        StudentProfile stud = new StudentProfile();
+
+                        //prepare properties                                               
+                        stud.id = Convert.ToInt32(reader["id"].ToString());
+                        //stud.goc_no = reader["goc_no"].ToString();
+                        stud.lrn_no = reader["lrn_no"].ToString();
+                        stud.fname = reader["fname"].ToString();
+                        stud.mname = reader["mname"].ToString();
+                        stud.lname = reader["lname"].ToString();
+                        //stud.grade_level = reader["grade_level"].ToString();
+                        stud.section = reader["section"].ToString();
+                        stud.strand = reader["strand"].ToString();
+                        //stud.academic_status = reader["academic_status"].ToString();
+
+                        studentProfiles.Add(stud);
+                    }
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.ToString(), "System Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return studentProfiles;
+        }//End of Load
 
         //Update
         public void Update()

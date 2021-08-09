@@ -37,7 +37,7 @@ namespace GOC_GS.Models
             set { strand = value; }
         }
 
-       
+
 
         public void LoadStudentList(DataGridView dgv)
         {
