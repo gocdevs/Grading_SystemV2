@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GOC_GS.Models;
+using MySql.Data.MySqlClient;
 
 namespace GOC_GS.FileMaintenance
 {
@@ -46,7 +47,22 @@ namespace GOC_GS.FileMaintenance
                 dgv.Rows.Add(item.Id,item.GOC_No,item.LRN_No ,item.FName, item.MName, item.LName, item.Grade_Level, item.Section, item.Strand, item.Academic_Status);              
             }         
         }
+                
+        public void SearchStudent()
+        {
+            sp_list.Clear();
+            sp_list = sp.LoadStudent();
+            dgv.Rows.Clear();
 
+            foreach (var item in sp_list)
+            {               
+                if (item.LName.Contains(txtSearch.Text.ToUpper()))
+                {
+                    dgv.Rows.Add(item.Id, item.GOC_No, item.LRN_No, item.FName, item.MName, item.LName, item.Grade_Level, item.Section, item.Strand, item.Academic_Status);
+                }
+                
+            }
+        }
 
         public void HeaderFixSubject(DataGridView dgv)
         {
@@ -77,10 +93,7 @@ namespace GOC_GS.FileMaintenance
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            sda.Lname = txtSearch.Text;
-            sda.Grade_level = cmbGradeLevel.Text;
-            sda.Strand = cmbStrand.Text;
-            sda.LoadDataTable(dgvStudentList);
+            SearchStudent();
         }
 
         private void cmbGradeLevel_SelectedIndexChanged(object sender, EventArgs e)
@@ -105,9 +118,25 @@ namespace GOC_GS.FileMaintenance
         {
             
         }
-       
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dgv_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //info.id = Convert.ToInt32(dgv.Rows[e.RowIndex].Cells[0].Value.ToString());
+            if (e.ColumnIndex != 10)
+            {
+                return;
+            }
+
             if (e.ColumnIndex == 10)//select to edit
             {
                 //MessageBox.Show("aa");
@@ -116,7 +145,7 @@ namespace GOC_GS.FileMaintenance
                 info.goc_no = dgv.Rows[e.RowIndex].Cells[1].Value.ToString();
                 info.lrn_no = dgv.Rows[e.RowIndex].Cells[2].Value.ToString();
 
-                info.fname = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();                
+                info.fname = dgv.Rows[e.RowIndex].Cells[3].Value.ToString();
                 info.mname = dgv.Rows[e.RowIndex].Cells[4].Value.ToString();
                 info.lname = dgv.Rows[e.RowIndex].Cells[5].Value.ToString();
 
@@ -127,7 +156,6 @@ namespace GOC_GS.FileMaintenance
             }
 
             //info.Show();
-
             //frmFacultyLoadSection frm = new frmFacultyLoadSection();
             frmMain mainwin = (frmMain)Application.OpenForms["frmMain"];
             mainwin.pnlAllContainer.Controls.Clear();
@@ -135,17 +163,7 @@ namespace GOC_GS.FileMaintenance
             info.AutoScroll = true;
             mainwin.pnlAllContainer.Controls.Add(info);
             info.Show();
-
-
             info.Render();
-            
-
-
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -62,7 +62,7 @@ namespace GOC_GS
             this.btnSubjects.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubjects.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjects.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjects.Location = new System.Drawing.Point(233, 263);
+            this.btnSubjects.Location = new System.Drawing.Point(222, 189);
             this.btnSubjects.Name = "btnSubjects";
             this.btnSubjects.Size = new System.Drawing.Size(125, 63);
             this.btnSubjects.TabIndex = 7969;
@@ -77,7 +77,7 @@ namespace GOC_GS
             this.btnSection.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSection.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSection.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSection.Location = new System.Drawing.Point(431, 263);
+            this.btnSection.Location = new System.Drawing.Point(420, 189);
             this.btnSection.Name = "btnSection";
             this.btnSection.Size = new System.Drawing.Size(125, 63);
             this.btnSection.TabIndex = 7970;
@@ -92,7 +92,7 @@ namespace GOC_GS
             this.btnFaculty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFaculty.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFaculty.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnFaculty.Location = new System.Drawing.Point(335, 144);
+            this.btnFaculty.Location = new System.Drawing.Point(317, 318);
             this.btnFaculty.Name = "btnFaculty";
             this.btnFaculty.Size = new System.Drawing.Size(125, 63);
             this.btnFaculty.TabIndex = 7971;
@@ -107,7 +107,7 @@ namespace GOC_GS
             this.btnStrand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStrand.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStrand.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnStrand.Location = new System.Drawing.Point(635, 263);
+            this.btnStrand.Location = new System.Drawing.Point(624, 189);
             this.btnStrand.Name = "btnStrand";
             this.btnStrand.Size = new System.Drawing.Size(125, 63);
             this.btnStrand.TabIndex = 7972;
@@ -122,7 +122,7 @@ namespace GOC_GS
             this.btnSubjectType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubjectType.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubjectType.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnSubjectType.Location = new System.Drawing.Point(824, 263);
+            this.btnSubjectType.Location = new System.Drawing.Point(813, 189);
             this.btnSubjectType.Name = "btnSubjectType";
             this.btnSubjectType.Size = new System.Drawing.Size(125, 63);
             this.btnSubjectType.TabIndex = 7973;
@@ -137,7 +137,7 @@ namespace GOC_GS
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Control;
-            this.button1.Location = new System.Drawing.Point(744, 144);
+            this.button1.Location = new System.Drawing.Point(726, 318);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(131, 63);
             this.button1.TabIndex = 7974;
@@ -152,7 +152,7 @@ namespace GOC_GS
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(542, 144);
+            this.button2.Location = new System.Drawing.Point(524, 318);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(125, 63);
             this.button2.TabIndex = 7975;
