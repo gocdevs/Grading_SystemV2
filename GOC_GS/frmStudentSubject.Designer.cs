@@ -89,7 +89,7 @@ namespace GOC_GS
             this.Column5,
             this.Column3,
             this.Column6});
-            this.dgvStudentSubjects.Location = new System.Drawing.Point(1043, 393);
+            this.dgvStudentSubjects.Location = new System.Drawing.Point(1114, 77);
             this.dgvStudentSubjects.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStudentSubjects.Name = "dgvStudentSubjects";
             this.dgvStudentSubjects.ReadOnly = true;
@@ -156,13 +156,13 @@ namespace GOC_GS
             this.Column12,
             this.Column13,
             this.Column14});
-            this.dgvSubjects.Location = new System.Drawing.Point(117, 372);
+            this.dgvSubjects.Location = new System.Drawing.Point(37, 372);
             this.dgvSubjects.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.RowHeadersVisible = false;
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubjects.Size = new System.Drawing.Size(835, 265);
+            this.dgvSubjects.Size = new System.Drawing.Size(1070, 265);
             this.dgvSubjects.TabIndex = 8007;
             // 
             // Column8
@@ -215,13 +215,13 @@ namespace GOC_GS
             this.dgvStudentName.AllowUserToDeleteRows = false;
             this.dgvStudentName.BackgroundColor = System.Drawing.Color.White;
             this.dgvStudentName.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStudentName.Location = new System.Drawing.Point(116, 48);
+            this.dgvStudentName.Location = new System.Drawing.Point(37, 48);
             this.dgvStudentName.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStudentName.Name = "dgvStudentName";
             this.dgvStudentName.ReadOnly = true;
             this.dgvStudentName.RowHeadersVisible = false;
             this.dgvStudentName.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvStudentName.Size = new System.Drawing.Size(835, 273);
+            this.dgvStudentName.Size = new System.Drawing.Size(1070, 273);
             this.dgvStudentName.TabIndex = 8006;
             // 
             // lblCount
@@ -230,7 +230,7 @@ namespace GOC_GS
             this.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblCount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCount.Location = new System.Drawing.Point(896, 19);
+            this.lblCount.Location = new System.Drawing.Point(1045, 16);
             this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCount.Name = "lblCount";
             this.lblCount.Size = new System.Drawing.Size(55, 19);
@@ -243,7 +243,7 @@ namespace GOC_GS
             this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(781, 19);
+            this.label5.Location = new System.Drawing.Point(930, 16);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
@@ -258,7 +258,7 @@ namespace GOC_GS
             this.cmbSemester.Items.AddRange(new object[] {
             "1st",
             "2nd"});
-            this.cmbSemester.Location = new System.Drawing.Point(600, 330);
+            this.cmbSemester.Location = new System.Drawing.Point(602, 338);
             this.cmbSemester.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbSemester.Name = "cmbSemester";
             this.cmbSemester.Size = new System.Drawing.Size(120, 27);
@@ -271,7 +271,7 @@ namespace GOC_GS
             this.label3.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(521, 336);
+            this.label3.Location = new System.Drawing.Point(523, 344);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 19);
@@ -283,7 +283,7 @@ namespace GOC_GS
             this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
-            this.cmbStrand.Location = new System.Drawing.Point(361, 331);
+            this.cmbStrand.Location = new System.Drawing.Point(363, 339);
             this.cmbStrand.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbStrand.Name = "cmbStrand";
             this.cmbStrand.Size = new System.Drawing.Size(120, 27);
@@ -298,7 +298,7 @@ namespace GOC_GS
             this.cmbGradeLevel.Items.AddRange(new object[] {
             "11",
             "12"});
-            this.cmbGradeLevel.Location = new System.Drawing.Point(209, 331);
+            this.cmbGradeLevel.Location = new System.Drawing.Point(150, 337);
             this.cmbGradeLevel.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbGradeLevel.Name = "cmbGradeLevel";
             this.cmbGradeLevel.Size = new System.Drawing.Size(61, 27);
@@ -311,7 +311,7 @@ namespace GOC_GS
             this.label7.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(301, 334);
+            this.label7.Location = new System.Drawing.Point(303, 342);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(54, 19);
@@ -324,7 +324,7 @@ namespace GOC_GS
             this.label6.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(113, 336);
+            this.label6.Location = new System.Drawing.Point(54, 342);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 19);
@@ -360,7 +360,7 @@ namespace GOC_GS
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1043, 354);
+            this.button1.Location = new System.Drawing.Point(1114, 38);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 32);
             this.button1.TabIndex = 8009;
@@ -372,7 +372,7 @@ namespace GOC_GS
             // btnGenerate
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(833, 328);
+            this.btnGenerate.Location = new System.Drawing.Point(989, 333);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(118, 34);
             this.btnGenerate.TabIndex = 8010;
@@ -383,7 +383,7 @@ namespace GOC_GS
             // lblPercent
             // 
             this.lblPercent.AutoSize = true;
-            this.lblPercent.Location = new System.Drawing.Point(959, 653);
+            this.lblPercent.Location = new System.Drawing.Point(1015, 650);
             this.lblPercent.Name = "lblPercent";
             this.lblPercent.Size = new System.Drawing.Size(0, 13);
             this.lblPercent.TabIndex = 8012;
@@ -392,7 +392,7 @@ namespace GOC_GS
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(575, 333);
+            this.label1.Location = new System.Drawing.Point(577, 341);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 19);
             this.label1.TabIndex = 8013;
@@ -400,7 +400,7 @@ namespace GOC_GS
             // lblSuccess
             // 
             this.lblSuccess.AutoSize = true;
-            this.lblSuccess.Location = new System.Drawing.Point(1004, 653);
+            this.lblSuccess.Location = new System.Drawing.Point(1060, 650);
             this.lblSuccess.Name = "lblSuccess";
             this.lblSuccess.Size = new System.Drawing.Size(0, 13);
             this.lblSuccess.TabIndex = 8014;

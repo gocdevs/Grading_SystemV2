@@ -92,7 +92,7 @@ namespace GOC_GS
             dgv.Columns["id"].Visible = false;
             dgv.Columns["date_assigned"].Visible = false;
           
-            dgv.Columns["strand"].Visible = false;
+            dgv.Columns["strand"].HeaderText = "Strand";
 
             dgv.Columns["faculty_id"].HeaderText = "Faculty Id";
             dgv.Columns["fullname"].HeaderText = "Faculty Name";
@@ -168,7 +168,7 @@ namespace GOC_GS
                     {
                         //if (dgvFacultyLoads.Rows[i].Cells[10].FormattedValue.Equals(""))//Section to be assigned
                         //{
-                            facultyLoading.Id = Convert.ToInt32(dgvFacultyLoads.Rows[i].Cells[2].FormattedValue.ToString());//id
+                            facultyLoading.Id = Convert.ToInt32(dgvFacultyLoads.Rows[i].Cells[3].FormattedValue.ToString());//id
                             facultyLoading.Section = dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.ToString();//Updated Section
 
                             facultyLoading.Update();
@@ -317,7 +317,7 @@ namespace GOC_GS
 
                 if (result == DialogResult.Yes)
                 {
-                    id = Convert.ToInt32(dgvFacultyLoads.Rows[e.RowIndex].Cells[2].Value.ToString());
+                    id = Convert.ToInt32(dgvFacultyLoads.Rows[e.RowIndex].Cells[3].Value.ToString());
 
                     #region Delete Specific
                     try
