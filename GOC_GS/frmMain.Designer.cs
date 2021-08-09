@@ -39,11 +39,9 @@ namespace GOC_GS
             this.label3 = new System.Windows.Forms.Label();
             this.lblFacultyId = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
-            this.btnConSettings = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pnlAllContainer = new System.Windows.Forms.Panel();
             this.pnlAdminView = new System.Windows.Forms.Panel();
             this.btnStudentSubject = new System.Windows.Forms.Button();
+            this.btnConSettings = new System.Windows.Forms.Button();
             this.btnStudentData = new System.Windows.Forms.Button();
             this.btnFileMaintenance = new System.Windows.Forms.Button();
             this.btnFacultyLoading = new System.Windows.Forms.Button();
@@ -51,11 +49,13 @@ namespace GOC_GS
             this.pnlTeacherView = new System.Windows.Forms.Panel();
             this.btnViewGrades = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlAllContainer = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlAdminView.SuspendLayout();
             this.pnlTeacherView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -171,45 +171,6 @@ namespace GOC_GS
             this.pnlLeft.Size = new System.Drawing.Size(200, 729);
             this.pnlLeft.TabIndex = 1;
             // 
-            // btnConSettings
-            // 
-            this.btnConSettings.FlatAppearance.BorderSize = 0;
-            this.btnConSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConSettings.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-            this.btnConSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnConSettings.Image")));
-            this.btnConSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConSettings.Location = new System.Drawing.Point(3, 455);
-            this.btnConSettings.Name = "btnConSettings";
-            this.btnConSettings.Size = new System.Drawing.Size(181, 46);
-            this.btnConSettings.TabIndex = 69;
-            this.btnConSettings.Text = "     Connection Settings";
-            this.btnConSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConSettings.UseVisualStyleBackColor = true;
-            this.btnConSettings.Click += new System.EventHandler(this.btnConSettings_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(22, 12);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(148, 164);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1037;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.WaitOnLoad = true;
-            // 
-            // pnlAllContainer
-            // 
-            this.pnlAllContainer.BackgroundImage = global::GOC_GS.Properties.Resources.goc_logo;
-            this.pnlAllContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlAllContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAllContainer.Location = new System.Drawing.Point(200, 59);
-            this.pnlAllContainer.Name = "pnlAllContainer";
-            this.pnlAllContainer.Size = new System.Drawing.Size(1150, 670);
-            this.pnlAllContainer.TabIndex = 26;
-            // 
             // pnlAdminView
             // 
             this.pnlAdminView.Controls.Add(this.btnStudentSubject);
@@ -218,7 +179,7 @@ namespace GOC_GS
             this.pnlAdminView.Controls.Add(this.btnFileMaintenance);
             this.pnlAdminView.Controls.Add(this.btnFacultyLoading);
             this.pnlAdminView.Controls.Add(this.btnDashBoard);
-            this.pnlAdminView.Location = new System.Drawing.Point(4, 206);
+            this.pnlAdminView.Location = new System.Drawing.Point(6, 200);
             this.pnlAdminView.Name = "pnlAdminView";
             this.pnlAdminView.Size = new System.Drawing.Size(187, 517);
             this.pnlAdminView.TabIndex = 0;
@@ -240,6 +201,23 @@ namespace GOC_GS
             this.btnStudentSubject.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnStudentSubject.UseVisualStyleBackColor = true;
             this.btnStudentSubject.Click += new System.EventHandler(this.btnStudentSubject_Click_1);
+            // 
+            // btnConSettings
+            // 
+            this.btnConSettings.FlatAppearance.BorderSize = 0;
+            this.btnConSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConSettings.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnConSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnConSettings.Image")));
+            this.btnConSettings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConSettings.Location = new System.Drawing.Point(3, 455);
+            this.btnConSettings.Name = "btnConSettings";
+            this.btnConSettings.Size = new System.Drawing.Size(181, 46);
+            this.btnConSettings.TabIndex = 69;
+            this.btnConSettings.Text = "     Connection Settings";
+            this.btnConSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConSettings.UseVisualStyleBackColor = true;
+            this.btnConSettings.Click += new System.EventHandler(this.btnConSettings_Click);
             // 
             // btnStudentData
             // 
@@ -333,6 +311,7 @@ namespace GOC_GS
             this.btnViewGrades.Text = "     View Grades";
             this.btnViewGrades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnViewGrades.UseVisualStyleBackColor = true;
+            this.btnViewGrades.Visible = false;
             // 
             // btnGrading
             // 
@@ -351,6 +330,28 @@ namespace GOC_GS
             this.btnGrading.UseVisualStyleBackColor = true;
             this.btnGrading.Click += new System.EventHandler(this.btnGrading_Click_2);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(22, 12);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(148, 164);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1037;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.WaitOnLoad = true;
+            // 
+            // pnlAllContainer
+            // 
+            this.pnlAllContainer.BackgroundImage = global::GOC_GS.Properties.Resources.goc_logo;
+            this.pnlAllContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlAllContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAllContainer.Location = new System.Drawing.Point(200, 59);
+            this.pnlAllContainer.Name = "pnlAllContainer";
+            this.pnlAllContainer.Size = new System.Drawing.Size(1150, 670);
+            this.pnlAllContainer.TabIndex = 26;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,9 +368,9 @@ namespace GOC_GS
             this.pnlTop.PerformLayout();
             this.pnlLeft.ResumeLayout(false);
             this.pnlLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlAdminView.ResumeLayout(false);
             this.pnlTeacherView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
