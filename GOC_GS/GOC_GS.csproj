@@ -299,9 +299,7 @@
   <ItemGroup>
     <None Include="Resources\search1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Transcations\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\add_green.png" />
   </ItemGroup>

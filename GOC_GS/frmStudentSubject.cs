@@ -81,7 +81,7 @@ namespace GOC_GS
             dgvStudNames.Rows.Clear();
             foreach (var item in list_studProf)
             {
-                if (cmbSection.Text.Equals(item.Section))
+                if (cmbSection.Text.Equals(item.Section) && cmbStrand.Text.Equals(item.Strand))
                 {
                     if (item.MName.Trim() == "")
                     {
@@ -96,8 +96,30 @@ namespace GOC_GS
 
                     lblStrand.Refresh();
                     lblStrand.Text = item.Strand;
+                    //cmbStrand.Text = item.Strand;
                 }
-               
+
+                //else if (cmbSection.Text.Equals(item.Section))
+                //{
+                //    if (item.MName.Trim() == "")
+                //    {
+                //        fullname = item.LName + ", " + item.FName + " " + item.MName + "";
+                //    }
+                //    else
+                //    {
+                //        fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
+                //    }
+
+                //    dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname, item.Section, item.Strand);
+
+                //    lblStrand.Refresh();
+                //    lblStrand.Text = item.Strand;
+                //    //cmbStrand.Text = item.Strand;
+                //}
+
+
+
+
             }                                          
         }
 
@@ -151,7 +173,7 @@ namespace GOC_GS
         private void RecordCount()
         {
 
-            lblCount.Text = dgvStudentNames.Rows.Count.ToString();
+            lblCount.Text = dgvStudNames.Rows.Count.ToString();
         }
 
         public string StudentName, stud_section, LRN;
@@ -195,44 +217,33 @@ namespace GOC_GS
             this.Close();
         }
 
+
         private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void loadSubj()
         {
             subject.Grade_level = cmbGradeLevel.Text;
             subject.Strand = lblStrand.Text;
             subject.Semester = cmbSemester.Text;
-            subject_list =  subject.LoadThisSubjects();
+            subject_list.Clear();
+            dgvSubjects.Rows.Clear();
+            subject_list = subject.LoadThisSubjects();
 
-            dgvStudentSubjects.Rows.Clear();
+
             foreach (var item in subject_list)
             {
-                dgvStudentSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type ,item.Strand,item.Semester );
+                dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
             }
-
-
         }
-
-        
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             FilterBySection();
             RecordCount();
-
-            ////clear list
-            //subject_list.Clear();
-            //dgvSubjects.Rows.Clear();
-            
-            ////pass value to list
-            //subject.Semester = cmbSemester.Text;
-            //subject.Grade_level = cmbGradeLevel.Text;
-            //subject.Strand = cmbStrand.Text;
-            //subject_list = subject.LoadThisSubjects();
-
-            ////loop through load it to list view
-            //foreach (var item in subject_list)
-            //{
-            //    dgvSubjects.Rows.Add(item.Id, item.Subject_code, item.Subject_name, item.Grade_level, item.Subject_type, item.Strand, item.Semester);
-            //}//End LoadSchedule()
+            loadSubj();           
         }
 
         private void cmbSection_Click(object sender, EventArgs e)
@@ -247,12 +258,12 @@ namespace GOC_GS
             //RecordCount();
             //pnlLoading.Show();
 
-            for (int i = 0; i < dgvStudentNames.Rows.Count; i++)
+            for (int i = 0; i < dgvStudNames.Rows.Count; i++)
             {
-                LRN = dgvStudentNames.Rows[i].Cells[0].FormattedValue.ToString();
-                StudentName = dgvStudentNames.Rows[i].Cells[1].FormattedValue.ToString();
-                Section = dgvStudentNames.Rows[i].Cells[2].FormattedValue.ToString();
-                Strand = dgvStudentNames.Rows[i].Cells[3].FormattedValue.ToString();
+                LRN = dgvStudNames.Rows[i].Cells[0].FormattedValue.ToString();
+                StudentName = dgvStudNames.Rows[i].Cells[1].FormattedValue.ToString();
+                Section = dgvStudNames.Rows[i].Cells[2].FormattedValue.ToString();
+                Strand = dgvStudNames.Rows[i].Cells[3].FormattedValue.ToString();
 
                 for (int x = 0; x < dgvSubjects.Rows.Count; x++)
                 {
@@ -262,7 +273,7 @@ namespace GOC_GS
                     GradeLevel = dgvSubjects.Rows[x].Cells[3].FormattedValue.ToString();//Code                                
                     Semester = dgvSubjects.Rows[x].Cells[6].FormattedValue.ToString();//name
 
-                    dgvStudentSubjects.Rows.Add(LRN, StudentName, SubjectName, GradeLevel, Strand, Section, Semester);
+                    //dgvSubjects.Rows.Add(LRN, StudentName, SubjectName, GradeLevel, Strand, Section, Semester);
 
                     Grading grading = new Grading();
                     grading.LRN_No = LRN;
@@ -289,6 +300,7 @@ namespace GOC_GS
             
             pnlLoading.Hide();
             MessageBox.Show("Data Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dgvSubjects.Rows.Clear();
 
 
         }
