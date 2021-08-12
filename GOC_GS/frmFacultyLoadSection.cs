@@ -356,55 +356,79 @@ namespace GOC_GS
 
             else if (e.ColumnIndex == 1)
             {
+                //id = Convert.ToInt32(dgvFacultyLoads.Rows[e.RowIndex].Cells[3].Value.ToString());
+                //this_section = dgvFacultyLoads.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                // MessageBox.Show(id.ToString() +" "+ this_section);
+                //foreach (DataGridViewRow row in dgvFacultyLoads.SelectedRows)
+                //{                   
+                //    id = Convert.ToInt32(row.Cells[3].Value.ToString());//id
+                //    this_section = row.Cells[0].Value.ToString();//Section to Set
+
+                //    MessageBox.Show(id.ToString() + " " + this_section);
+
+                //    //facultyLoading.Id = id;
+                //    //facultyLoading.Section = this_section;
+                //    //facultyLoading.Update();
+                //}
+
+
                 var ctr = 0;
-                
-                    for (int i = 0; i < dgvFacultyLoads.Rows.Count; i++)
-                    {
-                        if (!dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.Equals(""))//Section to be assigned
-                        {
-                            ctr = 1;
-                        }
-                        
-                        else
-                        {
-                            //MessageBox.Show("Please check the section to assign","Grading System",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                            //return;
-                        }
-                    }
 
-                    if (ctr == 1)
-                    {
-
-                        string message = "Do you want to assign the teacher to this section?";
-                        string title = "Grading System";
-
-                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                        DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
-
-                        if (result == DialogResult.Yes)
-                        {
-
-                            foreach (DataGridViewRow row in dgvFacultyLoads.SelectedRows)
-                            {
-                                id = Convert.ToInt32(row.Cells[3].Value.ToString());//id
-                                this_section = row.Cells[0].Value.ToString();//Section to Set
-
-                                facultyLoading.Id = id;
-                                facultyLoading.Section = this_section;
-                                facultyLoading.Update();
-                            }
-                            MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            facultyLoading.LoadDataTable(dgvFacultyLoads);
-                            CountLoads();
-                        }
-                    }
-                }
-                else
+                for (int i = 0; i < dgvFacultyLoads.Rows.Count; i++)
                 {
-                    return;
+                    if (!dgvFacultyLoads.Rows[i].Cells[0].FormattedValue.Equals(""))//Section to be assigned
+                    {
+                        ctr = 1;
+                    }
+
+                    else
+                    {
+                        //MessageBox.Show("Please check the section to assign","Grading System",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        //return;
+                    }
                 }
 
-            
+                if (ctr == 1)
+                {
+                    string message = "Do you want to assign the teacher to this section?";
+                    string title = "Grading System";
+
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        id = Convert.ToInt32(dgvFacultyLoads.Rows[e.RowIndex].Cells[3].Value.ToString());
+                        this_section = dgvFacultyLoads.Rows[e.RowIndex].Cells[0].Value.ToString();
+
+                        facultyLoading.Id = id;
+                        facultyLoading.Section = this_section;
+                        facultyLoading.Update();
+
+                        //foreach (DataGridViewRow row in dgvFacultyLoads.SelectedRows)
+                        //{
+                        //    //id = Convert.ToInt32(row.Cells[3].Value.ToString());//id
+                        //    //this_section = row.Cells[0].Value.ToString();//Section to Set
+
+                        //    id = Convert.ToInt32(row.Cells[3].Value.ToString());//id
+                        //    this_section = row.Cells[0].Value.ToString();//Section to Set
+
+                        //    facultyLoading.Id = id;
+                        //    facultyLoading.Section = this_section;
+                        //    facultyLoading.Update();
+                        //}
+
+                        MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        facultyLoading.LoadDataTable(dgvFacultyLoads);
+                        CountLoads();
+                    }
+                }
+            }
+            else
+            {
+                return;
+            }                   
         }
 
         private void btnClose_Click(object sender, EventArgs e)
