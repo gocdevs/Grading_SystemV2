@@ -31,6 +31,7 @@ namespace GOC_GS
         {
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.btnLoadStud = new System.Windows.Forms.Button();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -84,6 +85,7 @@ namespace GOC_GS
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnPrint);
             this.panel1.Controls.Add(this.btnLoadStud);
             this.panel1.Controls.Add(this.cmbGradeLevel);
             this.panel1.Controls.Add(this.label1);
@@ -99,6 +101,18 @@ namespace GOC_GS
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1100, 54);
             this.panel1.TabIndex = 7995;
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(873, 13);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(85, 28);
+            this.btnPrint.TabIndex = 1060;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // btnLoadStud
             // 
@@ -505,5 +519,6 @@ namespace GOC_GS
         private System.Windows.Forms.Button btnLoadStud;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblSection;
+        private System.Windows.Forms.Button btnPrint;
     }
 }

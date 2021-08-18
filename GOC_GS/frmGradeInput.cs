@@ -418,5 +418,16 @@ namespace GOC_GS
         {
             this.Close();
         }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport();
+            frm.section = cmbSection.Text;
+            frm.gradeLevel = cmbGradeLevel.Text;
+            frm.semester = cmbTerm.Text;
+            frm.subject = cmbSubject.Text;
+            frm.Grades();
+            frm.Show();
+        }
     }
 }

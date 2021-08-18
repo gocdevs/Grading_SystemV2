@@ -260,10 +260,10 @@ namespace GOC_GS
 
             for (int i = 0; i < dgvStudNames.Rows.Count; i++)
             {
-                LRN = dgvStudNames.Rows[i].Cells[0].FormattedValue.ToString();
-                StudentName = dgvStudNames.Rows[i].Cells[1].FormattedValue.ToString();
-                Section = dgvStudNames.Rows[i].Cells[2].FormattedValue.ToString();
-                Strand = dgvStudNames.Rows[i].Cells[3].FormattedValue.ToString();
+                LRN = dgvStudNames.Rows[i].Cells[1].FormattedValue.ToString();
+                StudentName = dgvStudNames.Rows[i].Cells[2].FormattedValue.ToString();
+                Section = dgvStudNames.Rows[i].Cells[3].FormattedValue.ToString();
+                Strand = dgvStudNames.Rows[i].Cells[4].FormattedValue.ToString();
 
                 for (int x = 0; x < dgvSubjects.Rows.Count; x++)
                 {

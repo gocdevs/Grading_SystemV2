@@ -9,18 +9,18 @@ using System.Windows.Forms;
 
 namespace GOC_GS
 {
-    class CrystalReportConnection
+    class CrystalReport_Connection
     {
         public static string DSN = null;
         public static string HOST = null;
-        public static string DATABASE = null;
-        public static string USERNAME = null;
-        public static string PASSWORD = null;
+        public static string database = null;
+        public static string username = null;
+        public static string password = null;
 
-        private static CrystalReportConnection instance = null;
+        private static CrystalReport_Connection instance = null;
         private static readonly object padlock = new object();
 
-        public static CrystalReportConnection Instance
+        public static CrystalReport_Connection Instance
         {
             get
             {
@@ -28,7 +28,7 @@ namespace GOC_GS
                 {
                     if (instance == null)
                     {
-                        instance = new CrystalReportConnection();
+                        instance = new CrystalReport_Connection();
                     }
                     return instance;
                 }
@@ -37,6 +37,7 @@ namespace GOC_GS
 
         public void SetConnection(ref ReportDocument rpt)
         {
+            // MessageBox.Show(DSN + " " + HOST + " " + database + " " + username + " " + password);
             try
             {
                 //create connection info
@@ -46,12 +47,13 @@ namespace GOC_GS
 
                 //update connection string base on  database config
                 crConnectionInfo.ServerName = DSN;
-                crConnectionInfo.DatabaseName = DATABASE;
-                crConnectionInfo.UserID = USERNAME;
-                crConnectionInfo.Password = PASSWORD;
+                crConnectionInfo.DatabaseName = database;
+                crConnectionInfo.UserID = username;
+                crConnectionInfo.Password = password;
+
                 CrTables = rpt.Database.Tables;
 
-                //CrTables = rpt.Database.Tables;
+               
                 foreach (CrystalDecisions.CrystalReports.Engine.Table CrTable in CrTables)
                 {
                     crtableLogoninfo = CrTable.LogOnInfo;

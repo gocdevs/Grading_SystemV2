@@ -23,6 +23,12 @@ namespace GOC_GS
            Application.Exit();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            frmConnectionSettings frm = new frmConnectionSettings();
+            frm.Show();
+        }
+
         public frmLogin()
         {
             InitializeComponent();

@@ -40,6 +40,7 @@ namespace GOC_GS
             this.lblFacultyId = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlAdminView = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
             this.btnStudentSubject = new System.Windows.Forms.Button();
             this.btnConSettings = new System.Windows.Forms.Button();
             this.btnStudentData = new System.Windows.Forms.Button();
@@ -173,6 +174,7 @@ namespace GOC_GS
             // 
             // pnlAdminView
             // 
+            this.pnlAdminView.Controls.Add(this.btnReport);
             this.pnlAdminView.Controls.Add(this.btnStudentSubject);
             this.pnlAdminView.Controls.Add(this.btnConSettings);
             this.pnlAdminView.Controls.Add(this.btnStudentData);
@@ -184,6 +186,24 @@ namespace GOC_GS
             this.pnlAdminView.Size = new System.Drawing.Size(187, 517);
             this.pnlAdminView.TabIndex = 0;
             this.pnlAdminView.Visible = false;
+            // 
+            // btnReport
+            // 
+            this.btnReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReport.BackgroundImage")));
+            this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnReport.FlatAppearance.BorderSize = 0;
+            this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReport.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReport.Location = new System.Drawing.Point(13, 403);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(158, 46);
+            this.btnReport.TabIndex = 1046;
+            this.btnReport.Text = "Reports";
+            this.btnReport.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnStudentSubject
             // 
@@ -398,6 +418,7 @@ namespace GOC_GS
         private System.Windows.Forms.Panel pnlTeacherView;
         public System.Windows.Forms.Button btnViewGrades;
         public System.Windows.Forms.Button btnGrading;
+        public System.Windows.Forms.Button btnReport;
     }
 }
 

@@ -209,6 +209,17 @@ namespace GOC_GS
             frm.Show();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            frmReport frm = new frmReport();
+            frm.ShowDialog();
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             this.Close();
