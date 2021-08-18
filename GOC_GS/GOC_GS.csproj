@@ -138,6 +138,12 @@
     <Compile Include="FileMaintenance\frmSubjectType.Designer.cs">
       <DependentUpon>frmSubjectType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Header.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Header.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Models\Grading.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\FacultyLoading.cs" />
@@ -297,6 +303,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileMaintenance\frmSubjectType.resx">
       <DependentUpon>frmSubjectType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Header.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Header.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
