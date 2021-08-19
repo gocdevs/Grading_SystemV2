@@ -28,7 +28,8 @@ namespace GOC_GS
         Grading grade = new Grading();
         List<Grading> grades = new List<Grading>();
 
-        public string teacher_id;
+        public string teacher_id, teacher_name;
+
         public frmGradeInput()
         {
             InitializeComponent();
@@ -437,10 +438,16 @@ namespace GOC_GS
         private void btnPrint_Click(object sender, EventArgs e)
         {
             frmReport frm = new frmReport();
+
+            frmMain main = new frmMain();
+
+         
+         
             frm.section = cmbSection.Text;
             frm.gradeLevel = cmbGradeLevel.Text;
             frm.semester = cmbTerm.Text;
             frm.subject = cmbSubject.Text;
+            //frm.teacher_name = main.Username.ToUpper();
             frm.Grades();
             frm.Show();
         }

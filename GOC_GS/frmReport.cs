@@ -52,7 +52,7 @@ namespace GOC_GS
             PrintRegForm();
         }
 
-        public string gradeLevel, section, subject, semester;
+        public string gradeLevel, section, subject, semester,teacher_name;
 
         public void Grades()
         {
@@ -69,7 +69,10 @@ namespace GOC_GS
             reportData.SetParameterValue("Subject", subject);
             reportData.SetParameterValue("Section", section);
             reportData.SetParameterValue("Semester", semester);
-           
+            reportData.SetParameterValue("Subject_Teacher","CHRISTIAN MANUEL");
+            reportData.SetParameterValue("Adviser", "EFRAIM G. BASILIO");
+            reportData.SetParameterValue("Principal", "DR. REX I. IGOY, RGC");
+            reportData.SetParameterValue("EvalOfficer", "JOCELYN V. DEANG");
             MyReportViewer1.ReportSource = reportData;
             MyReportViewer1.Refresh();
         }

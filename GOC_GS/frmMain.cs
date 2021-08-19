@@ -38,6 +38,7 @@ namespace GOC_GS
                 lblUser.Text = Username;
                 lblUserStatus.Text = UserType;
                 grade.teacher_id = Teacher_Id;
+                grade.teacher_name = Username;
 
                 //pnlAdminView.Visible = true;
                 //pnlAdminView.Location = new Point(7, 200);
@@ -54,7 +55,9 @@ namespace GOC_GS
                 lblFacultyId.Text = Teacher_Id;
                 lblUser.Text = Username;
                 lblUserStatus.Text = UserType;
+
                 grade.teacher_id = Teacher_Id;
+                grade.teacher_name = Username;
 
                 //pnlTeacherView.Visible = true;
                 //pnlTeacherView.Location = new Point(200, 200);
