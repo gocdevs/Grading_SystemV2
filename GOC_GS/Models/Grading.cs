@@ -27,6 +27,9 @@ namespace GOC_GS
         protected string section;
         protected string strand;
 
+        protected string subject_teacher;
+        protected string faculty_id;
+
 
         public string Fullname
         {
@@ -131,8 +134,8 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO grading(lrn_no, fullname, subject_code, subject_desc,units, 1st_or_3rd_Q, 2nd_or_4th_Q, remarks, sem, grade_level, section, strand,average)" +
-                                    "VALUES (@lrn_no, @fullname, @subject_code, @subject_desc, @units, @1st_or_3rd_Q, @2nd_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average);";
+                    string sql = "INSERT INTO grading(lrn_no, fullname, subject_code, subject_desc,units, first_or_3rd_Q, second_or_4th_Q, remarks, sem, grade_level, section, strand,average)" +
+                                    "VALUES (@lrn_no, @fullname, @subject_code, @subject_desc, @units, @first_or_3rd_Q, @second_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -141,8 +144,8 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("subject_code", subject_code);
                     cmd.Parameters.AddWithValue("subject_desc", subject_desc);
                     cmd.Parameters.AddWithValue("units", units);
-                    cmd.Parameters.AddWithValue("1st_or_3rd_Q", first_or_3rd_Q);
-                    cmd.Parameters.AddWithValue("2nd_or_4th_Q", second_or_4th_Q);
+                    cmd.Parameters.AddWithValue("first_or_3rd_Q", first_or_3rd_Q);
+                    cmd.Parameters.AddWithValue("second_or_4th_Q", second_or_4th_Q);
                     cmd.Parameters.AddWithValue("remarks", remarks);
                     cmd.Parameters.AddWithValue("average", average);
                     cmd.Parameters.AddWithValue("sem", sem);
@@ -150,12 +153,7 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("section", section);
                     cmd.Parameters.AddWithValue("strand", strand);
 
-                    cmd.ExecuteNonQuery();
-
-                    
-                  
-
-
+                    cmd.ExecuteNonQuery();                                      
                 }
             }
             catch (MySqlException ex)
@@ -165,6 +163,7 @@ namespace GOC_GS
             }
         }
 
+       
         public List<Grading> Load()
         {
             try
@@ -191,8 +190,8 @@ namespace GOC_GS
                         grade.subject_code = reader["subject_code"].ToString();
                         grade.subject_desc = reader["subject_desc"].ToString();
                         grade.units = reader["units"].ToString();
-                        grade.first_or_3rd_Q = reader["1st_or_3rd_Q"].ToString();
-                        grade.second_or_4th_Q = reader["2nd_or_4th_Q"].ToString();
+                        grade.first_or_3rd_Q = reader["first_or_3rd_Q"].ToString();
+                        grade.second_or_4th_Q = reader["second_or_4th_Q"].ToString();
                         grade.average = reader["average"].ToString();
                         grade.remarks = reader["remarks"].ToString();
                         grade.sem = reader["sem"].ToString();
@@ -211,6 +210,48 @@ namespace GOC_GS
             }
             return grades;
         }//End of Load
+
+        public void UpdateTheGrades()
+        {
+            try
+            {
+                //prepare connection string 
+                using (MySqlConnection con = new MySqlConnection(GOC_GS.Config.GetConnectionString()))
+                {
+                    //try to open connection
+                    con.Open();
+                    //string sql = "UPDATE grading SET first_or_3rd_Q=@first_or_3rd_Q, second_or_4th_Q=@second_or_4th_Q," +
+                    //    "average=@average, remarks=@remarks WHERE id=@id;";
+
+                    string sql = "UPDATE grading SET first_or_3rd_Q=@first_or_3rd_Q ,second_or_4th_Q=@second_or_4th_Q  ,average=@average,remarks=@remarks WHERE id=@id;";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                    cmd.Parameters.AddWithValue("id", id);
+                    //cmd.Parameters.AddWithValue("subject_code", subject_code);
+                    //cmd.Parameters.AddWithValue("grade_level", grade_level);
+                    //cmd.Parameters.AddWithValue("section", section);
+
+                    cmd.Parameters.AddWithValue("first_or_3rd_Q", first_or_3rd_Q);
+                    cmd.Parameters.AddWithValue("second_or_4th_Q", second_or_4th_Q);
+                    cmd.Parameters.AddWithValue("average", average);
+                    cmd.Parameters.AddWithValue("remarks", remarks);
+                    //cmd.Parameters.AddWithValue("mname", faculty_id);
+
+
+                    //cmd.Parameters.AddWithValue("fullname", fullname);
+
+                    cmd.ExecuteNonQuery();
+
+                    //MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("ERROR : " + ex.Message.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+        }
 
         //Update
         public void Update_Info_Grade()

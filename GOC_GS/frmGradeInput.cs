@@ -64,8 +64,8 @@ namespace GOC_GS
             dgv.Columns["lrn_no"].HeaderText = "LRN No.";
             dgv.Columns["fullname"].HeaderText = "Student Name";
             //dgv.Columns["subject_code"].HeaderText = "Subject Code";
-            dgv.Columns["1st_or_3rd_Q"].HeaderText = "First Quarter";
-            dgv.Columns["2nd_or_4th_Q"].HeaderText = "Second Quarter";
+            dgv.Columns["first_or_3rd_Q"].HeaderText = "First Quarter";
+            dgv.Columns["second_or_4th_Q"].HeaderText = "Second Quarter";
             dgv.Columns["average"].HeaderText = "Average";
             dgv.Columns["remarks"].HeaderText = "Remarks";
 
@@ -225,7 +225,15 @@ namespace GOC_GS
             #region Validate Remarks Passed of Failed
             for (int n = 0; n < dgvGrades.Rows.Count; n++)
             {
-                dgvGrades.Rows[n].Cells[7].Value = ((Double.Parse(dgvGrades.Rows[n].Cells[6].Value.ToString()) + Double.Parse(dgvGrades.Rows[n].Cells[5].Value.ToString())) / 2).ToString("0.##");
+                double num1 = Convert.ToDouble(dgvGrades.Rows[n].Cells[6].Value);
+                double num2 = Convert.ToDouble(dgvGrades.Rows[n].Cells[5].Value);
+                double average = (num1 + num2) / 2;
+                double ans = Math.Round(average, MidpointRounding.AwayFromZero);
+
+
+                //string average = ((Double.Parse(dgvGrades.Rows[n].Cells[6].Value.ToString()) + Double.Parse(dgvGrades.Rows[n].Cells[5].Value.ToString())) / 2).ToString("0.##");
+                //double ans = Math.Round(Convert.ToDouble(average),0);
+                dgvGrades.Rows[n].Cells[7].Value = ans.ToString("0.##");
             }
 
             foreach (DataGridViewRow Myrow in dgvGrades.Rows)
@@ -303,8 +311,15 @@ namespace GOC_GS
         {
             for (int n = 0; n < dgvGrades.Rows.Count; n++)
             {
+                double num1 = Convert.ToDouble(dgvGrades.Rows[n].Cells[6].Value);
+                double num2 = Convert.ToDouble(dgvGrades.Rows[n].Cells[5].Value);
+                double average = (num1 + num2) / 2;
+                double ans = Math.Round(average, MidpointRounding.AwayFromZero);
 
-                dgvGrades.Rows[n].Cells[7].Value = ((Double.Parse(dgvGrades.Rows[n].Cells[6].Value.ToString()) + Double.Parse(dgvGrades.Rows[n].Cells[5].Value.ToString())) / 2).ToString("0.##");
+
+                //string average = ((Double.Parse(dgvGrades.Rows[n].Cells[6].Value.ToString()) + Double.Parse(dgvGrades.Rows[n].Cells[5].Value.ToString())) / 2).ToString("0.##");
+                //double ans = Math.Round(Convert.ToDouble(average),0);
+                dgvGrades.Rows[n].Cells[7].Value = ans.ToString("0.##");
 
             }
 
@@ -428,6 +443,31 @@ namespace GOC_GS
             frm.subject = cmbSubject.Text;
             frm.Grades();
             frm.Show();
+        }
+
+        public int gradeId;
+        public string inputGrade1, inputGrade2, gradeAverage, gradeRemark;
+        Grading grd = new Grading();
+        private void btnSaveGrades_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgvGrades.Rows.Count; i++)
+            {
+                gradeId =Convert.ToInt32(dgvGrades.Rows[i].Cells[0].FormattedValue.ToString());
+                inputGrade1 = dgvGrades.Rows[i].Cells[5].FormattedValue.ToString();
+                inputGrade2 = dgvGrades.Rows[i].Cells[6].FormattedValue.ToString();
+                gradeAverage = dgvGrades.Rows[i].Cells[7].FormattedValue.ToString();
+                gradeRemark = dgvGrades.Rows[i].Cells[8].FormattedValue.ToString();
+
+                grd.Id = gradeId;
+                grd.FirstGrade = inputGrade1;
+                grd.SecondGrade = inputGrade2;
+                grd.Average = gradeAverage;
+                grd.Remarks = gradeRemark;
+
+                grd.UpdateTheGrades();
+            }
+
+            MessageBox.Show("Grades Successfully Save", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

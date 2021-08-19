@@ -252,6 +252,7 @@ namespace GOC_GS
         }
 
         public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
+        Grading grading = new Grading();
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             //LoadTVL();
@@ -275,7 +276,7 @@ namespace GOC_GS
 
                     //dgvSubjects.Rows.Add(LRN, StudentName, SubjectName, GradeLevel, Strand, Section, Semester);
 
-                    Grading grading = new Grading();
+                  
                     grading.LRN_No = LRN;
                     grading.Fullname = StudentName;
                     grading.Subject_Code = SubjectCode;

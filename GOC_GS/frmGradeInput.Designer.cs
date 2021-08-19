@@ -45,6 +45,12 @@ namespace GOC_GS
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvGrades = new System.Windows.Forms.DataGridView();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSection = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,12 +63,6 @@ namespace GOC_GS
             this.Term = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradelevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.section1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblNum = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblSection = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -188,6 +188,7 @@ namespace GOC_GS
             this.btnSaveGrades.TabIndex = 1058;
             this.btnSaveGrades.Text = "Submit Grades";
             this.btnSaveGrades.UseVisualStyleBackColor = true;
+            this.btnSaveGrades.Click += new System.EventHandler(this.btnSaveGrades_Click);
             // 
             // cmbSection
             // 
@@ -295,97 +296,6 @@ namespace GOC_GS
             this.dgvGrades.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrades_CellEndEdit);
             this.dgvGrades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvGrades_EditingControlShowing);
             // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // IDNo
-            // 
-            this.IDNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IDNo.HeaderText = "IDNo";
-            this.IDNo.Name = "IDNo";
-            this.IDNo.ReadOnly = true;
-            this.IDNo.Width = 66;
-            // 
-            // StudentName
-            // 
-            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentName.HeaderText = "Student Name";
-            this.StudentName.Name = "StudentName";
-            this.StudentName.ReadOnly = true;
-            // 
-            // subjectCode
-            // 
-            this.subjectCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.subjectCode.HeaderText = "Subject Code";
-            this.subjectCode.Name = "subjectCode";
-            this.subjectCode.ReadOnly = true;
-            this.subjectCode.Width = 108;
-            // 
-            // units
-            // 
-            this.units.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.units.HeaderText = "Units";
-            this.units.Name = "units";
-            this.units.ReadOnly = true;
-            this.units.Visible = false;
-            // 
-            // firstQ
-            // 
-            this.firstQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.firstQ.HeaderText = "Quarter Grade";
-            this.firstQ.Name = "firstQ";
-            this.firstQ.Width = 116;
-            // 
-            // secondQ
-            // 
-            this.secondQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.secondQ.HeaderText = "Quarter Grade";
-            this.secondQ.Name = "secondQ";
-            this.secondQ.Width = 116;
-            // 
-            // average
-            // 
-            this.average.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.average.HeaderText = "Average";
-            this.average.Name = "average";
-            this.average.ReadOnly = true;
-            this.average.Width = 87;
-            // 
-            // remarks
-            // 
-            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.remarks.HeaderText = "Remarks";
-            this.remarks.Name = "remarks";
-            this.remarks.ReadOnly = true;
-            this.remarks.Width = 90;
-            // 
-            // Term
-            // 
-            this.Term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Term.HeaderText = "Term";
-            this.Term.Name = "Term";
-            this.Term.ReadOnly = true;
-            this.Term.Visible = false;
-            // 
-            // gradelevel
-            // 
-            this.gradelevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.gradelevel.HeaderText = "Level";
-            this.gradelevel.Name = "gradelevel";
-            this.gradelevel.ReadOnly = true;
-            this.gradelevel.Visible = false;
-            // 
-            // section1
-            // 
-            this.section1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.section1.HeaderText = "Section";
-            this.section1.Name = "section1";
-            this.section1.ReadOnly = true;
-            this.section1.Visible = false;
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -459,6 +369,100 @@ namespace GOC_GS
             this.lblSection.Size = new System.Drawing.Size(0, 19);
             this.lblSection.TabIndex = 8032;
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            // 
+            // IDNo
+            // 
+            this.IDNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IDNo.HeaderText = "IDNo";
+            this.IDNo.Name = "IDNo";
+            this.IDNo.ReadOnly = true;
+            this.IDNo.Width = 66;
+            // 
+            // StudentName
+            // 
+            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentName.HeaderText = "Student Name";
+            this.StudentName.Name = "StudentName";
+            this.StudentName.ReadOnly = true;
+            // 
+            // subjectCode
+            // 
+            this.subjectCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.subjectCode.HeaderText = "Subject Code";
+            this.subjectCode.Name = "subjectCode";
+            this.subjectCode.ReadOnly = true;
+            this.subjectCode.Width = 118;
+            // 
+            // units
+            // 
+            this.units.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.units.HeaderText = "Units";
+            this.units.Name = "units";
+            this.units.ReadOnly = true;
+            this.units.Visible = false;
+            this.units.Width = 68;
+            // 
+            // firstQ
+            // 
+            this.firstQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.firstQ.HeaderText = "Quarter Grade";
+            this.firstQ.Name = "firstQ";
+            this.firstQ.Width = 127;
+            // 
+            // secondQ
+            // 
+            this.secondQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.secondQ.HeaderText = "Quarter Grade";
+            this.secondQ.Name = "secondQ";
+            this.secondQ.Width = 127;
+            // 
+            // average
+            // 
+            this.average.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.average.HeaderText = "Average";
+            this.average.Name = "average";
+            this.average.ReadOnly = true;
+            this.average.Width = 87;
+            // 
+            // remarks
+            // 
+            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.remarks.HeaderText = "Remarks";
+            this.remarks.Name = "remarks";
+            this.remarks.ReadOnly = true;
+            this.remarks.Width = 90;
+            // 
+            // Term
+            // 
+            this.Term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Term.HeaderText = "Term";
+            this.Term.Name = "Term";
+            this.Term.ReadOnly = true;
+            this.Term.Visible = false;
+            this.Term.Width = 66;
+            // 
+            // gradelevel
+            // 
+            this.gradelevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.gradelevel.HeaderText = "Level";
+            this.gradelevel.Name = "gradelevel";
+            this.gradelevel.ReadOnly = true;
+            this.gradelevel.Visible = false;
+            this.gradelevel.Width = 68;
+            // 
+            // section1
+            // 
+            this.section1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.section1.HeaderText = "Section";
+            this.section1.Name = "section1";
+            this.section1.ReadOnly = true;
+            this.section1.Visible = false;
+            this.section1.Width = 81;
+            // 
             // frmGradeInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -500,6 +504,14 @@ namespace GOC_GS
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvGrades;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblNum;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button btnLoadStud;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSection;
+        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
@@ -512,13 +524,5 @@ namespace GOC_GS
         private System.Windows.Forms.DataGridViewTextBoxColumn Term;
         private System.Windows.Forms.DataGridViewTextBoxColumn gradelevel;
         private System.Windows.Forms.DataGridViewTextBoxColumn section1;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lblNum;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnLoadStud;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblSection;
-        private System.Windows.Forms.Button btnPrint;
     }
 }
