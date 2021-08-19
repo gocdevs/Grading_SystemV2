@@ -131,8 +131,8 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO grading(lrn_no, fullname, subject_code, subject_desc,units, 1st_or_3rd_Q, 2nd_or_4th_Q, remarks, sem, grade_level, section, strand)" +
-                                    "VALUES (@lrn_no, @fullname, @subject_code, @subject_desc, @units, @1st_or_3rd_Q, @2nd_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand);";
+                    string sql = "INSERT INTO grading(lrn_no, fullname, subject_code, subject_desc,units, 1st_or_3rd_Q, 2nd_or_4th_Q, remarks, sem, grade_level, section, strand,average)" +
+                                    "VALUES (@lrn_no, @fullname, @subject_code, @subject_desc, @units, @1st_or_3rd_Q, @2nd_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -144,6 +144,7 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("1st_or_3rd_Q", first_or_3rd_Q);
                     cmd.Parameters.AddWithValue("2nd_or_4th_Q", second_or_4th_Q);
                     cmd.Parameters.AddWithValue("remarks", remarks);
+                    cmd.Parameters.AddWithValue("average", average);
                     cmd.Parameters.AddWithValue("sem", sem);
                     cmd.Parameters.AddWithValue("grade_level", grade_level);
                     cmd.Parameters.AddWithValue("section", section);
