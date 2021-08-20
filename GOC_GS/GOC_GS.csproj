@@ -241,12 +241,12 @@
     <Compile Include="Models\StudentGrade.cs" />
     <Compile Include="Models\SubjectType.cs" />
     <Compile Include="Models\Users.cs" />
-    <Compile Include="StudentList.cs">
+    <Compile Include="Reports\StudentList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentList.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Utilities\Util_RequiredFields.cs" />
     <EmbeddedResource Include="Connection\frmConnectionSettings.resx">
@@ -336,11 +336,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StudentList.rpt">
+    <Resource Include="Reports\StudentList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StudentList.cs</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

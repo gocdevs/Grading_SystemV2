@@ -33,7 +33,7 @@ namespace GOC_GS
             this.MyReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.txtSection = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.StudentList1 = new GOC_GS.StudentList();
+            //this.StudentList1 = new GOC_GS.StudentList();
             this.SuspendLayout();
             // 
             // MyReportViewer
@@ -97,6 +97,6 @@ namespace GOC_GS
         private CrystalDecisions.Windows.Forms.CrystalReportViewer MyReportViewer1;
         private System.Windows.Forms.TextBox txtSection;
         private System.Windows.Forms.Button button1;
-        private StudentList StudentList1;
+        //private StudentList StudentList1;
     }
 }
