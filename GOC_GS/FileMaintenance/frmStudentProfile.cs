@@ -54,6 +54,8 @@ namespace GOC_GS.FileMaintenance
                     student_Profile.Section = util.ToProperCase(dgvStudentList.Rows[i].Cells[6].Value.ToString());
                     student_Profile.Strand = util.ToProperCase(dgvStudentList.Rows[i].Cells[7].Value.ToString());
                     student_Profile.Academic_Status = util.ToProperCase(dgvStudentList.Rows[i].Cells[8].Value.ToString());
+                    student_Profile.Sex = dgvStudentList.Rows[i].Cells[9].Value.ToString();
+                    student_Profile.Student_Type = dgvStudentList.Rows[i].Cells[10].Value.ToString();
 
                     student_Profile.Save();
                 }

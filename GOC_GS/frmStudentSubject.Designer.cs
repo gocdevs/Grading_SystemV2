@@ -159,12 +159,11 @@ namespace GOC_GS
             this.lblCount.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblCount.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCount.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblCount.Location = new System.Drawing.Point(1041, 25);
+            this.lblCount.Location = new System.Drawing.Point(151, 333);
             this.lblCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(55, 19);
+            this.lblCount.Size = new System.Drawing.Size(0, 19);
             this.lblCount.TabIndex = 8002;
-            this.lblCount.Text = "Count: ";
             // 
             // label5
             // 
@@ -172,7 +171,7 @@ namespace GOC_GS
             this.label5.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(926, 25);
+            this.label5.Location = new System.Drawing.Point(27, 333);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(116, 19);
@@ -212,7 +211,7 @@ namespace GOC_GS
             this.cmbStrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStrand.FormattingEnabled = true;
-            this.cmbStrand.Location = new System.Drawing.Point(649, 23);
+            this.cmbStrand.Location = new System.Drawing.Point(649, 21);
             this.cmbStrand.Margin = new System.Windows.Forms.Padding(2, 4, 2, 4);
             this.cmbStrand.Name = "cmbStrand";
             this.cmbStrand.Size = new System.Drawing.Size(120, 27);
@@ -383,9 +382,9 @@ namespace GOC_GS
             // btnRefresh
             // 
             this.btnRefresh.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(828, 21);
+            this.btnRefresh.Location = new System.Drawing.Point(910, 20);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(73, 29);
+            this.btnRefresh.Size = new System.Drawing.Size(96, 29);
             this.btnRefresh.TabIndex = 8021;
             this.btnRefresh.Text = "&Load";
             this.btnRefresh.UseVisualStyleBackColor = true;

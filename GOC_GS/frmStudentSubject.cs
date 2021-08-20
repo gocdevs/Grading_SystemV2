@@ -76,12 +76,12 @@ namespace GOC_GS
        private void FilterBySection()
         {
             list_studProf.Clear();
-            list_studProf = studProf.LoadStudentToGrade();
+            list_studProf = studProf.LoadStudentToGrade();// filter student accdg to Type ex. New Student , Tranferee
 
             dgvStudNames.Rows.Clear();
             foreach (var item in list_studProf)
             {
-                if (cmbSection.Text.Equals(item.Section) && cmbStrand.Text.Equals(item.Strand))
+                if (cmbSection.Text.Equals(item.Section) && cmbStrand.Text.Equals(item.Strand) && (item.Student_Type.Contains("New") || item.Student_Type.Contains("new")))
                 {
                     if (item.MName.Trim() == "")
                     {

@@ -159,3 +159,4 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\StudentList.rpt
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\StudentList.cs
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmReportSelect.resources
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStudentType.resources

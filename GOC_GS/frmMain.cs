@@ -162,7 +162,7 @@ namespace GOC_GS
             pnlAllContainer.Visible = true;
 
             //load the form
-            frmStudentSubject frm = new frmStudentSubject();
+            frmStudentType frm = new frmStudentType();
             frm.TopLevel = false;
             frm.AutoScroll = true;
 

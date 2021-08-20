@@ -11,7 +11,6 @@ namespace GOC_GS.Models
 {
     class StudentProfile
     {
-
         List<StudentProfile> studentProfiles = new List<StudentProfile>();
 
         protected int id;
@@ -24,7 +23,8 @@ namespace GOC_GS.Models
         protected string section;
         protected string strand;
         protected string academic_status;
-
+        protected string sex;
+        protected string student_type;
 
         public int Id
         {
@@ -86,6 +86,18 @@ namespace GOC_GS.Models
             set { academic_status = value; }
         }
 
+        public string Sex
+        {
+            get { return sex; }
+            set { sex = value; }
+        }
+
+        public string Student_Type
+        {
+            get { return student_type; }
+            set { student_type = value; }
+        }
+
         Microsoft.Office.Interop.Excel.Application application;
         Microsoft.Office.Interop.Excel.Workbook workbook;
         Microsoft.Office.Interop.Excel.Worksheet worksheet;
@@ -133,10 +145,10 @@ namespace GOC_GS.Models
                                     range.Cells[xlRow, 6].Text,
                                     range.Cells[xlRow, 7].Text,
                                     range.Cells[xlRow, 8].Text,
-                                    range.Cells[xlRow, 9].Text
-                                    );
-
-                       
+                                    range.Cells[xlRow, 9].Text,
+                                    range.Cells[xlRow, 10].Text,
+                                    range.Cells[xlRow, 11].Text //Student Type
+                                    );                       
                     }
                     //end load datagrid
 
@@ -165,8 +177,8 @@ namespace GOC_GS.Models
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO student_profile(goc_no ,lrn_no ,fname ,mname ,lname,grade_level,section,strand,academic_status) " +
-                                    " VALUES (@goc_no,@lrn_no,@fname,@mname,@lname,@grade_level,@section,@strand,@academic_status);";
+                    string sql = "INSERT INTO student_profile(goc_no ,lrn_no ,fname ,mname ,lname,grade_level,section,strand,academic_status,sex,student_type) " +
+                                    " VALUES (@goc_no,@lrn_no,@fname,@mname,@lname,@grade_level,@section,@strand,@academic_status,@sex,@student_type);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -179,6 +191,8 @@ namespace GOC_GS.Models
                     cmd.Parameters.AddWithValue("section", section);
                     cmd.Parameters.AddWithValue("strand", strand);
                     cmd.Parameters.AddWithValue("academic_status", academic_status);
+                    cmd.Parameters.AddWithValue("sex", sex);
+                    cmd.Parameters.AddWithValue("student_type", student_type);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -223,7 +237,8 @@ namespace GOC_GS.Models
                         stud.section = reader["section"].ToString();
                         stud.strand = reader["strand"].ToString();
                         stud.academic_status = reader["academic_status"].ToString();
-
+                        stud.sex = reader["sex"].ToString();
+                        stud.student_type = reader["student_type"].ToString();
                         studentProfiles.Add(stud);
                     }
                 }
@@ -245,7 +260,7 @@ namespace GOC_GS.Models
                     //try to open connection
                     con.Open();
                     //prepare sql query
-                    string sql = "SELECT id, lrn_no, fname, lname ,CONCAT(LEFT(mname,1)) mname, section, strand FROM student_profile";
+                    string sql = "SELECT id, lrn_no, fname, lname ,CONCAT(LEFT(mname,1)) mname, section, strand,student_type FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -267,7 +282,7 @@ namespace GOC_GS.Models
                         //stud.grade_level = reader["grade_level"].ToString();
                         stud.section = reader["section"].ToString();
                         stud.strand = reader["strand"].ToString();
-                        //stud.academic_status = reader["academic_status"].ToString();
+                        stud.student_type = reader["student_type"].ToString();
 
                         studentProfiles.Add(stud);
                     }
@@ -292,7 +307,7 @@ namespace GOC_GS.Models
                     con.Open();
                     string sql = "UPDATE student_profile SET goc_no=@goc_no, lrn_no=@lrn_no, fname=@fname," +
                         "lname=@lname, mname=@mname, grade_level=@grade_level, section=@section, strand=@strand," +
-                        "academic_status=@academic_status WHERE id=@id;";
+                        "academic_status=@academic_status, sex=@sex, student_type=@student_type WHERE id=@id;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
                     cmd.Parameters.AddWithValue("id", id);
@@ -305,20 +320,18 @@ namespace GOC_GS.Models
                     cmd.Parameters.AddWithValue("section", section);
                     cmd.Parameters.AddWithValue("strand", strand);
                     cmd.Parameters.AddWithValue("academic_status", academic_status);
+                    cmd.Parameters.AddWithValue("sex", sex);
+                    cmd.Parameters.AddWithValue("student_type", student_type);
 
                     cmd.ExecuteNonQuery();
-
                     //MessageBox.Show("Recorde Updated!", "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show("ERROR : " + ex.Message.ToString(), "Grading System", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
-        }
-
-       
+        }       
     }
 }
 
