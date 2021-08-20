@@ -45,6 +45,7 @@ namespace GOC_GS
             this.btnIrreg.TabIndex = 7979;
             this.btnIrreg.Text = "&Irregular Student / Transferee";
             this.btnIrreg.UseVisualStyleBackColor = false;
+            this.btnIrreg.Click += new System.EventHandler(this.btnIrreg_Click);
             // 
             // btnRegular
             // 

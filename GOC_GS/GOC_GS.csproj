@@ -144,6 +144,12 @@
     <Compile Include="frmStudentType.Designer.cs">
       <DependentUpon>frmStudentType.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStudSubjIrreg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStudSubjIrreg.Designer.cs">
+      <DependentUpon>frmStudSubjIrreg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Header.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStudentType.resx">
       <DependentUpon>frmStudentType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStudSubjIrreg.resx">
+      <DependentUpon>frmStudSubjIrreg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Header.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
