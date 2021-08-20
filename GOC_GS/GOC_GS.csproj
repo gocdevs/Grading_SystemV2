@@ -90,11 +90,12 @@
     <Compile Include="FileMaintenance\frmStudentProfile.Designer.cs">
       <DependentUpon>frmStudentProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="FinalSemetralGrades.cs">
+    <Compile Include="Reports\FinalSemetralGrades.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalSemetralGrades.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="frmFacultyLoadSection.cs">
       <SubType>Form</SubType>
@@ -246,7 +247,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StudentList.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Utilities\Util_RequiredFields.cs" />
     <EmbeddedResource Include="Connection\frmConnectionSettings.resx">
@@ -264,9 +265,10 @@
     <EmbeddedResource Include="FileMaintenance\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FinalSemetralGrades.rpt">
+    <EmbeddedResource Include="Reports\FinalSemetralGrades.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>FinalSemetralGrades.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
@@ -336,11 +338,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Resource Include="Reports\StudentList.rpt">
+    <EmbeddedResource Include="Reports\StudentList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StudentList.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Resource>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

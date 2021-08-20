@@ -158,5 +158,7 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\stdole.dll
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmReportSelect.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStudentType.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.frmStudSubjIrreg.resources
-C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.g.resources
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\StudentList.cs
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\StudentList.rpt
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\FinalSemetralGrades.rpt
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\FinalSemetralGrades.cs
