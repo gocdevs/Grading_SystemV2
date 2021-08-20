@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GOC_GS {
+namespace GOC_GS.Reports {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace GOC_GS {
         
         public override string FullResourceName {
             get {
-                return "GOC_GS.FinalSemetralGrades.rpt";
+                return "GOC_GS.Reports.FinalSemetralGrades.rpt";
             }
             set {
                 // Do nothing

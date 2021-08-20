@@ -60,7 +60,7 @@ namespace GOC_GS
             Credential();
             ReportDocument reportData = new ReportDocument();
             //reportData.Load(Application.StartupPath + "/Reports/rptAssessment.rpt");
-            reportData.Load("C:/Users/SERVER/Documents/GitHub/Grading_SystemV2/GOC_GS/FinalSemetralGrades.rpt");
+            reportData.Load(Application.StartupPath + "Reports/FinalSemetralGrades.rpt");
 
 
             CrystalReport_Connection.Instance.SetConnection(ref reportData);
