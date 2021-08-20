@@ -34,8 +34,8 @@ namespace GOC_GS
             //Report Connection
             Credential();
             ReportDocument reportData = new ReportDocument();
-            //reportData.Load(Application.StartupPath + "/Reports/rptAssessment.rpt");
-            reportData.Load("C:/Users/SERVER/Documents/GitHub/Grading_SystemV2/GOC_GS/StudentList.rpt");
+            reportData.Load(Application.StartupPath + "StudentList.rpt");
+            //reportData.Load("C:/Users/SERVER/Documents/GitHub/Grading_SystemV2/GOC_GS/StudentList.rpt");
         
 
             CrystalReport_Connection.Instance.SetConnection(ref reportData);
