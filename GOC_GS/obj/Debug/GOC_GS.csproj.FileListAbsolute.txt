@@ -162,3 +162,4 @@ C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\Stude
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\StudentList.rpt
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\FinalSemetralGrades.rpt
 C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\bin\Debug\Reports\FinalSemetralGrades.cs
+C:\Users\SERVER\Documents\GitHub\Grading_SystemV2\GOC_GS\obj\Debug\GOC_GS.csproj.AssemblyReference.cache
