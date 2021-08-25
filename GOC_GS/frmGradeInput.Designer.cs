@@ -31,7 +31,6 @@ namespace GOC_GS
         {
             this.btnClose = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnLoadStud = new System.Windows.Forms.Button();
             this.cmbGradeLevel = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,15 +41,10 @@ namespace GOC_GS
             this.label5 = new System.Windows.Forms.Label();
             this.cmbTerm = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dgvGrades = new System.Windows.Forms.DataGridView();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblNum = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblSection = new System.Windows.Forms.Label();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IDNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +57,12 @@ namespace GOC_GS
             this.Term = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gradelevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.section1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNum = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSection = new System.Windows.Forms.Label();
             this.cmbGender = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
@@ -87,12 +87,14 @@ namespace GOC_GS
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.btnPrint);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnLoadStud);
+            this.panel1.Controls.Add(this.cmbGender);
             this.panel1.Controls.Add(this.cmbGradeLevel);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.cmbSubject);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btnSaveGrades);
             this.panel1.Controls.Add(this.cmbSection);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.cmbTerm);
@@ -103,22 +105,10 @@ namespace GOC_GS
             this.panel1.Size = new System.Drawing.Size(1100, 54);
             this.panel1.TabIndex = 7995;
             // 
-            // btnPrint
-            // 
-            this.btnPrint.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(855, 72);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(85, 28);
-            this.btnPrint.TabIndex = 1060;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
-            // 
             // btnLoadStud
             // 
             this.btnLoadStud.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadStud.Location = new System.Drawing.Point(735, 13);
+            this.btnLoadStud.Location = new System.Drawing.Point(853, 13);
             this.btnLoadStud.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadStud.Name = "btnLoadStud";
             this.btnLoadStud.Size = new System.Drawing.Size(85, 28);
@@ -182,7 +172,7 @@ namespace GOC_GS
             // btnSaveGrades
             // 
             this.btnSaveGrades.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveGrades.Location = new System.Drawing.Point(966, 15);
+            this.btnSaveGrades.Location = new System.Drawing.Point(1014, 74);
             this.btnSaveGrades.Margin = new System.Windows.Forms.Padding(4);
             this.btnSaveGrades.Name = "btnSaveGrades";
             this.btnSaveGrades.Size = new System.Drawing.Size(125, 26);
@@ -243,6 +233,18 @@ namespace GOC_GS
             this.label3.TabIndex = 1048;
             this.label3.Text = "Grade Level:";
             // 
+            // btnPrint
+            // 
+            this.btnPrint.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Location = new System.Drawing.Point(1009, 13);
+            this.btnPrint.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(85, 28);
+            this.btnPrint.TabIndex = 1060;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -297,6 +299,88 @@ namespace GOC_GS
             this.dgvGrades.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGrades_CellEndEdit);
             this.dgvGrades.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgvGrades_EditingControlShowing);
             // 
+            // id
+            // 
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // IDNo
+            // 
+            this.IDNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.IDNo.HeaderText = "IDNo";
+            this.IDNo.Name = "IDNo";
+            this.IDNo.Width = 66;
+            // 
+            // StudentName
+            // 
+            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.StudentName.HeaderText = "Student Name";
+            this.StudentName.Name = "StudentName";
+            // 
+            // subjectCode
+            // 
+            this.subjectCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.subjectCode.HeaderText = "Subject Code";
+            this.subjectCode.Name = "subjectCode";
+            this.subjectCode.Width = 108;
+            // 
+            // units
+            // 
+            this.units.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.units.HeaderText = "Units";
+            this.units.Name = "units";
+            this.units.Visible = false;
+            // 
+            // firstQ
+            // 
+            this.firstQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.firstQ.HeaderText = "Quarter Grade";
+            this.firstQ.Name = "firstQ";
+            this.firstQ.Width = 116;
+            // 
+            // secondQ
+            // 
+            this.secondQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.secondQ.HeaderText = "Quarter Grade";
+            this.secondQ.Name = "secondQ";
+            this.secondQ.Width = 116;
+            // 
+            // average
+            // 
+            this.average.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.average.HeaderText = "Average";
+            this.average.Name = "average";
+            this.average.Width = 87;
+            // 
+            // remarks
+            // 
+            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.remarks.HeaderText = "Remarks";
+            this.remarks.Name = "remarks";
+            this.remarks.Width = 90;
+            // 
+            // Term
+            // 
+            this.Term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Term.HeaderText = "Term";
+            this.Term.Name = "Term";
+            this.Term.Visible = false;
+            // 
+            // gradelevel
+            // 
+            this.gradelevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.gradelevel.HeaderText = "Level";
+            this.gradelevel.Name = "gradelevel";
+            this.gradelevel.Visible = false;
+            // 
+            // section1
+            // 
+            this.section1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.section1.HeaderText = "Section";
+            this.section1.Name = "section1";
+            this.section1.Visible = false;
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -325,12 +409,12 @@ namespace GOC_GS
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblNum.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNum.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNum.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblNum.Location = new System.Drawing.Point(1096, 76);
+            this.lblNum.Location = new System.Drawing.Point(1121, 655);
             this.lblNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNum.Name = "lblNum";
-            this.lblNum.Size = new System.Drawing.Size(17, 19);
+            this.lblNum.Size = new System.Drawing.Size(14, 15);
             this.lblNum.TabIndex = 8031;
             this.lblNum.Text = "0";
             // 
@@ -338,12 +422,12 @@ namespace GOC_GS
             // 
             this.label10.AutoSize = true;
             this.label10.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(976, 74);
+            this.label10.Location = new System.Drawing.Point(1021, 655);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(112, 19);
+            this.label10.Size = new System.Drawing.Size(92, 15);
             this.label10.TabIndex = 8030;
             this.label10.Text = "No. of Students:";
             // 
@@ -370,92 +454,6 @@ namespace GOC_GS
             this.lblSection.Size = new System.Drawing.Size(0, 19);
             this.lblSection.TabIndex = 8032;
             // 
-            // id
-            // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // IDNo
-            // 
-            this.IDNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.IDNo.HeaderText = "IDNo";
-            this.IDNo.Name = "IDNo";
-            this.IDNo.Width = 66;
-            // 
-            // StudentName
-            // 
-            this.StudentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.StudentName.HeaderText = "Student Name";
-            this.StudentName.Name = "StudentName";
-            // 
-            // subjectCode
-            // 
-            this.subjectCode.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.subjectCode.HeaderText = "Subject Code";
-            this.subjectCode.Name = "subjectCode";
-            this.subjectCode.Width = 118;
-            // 
-            // units
-            // 
-            this.units.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.units.HeaderText = "Units";
-            this.units.Name = "units";
-            this.units.Visible = false;
-            this.units.Width = 68;
-            // 
-            // firstQ
-            // 
-            this.firstQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.firstQ.HeaderText = "Quarter Grade";
-            this.firstQ.Name = "firstQ";
-            this.firstQ.Width = 127;
-            // 
-            // secondQ
-            // 
-            this.secondQ.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.secondQ.HeaderText = "Quarter Grade";
-            this.secondQ.Name = "secondQ";
-            this.secondQ.Width = 127;
-            // 
-            // average
-            // 
-            this.average.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.average.HeaderText = "Average";
-            this.average.Name = "average";
-            this.average.Width = 87;
-            // 
-            // remarks
-            // 
-            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.remarks.HeaderText = "Remarks";
-            this.remarks.Name = "remarks";
-            this.remarks.Width = 90;
-            // 
-            // Term
-            // 
-            this.Term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.Term.HeaderText = "Term";
-            this.Term.Name = "Term";
-            this.Term.Visible = false;
-            this.Term.Width = 66;
-            // 
-            // gradelevel
-            // 
-            this.gradelevel.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.gradelevel.HeaderText = "Level";
-            this.gradelevel.Name = "gradelevel";
-            this.gradelevel.Visible = false;
-            this.gradelevel.Width = 68;
-            // 
-            // section1
-            // 
-            this.section1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.section1.HeaderText = "Section";
-            this.section1.Name = "section1";
-            this.section1.Visible = false;
-            this.section1.Width = 81;
-            // 
             // cmbGender
             // 
             this.cmbGender.BackColor = System.Drawing.Color.White;
@@ -465,7 +463,7 @@ namespace GOC_GS
             this.cmbGender.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.cmbGender.Location = new System.Drawing.Point(656, 72);
+            this.cmbGender.Location = new System.Drawing.Point(772, 15);
             this.cmbGender.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(73, 26);
@@ -476,7 +474,7 @@ namespace GOC_GS
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(605, 77);
+            this.label7.Location = new System.Drawing.Point(730, 21);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 18);
@@ -488,15 +486,13 @@ namespace GOC_GS
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 678);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.cmbGender);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.lblSection);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNum);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnSaveGrades);
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGradeInput";

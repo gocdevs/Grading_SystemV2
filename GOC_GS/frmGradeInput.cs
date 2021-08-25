@@ -189,9 +189,10 @@ namespace GOC_GS
             grades = grade.Load();
 
             //loop through load it to list view
+            
             foreach (var item in grades)
             {
-                if (item.Subject_Code == cmbSubject.Text && item.Sem == cmbTerm.Text && cmbSection.Text == item.Section)
+                if (item.Subject_Code == cmbSubject.Text && item.Sem == cmbTerm.Text && cmbSection.Text == item.Section && cmbGender.Text == item.Sex)
                 {
                     dgvGrades.Rows.Add(item.Id, item.GOC_No, item.Fullname, item.Subject_Code, item.Units, item.FirstGrade, item.SecondGrade, item.Average, item.Remarks, item.Sem, item.Grade_level, item.Section, item.Strand);
                    

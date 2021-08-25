@@ -180,7 +180,7 @@ namespace GOC_GS
                 {
                     con.Open();
 
-                    string sql = "SELECT * FROM grading";
+                    string sql = "SELECT * FROM grading ORDER BY fullname ASC";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);                   
                     MySqlDataReader reader = cmd.ExecuteReader();
@@ -206,6 +206,7 @@ namespace GOC_GS
                         grade.grade_level = reader["grade_level"].ToString();
                         grade.section = reader["section"].ToString();
                         grade.strand = reader["strand"].ToString();
+                        grade.sex = reader["sex"].ToString();
 
                         grades.Add(grade);
                     }
