@@ -26,6 +26,7 @@ namespace GOC_GS
         protected string grade_level;
         protected string section;
         protected string strand;
+        protected string sex;
 
         protected string subject_teacher;
         protected string faculty_id;
@@ -121,6 +122,12 @@ namespace GOC_GS
             set { goc_no = value; }
         }
 
+        public string Sex
+        {
+            get { return sex; }
+            set { sex = value; }
+        }
+
         List<Grading> grades = new List<Grading>();
         //Save Records
         public void Save()
@@ -134,8 +141,8 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO grading(goc_no, fullname, subject_code, subject_desc,units, first_or_3rd_Q, second_or_4th_Q, remarks, sem, grade_level, section, strand,average)" +
-                                    "VALUES (@goc_no, @fullname, @subject_code, @subject_desc, @units, @first_or_3rd_Q, @second_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average);";
+                    string sql = "INSERT INTO grading(goc_no, fullname, subject_code, subject_desc,units, first_or_3rd_Q, second_or_4th_Q, remarks, sem, grade_level, section, strand,average,sex)" +
+                                    "VALUES (@goc_no, @fullname, @subject_code, @subject_desc, @units, @first_or_3rd_Q, @second_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average,@sex);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -152,6 +159,7 @@ namespace GOC_GS
                     cmd.Parameters.AddWithValue("grade_level", grade_level);
                     cmd.Parameters.AddWithValue("section", section);
                     cmd.Parameters.AddWithValue("strand", strand);
+                    cmd.Parameters.AddWithValue("sex", sex);
 
                     cmd.ExecuteNonQuery();                                      
                 }

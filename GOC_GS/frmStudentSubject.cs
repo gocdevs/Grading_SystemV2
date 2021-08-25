@@ -72,7 +72,7 @@ namespace GOC_GS
             }
         }
 
-       public String strand_item;
+       public String strand_item, sex;
        private void FilterBySection()
         {
             list_studProf.Clear();
@@ -86,13 +86,14 @@ namespace GOC_GS
                     if (item.MName.Trim() == "")
                     {
                         fullname = item.LName + ", " + item.FName + " " + item.MName + "";
+
                     }
                     else
                     {
                         fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
                     }
 
-                    dgvStudNames.Rows.Add(item.Id,  item.GOC_No, fullname, item.Section, item.Strand);
+                    dgvStudNames.Rows.Add(item.Id,  item.GOC_No, fullname, item.Section, item.Strand, item.Sex);                  
 
                     lblStrand.Refresh();
                     lblStrand.Text = item.Strand;
@@ -251,7 +252,7 @@ namespace GOC_GS
            
         }
 
-        public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName;
+        public string SubjectCode, SubjectType, GradeLevel, Strand, Semester, Section, SubjectName, Sex;
         Grading grading = new Grading();
         private void btnGenerate_Click(object sender, EventArgs e)
         {
@@ -265,6 +266,7 @@ namespace GOC_GS
                 StudentName = dgvStudNames.Rows[i].Cells[2].FormattedValue.ToString();
                 Section = dgvStudNames.Rows[i].Cells[3].FormattedValue.ToString();
                 Strand = dgvStudNames.Rows[i].Cells[4].FormattedValue.ToString();
+                Sex = dgvStudNames.Rows[i].Cells[5].FormattedValue.ToString();
 
                 for (int x = 0; x < dgvSubjects.Rows.Count; x++)
                 {
@@ -290,6 +292,7 @@ namespace GOC_GS
                     grading.Grade_level = GradeLevel;
                     grading.Section = Section;
                     grading.Strand = Strand;
+                    grading.Sex = Sex;
 
                     grading.Save();
                     this.Refresh();                       

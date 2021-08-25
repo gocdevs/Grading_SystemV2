@@ -78,6 +78,7 @@ namespace GOC_GS
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlLoading)).BeginInit();
@@ -522,7 +523,8 @@ namespace GOC_GS
             this.Column19,
             this.Column16,
             this.Column17,
-            this.Column18});
+            this.Column18,
+            this.Column20});
             this.dgvStudNames.Location = new System.Drawing.Point(31, 56);
             this.dgvStudNames.Name = "dgvStudNames";
             this.dgvStudNames.ReadOnly = true;
@@ -575,6 +577,13 @@ namespace GOC_GS
             this.Column18.HeaderText = "Strand";
             this.Column18.Name = "Column18";
             this.Column18.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Sex";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            this.Column20.Visible = false;
             // 
             // frmStudentSubject
             // 
@@ -670,5 +679,6 @@ namespace GOC_GS
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
     }
 }
