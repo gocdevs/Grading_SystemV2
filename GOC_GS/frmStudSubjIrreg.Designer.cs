@@ -31,11 +31,6 @@ namespace GOC_GS
         {
             this.lblStrand = new System.Windows.Forms.Label();
             this.dgvStudNames = new System.Windows.Forms.DataGridView();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.lblLoading = new System.Windows.Forms.Label();
@@ -63,6 +58,11 @@ namespace GOC_GS
             this.label4 = new System.Windows.Forms.Label();
             this.btnSearchAll = new System.Windows.Forms.Button();
             this.txtSubjectName = new System.Windows.Forms.TextBox();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudNames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             this.SuspendLayout();
@@ -98,39 +98,6 @@ namespace GOC_GS
             this.dgvStudNames.RowHeadersVisible = false;
             this.dgvStudNames.Size = new System.Drawing.Size(1070, 174);
             this.dgvStudNames.TabIndex = 8045;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "id";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            this.Column15.Visible = false;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "LRN No.";
-            this.Column19.Name = "Column19";
-            this.Column19.ReadOnly = true;
-            // 
-            // Column16
-            // 
-            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column16.HeaderText = "Fullname";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            // 
-            // Column17
-            // 
-            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column17.HeaderText = "Section";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "Strand";
-            this.Column18.Name = "Column18";
-            this.Column18.ReadOnly = true;
             // 
             // btnRefresh
             // 
@@ -417,6 +384,39 @@ namespace GOC_GS
             this.txtSubjectName.TabIndex = 8048;
             this.txtSubjectName.TextChanged += new System.EventHandler(this.txtSubjectName_TextChanged);
             // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "id";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            this.Column15.Visible = false;
+            // 
+            // Column19
+            // 
+            this.Column19.HeaderText = "GOC No.";
+            this.Column19.Name = "Column19";
+            this.Column19.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column16.HeaderText = "Fullname";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            // 
+            // Column17
+            // 
+            this.Column17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column17.HeaderText = "Section";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column18
+            // 
+            this.Column18.HeaderText = "Strand";
+            this.Column18.Name = "Column18";
+            this.Column18.ReadOnly = true;
+            // 
             // frmStudSubjIrreg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,11 +458,6 @@ namespace GOC_GS
 
         private System.Windows.Forms.Label lblStrand;
         private System.Windows.Forms.DataGridView dgvStudNames;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblLoading;
@@ -490,5 +485,10 @@ namespace GOC_GS
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSearchAll;
         private System.Windows.Forms.TextBox txtSubjectName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
     }
 }

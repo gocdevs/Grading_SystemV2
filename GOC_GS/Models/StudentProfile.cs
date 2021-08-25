@@ -260,7 +260,7 @@ namespace GOC_GS.Models
                     //try to open connection
                     con.Open();
                     //prepare sql query
-                    string sql = "SELECT id, lrn_no, fname, lname ,CONCAT(LEFT(mname,1)) mname, section, strand,student_type FROM student_profile";
+                    string sql = "SELECT id, goc_no, fname, lname ,CONCAT(LEFT(mname,1)) mname, section, strand,student_type FROM student_profile";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -275,7 +275,7 @@ namespace GOC_GS.Models
                         //prepare properties                                               
                         stud.id = Convert.ToInt32(reader["id"].ToString());
                         //stud.goc_no = reader["goc_no"].ToString();
-                        stud.lrn_no = reader["lrn_no"].ToString();
+                        stud.goc_no = reader["goc_no"].ToString();
                         stud.fname = reader["fname"].ToString();
                         stud.mname = reader["mname"].ToString();
                         stud.lname = reader["lname"].ToString();

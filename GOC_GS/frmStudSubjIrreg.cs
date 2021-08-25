@@ -58,7 +58,7 @@ namespace GOC_GS
                         fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
                     }
 
-                    dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname, item.Section, item.Strand);
+                    dgvStudNames.Rows.Add(item.Id,  item.GOC_No, fullname, item.Section, item.Strand);
 
                     lblStrand.Refresh();
                     lblStrand.Text = item.Strand;

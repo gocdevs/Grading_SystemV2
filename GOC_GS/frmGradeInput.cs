@@ -33,6 +33,7 @@ namespace GOC_GS
         public frmGradeInput()
         {
             InitializeComponent();
+            cmbGender.Text = "Male";
             //studentGrade.LoadDataTable(dgvList);
             //strand.LoadCombo(cmbStrand);
 
@@ -192,7 +193,7 @@ namespace GOC_GS
             {
                 if (item.Subject_Code == cmbSubject.Text && item.Sem == cmbTerm.Text && cmbSection.Text == item.Section)
                 {
-                    dgvGrades.Rows.Add(item.Id, item.LRN_No, item.Fullname, item.Subject_Code, item.Units, item.FirstGrade, item.SecondGrade, item.Average, item.Remarks, item.Sem, item.Grade_level, item.Section, item.Strand);
+                    dgvGrades.Rows.Add(item.Id, item.GOC_No, item.Fullname, item.Subject_Code, item.Units, item.FirstGrade, item.SecondGrade, item.Average, item.Remarks, item.Sem, item.Grade_level, item.Section, item.Strand);
                    
                 }
                 //else

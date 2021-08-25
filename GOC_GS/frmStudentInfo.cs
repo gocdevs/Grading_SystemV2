@@ -48,14 +48,14 @@ namespace GOC_GS
             //fullname = String.Len();
             //MessageBox.Show(fullname);
 
-            gs.LRN_No = txtLRN.Text;
+            gs.GOC_No = txtGOC.Text;
             gs_list = gs.Get_Name();           
             foreach (var item in gs_list)
             {
                 fullname = item.Fullname;
             }
 
-            gs.LRN_No = txtLRN.Text;
+            gs.GOC_No = txtGOC.Text;
             gs.Fullname = fullname;
             gs.Update_Name();
 

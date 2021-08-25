@@ -72,12 +72,12 @@ namespace GOC_GS
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvStudNames = new System.Windows.Forms.DataGridView();
+            this.lblStrand = new System.Windows.Forms.Label();
             this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblStrand = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pnlLoading)).BeginInit();
@@ -530,6 +530,19 @@ namespace GOC_GS
             this.dgvStudNames.Size = new System.Drawing.Size(1070, 265);
             this.dgvStudNames.TabIndex = 8023;
             // 
+            // lblStrand
+            // 
+            this.lblStrand.AutoSize = true;
+            this.lblStrand.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.lblStrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStrand.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblStrand.Location = new System.Drawing.Point(651, 25);
+            this.lblStrand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStrand.Name = "lblStrand";
+            this.lblStrand.Size = new System.Drawing.Size(0, 19);
+            this.lblStrand.TabIndex = 8024;
+            this.lblStrand.Visible = false;
+            // 
             // Column15
             // 
             this.Column15.HeaderText = "id";
@@ -539,7 +552,7 @@ namespace GOC_GS
             // 
             // Column19
             // 
-            this.Column19.HeaderText = "LRN No.";
+            this.Column19.HeaderText = "GOC No.";
             this.Column19.Name = "Column19";
             this.Column19.ReadOnly = true;
             // 
@@ -562,19 +575,6 @@ namespace GOC_GS
             this.Column18.HeaderText = "Strand";
             this.Column18.Name = "Column18";
             this.Column18.ReadOnly = true;
-            // 
-            // lblStrand
-            // 
-            this.lblStrand.AutoSize = true;
-            this.lblStrand.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblStrand.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStrand.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lblStrand.Location = new System.Drawing.Point(651, 25);
-            this.lblStrand.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblStrand.Name = "lblStrand";
-            this.lblStrand.Size = new System.Drawing.Size(0, 19);
-            this.lblStrand.TabIndex = 8024;
-            this.lblStrand.Visible = false;
             // 
             // frmStudentSubject
             // 
@@ -664,11 +664,11 @@ namespace GOC_GS
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridView dgvStudNames;
+        private System.Windows.Forms.Label lblStrand;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.Label lblStrand;
     }
 }

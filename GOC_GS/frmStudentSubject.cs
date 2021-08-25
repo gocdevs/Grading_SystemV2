@@ -68,7 +68,7 @@ namespace GOC_GS
                 {
                     fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
                 }
-                dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname , item.Section, item.Strand);
+                dgvStudNames.Rows.Add(item.Id, item.GOC_No, fullname , item.Section, item.Strand);
             }
         }
 
@@ -92,7 +92,7 @@ namespace GOC_GS
                         fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
                     }
 
-                    dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname, item.Section, item.Strand);
+                    dgvStudNames.Rows.Add(item.Id,  item.GOC_No, fullname, item.Section, item.Strand);
 
                     lblStrand.Refresh();
                     lblStrand.Text = item.Strand;
@@ -110,7 +110,7 @@ namespace GOC_GS
                 //        fullname = item.LName + ", " + item.FName + " " + item.MName + ".";
                 //    }
 
-                //    dgvStudNames.Rows.Add(item.Id, item.LRN_No, fullname, item.Section, item.Strand);
+                //    dgvStudNames.Rows.Add(item.Id,  item.GOC_No, fullname, item.Section, item.Strand);
 
                 //    lblStrand.Refresh();
                 //    lblStrand.Text = item.Strand;
@@ -176,7 +176,7 @@ namespace GOC_GS
             lblCount.Text = dgvStudNames.Rows.Count.ToString();
         }
 
-        public string StudentName, stud_section, LRN;
+        public string StudentName, stud_section, GOC_No;
 
         private void cmbSection_Enter(object sender, EventArgs e)
         {
@@ -261,7 +261,7 @@ namespace GOC_GS
 
             for (int i = 0; i < dgvStudNames.Rows.Count; i++)
             {
-                LRN = dgvStudNames.Rows[i].Cells[1].FormattedValue.ToString();
+                GOC_No = dgvStudNames.Rows[i].Cells[1].FormattedValue.ToString();
                 StudentName = dgvStudNames.Rows[i].Cells[2].FormattedValue.ToString();
                 Section = dgvStudNames.Rows[i].Cells[3].FormattedValue.ToString();
                 Strand = dgvStudNames.Rows[i].Cells[4].FormattedValue.ToString();
@@ -277,7 +277,7 @@ namespace GOC_GS
                     //dgvSubjects.Rows.Add(LRN, StudentName, SubjectName, GradeLevel, Strand, Section, Semester);
 
                   
-                    grading.LRN_No = LRN;
+                    grading.GOC_No = GOC_No;
                     grading.Fullname = StudentName;
                     grading.Subject_Code = SubjectCode;
                     grading.Subject_Desc = SubjectName;

@@ -13,7 +13,7 @@ namespace GOC_GS
         List<Grading> grading_list = new List<Grading>();
 
         protected int id;
-        protected string lrn_no;
+        protected string goc_no;
         protected string fullname;
         protected string subject_code;
         protected string subject_desc;
@@ -115,10 +115,10 @@ namespace GOC_GS
             set { id = value; }
         }
 
-        public string LRN_No
+        public string GOC_No
         {
-            get { return lrn_no; }
-            set { lrn_no = value; }
+            get { return goc_no; }
+            set { goc_no = value; }
         }
 
         List<Grading> grades = new List<Grading>();
@@ -134,12 +134,12 @@ namespace GOC_GS
                     //try to open connection
                     con.Open();
 
-                    string sql = "INSERT INTO grading(lrn_no, fullname, subject_code, subject_desc,units, first_or_3rd_Q, second_or_4th_Q, remarks, sem, grade_level, section, strand,average)" +
-                                    "VALUES (@lrn_no, @fullname, @subject_code, @subject_desc, @units, @first_or_3rd_Q, @second_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average);";
+                    string sql = "INSERT INTO grading(goc_no, fullname, subject_code, subject_desc,units, first_or_3rd_Q, second_or_4th_Q, remarks, sem, grade_level, section, strand,average)" +
+                                    "VALUES (@goc_no, @fullname, @subject_code, @subject_desc, @units, @first_or_3rd_Q, @second_or_4th_Q, @remarks, @sem, @grade_level, @section, @strand,@average);";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
-                    cmd.Parameters.AddWithValue("lrn_no", lrn_no);
+                    cmd.Parameters.AddWithValue("goc_no", goc_no);
                     cmd.Parameters.AddWithValue("fullname", fullname);
                     cmd.Parameters.AddWithValue("subject_code", subject_code);
                     cmd.Parameters.AddWithValue("subject_desc", subject_desc);
@@ -185,7 +185,7 @@ namespace GOC_GS
 
                         //prepare properties
                         grade.id = Convert.ToInt32(reader["id"].ToString());
-                        grade.lrn_no = reader["lrn_no"].ToString();
+                        grade.goc_no = reader["goc_no"].ToString();
                         grade.fullname = reader["fullname"].ToString();
                         grade.subject_code = reader["subject_code"].ToString();
                         grade.subject_desc = reader["subject_desc"].ToString();
@@ -263,7 +263,7 @@ namespace GOC_GS
                 {
                     //try to open connection
                     con.Open();
-                    string sql = "UPDATE grading SET goc_no=@goc_no, lrn_no=@lrn_no, fname=@fname," +
+                    string sql = "UPDATE grading SET goc_no=@goc_no, goc_no=@goc_no, fname=@fname," +
                         "lname=@lname, mname=@mname, grade_level=@grade_level, section=@section, strand=@strand," +
                         "academic_status=@academic_status WHERE id=@id;";
 
@@ -271,7 +271,7 @@ namespace GOC_GS
 
                     cmd.Parameters.AddWithValue("id", id);
                     //cmd.Parameters.AddWithValue("goc_no", goc_no);
-                    //cmd.Parameters.AddWithValue("lrn_no", lrn_no);
+                    //cmd.Parameters.AddWithValue("goc_no", goc_no);
                     //cmd.Parameters.AddWithValue("fname", fname);
                     //cmd.Parameters.AddWithValue("lname", lname);
                     //cmd.Parameters.AddWithValue("mname", mname);
@@ -305,11 +305,11 @@ namespace GOC_GS
                     con.Open();
 
                     //prepare sql query
-                    string sql = "SELECT CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName FROM student_profile WHERE lrn_no=@lrn_no";
+                    string sql = "SELECT CONCAT(lname,', ', fname,' ',Left(mname,1) ,'.') FullName FROM student_profile WHERE goc_no=@goc_no";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
-                    cmd.Parameters.AddWithValue("lrn_no", lrn_no);
+                    cmd.Parameters.AddWithValue("goc_no", goc_no);
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -331,7 +331,7 @@ namespace GOC_GS
                    
                 }
 
-                //string sql2 = "UPDATE grading SET fullname=@thisfullname WHERE lrn_no=@lrn_no";
+                //string sql2 = "UPDATE grading SET fullname=@thisfullname WHERE goc_no=@goc_no";
 
                 //MySqlCommand cmd2 = new MySqlCommand(sql2, con);
 
@@ -355,11 +355,11 @@ namespace GOC_GS
                 {
                     //try to open connection
                     con.Open();
-                    string sql = "UPDATE grading SET fullname=@fullname WHERE lrn_no=@lrn_no;";
+                    string sql = "UPDATE grading SET fullname=@fullname WHERE goc_no=@goc_no;";
 
                     MySqlCommand cmd = new MySqlCommand(sql, con);
 
-                    cmd.Parameters.AddWithValue("lrn_no", lrn_no);                   
+                    cmd.Parameters.AddWithValue("goc_no", goc_no);                   
                     cmd.Parameters.AddWithValue("fullname", fullname);
 
                     cmd.ExecuteNonQuery();
