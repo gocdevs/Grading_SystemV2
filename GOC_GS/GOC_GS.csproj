@@ -90,6 +90,12 @@
     <Compile Include="FileMaintenance\frmStudentProfile.Designer.cs">
       <DependentUpon>frmStudentProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="HeaderLandscape.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HeaderLandscape.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\FinalSemetralGrades.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -249,6 +255,12 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Summary_Grades.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Summary_Grades.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\Util_RequiredFields.cs" />
     <EmbeddedResource Include="Connection\frmConnectionSettings.resx">
       <DependentUpon>frmConnectionSettings.cs</DependentUpon>
@@ -264,6 +276,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FileMaintenance\frmUsers.resx">
       <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HeaderLandscape.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>HeaderLandscape.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\FinalSemetralGrades.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -342,6 +358,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>StudentList.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Summary_Grades.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Summary_Grades.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
