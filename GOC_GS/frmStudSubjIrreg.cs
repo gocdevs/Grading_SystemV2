@@ -135,5 +135,30 @@ namespace GOC_GS
         {
             LoadSubjectSpecific();
         }
+
+        public string GOCNo, Fullname, Section, Strand, SubjCode, SubjName, GradeLevel, SubjStrand, Semester;
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvStudNames.SelectedRows)
+            {
+                GOCNo = row.Cells[1].Value.ToString();
+                Fullname = row.Cells[2].Value.ToString();
+                Section = row.Cells[3].Value.ToString();
+                Strand = row.Cells[4].Value.ToString();               
+            }
+
+            foreach (DataGridViewRow row in dgvSubjects.SelectedRows)
+            {
+                SubjCode = row.Cells[1].Value.ToString();
+                SubjName = row.Cells[2].Value.ToString();
+                GradeLevel = row.Cells[3].Value.ToString();
+                SubjStrand = row.Cells[4].Value.ToString();
+                Semester = row.Cells[5].Value.ToString();
+            }
+
+            //dgvFacultyLoads.Rows.Add(FacultyId, FullName, SubjectCode, SubjectType, GradeLevel, Strand, Semester);
+            MessageBox.Show(GOCNo +" "+ Fullname +" "+ Section+" "+ Strand);
+            MessageBox.Show(SubjCode + " " + SubjName + " " + GradeLevel + " " + SubjStrand+" "+Semester);
+        }
     }
 }
