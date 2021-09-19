@@ -272,11 +272,13 @@ namespace GOC_GS
                         //instantiate model
                         FacultyLoading loading = new FacultyLoading();
 
-                        //prepare properties                                               
-                        loading.section = reader["fullname"].ToString();                  
+                        //prepare properties
+                        loading.id = Convert.ToInt32(reader["id"].ToString());
+                        loading.fullname = reader["fullname"].ToString();                  
                         loading.faculty_id = reader["faculty_id"].ToString();
-                        loading.faculty_id = reader["subject_code"].ToString();
+                        loading.subjectCode = reader["subject_code"].ToString();
                         loading.gradeLevel = reader["grade_level"].ToString();
+                        loading.strand = reader["strand"].ToString();
                         loading.section = reader["section"].ToString();
                         loading.semester = reader["semester"].ToString();
 

@@ -32,6 +32,9 @@ namespace GOC_GS
         Subjects subject = new Subjects();
         List<Subjects> subject_list = new List<Subjects>();
 
+        FacultyLoading floading = new FacultyLoading();
+        List<FacultyLoading> list_floading = new List<FacultyLoading>();
+
         Util_RequiredFields util = new Util_RequiredFields();
 
         public String strand_item;
@@ -98,6 +101,17 @@ namespace GOC_GS
             }
         }
 
+        public void LoadFacultySubject()
+        {
+            list_floading.Clear();
+            list_floading = floading.InsertTeacherToGrading();
+            dgvSubjects.Rows.Clear();
+            foreach (var item in list_floading)
+            {
+                dgvSubjects.Rows.Add(item.Id, item.FullName, item.SubjectCode, item.Strand, item.Semester, item.GradeLevel, item.Section);
+            }
+        }
+
         public void LoadSubjectSpecific()
         {
             subject_list.Clear();
@@ -121,14 +135,37 @@ namespace GOC_GS
         {
             FilterBySection();
             RecordCount();
-            loadSubj();
+            //loadSubj();
         }
+
+        public void AddImageDataGrid(DataGridView dgv)
+        {
+            DataGridViewImageColumn dimg = new DataGridViewImageColumn();
+            dimg.Image = Properties.Resources.add_green;
+            dimg.HeaderText = "Assign";
+            dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns.Add(dimg);           
+        }
+
+        public void AddDelete(DataGridView dgv)
+        {
+            DataGridViewImageColumn dimg = new DataGridViewImageColumn();
+            dimg.Image = Properties.Resources.delete;
+            dimg.HeaderText = "Remove";
+            dimg.ImageLayout = DataGridViewImageCellLayout.Normal;
+            dimg.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgv.Columns.Add(dimg);
+        }
+
 
         private void btnSearchAll_Click(object sender, EventArgs e)
         {
             txtSubjectName.Enabled = true;
             txtSubjectName.Focus();
-            LoadSubjectsAll();
+            LoadFacultySubject();
+            AddImageDataGrid(dgvSubjects);
+            AddDelete(dgvTransSubjects);
         }
 
         private void txtSubjectName_TextChanged(object sender, EventArgs e)
@@ -136,7 +173,60 @@ namespace GOC_GS
             LoadSubjectSpecific();
         }
 
-        public string GOCNo, Fullname, Section, Strand, SubjCode, SubjName, GradeLevel, SubjStrand, Semester;
+        public string id, GOCNo, TeacherName, Fullname, SubjectCode, Section, Strand, SubjCode, SubjName, GradeLevel, SubjStrand, Semester;
+
+        private void dgvTransSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvTransSubjects.Rows.Count < 1)
+            {
+
+            }
+            else
+            {
+                foreach (DataGridViewRow row in dgvTransSubjects.SelectedRows)
+                {
+
+                    dgvTransSubjects.Rows.RemoveAt(row.Index);
+                }
+            }
+        }
+
+        private void dgvSubjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 7)
+            {
+                foreach (DataGridViewRow row in dgvSubjects.SelectedRows)
+                {
+                    id = row.Cells[0].Value.ToString();
+                    TeacherName = row.Cells[1].Value.ToString();
+                    SubjectCode = row.Cells[2].Value.ToString();
+                    Strand = row.Cells[3].Value.ToString();
+                    Semester = row.Cells[4].Value.ToString();
+                    GradeLevel = row.Cells[5].Value.ToString();
+                    Section = row.Cells[6].Value.ToString();
+                }
+
+                if (dgvTransSubjects.Rows.Count < 1)
+                {
+                    dgvTransSubjects.Rows.Add(id, TeacherName, SubjectCode, Strand, Semester, GradeLevel, Section);
+                }
+                else
+                {
+                    //check if duplicate id is in the datagrid
+                    for (int i = 0; i < dgvTransSubjects.Rows.Count; i++)
+                    {
+                        if (id == dgvTransSubjects.Rows[i].Cells[0].FormattedValue.ToString())
+                        {
+                            MessageBox.Show("Duplicate Entry Detected","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            return;
+                        }
+                    }
+
+                    dgvTransSubjects.Rows.Add(id, TeacherName, SubjectCode, Strand, Semester, GradeLevel, Section);
+                }                              
+            }      
+        }
+
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow row in dgvStudNames.SelectedRows)
