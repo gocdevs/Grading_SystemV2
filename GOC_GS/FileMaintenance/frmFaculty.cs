@@ -178,7 +178,139 @@ namespace GOC_GS
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-           
+            if (chkNotAdviser.Checked == false)
+            {
+                string message = "Faculty No. " + txtFacultyId.Text + " will be the Adviser of " + cmbAdviserOf.Text +
+                                 "\nDo you want to continue?";
+                string title = "Grading System";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+
+                    if (util.readyToSave == 1)
+                    {
+                        util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
+                        if (util.readyToSave == 1)
+                        {
+                            #region PASS VALUE
+                            faculty.Id = id;
+                            faculty.Faculty_id = txtFacultyId.Text;
+                            faculty.Last_name = txtLName.Text;
+                            faculty.First_name = txtFName.Text;
+                            faculty.Middle_name = txtMName.Text;
+                            faculty.Course = txtCourse.Text;
+                            faculty.Specialize_subject = txtSpecialSubj.Text;
+                            faculty.Adviser_of = cmbAdviserOf.Text;
+                            faculty.Emp_status = cmbEStatus.Text;
+                            #endregion
+                            if (btnAdd.Text == "&Update")
+                            {
+                                faculty.Update();
+                                Reset();
+                                RenderFacultyId();
+                            }
+                            else
+                            {
+                                faculty.Save();
+                                Reset();
+                                RenderFacultyId();
+                            }
+                        }
+                        else
+                        {
+                            Reset();
+                            RenderFacultyId();
+                            return;
+                        }
+
+                    }
+                    else
+                    {
+                        Reset();
+                        RenderFacultyId();
+                        return;
+                    }
+
+                    faculty.LoadDataTable(dgvFacultyList);
+
+                }
+                else
+                {
+                    RenderFacultyId();
+                    return;
+                }
+            }
+            else if (chkNotAdviser.Checked == true)
+            {
+                string message = "Faculty No. " + txtFacultyId.Text + " will be the added as a Subject Teacher." +
+                                 "\nDo you want to continue?";
+                string title = "Grading System";
+
+                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+                if (result == DialogResult.Yes)
+                {
+                    util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+
+                    if (util.readyToSave == 1)
+                    {
+                        util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
+                        if (util.readyToSave == 1)
+                        {
+                            #region PASS VALUE
+                            faculty.Id = id;
+                            faculty.Faculty_id = txtFacultyId.Text;
+                            faculty.Last_name = txtLName.Text;
+                            faculty.First_name = txtFName.Text;
+                            faculty.Middle_name = txtMName.Text;
+                            faculty.Course = txtCourse.Text;
+                            faculty.Specialize_subject = txtSpecialSubj.Text;
+                            faculty.Adviser_of = cmbAdviserOf.Text;
+                            faculty.Emp_status = cmbEStatus.Text;
+                            #endregion
+                            if (btnAdd.Text == "&Update")
+                            {
+                                faculty.Update();
+                                Reset();
+                                RenderFacultyId();
+                            }
+                            else
+                            {
+                                faculty.Save();
+                                Reset();
+                                RenderFacultyId();
+                            }
+                        }
+                        else
+                        {
+                            Reset();
+                            RenderFacultyId();
+                            return;
+                        }
+
+                    }
+                    else
+                    {
+                        Reset();
+                        RenderFacultyId();
+                        return;
+                    }
+
+                    faculty.LoadDataTable(dgvFacultyList);
+
+                }
+                else
+                {
+                    RenderFacultyId();
+                    return;
+                }
+
+            }
+
+            #region Old code
             if (chkNotAdviser.Checked == false)
             {
                 string message = "Faculty No. "+txtFacultyId.Text+ " will be the Adviser of " + cmbAdviserOf.Text +
@@ -327,11 +459,8 @@ namespace GOC_GS
                 }
             }
 
-
-
-
         }
-
+        #endregion
         private void pbClose_Click(object sender, EventArgs e)
         {
             this.Close();
