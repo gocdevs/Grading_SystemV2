@@ -19,6 +19,7 @@ namespace GOC_GS.FileMaintenance
         }
         
         StudentProfile student_Profile = new StudentProfile();
+        Util_RequiredFields util = new Util_RequiredFields();
         private void btnBrowse_Click(object sender, EventArgs e)
         {
             student_Profile.openFile();
@@ -26,10 +27,18 @@ namespace GOC_GS.FileMaintenance
         }
 
         private void btnImport_Click(object sender, EventArgs e)
-        {           
+        {
             //tmrCount.Enabled = true;
-            student_Profile.FilePath = txtFilePath.Text;
-            student_Profile.importFile(dgvStudentList);                      
+            util.ValidateTextBox1(txtFilePath);
+            if (util.readyToSave == 1)
+            {
+                student_Profile.FilePath = txtFilePath.Text;
+                student_Profile.importFile(dgvStudentList);
+            }
+            else
+            {
+                MessageBox.Show("File Path is Required", "WARNING", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }                  
         }
 
         private void btnClose_Click(object sender, EventArgs e)

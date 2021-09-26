@@ -51,6 +51,7 @@ namespace GOC_GS
             this.txtSectionName.Name = "txtSectionName";
             this.txtSectionName.Size = new System.Drawing.Size(176, 25);
             this.txtSectionName.TabIndex = 7978;
+            this.txtSectionName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSectionName_KeyPress);
             // 
             // cmbGradeLevel
             // 
