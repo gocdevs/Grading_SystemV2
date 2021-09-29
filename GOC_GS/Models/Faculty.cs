@@ -189,6 +189,7 @@ namespace GOC_GS.Models
                 {
 
                     //try to open connection
+                    //try to open connection
                     con.Open();
 
                     string sql = "UPDATE faculty SET faculty_id=@faculty_id, lname=@lname, fname=@fname, mname=@mname, course=@course, specialize_subject=@specialize_subject, adviser_of=@adviser_of, employment_status=@employment_status" +
