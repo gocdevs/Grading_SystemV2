@@ -15,18 +15,59 @@ CREATE TABLE `faculty` (
   `lname` varchar(255) NOT NULL,
   `mname` varchar(255) NOT NULL,
   `course` varchar(255) NOT NULL,
-  `specialize_subject` varchar(255) NOT NULL
-  `adviser_of` varchar(255) NOT NULL
+  `specialize_subject` varchar(255) NOT NULL,
+  `adviser_of` varchar(255) NOT NULL,
   `employement_status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `section` (
-  `id` int(11) NOT NULL,
-  `section_name` varchar(255) NOT NULL,
-  `strand` varchar(255) NOT NULL,
-  `department` varchar(255) NOT NULL,
-  `grade_level` varchar(255) NOT NULL,
+
+CREATE TABLE `subject_type` (
+  `id` int(11) NOT NULL, 
+  `subject_type` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `subject_type`
+  ADD PRIMARY KEY (`id`);
+
+CREATE TABLE `subject_type` (
+  `id` int(11) NOT NULL, 
+  `subject_type` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `subject_type`
+  ADD PRIMARY KEY (`id`);
+
+CREATE TABLE `strand` (
+  `id` int(11) NOT NULL, 
+  `strand_name` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `strand`
+  ADD PRIMARY KEY (`id`);
+
+
+CREATE TABLE `grade_Level` (
+  `id` int(11) NOT NULL, 
+  `grade_level` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+ALTER TABLE `grade_Level`
+  ADD PRIMARY KEY (`id`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 CREATE TABLE `student_profile` (
   `id` int(11) NOT NULL,
@@ -38,8 +79,10 @@ CREATE TABLE `student_profile` (
   `grade_level` varchar(255) NOT NULL,
   `section` varchar(255) NOT NULL,
   `strand` varchar(255) NOT NULL,
-  `academic_status` varchar(255) NOT NULL, 
+  `academic_status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 CREATE TABLE `faculty_loads` (
   `id` int(11) NOT NULL,
@@ -52,19 +95,7 @@ CREATE TABLE `faculty_loads` (
   `strand` varchar(255) NOT NULL,
   `semester` varchar(255) NOT NULL,
   `note` varchar(255) NOT NULL,
-  `date_assigned` varchar(255) NOT NULL, 
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-
-CREATE TABLE `faculty_loads` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `user_type` varchar(255) NOT NULL,
-  `faculty_id` varchar(255) NOT NULL,
-  `fname` varchar(255) NOT NULL,
-  `mname` varchar(255) NOT NULL,
-  `lname` varchar(255) NOT NULL,
+  `date_assigned` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `academic_grades` (
@@ -78,7 +109,7 @@ CREATE TABLE `academic_grades` (
   `grade_level` varchar(255) NOT NULL,
   `section` varchar(255) NOT NULL,
   `strand` varchar(255) NOT NULL,
-  `term` varchar(255) NOT NULL,
+  `term` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE `char_grades_and_attendance` (
@@ -127,19 +158,6 @@ CREATE TABLE `char_grades_and_attendance` (
   `month8` int(5) NOT NULL,
   `month9` int(5) NOT NULL,
   `month10` int(5) NOT NULL,
-  `total_abs` int(5) NOT NULL,
+  `total_abs` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `character_grades` (
-  `id` int(11) NOT NULL,
-  `goc_no` varchar(255) NOT NULL,
-  `student_name` varchar(255) NOT NULL,
-  `subject_name` varchar(255) NOT NULL,
-  `sem_grade1` varchar(255) NOT NULL,
-  `sem_grade2` varchar(255) NOT NULL,
-  `average` varchar(255) NOT NULL,
-  `grade_level` varchar(255) NOT NULL,
-  `section` varchar(255) NOT NULL,
-  `strand` varchar(255) NOT NULL,
-  `term` varchar(255) NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
