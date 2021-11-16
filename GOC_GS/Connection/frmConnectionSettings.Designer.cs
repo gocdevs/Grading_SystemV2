@@ -76,7 +76,7 @@ namespace GOC_GS
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -129,7 +129,7 @@ namespace GOC_GS
             // 
             // btnSaveConfiguration
             // 
-            this.btnSaveConfiguration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnSaveConfiguration.BackColor = System.Drawing.Color.White;
             this.btnSaveConfiguration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveConfiguration.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveConfiguration.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -199,8 +199,10 @@ namespace GOC_GS
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmConnectionSettings";
-            this.Text = "frmConnectionSettings";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Connection Setup";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConnectionSettings_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
