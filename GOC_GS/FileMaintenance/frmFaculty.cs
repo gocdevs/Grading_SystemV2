@@ -309,158 +309,159 @@ namespace GOC_GS
                 }
 
             }
-
-            #region Old code
-            if (chkNotAdviser.Checked == false)
-            {
-                string message = "Faculty No. "+txtFacultyId.Text+ " will be the Adviser of " + cmbAdviserOf.Text +
-                                 "\nDo you want to continue?";
-                string title = "Grading System";
-
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    if (btnAdd.Text == "&Update")
-                    {
-                        util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
-                        util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
-                        if (util.readyToSave == 1)
-                        {
-                            #region UPDATE DISCOUNT
-                            faculty.Id = id;
-                            faculty.Faculty_id = txtFacultyId.Text;
-                            faculty.Last_name = txtLName.Text;
-                            faculty.First_name = txtFName.Text;
-                            faculty.Middle_name = txtMName.Text;
-                            faculty.Course = txtCourse.Text;
-                            faculty.Specialize_subject = txtSpecialSubj.Text;
-                            faculty.Adviser_of = cmbAdviserOf.Text;
-                            faculty.Emp_status = cmbEStatus.Text;
-
-                            faculty.Update();
-                            Reset();
-                            #endregion
-                        }
-                        else
-                        {
-                            Reset();
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
-                        util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
-
-                        if (util.readyToSave == 1)
-                        {
-                            faculty.Id = id;
-                            faculty.Faculty_id = txtFacultyId.Text;
-                            faculty.Last_name = txtLName.Text;
-                            faculty.First_name = txtFName.Text;
-                            faculty.Middle_name = txtMName.Text;
-                            faculty.Course = txtCourse.Text;
-                            faculty.Specialize_subject = txtSpecialSubj.Text;
-                            faculty.Adviser_of = cmbAdviserOf.Text;
-                            faculty.Emp_status = cmbEStatus.Text;
-
-                            faculty.Save();
-                            Reset();
-                        }
-                        else
-                        {
-                            Reset();
-                            return;
-                        }
-                    }
-                    faculty.LoadDataTable(dgvFacultyList);
-
-                }
-                else
-                {
-                    return;
-                }
-            }
-
-            else if (chkNotAdviser.Checked == true)
-            {
-                string message = "Faculty No. " + txtFacultyId.Text + " will be the added as a Subject Teacher." +
-                                 "\nDo you want to continue?";
-                string title = "Grading System";
-
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    if (btnAdd.Text == "&Update")
-                    {
-                        util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
-                        util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
-                        if (util.readyToSave == 1)
-                        {
-                            #region UPDATE DISCOUNT
-                            faculty.Id = id;
-                            faculty.Faculty_id = txtFacultyId.Text;
-                            faculty.Last_name = txtLName.Text;
-                            faculty.First_name = txtFName.Text;
-                            faculty.Middle_name = txtMName.Text;
-                            faculty.Course = txtCourse.Text;
-                            faculty.Specialize_subject = txtSpecialSubj.Text;                           
-                            faculty.Emp_status = cmbEStatus.Text;
-
-                            faculty.Adviser_of = "Subject Teacher";
-
-                            faculty.Update();
-                            Reset();
-                            #endregion
-                        }
-                        else
-                        {
-                            Reset();
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
-                        util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
-
-                        if (util.readyToSave == 1)
-                        {
-                            faculty.Id = id;
-                            faculty.Faculty_id = txtFacultyId.Text;
-                            faculty.Last_name = txtLName.Text;
-                            faculty.First_name = txtFName.Text;
-                            faculty.Middle_name = txtMName.Text;
-                            faculty.Course = txtCourse.Text;
-                            faculty.Specialize_subject = txtSpecialSubj.Text;
-                            faculty.Emp_status = cmbEStatus.Text;
-
-                            faculty.Adviser_of = "Subject Teacher";
-                            
-                            faculty.Save();
-                            Reset();
-                        }
-                        else
-                        {
-                            Reset();
-                            return;
-                        }
-                    }
-                    faculty.LoadDataTable(dgvFacultyList);
-
-                }
-                else
-                {
-                    return;
-                }
-            }
-
         }
-        #endregion
+
+        //    #region Old code
+        //    if (chkNotAdviser.Checked == false)
+        //    {
+        //        string message = "Faculty No. "+txtFacultyId.Text+ " will be the Adviser of " + cmbAdviserOf.Text +
+        //                         "\nDo you want to continue?";
+        //        string title = "Grading System";
+
+        //        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+        //        DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+        //        if (result == DialogResult.Yes)
+        //        {
+        //            if (btnAdd.Text == "&Update")
+        //            {
+        //                util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+        //                util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
+        //                if (util.readyToSave == 1)
+        //                {
+        //                    #region UPDATE DISCOUNT
+        //                    faculty.Id = id;
+        //                    faculty.Faculty_id = txtFacultyId.Text;
+        //                    faculty.Last_name = txtLName.Text;
+        //                    faculty.First_name = txtFName.Text;
+        //                    faculty.Middle_name = txtMName.Text;
+        //                    faculty.Course = txtCourse.Text;
+        //                    faculty.Specialize_subject = txtSpecialSubj.Text;
+        //                    faculty.Adviser_of = cmbAdviserOf.Text;
+        //                    faculty.Emp_status = cmbEStatus.Text;
+
+        //                    faculty.Update();
+        //                    Reset();
+        //                    #endregion
+        //                }
+        //                else
+        //                {
+        //                    Reset();
+        //                    return;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+        //                util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
+
+        //                if (util.readyToSave == 1)
+        //                {
+        //                    faculty.Id = id;
+        //                    faculty.Faculty_id = txtFacultyId.Text;
+        //                    faculty.Last_name = txtLName.Text;
+        //                    faculty.First_name = txtFName.Text;
+        //                    faculty.Middle_name = txtMName.Text;
+        //                    faculty.Course = txtCourse.Text;
+        //                    faculty.Specialize_subject = txtSpecialSubj.Text;
+        //                    faculty.Adviser_of = cmbAdviserOf.Text;
+        //                    faculty.Emp_status = cmbEStatus.Text;
+
+        //                    faculty.Save();
+        //                    Reset();
+        //                }
+        //                else
+        //                {
+        //                    Reset();
+        //                    return;
+        //                }
+        //            }
+        //            faculty.LoadDataTable(dgvFacultyList);
+
+        //        }
+        //        else
+        //        {
+        //            return;
+        //        }
+        //    }
+
+        //    else if (chkNotAdviser.Checked == true)
+        //    {
+        //        string message = "Faculty No. " + txtFacultyId.Text + " will be the added as a Subject Teacher." +
+        //                         "\nDo you want to continue?";
+        //        string title = "Grading System";
+
+        //        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+        //        DialogResult result = MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+
+        //        if (result == DialogResult.Yes)
+        //        {
+        //            if (btnAdd.Text == "&Update")
+        //            {
+        //                util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+        //                util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
+        //                if (util.readyToSave == 1)
+        //                {
+        //                    #region UPDATE DISCOUNT
+        //                    faculty.Id = id;
+        //                    faculty.Faculty_id = txtFacultyId.Text;
+        //                    faculty.Last_name = txtLName.Text;
+        //                    faculty.First_name = txtFName.Text;
+        //                    faculty.Middle_name = txtMName.Text;
+        //                    faculty.Course = txtCourse.Text;
+        //                    faculty.Specialize_subject = txtSpecialSubj.Text;                           
+        //                    faculty.Emp_status = cmbEStatus.Text;
+
+        //                    faculty.Adviser_of = "Subject Teacher";
+
+        //                    faculty.Update();
+        //                    Reset();
+        //                    #endregion
+        //                }
+        //                else
+        //                {
+        //                    Reset();
+        //                    return;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                util.ValidateTextBox6(txtFacultyId, txtLName, txtFName, txtMName, txtCourse, txtSpecialSubj);// Validation before Updating
+        //                util.ValidateCombobox2(cmbAdviserOf, cmbEStatus);// Validation before Updating
+
+        //                if (util.readyToSave == 1)
+        //                {
+        //                    faculty.Id = id;
+        //                    faculty.Faculty_id = txtFacultyId.Text;
+        //                    faculty.Last_name = txtLName.Text;
+        //                    faculty.First_name = txtFName.Text;
+        //                    faculty.Middle_name = txtMName.Text;
+        //                    faculty.Course = txtCourse.Text;
+        //                    faculty.Specialize_subject = txtSpecialSubj.Text;
+        //                    faculty.Emp_status = cmbEStatus.Text;
+
+        //                    faculty.Adviser_of = "Subject Teacher";
+                            
+        //                    faculty.Save();
+        //                    Reset();
+        //                }
+        //                else
+        //                {
+        //                    Reset();
+        //                    return;
+        //                }
+        //            }
+        //            faculty.LoadDataTable(dgvFacultyList);
+
+        //        }
+        //        else
+        //        {
+        //            return;
+        //        }
+        //    }
+
+        //}
+        //#endregion
         private void pbClose_Click(object sender, EventArgs e)
         {
             this.Close();
