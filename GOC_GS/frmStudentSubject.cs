@@ -294,6 +294,9 @@ namespace GOC_GS
                     grading.Strand = Strand;
                     grading.Sex = Sex;
 
+                    //Add student Acad_Stat ex regular / irregular
+                    //School Year // 
+
                     grading.Save();
                     this.Refresh();                       
                 }
