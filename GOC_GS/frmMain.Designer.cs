@@ -34,24 +34,24 @@ namespace GOC_GS
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblUserStatus = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblFacultyId = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.pnlAdminView = new System.Windows.Forms.Panel();
-            this.btnStudentData = new System.Windows.Forms.Button();
-            this.pnlTeacherView = new System.Windows.Forms.Panel();
-            this.pnlAllContainer = new System.Windows.Forms.Panel();
-            this.btnLogout = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.btnStudentSubject = new System.Windows.Forms.Button();
             this.btnConSettings = new System.Windows.Forms.Button();
+            this.btnStudentData = new System.Windows.Forms.Button();
             this.btnFileMaintenance = new System.Windows.Forms.Button();
             this.btnFacultyLoading = new System.Windows.Forms.Button();
             this.btnDashBoard = new System.Windows.Forms.Button();
+            this.pnlTeacherView = new System.Windows.Forms.Panel();
             this.btnViewGrades = new System.Windows.Forms.Button();
             this.btnGrading = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pnlAllContainer = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.pnlLeft.SuspendLayout();
             this.pnlAdminView.SuspendLayout();
@@ -106,6 +106,24 @@ namespace GOC_GS
             this.lblUserStatus.Size = new System.Drawing.Size(90, 18);
             this.lblUserStatus.TabIndex = 1042;
             this.lblUserStatus.Text = "Adminstrator";
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(1033, 9);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(106, 35);
+            this.btnLogout.TabIndex = 68;
+            this.btnLogout.Text = "     Log out";
+            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // lblUser
             // 
@@ -169,60 +187,6 @@ namespace GOC_GS
             this.pnlAdminView.TabIndex = 0;
             this.pnlAdminView.Visible = false;
             // 
-            // btnStudentData
-            // 
-            this.btnStudentData.FlatAppearance.BorderSize = 0;
-            this.btnStudentData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStudentData.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStudentData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-            this.btnStudentData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStudentData.Location = new System.Drawing.Point(13, 216);
-            this.btnStudentData.Name = "btnStudentData";
-            this.btnStudentData.Size = new System.Drawing.Size(158, 46);
-            this.btnStudentData.TabIndex = 1044;
-            this.btnStudentData.Text = "Student Profile";
-            this.btnStudentData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStudentData.UseVisualStyleBackColor = true;
-            this.btnStudentData.Click += new System.EventHandler(this.btnStudentData_Click_1);
-            // 
-            // pnlTeacherView
-            // 
-            this.pnlTeacherView.Controls.Add(this.btnViewGrades);
-            this.pnlTeacherView.Controls.Add(this.btnGrading);
-            this.pnlTeacherView.Location = new System.Drawing.Point(4, 206);
-            this.pnlTeacherView.Name = "pnlTeacherView";
-            this.pnlTeacherView.Size = new System.Drawing.Size(189, 112);
-            this.pnlTeacherView.TabIndex = 0;
-            this.pnlTeacherView.Visible = false;
-            // 
-            // pnlAllContainer
-            // 
-            this.pnlAllContainer.BackgroundImage = global::GOC_GS.Properties.Resources.goc_logo;
-            this.pnlAllContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pnlAllContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlAllContainer.Location = new System.Drawing.Point(200, 59);
-            this.pnlAllContainer.Name = "pnlAllContainer";
-            this.pnlAllContainer.Size = new System.Drawing.Size(1150, 670);
-            this.pnlAllContainer.TabIndex = 26;
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLogout.FlatAppearance.BorderSize = 0;
-            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogout.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLogout.Location = new System.Drawing.Point(1033, 9);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(106, 35);
-            this.btnLogout.TabIndex = 68;
-            this.btnLogout.Text = "     Log out";
-            this.btnLogout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLogout.UseVisualStyleBackColor = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // btnReport
             // 
             this.btnReport.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnReport.BackgroundImage")));
@@ -275,6 +239,22 @@ namespace GOC_GS
             this.btnConSettings.UseVisualStyleBackColor = true;
             this.btnConSettings.Click += new System.EventHandler(this.btnConSettings_Click);
             // 
+            // btnStudentData
+            // 
+            this.btnStudentData.FlatAppearance.BorderSize = 0;
+            this.btnStudentData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudentData.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(236)))), ((int)(((byte)(240)))));
+            this.btnStudentData.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudentData.Location = new System.Drawing.Point(13, 216);
+            this.btnStudentData.Name = "btnStudentData";
+            this.btnStudentData.Size = new System.Drawing.Size(158, 46);
+            this.btnStudentData.TabIndex = 1044;
+            this.btnStudentData.Text = "Student Profile";
+            this.btnStudentData.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnStudentData.UseVisualStyleBackColor = true;
+            this.btnStudentData.Click += new System.EventHandler(this.btnStudentData_Click_1);
+            // 
             // btnFileMaintenance
             // 
             this.btnFileMaintenance.FlatAppearance.BorderSize = 0;
@@ -326,6 +306,16 @@ namespace GOC_GS
             this.btnDashBoard.UseVisualStyleBackColor = true;
             this.btnDashBoard.Click += new System.EventHandler(this.btnDashBoard_Click_1);
             // 
+            // pnlTeacherView
+            // 
+            this.pnlTeacherView.Controls.Add(this.btnViewGrades);
+            this.pnlTeacherView.Controls.Add(this.btnGrading);
+            this.pnlTeacherView.Location = new System.Drawing.Point(4, 206);
+            this.pnlTeacherView.Name = "pnlTeacherView";
+            this.pnlTeacherView.Size = new System.Drawing.Size(189, 112);
+            this.pnlTeacherView.TabIndex = 0;
+            this.pnlTeacherView.Visible = false;
+            // 
             // btnViewGrades
             // 
             this.btnViewGrades.FlatAppearance.BorderSize = 0;
@@ -372,6 +362,16 @@ namespace GOC_GS
             this.pictureBox1.TabStop = false;
             this.pictureBox1.WaitOnLoad = true;
             // 
+            // pnlAllContainer
+            // 
+            this.pnlAllContainer.BackgroundImage = global::GOC_GS.Properties.Resources.goc_logo;
+            this.pnlAllContainer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pnlAllContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlAllContainer.Location = new System.Drawing.Point(200, 59);
+            this.pnlAllContainer.Name = "pnlAllContainer";
+            this.pnlAllContainer.Size = new System.Drawing.Size(1150, 670);
+            this.pnlAllContainer.TabIndex = 26;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,7 +383,6 @@ namespace GOC_GS
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Golden Olympus Colleges - Grading System";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlTop.ResumeLayout(false);
             this.pnlTop.PerformLayout();
             this.pnlLeft.ResumeLayout(false);
